@@ -134,6 +134,7 @@ export async function simulateTaskExecutionAction(taskId: string): Promise<void>
     if (!task) throw new Error('Task not found for simulation.');
 
     await updateTaskStatusInFirestore(taskId, 'in-progress');
+    revalidatePath('/'); 
 
     for (let i = 0; i < task.steps.length; i++) {
       await updateStepStatusInFirestore(taskId, i, 'in-progress');
