@@ -104,16 +104,26 @@ export default function HomePage() {
         {/* Hero Section */}
         <section className="relative h-[500px] w-full">
           <div className="absolute inset-0 grid grid-cols-5">
-            <Image src="https://picsum.photos/seed/cyberpunk-city/600/800" alt="Cyberpunk cityscape" fill className="relative object-cover" data-ai-hint="cyberpunk cityscape"/>
-            <Image src="https://picsum.photos/seed/woman-vr/600/800" alt="Woman with VR headset" fill className="relative object-cover" data-ai-hint="woman vr"/>
+            <div className="relative">
+                <Image src="https://picsum.photos/seed/cyberpunk-city/600/800" alt="Cyberpunk cityscape" width={600} height={800} className="w-full h-full object-cover" data-ai-hint="cyberpunk cityscape teal blue pink"/>
+            </div>
+            <div className="relative">
+                <Image src="https://picsum.photos/seed/woman-vr/600/800" alt="Woman with VR headset" width={600} height={800} className="w-full h-full object-cover" data-ai-hint="woman vr cybernetic white"/>
+            </div>
             <div className="relative col-span-1">
-              <Image src="https://picsum.photos/seed/laptop-typing/800/800" alt="Hands typing on a laptop" fill className="object-cover" data-ai-hint="typing hands"/>
+              <Image src="https://picsum.photos/seed/laptop-typing/800/800" alt="Hands typing on a laptop" width={800} height={800} className="w-full h-full object-cover" data-ai-hint="typing hands futuristic office teal"/>
             </div>
             <div className="relative grid grid-rows-2">
-                <Image src="https://picsum.photos/seed/brain-circuit/600/400" alt="Brain made of circuits" fill className="relative object-cover" data-ai-hint="brain circuit"/>
-                <Image src="https://picsum.photos/seed/robotic-hand/600/400" alt="Robotic hand" fill className="relative object-cover" data-ai-hint="robot hand"/>
+                <div className="relative">
+                    <Image src="https://picsum.photos/seed/brain-circuit/600/400" alt="Brain made of circuits" width={600} height={400} className="w-full h-full object-cover" data-ai-hint="brain circuit light-gray"/>
+                </div>
+                <div className="relative">
+                    <Image src="https://picsum.photos/seed/robotic-hand/600/400" alt="Robotic hand" width={600} height={400} className="w-full h-full object-cover" data-ai-hint="robot hand white photorealistic"/>
+                </div>
             </div>
-            <Image src="https://picsum.photos/seed/nervous-system-2/600/800" alt="Human nervous system schematic" fill className="relative object-cover" data-ai-hint="nervous system"/>
+            <div className="relative">
+                <Image src="https://picsum.photos/seed/nervous-system-2/600/800" alt="Human nervous system schematic" width={600} height={800} className="w-full h-full object-cover" data-ai-hint="nervous system schematic teal orange-red"/>
+            </div>
           </div>
           <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
             <h2 className="text-5xl font-extrabold text-white">Hackathons and Internships</h2>
