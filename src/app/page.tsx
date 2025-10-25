@@ -39,6 +39,7 @@ import {
 import IndustrySolutions from '@/components/IndustrySolutions';
 import TrendingBlogs from '@/components/TrendingBlogs';
 import LimitlessLearning from '@/components/LimitlessLearning';
+import CareerTimeline from '@/components/CareerTimeline';
 
 
 const whatWeOffer = [
@@ -67,15 +68,6 @@ const faqItems = [
         answer: "Absolutely! We encourage you to showcase your achievements. Adding your completed courses and certificates to your resume and LinkedIn profile can significantly boost your career prospects."
     }
 ];
-
-const timelineItems = [
-    { icon: <Target className="text-teal-500" />, title: "Define Your Career Goal", description: "Identify your interests and strengths to choose a career path in tech, whether it's AI, web development, or data science.", label: "Career Goal" },
-    { icon: <GraduationCap className="text-teal-500" />, title: "Build Skills with Free Courses", description: "Enroll in our comprehensive free courses to learn foundational and advanced skills at your own pace.", label: "Build Skills" },
-    { icon: <Code className="text-teal-500" />, title: "Apply Knowledge with Projects", description: "Work on hands-on projects to build a strong portfolio and demonstrate your abilities to potential employers.", label: "Apply Knowledge" },
-    { icon: <Briefcase className="text-teal-500" />, title: "Gain Real-World Experience", description: "Participate in hackathons and internships to solve real challenges and collaborate with industry professionals.", label: "Gain Experience" },
-    { icon: <Star className="text-teal-500" />, title: "Become an Industry Expert", description: "Continuously learn, contribute to open-source projects, and stay updated with the latest industry trends to establish yourself as a leader in your field.", label: "Become an Expert" },
-];
-
 
 export default function HomePage() {
   const [activePanel, setActivePanel] = useState(0);
@@ -293,38 +285,7 @@ export default function HomePage() {
         <IndustrySolutions />
 
         {/* Section 7: Step-by-Step Career Timeline */}
-        <section className="container mx-auto max-w-7xl px-4 py-20">
-            <h2 className="text-center text-3xl font-bold mb-12 font-space-grotesk">Your Path to Success: Step-by-Step Career Timeline</h2>
-            <div className="relative">
-                <div className="absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-gray-200"></div>
-                {timelineItems.map((item, index) => (
-                    <div key={index} className="relative w-full py-8">
-                        <div className={`relative flex items-center w-full ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
-                            <div className="hidden md:block w-5/12"></div>
-                            <div className="absolute left-1/2 -translate-x-1/2 z-10">
-                                 <div className="w-4 h-4 rounded-full border-2 border-pink-500 bg-background"></div>
-                            </div>
-                            <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pl-16' : 'md:pr-16'}`}>
-                                <div className="p-6 rounded-lg border bg-card shadow-md">
-                                    <div className="flex items-center gap-4 mb-2">
-                                        <div className="flex-shrink-0 text-accent">
-                                            {React.cloneElement(item.icon, { className: "h-6 w-6" })}
-                                        </div>
-                                        <h3 className="text-xl font-bold font-space-grotesk">{item.title}</h3>
-                                    </div>
-                                    <p className="text-sm text-muted-foreground">{item.description}</p>
-                                </div>
-                            </div>
-                        </div>
-                         {index === 3 && (
-                            <div className="w-full text-center my-8 md:my-16">
-                                <h3 className="text-2xl font-bold text-accent font-space-grotesk">Advancing Your Career: From Gaining Experience to Becoming an Industry Expert</h3>
-                            </div>
-                        )}
-                    </div>
-                ))}
-            </div>
-        </section>
+        <CareerTimeline />
 
         {/* Section 8: "What We Offer" Grid */}
         <section className="container mx-auto max-w-7xl px-4 py-16">
@@ -438,5 +399,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-    
