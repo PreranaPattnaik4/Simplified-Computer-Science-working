@@ -35,6 +35,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import IndustrySolutions from '@/components/IndustrySolutions';
+
 
 const whatWeOffer = [
     { icon: <BookOpen />, title: "Blogs", description: "In-depth articles on the latest in tech.", tag: "LATEST" },
@@ -177,19 +179,19 @@ export default function HomePage() {
         <section className="py-16">
           <div className="relative grid grid-cols-3 h-64 w-full">
             <div className="relative">
-              <Image src="https://picsum.photos/seed/circuits-v/600/400" alt="Circuits" layout="fill" objectFit="cover" data-ai-hint="glowing circuits vertical"/>
+              <Image src="https://picsum.photos/seed/circuits-v/600/400" alt="Circuits" fill objectFit="cover" data-ai-hint="glowing circuits vertical"/>
               <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
                 <h3 className="text-white text-2xl font-bold">TRANDING COURSES LIVE!</h3>
               </div>
             </div>
             <div className="relative">
-              <Image src="https://picsum.photos/seed/vr-woman-v/600/400" alt="Woman in VR" layout="fill" objectFit="cover" data-ai-hint="woman vr vertical"/>
+              <Image src="https://picsum.photos/seed/vr-woman-v/600/400" alt="Woman in VR" fill objectFit="cover" data-ai-hint="woman vr vertical"/>
                <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
                 <h3 className="text-white text-2xl font-bold">HELPFUL BLOGS</h3>
               </div>
             </div>
             <div className="relative">
-              <Image src="https://picsum.photos/seed/android-v/600/400" alt="Android" layout="fill" objectFit="cover" data-ai-hint="android robot vertical"/>
+              <Image src="https://picsum.photos/seed/android-v/600/400" alt="Android" fill objectFit="cover" data-ai-hint="android robot vertical"/>
                <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
                 <h3 className="text-white text-2xl font-bold">PROJECTS</h3>
               </div>
@@ -249,19 +251,7 @@ export default function HomePage() {
         </section>
 
         {/* Section 5: Industry Solutions */}
-        <section className="container mx-auto max-w-7xl px-4 py-20 text-center">
-            <h2 className="text-4xl font-bold mb-12">Industry Solutions</h2>
-            <div className="flex flex-wrap justify-center items-center gap-4">
-                <span className="py-2 px-4 rounded-full bg-purple-100 text-purple-800 font-semibold">01 Generative AI</span>
-                <span className="py-2 px-4 rounded-full bg-green-100 text-green-800 font-semibold">02 Computer Vision</span>
-                <span className="py-2 px-4 rounded-full bg-yellow-100 text-yellow-800 font-semibold">03 NLP</span>
-                <span className="py-2 px-4 rounded-full bg-blue-100 text-blue-800 font-semibold">04 Autonomous Systems</span>
-                <span className="py-2 px-4 rounded-full bg-indigo-100 text-indigo-800 font-semibold">05 Reinforcement Learning</span>
-                <span className="py-2 px-4 rounded-full bg-pink-100 text-pink-800 font-semibold">06 Big Data Analytics</span>
-                <span className="py-2 px-4 rounded-full bg-red-100 text-red-800 font-semibold">07 Cybersecurity AI</span>
-                <span className="py-2 px-4 rounded-full bg-teal-100 text-teal-800 font-semibold">08 Responsible AI</span>
-            </div>
-        </section>
+        <IndustrySolutions />
 
         {/* Section 6: Step-by-Step Career Timeline */}
         <section className="container mx-auto max-w-7xl px-4 py-20">

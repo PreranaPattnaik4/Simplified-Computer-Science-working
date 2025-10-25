@@ -42,6 +42,11 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        'pastel-purple': '#C3B1E1',
+        'pastel-green': '#B2D8B2',
+        'pastel-blue': '#AEC6CF',
+        'pastel-beige': '#F5F5DC',
+        'pastel-pink': '#FFD1DC',
       },
       borderRadius: {
         lg: "var(--radius)",
