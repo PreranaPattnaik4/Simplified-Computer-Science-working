@@ -69,11 +69,11 @@ const faqItems = [
 ];
 
 const timelineItems = [
-    { icon: <Target />, title: "Define Your Career Goal", description: "Identify your interests and strengths to choose a career path in tech, whether it's AI, web development, or data science." },
-    { icon: <GraduationCap />, title: "Build Skills with Free Courses", description: "Enroll in our comprehensive free courses to learn foundational and advanced skills at your own pace." },
-    { icon: <Code />, title: "Apply Knowledge with Projects", description: "Work on hands-on projects to build a strong portfolio and demonstrate your abilities to potential employers." },
-    { icon: <Briefcase />, title: "Gain Real-World Experience", description: "Participate in hackathons and internships to solve real challenges and collaborate with industry professionals." },
-    { icon: <Star />, title: "Become an Industry Expert", description: "Continuously learn, contribute to open-source projects, and stay updated with the latest industry trends to establish yourself as a leader in your field." },
+    { icon: <Target className="text-teal-500" />, title: "Define Your Career Goal", description: "Identify your interests and strengths to choose a career path in tech, whether it's AI, web development, or data science.", label: "Career Goal" },
+    { icon: <GraduationCap className="text-teal-500" />, title: "Build Skills with Free Courses", description: "Enroll in our comprehensive free courses to learn foundational and advanced skills at your own pace.", label: "Build Skills" },
+    { icon: <Code className="text-teal-500" />, title: "Apply Knowledge with Projects", description: "Work on hands-on projects to build a strong portfolio and demonstrate your abilities to potential employers.", label: "Apply Knowledge" },
+    { icon: <Briefcase className="text-teal-500" />, title: "Gain Real-World Experience", description: "Participate in hackathons and internships to solve real challenges and collaborate with industry professionals.", label: "Gain Experience" },
+    { icon: <Star className="text-teal-500" />, title: "Become an Industry Expert", description: "Continuously learn, contribute to open-source projects, and stay updated with the latest industry trends to establish yourself as a leader in your field.", label: "Become an Expert" },
 ];
 
 
@@ -135,7 +135,6 @@ export default function HomePage() {
                 <div className="flex gap-2 h-64 md:h-80 rounded-lg overflow-hidden">
                 {panels.map((panel) => {
                     const isActive = activePanel === panel.id;
-                    const baseWidth = 100 / panels.length;
                     const activeWidth = 65;
                     const inactiveWidth = (100 - activeWidth) / (panels.length - 1);
                     const width = isActive ? activeWidth : inactiveWidth;
@@ -199,7 +198,7 @@ export default function HomePage() {
 
         {/* Hero Content */}
         <section className="container mx-auto max-w-7xl px-4 py-16 text-center">
-          <h2 className="text-4xl font-bold">Unleash Your Potential in AI, Tech & Innovation!</h2>
+          <h2 className="text-4xl font-bold font-space-grotesk">Unleash Your Potential in AI, Tech & Innovation!</h2>
           <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground">
             Gain hands-on experience through exciting hackathons and real-world internships in AI, Machine Learning, and cutting-edge tech. Build your portfolio, collaborate with industry experts, and stand out in your career journey.
           </p>
@@ -215,7 +214,7 @@ export default function HomePage() {
 
         {/* Section 2: Empowering Innovation & Key Topics */}
         <section className="container mx-auto max-w-7xl px-4 py-16">
-            <h2 className="mb-12 text-center text-3xl font-bold tracking-tight">SIMPLIFYING COMPUTER SCIENCE | EMPOWERING INNOVATION: PROJECTS HACKATHONS AND INTERNSHIPS</h2>
+            <h2 className="mb-12 text-center text-3xl font-bold tracking-tight font-space-grotesk">SIMPLIFYING COMPUTER SCIENCE | EMPOWERING INNOVATION: PROJECTS HACKATHONS AND INTERNSHIPS</h2>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                 <div className="col-span-1 space-y-4">
                     <div className="bg-black p-6 rounded-lg text-white font-bold text-lg">Artificial Intelligence Specialists</div>
@@ -225,7 +224,7 @@ export default function HomePage() {
                     <div className="bg-black p-6 rounded-lg text-white font-bold text-lg">Data Scientists And Analysts</div>
                 </div>
                 <div className="col-span-2 rounded-lg border bg-card p-8 text-card-foreground">
-                    <h3 className="text-2xl font-bold mb-4">Key Skills</h3>
+                    <h3 className="text-2xl font-bold mb-4 font-space-grotesk">Key Skills</h3>
                     <p className="mb-6 text-muted-foreground">Our curriculum is designed to equip you with the most in-demand skills in the tech industry. From programming fundamentals to advanced AI concepts, you'll gain the expertise needed to excel in your career.</p>
                     <ul className="list-disc list-inside space-y-2 mb-6">
                         <li>Proficiency in Python, Java, and C++</li>
@@ -234,7 +233,7 @@ export default function HomePage() {
                         <li>Data analysis and visualization with Pandas and Matplotlib</li>
                         <li>Cloud computing with AWS, Azure, and Google Cloud</li>
                     </ul>
-                    <h3 className="text-2xl font-bold mb-4">Career Outlook</h3>
+                    <h3 className="text-2xl font-bold mb-4 font-space-grotesk">Career Outlook</h3>
                     <p className="text-muted-foreground">The demand for skilled tech professionals is at an all-time high. By completing our programs, you'll be prepared for high-paying roles such as:</p>
                     <ol className="list-decimal list-inside space-y-2 mt-4">
                         <li>AI/ML Engineer</li>
@@ -249,39 +248,38 @@ export default function HomePage() {
         {/* Section 4: Gateway to Mastering CS & AI */}
         <section className="bg-black text-white py-20">
             <div className="container mx-auto max-w-7xl px-4">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    <div className="md:col-span-1">
-                        <h2 className="text-3xl font-bold">Your Free Gateway to Mastering Computer Science and AI!</h2>
-                        <p className="mt-4 text-white/70">We provide a comprehensive ecosystem of free resources to help you succeed in the tech industry.</p>
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+                    <div className="md:col-span-2">
+                        <h2 className="font-space-grotesk text-5xl font-bold leading-tight">Your Free Gateway to Mastering Computer Science and AI!</h2>
+                        <p className="mt-4 text-gray-300 text-base">We provide a comprehensive ecosystem of free resources to help you succeed in the tech industry.</p>
                     </div>
                     <div className="space-y-8">
-                        <div className="p-4 bg-gray-800 rounded-lg">
-                            <h3 className="font-bold text-lg">Comprehensive Courses</h3>
-                            <p className="text-sm text-white/70">From beginner to advanced.</p>
+                        <div className="p-4 rounded-lg">
+                            <h3 className="font-space-grotesk font-bold text-xl">Comprehensive Courses</h3>
+                            <p className="text-sm text-gray-300">From beginner to advanced.</p>
                         </div>
-                        <div className="p-4 bg-gray-800 rounded-lg">
-                            <h3 className="font-bold text-lg">Earn Self-Achievement Certificates</h3>
-                            <p className="text-sm text-white/70">Validate your skills.</p>
-                        </div>
-                    </div>
-                     <div className="space-y-8">
-                        <div className="p-4 bg-gray-800 rounded-lg">
-                            <h3 className="font-bold text-lg">Expertly Curated Articles</h3>
-                            <p className="text-sm text-white/70">Stay updated with the latest trends.</p>
-                        </div>
-                        <div className="p-4 bg-gray-800 rounded-lg">
-                            <h3 className="font-bold text-lg">Master Project & File Management</h3>
-                            <p className="text-sm text-white/70">Organize your work like a pro.</p>
+                        <div className="p-4 rounded-lg">
+                            <h3 className="font-space-grotesk font-bold text-xl">Earn Self-Achievement Certificates</h3>
+                            <p className="text-sm text-gray-300">Validate your skills.</p>
                         </div>
                     </div>
                      <div className="space-y-8">
-                        <div className="p-4 bg-gray-800 rounded-lg">
-                            <h3 className="font-bold text-lg">Interactive Learning Tools</h3>
-                            <p className="text-sm text-white/70">Engage with hands-on exercises.</p>
+                        <div className="p-4 rounded-lg">
+                            <h3 className="font-space-grotesk font-bold text-xl">Expertly Curated Articles</h3>
+                            <p className="text-sm text-gray-300">Stay updated with the latest trends.</p>
                         </div>
-                        <div className="p-4 bg-gray-800 rounded-lg">
-                            <h3 className="font-bold text-lg">Career Guidance & Support</h3>
-                            <p className="text-sm text-white/70">Navigate your career path.</p>
+                        <div className="p-4 rounded-lg">
+                            <h3 className="font-space-grotesk font-bold text-xl">Master Project & File Management</h3>
+                            <p className="text-sm text-gray-300">Organize your work like a pro.</p>                        </div>
+                    </div>
+                     <div className="space-y-8">
+                        <div className="p-4 rounded-lg">
+                            <h3 className="font-space-grotesk font-bold text-xl">Interactive Learning Tools</h3>
+                            <p className="text-sm text-gray-300">Engage with hands-on exercises.</p>
+                        </div>
+                        <div className="p-4 rounded-lg">
+                            <h3 className="font-space-grotesk font-bold text-xl">Career Guidance & Support</h3>
+                            <p className="text-sm text-gray-300">Navigate your career path.</p>
                         </div>
                     </div>
                 </div>
@@ -296,28 +294,33 @@ export default function HomePage() {
 
         {/* Section 7: Step-by-Step Career Timeline */}
         <section className="container mx-auto max-w-7xl px-4 py-20">
-            <h2 className="text-center text-4xl font-bold mb-12">Your Path to Success: Step-by-Step Career Timeline</h2>
+            <h2 className="text-center text-3xl font-bold mb-12 font-space-grotesk">Your Path to Success: Step-by-Step Career Timeline</h2>
             <div className="relative">
-                <div className="absolute left-6 w-1 h-full bg-border rounded"></div>
+                <div className="absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-gray-200"></div>
                 {timelineItems.map((item, index) => (
-                    <div key={index} className="relative pl-20 mb-16">
-                         {index === 3 && (
-                            <div className="w-full text-left my-8 md:my-16">
-                                <h3 className="text-2xl font-bold text-accent">Advancing Your Career: From Gaining Experience to Becoming an Industry Expert</h3>
+                    <div key={index} className="relative w-full py-8">
+                        <div className={`relative flex items-center w-full ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+                            <div className="hidden md:block w-5/12"></div>
+                            <div className="absolute left-1/2 -translate-x-1/2 z-10">
+                                 <div className="w-4 h-4 rounded-full border-2 border-pink-500 bg-background"></div>
                             </div>
-                        )}
-                        <div className="flex items-start gap-4 mb-4">
-                             <div className="absolute left-6 top-1 -translate-x-1/2 h-6 w-6 rounded-full bg-accent border-4 border-background"></div>
-                            <div className="flex-shrink-0 h-12 w-12 rounded-full bg-secondary flex items-center justify-center text-accent">
-                                {React.cloneElement(item.icon, { className: "h-6 w-6" })}
-                            </div>
-                            <div>
-                                <h3 className="text-xl font-bold">{item.title}</h3>
-                                <div className="p-6 rounded-lg border bg-card shadow-md mt-2">
-                                    <p className="text-muted-foreground">{item.description}</p>
+                            <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pl-16' : 'md:pr-16'}`}>
+                                <div className="p-6 rounded-lg border bg-card shadow-md">
+                                    <div className="flex items-center gap-4 mb-2">
+                                        <div className="flex-shrink-0 text-accent">
+                                            {React.cloneElement(item.icon, { className: "h-6 w-6" })}
+                                        </div>
+                                        <h3 className="text-xl font-bold font-space-grotesk">{item.title}</h3>
+                                    </div>
+                                    <p className="text-sm text-muted-foreground">{item.description}</p>
                                 </div>
                             </div>
                         </div>
+                         {index === 3 && (
+                            <div className="w-full text-center my-8 md:my-16">
+                                <h3 className="text-2xl font-bold text-accent font-space-grotesk">Advancing Your Career: From Gaining Experience to Becoming an Industry Expert</h3>
+                            </div>
+                        )}
                     </div>
                 ))}
             </div>
@@ -325,7 +328,7 @@ export default function HomePage() {
 
         {/* Section 8: "What We Offer" Grid */}
         <section className="container mx-auto max-w-7xl px-4 py-16">
-            <h2 className="mb-12 text-center text-4xl font-bold">What We Offer</h2>
+            <h2 className="mb-12 text-center text-4xl font-bold font-space-grotesk">What We Offer</h2>
             <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
                 {whatWeOffer.map((item, index) => (
                     <div key={index} className="relative flex flex-col items-center text-center">
@@ -333,7 +336,7 @@ export default function HomePage() {
                         <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-secondary text-accent">
                             {React.cloneElement(item.icon, { className: "h-8 w-8" })}
                         </div>
-                        <h3 className="mb-2 text-xl font-semibold">{item.title}</h3>
+                        <h3 className="mb-2 text-xl font-semibold font-space-grotesk">{item.title}</h3>
                         <p className="text-muted-foreground">{item.description}</p>
                     </div>
                 ))}
@@ -347,7 +350,7 @@ export default function HomePage() {
         <section className="container mx-auto max-w-7xl px-4 py-16">
             <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
                 <div>
-                    <h2 className="text-4xl font-bold">We're Here To All Your Questions</h2>
+                    <h2 className="text-4xl font-bold font-space-grotesk">We're Here To All Your Questions</h2>
                     <p className="mt-4 text-lg text-muted-foreground">
                         Our platform is designed for learners of all levels, from absolute beginners looking to start their journey in tech, to experienced professionals aiming to upskill. We provide a comprehensive range of resources to support your learning goals.
                     </p>
@@ -356,7 +359,7 @@ export default function HomePage() {
                     <Accordion type="single" collapsible className="w-full">
                         {faqItems.map((item, index) => (
                             <AccordionItem key={index} value={`item-${index + 1}`}>
-                                <AccordionTrigger className="text-lg font-semibold">{item.question}</AccordionTrigger>
+                                <AccordionTrigger className="text-lg font-semibold font-space-grotesk">{item.question}</AccordionTrigger>
                                 <AccordionContent className="text-base text-muted-foreground">
                                     {item.answer}
                                 </AccordionContent>
@@ -370,7 +373,7 @@ export default function HomePage() {
         {/* Section 10: Final Enrollment CTA */}
         <section className="container mx-auto max-w-7xl px-4 py-16">
             <div className="rounded-lg border-l-8 border-accent bg-card p-8 shadow-lg md:p-12 text-center">
-                <h2 className="text-3xl font-bold">Discover the most trending courses in AI, technology, and more! Join now to access these high-demand courses</h2>
+                <h2 className="text-3xl font-bold font-space-grotesk">Discover the most trending courses in AI, technology, and more! Join now to access these high-demand courses</h2>
                 <p className="mt-2 text-xl font-semibold text-accent">Earn Free Certificate</p>
                 <p className="mx-auto mt-4 max-w-3xl text-muted-foreground">
                     Gain full access to our extensive library of free courses and track your progress effortlessly! While our Blogs, Tutorials, and Resources are available without signup, registering allows you to enjoy exclusive content, course certificates, and more. Most of our courses are free—start learning today with no fees, just knowledge!
@@ -387,11 +390,11 @@ export default function HomePage() {
         <div className="container mx-auto max-w-7xl px-4 py-16">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
             <div>
-              <h3 className="mb-4 text-lg font-bold text-white">SIMPLIFIEDCOMPUTERSCIENCE</h3>
+              <h3 className="mb-4 text-lg font-bold text-white font-space-grotesk">SIMPLIFIEDCOMPUTERSCIENCE</h3>
               <p>Welcome to Simplified Computer Science, your ultimate guide to the world of technology. Our mission is to make computer science accessible and understandable for everyone, from beginners to experts.</p>
             </div>
             <div>
-              <h3 className="mb-4 text-lg font-bold text-white">QUICK LINKS</h3>
+              <h3 className="mb-4 text-lg font-bold text-white font-space-grotesk">QUICK LINKS</h3>
               <ul className="space-y-2">
                 <li><a href="#" className="hover:text-accent">Home</a></li>
                 <li><a href="#" className="hover:text-accent">About</a></li>
@@ -401,7 +404,7 @@ export default function HomePage() {
               </ul>
             </div>
             <div>
-              <h3 className="mb-4 text-lg font-bold text-white">EXPLORER</h3>
+              <h3 className="mb-4 text-lg font-bold text-white font-space-grotesk">EXPLORER</h3>
               <ul className="space-y-2">
                 <li><a href="#" className="hover:text-accent">Blogs</a></li>
                 <li><a href="#" className="hover:text-accent">Courses Live!</a></li>
@@ -410,7 +413,7 @@ export default function HomePage() {
               </ul>
             </div>
             <div>
-              <h3 className="mb-4 text-lg font-bold text-white">GET IN TOUCH</h3>
+              <h3 className="mb-4 text-lg font-bold text-white font-space-grotesk">GET IN TOUCH</h3>
               <p>simplifiedcomputerscie@gmail.com</p>
               <div className="mt-4 flex space-x-4">
                 <a href="#"><Instagram className="h-6 w-6 hover:text-accent"/></a>
@@ -435,3 +438,5 @@ export default function HomePage() {
     </div>
   );
 }
+
+    

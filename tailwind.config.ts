@@ -49,6 +49,11 @@ const config: Config = {
         'pastel-beige': '#F5F5DC',
         'pastel-pink': '#FFD1DC',
         'gold': '#FFD60A',
+        'pastel-purple-bg': '#E8DFF5',
+        'pastel-pink-bg': '#FBE9E7',
+        'pastel-blue-bg': '#E3F2FD',
+        'pastel-yellow-bg': '#FFF9C4',
+        'pastel-green-bg': '#E8F5E9',
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -57,6 +62,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-sans)', 'sans-serif'],
+        'space-grotesk': ['var(--font-space-grotesk)', 'sans-serif'],
       },
        keyframes: {
         "accordion-down": {
@@ -80,5 +86,3 @@ const config: Config = {
   ],
 };
 export default config;
-
-    
