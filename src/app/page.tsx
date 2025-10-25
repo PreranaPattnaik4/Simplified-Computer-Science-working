@@ -245,10 +245,10 @@ export default function HomePage() {
                 </div>
             </div>
         </section>
-
+        
         {/* Section 3: Trending Blogs */}
         <TrendingBlogs />
-        
+
         {/* Section 4: Gateway to Mastering CS & AI */}
         <section className="bg-black text-white py-20">
             <div className="container mx-auto max-w-7xl px-4">
