@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -47,6 +48,7 @@ const config: Config = {
         'pastel-blue': '#AEC6CF',
         'pastel-beige': '#F5F5DC',
         'pastel-pink': '#FFD1DC',
+        'gold': '#FFD60A',
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -72,6 +74,11 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require('@tailwindcss/line-clamp'),
+  ],
 };
 export default config;
+
+    

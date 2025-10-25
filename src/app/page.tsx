@@ -36,6 +36,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import IndustrySolutions from '@/components/IndustrySolutions';
+import TrendingBlogs from '@/components/TrendingBlogs';
 
 
 const whatWeOffer = [
@@ -175,38 +176,8 @@ export default function HomePage() {
             </div>
         </section>
 
-        {/* Section 3: Trending Courses CTA */}
-        <section className="py-16">
-          <div className="relative grid grid-cols-3 h-64 w-full">
-            <div className="relative">
-              <Image src="https://picsum.photos/seed/circuits-v/600/400" alt="Circuits" fill objectFit="cover" data-ai-hint="glowing circuits vertical"/>
-              <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                <h3 className="text-white text-2xl font-bold">TRANDING COURSES LIVE!</h3>
-              </div>
-            </div>
-            <div className="relative">
-              <Image src="https://picsum.photos/seed/vr-woman-v/600/400" alt="Woman in VR" fill objectFit="cover" data-ai-hint="woman vr vertical"/>
-               <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                <h3 className="text-white text-2xl font-bold">HELPFUL BLOGS</h3>
-              </div>
-            </div>
-            <div className="relative">
-              <Image src="https://picsum.photos/seed/android-v/600/400" alt="Android" fill objectFit="cover" data-ai-hint="android robot vertical"/>
-               <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                <h3 className="text-white text-2xl font-bold">PROJECTS</h3>
-              </div>
-            </div>
-          </div>
-          <div className="container mx-auto max-w-7xl px-4 text-center mt-16">
-            <h2 className="text-3xl font-bold">Discover the most trending courses in AI, technology, and more! Join now to access these high-demand courses</h2>
-            <p className="mx-auto mt-4 max-w-4xl text-muted-foreground">
-              Gain full access to our extensive library of free courses and track your progress effortlessly! While our Blogs, Tutorials, and Resources are available without signup, registering allows you to enjoy exclusive content, course certificates, and more. Most of our courses are free—start learning today with no fees, just knowledge!
-            </p>
-            <button className="mt-8 rounded-full bg-accent px-10 py-3 font-bold text-accent-foreground transition-transform hover:scale-105">
-              TRENDING BLOGS
-            </button>
-          </div>
-        </section>
+        {/* Section 3: Trending Blogs */}
+        <TrendingBlogs />
         
         {/* Section 4: Gateway to Mastering CS & AI */}
         <section className="bg-black text-white py-20">
@@ -391,3 +362,5 @@ export default function HomePage() {
     </div>
   );
 }
+
+    
