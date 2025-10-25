@@ -82,7 +82,7 @@ export default function CareerTimeline() {
         {/* Timeline */}
         <div className="relative">
           {/* Central Line */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-px h-full bg-gray-300"></div>
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-px h-full bg-accent"></div>
 
           <div className="space-y-12">
             {steps.map((step, index) => {
@@ -95,11 +95,11 @@ export default function CareerTimeline() {
                   <div className="md:hidden">
                     <div className="flex gap-4">
                       <div className="flex flex-col items-center">
-                        <div className="w-12 h-12 rounded-full border-2 border-pink-500 flex items-center justify-center text-pink-500 font-bold z-10 bg-white">
+                        <div className="w-12 h-12 rounded-full border-2 border-accent flex items-center justify-center text-accent-foreground font-bold z-10 bg-accent">
                           {index + 1}
                         </div>
                         {index < steps.length - 1 && (
-                          <div className="w-px h-full bg-gray-300 mt-2"></div>
+                          <div className="w-px h-full bg-accent mt-2"></div>
                         )}
                       </div>
                       <div className="pb-8 flex-1">
@@ -123,7 +123,7 @@ export default function CareerTimeline() {
                             <p className="text-gray-700 text-sm leading-relaxed">{step.description}</p>
                           </div>
                         </div>
-                        <div className="w-12 h-12 rounded-full border-2 border-pink-500 flex items-center justify-center text-pink-500 font-bold flex-shrink-0 z-10 relative bg-white min-w-[48px]">
+                        <div className="w-12 h-12 rounded-full border-2 border-accent flex items-center justify-center text-accent-foreground font-bold flex-shrink-0 z-10 relative bg-accent min-w-[48px]">
                           {index + 1}
                         </div>
                         <div className="w-1/2"></div>
@@ -131,7 +131,7 @@ export default function CareerTimeline() {
                     ) : (
                       <>
                         <div className="w-1/2"></div>
-                        <div className="w-12 h-12 rounded-full border-2 border-pink-500 flex items-center justify-center text-pink-500 font-bold flex-shrink-0 z-10 relative bg-white min-w-[48px]">
+                        <div className="w-12 h-12 rounded-full border-2 border-accent flex items-center justify-center text-accent-foreground font-bold flex-shrink-0 z-10 relative bg-accent min-w-[48px]">
                           {index + 1}
                         </div>
                         <div className="w-1/2 pl-8">
