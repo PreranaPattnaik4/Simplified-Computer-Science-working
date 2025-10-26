@@ -1,3 +1,6 @@
+
+'use client';
+
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
@@ -16,13 +19,15 @@ const fontSpaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
 })
 
-export const metadata: Metadata = {
+// Metadata is now defined as a static object.
+// We can't use 'export const metadata: Metadata' in a client component.
+// For dynamic titles, we would need a different approach.
+const metadata: Metadata = {
   title: "SCS Simplified Computer Science",
   description: "Unlocking Computer Science: SimplifiedCS for Effortless Learning!",
 };
 
 function LayoutWrapper({ children }: { children: React.ReactNode }) {
-  'use client';
   const pathname = usePathname();
   const isLearnPage = pathname ? pathname.includes('/learn/') : false;
 
@@ -42,6 +47,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+       <head>
+        <title>{String(metadata.title)}</title>
+        <meta name="description" content={String(metadata.description)} />
+      </head>
       <body className={cn("min-h-screen bg-background font-sans antialiased", fontSans.variable, fontSpaceGrotesk.variable)}>
         <LayoutWrapper>
           {children}

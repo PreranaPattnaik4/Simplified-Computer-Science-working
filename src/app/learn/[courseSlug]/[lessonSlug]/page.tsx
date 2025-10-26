@@ -118,10 +118,3 @@ export default function LessonPage({ params }: { params: { courseSlug: string; l
     </div>
   );
 }
-
-// Add these new UI components if they don't exist
-
-// src/components/ui/progress.tsx
-export { Progress } from "@/components/ui/progress_new";
-// src/components/ui/tabs.tsx
-export { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs_new";
