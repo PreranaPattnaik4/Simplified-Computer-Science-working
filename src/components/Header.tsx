@@ -42,8 +42,8 @@ export default function Header() {
       <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
           <div className="flex items-center gap-2">
-            <button onClick={() => setIsMenuOpen(true)} className="flex cursor-pointer items-center gap-2">
-              <Menu className="h-6 w-6" />
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="flex cursor-pointer items-center gap-2">
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               <span className="font-semibold text-sm">MENU</span>
             </button>
           </div>
@@ -96,61 +96,12 @@ export default function Header() {
       
       {/* Full-screen Menu Overlay */}
       <div className={cn(
-          "fixed inset-0 z-50 bg-white transition-transform duration-300 ease-in-out",
-          isMenuOpen ? "translate-y-0" : "-translate-y-full"
+          "fixed top-16 left-0 right-0 bottom-0 z-30 bg-white transition-all duration-300 ease-in-out",
+          isMenuOpen ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
       )}>
-        <div className="container mx-auto max-w-7xl px-4">
-            {/* Overlay Header */}
-            <div className="flex h-16 items-center justify-between">
-                <button onClick={() => setIsMenuOpen(false)} className="flex items-center gap-2">
-                    <X className="h-6 w-6" />
-                    <span className="font-semibold text-sm">MENU</span>
-                </button>
-                <div className="absolute left-1/2 -translate-x-1/2">
-                    <Link href="/" onClick={() => setIsMenuOpen(false)}>
-                        <div className="text-center">
-                            <h1 className="text-xl font-bold tracking-wider">SCS</h1>
-                            <p className="text-xs text-muted-foreground">SIMPLIFIED COMPUTER SCIENCE</p>
-                        </div>
-                    </Link>
-                </div>
-                <div className="flex items-center gap-4">
-                    <Search className="h-5 w-5 cursor-pointer text-muted-foreground hover:text-foreground" />
-                     <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <Button variant="ghost" size="icon">
-                          <User className="h-5 w-5" />
-                        </Button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="end">
-                        {isLoggedIn ? (
-                          <>
-                            <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                            <DropdownMenuSeparator />
-                            <Link href="/dashboard" passHref><DropdownMenuItem onClick={() => setIsMenuOpen(false)}>Dashboard</DropdownMenuItem></Link>
-                            <Link href="/profile" passHref><DropdownMenuItem onClick={() => setIsMenuOpen(false)}>Profile</DropdownMenuItem></Link>
-                            <DropdownMenuSeparator />
-                            <DropdownMenuItem onClick={() => { setIsMenuOpen(false); setIsLoggedIn(false); }}>Log out</DropdownMenuItem>
-                          </>
-                        ) : (
-                          <>
-                            <DropdownMenuItem onClick={() => { setIsMenuOpen(false); setIsAuthModalOpen(true); }}>
-                              <LogIn className="mr-2 h-4 w-4" />
-                              <span>Sign In</span>
-                            </DropdownMenuItem>
-                             <DropdownMenuItem onClick={() => { setIsMenuOpen(false); setIsAuthModalOpen(true); }}>
-                              <UserPlus className="mr-2 h-4 w-4" />
-                              <span>Sign Up</span>
-                            </DropdownMenuItem>
-                          </>
-                        )}
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                </div>
-            </div>
-
+        <div className="container mx-auto max-w-7xl px-4 h-full">
             {/* Navigation Links */}
-            <nav className="mt-16 flex flex-col items-center gap-4">
+            <nav className="flex flex-col items-center gap-4 pt-16">
                 {navLinks.map((link) => {
                     const isActive = (pathname === '/' && link.href === '/') || (link.href !== '/' && pathname.startsWith(link.href));
                     return (
