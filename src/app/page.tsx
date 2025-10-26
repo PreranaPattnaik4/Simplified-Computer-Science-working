@@ -74,28 +74,34 @@ export default function HomePage() {
 
   const panels = [
     {
-      id: 0,
-      title: "CAREER TIPS",
-      subtitle: "Roadmaps",
-      image: "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=600",
+        id: 0,
+        title: "Career Tips and Roadmaps",
+        subtitle: "Your career journey starts here",
+        image: "http://simplifiedcomputerscience.com/wp-content/uploads/2024/11/Screenshot-1260-1.png",
     },
     {
-      id: 1,
-      title: "TRENDING BLOGS",
-      subtitle: "Latest Tech News",
-      image: "https://images.pexels.com/photos/3194521/pexels-photo-3194521.jpeg?auto=compress&cs=tinysrgb&w=600",
+        id: 1,
+        title: "TRENDING BLOGS",
+        subtitle: "Stay updated with the latest trends",
+        image: "http://simplifiedcomputerscience.com/wp-content/uploads/2024/10/people-wearing-futuristic-high-tech-virtual-reality-glasses-scaled.jpg",
     },
     {
-      id: 2,
-      title: "HACKATHONS",
-      subtitle: "Upcoming Events",
-      image: "https://images.pexels.com/photos/3520665/pexels-photo-3520665.jpeg?auto=compress&cs=tinysrgb&w=600",
+        id: 2,
+        title: "Hackathons and Internships",
+        subtitle: "Gain real-world experience",
+        image: "http://simplifiedcomputerscience.com/wp-content/uploads/2025/03/futurism-perspective-digital-nomads-lifestyle-Copy-scaled.jpg",
     },
     {
-      id: 3,
-      title: "PROJECTS",
-      subtitle: "Hands-On Experience",
-      image: "https://images.pexels.com/photos/3729557/pexels-photo-3729557.jpeg?auto=compress&cs=tinysrgb&w=600",
+        id: 3,
+        title: "PROJECTS",
+        subtitle: "Build your portfolio",
+        image: "http://simplifiedcomputerscience.com/wp-content/uploads/2024/10/ai-chip-intelligence-technology-deep-learning-scaled.jpg",
+    },
+     {
+        id: 4,
+        title: "TOP TRENDING COURSES",
+        subtitle: "Master in-demand skills",
+        image: "http://simplifiedcomputerscience.com/wp-content/uploads/2024/11/digital-art-ai-technology-background_23-2151719560.jpg",
     },
   ];
 
@@ -352,7 +358,7 @@ export default function HomePage() {
                 <li><a href="#" className="hover:text-accent">Blogs</a></li>
                 <li><a href="#" className="hover:text-accent">Courses Live!</a></li>
                 <li><a href="#" className="hover:text-accent">Resources</a></li>
-                <li><a href="#" className="hover:text-accent">Services</a></li>
+                <li><a href="#" className="hovertext-accent">Services</a></li>
               </ul>
             </div>
             <div>
