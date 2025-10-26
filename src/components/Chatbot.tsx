@@ -79,7 +79,7 @@ export default function Chatbot() {
       >
         <div className="flex flex-col h-full">
           {/* Header */}
-          <div className="p-4 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between pt-6">
+          <div className="p-4 border-b border-gray-200 dark:border-gray-700 flex items-start justify-between pt-6">
             <div className="flex items-center gap-3">
               <div className="p-2 bg-primary/20 rounded-full">
                 <Bot className="h-6 w-6 text-primary" />
