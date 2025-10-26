@@ -17,7 +17,7 @@ const fontSpaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "SCS Simplified Computer Science",
-  description: "Your guide to the world of AI, tech, and computer science.",
+  description: "Unlocking Computer Science: SimplifiedCS for Effortless Learning!",
 };
 
 export default function RootLayout({
