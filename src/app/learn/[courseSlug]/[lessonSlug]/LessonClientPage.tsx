@@ -8,12 +8,14 @@ import { CheckCircle, Circle, FileText, MessageSquare, BookOpen, ChevronLeft, Ch
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { marked } from 'marked';
 import type { getCourses } from '@/app/lib/courses';
 import { cn } from '@/lib/utils';
+import Quiz from '@/components/Quiz';
 
 type Course = ReturnType<typeof getCourses>[0];
+type Lesson = Course['syllabus'][0]['lessons'][0];
 
 export default function LessonClientPage({ course, currentLessonIndex, lessonSlug }: { course: Course, currentLessonIndex: number, lessonSlug: string }) {
   const [isCompleted, setIsCompleted] = useState(false);
@@ -23,8 +25,13 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
   }
   
   const allLessons = course.syllabus.flatMap(module => module.lessons);
-  const currentLesson = allLessons[currentLessonIndex];
+  const currentLesson = allLessons[currentLessonIndex] as Lesson & { type?: string; options?: any[]; correctAnswer?: string; explanation?: string; };
   
+  // Reset completion state when lesson changes
+  useEffect(() => {
+    setIsCompleted(false);
+  }, [lessonSlug]);
+
   const totalLessons = allLessons.length;
   const progress = ((currentLessonIndex + 1) / totalLessons) * 100;
 
@@ -55,7 +62,7 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
           </Link>
         </div>
         <div className="flex-grow overflow-y-auto">
-          <Accordion type="multiple" defaultValue={['item-0']} className="w-full">
+          <Accordion type="multiple" defaultValue={['item-0', 'item-1', 'item-2', 'item-3', 'item-4', 'item-5']} className="w-full">
             {course.syllabus.map((module, moduleIndex) => (
               <AccordionItem key={moduleIndex} value={`item-${moduleIndex}`} className="border-none">
                 <AccordionTrigger className="px-4 py-3 text-sm font-semibold hover:bg-gray-100 border-b">
@@ -114,10 +121,14 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
                 <TabsTrigger value="comments">Comments</TabsTrigger>
               </TabsList>
               <TabsContent value="overview">
-                <article className="prose lg:prose-lg max-w-none">
-                  {/* Note: In a real app, you would sanitize this HTML */}
-                  <div dangerouslySetInnerHTML={{ __html: parsedContent }} />
-                </article>
+                {currentLesson.type === 'quiz' ? (
+                  <Quiz lesson={currentLesson} />
+                ) : (
+                  <article className="prose lg:prose-lg max-w-none">
+                    {/* Note: In a real app, you would sanitize this HTML */}
+                    <div dangerouslySetInnerHTML={{ __html: parsedContent }} />
+                  </article>
+                )}
               </TabsContent>
               <TabsContent value="comments">
                 <p>Comments feature coming soon!</p>
@@ -137,7 +148,7 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
                 )}
                 {nextLesson ? (
                     <Link href={`/learn/${course.slug}/${nextLesson.slug}`}>
-                        <Button variant="outline">
+                        <Button>
                             Next Lesson
                             <ChevronRight className="h-4 w-4 ml-2" />
                         </Button>

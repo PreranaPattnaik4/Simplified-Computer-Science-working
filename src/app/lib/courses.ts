@@ -296,6 +296,7 @@ const courses = [
             title: "Module 1: Python Fundamentals for Data Science",
             lessons: [
                 { 
+                    type: 'content',
                     slug: "introduction-to-python", 
                     title: "Introduction to Python and its data ecosystem", 
                     content: `### Objective
@@ -316,6 +317,7 @@ We recommend using the Anaconda distribution, which packages Python with essenti
 Use virtual environments (like \`conda create --name myenv python=3.8\`) to manage dependencies for different projects and avoid conflicts.` 
                 },
                 { 
+                    type: 'content',
                     slug: "variables-and-data-types", 
                     title: "Variables, data types, and operators", 
                     content: `### Objective
@@ -363,6 +365,7 @@ print(f"New average rating: {new_average}")
 \`\`\`` 
                 },
                 { 
+                    type: 'content',
                     slug: "control-flow", 
                     title: "Control flow: loops and conditional statements", 
                     content: `### Objective
@@ -421,46 +424,46 @@ squares_comp = [i**2 for i in range(5)]
 print(squares_comp) # [0, 1, 4, 9, 16]
 \`\`\`` 
                 },
-                { slug: "functions-and-modules", title: "Functions and modular programming", content: "Content for functions and modules." },
-                { slug: "file-io", title: "File I/O and working with data sources", content: "Content for file I/O." }
+                { type: 'content', slug: "functions-and-modules", title: "Functions and modular programming", content: "Content for functions and modules." },
+                { type: 'content', slug: "file-io", title: "File I/O and working with data sources", content: "Content for file I/O." }
             ]
         },
         {
             title: "Module 2: Data Manipulation with NumPy and Pandas",
             lessons: [
-                { slug: "intro-to-numpy", title: "Introduction to NumPy arrays and vectorized operations", content: "Content for NumPy." },
-                { slug: "intro-to-pandas", title: "Pandas Series and DataFrame objects", content: "Content for Pandas." },
-                { slug: "data-cleaning", title: "Data cleaning, transformation, and merging", content: "Content for data cleaning." },
-                { slug: "data-aggregation", title: "Grouping, aggregation, and pivot tables", content: "Content for data aggregation." },
-                { slug: "time-series-analysis", title: "Time series data analysis with Pandas", content: "Content for time series analysis." }
+                { type: 'content', slug: "intro-to-numpy", title: "Introduction to NumPy arrays and vectorized operations", content: "Content for NumPy." },
+                { type: 'content', slug: "intro-to-pandas", title: "Pandas Series and DataFrame objects", content: "Content for Pandas." },
+                { type: 'content', slug: "data-cleaning", title: "Data cleaning, transformation, and merging", content: "Content for data cleaning." },
+                { type: 'content', slug: "data-aggregation", title: "Grouping, aggregation, and pivot tables", content: "Content for data aggregation." },
+                { type: 'content', slug: "time-series-analysis", title: "Time series data analysis with Pandas", content: "Content for time series analysis." }
             ]
         },
         {
             title: "Module 3: Data Visualization with Matplotlib and Seaborn",
             lessons: [
-                { slug: 'visualization-principles', title: 'Principles of effective data visualization', content: 'Content for visualization principles.' },
-                { slug: 'matplotlib-plotting', title: 'Creating various plot types with Matplotlib', content: 'Content for Matplotlib.' },
-                { slug: 'seaborn-plotting', title: 'Statistical data visualization with Seaborn', content: 'Content for Seaborn.' },
-                { slug: 'customizing-plots', title: 'Customizing plots for presentations', content: 'Content for customizing plots.' },
+                { type: 'content', slug: 'visualization-principles', title: 'Principles of effective data visualization', content: 'Content for visualization principles.' },
+                { type: 'content', slug: 'matplotlib-plotting', title: 'Creating various plot types with Matplotlib', content: 'Content for Matplotlib.' },
+                { type: 'content', slug: 'seaborn-plotting', title: 'Statistical data visualization with Seaborn', content: 'Content for Seaborn.' },
+                { type: 'content', slug: 'customizing-plots', title: 'Customizing plots for presentations', content: 'Content for customizing plots.' },
             ]
         },
         {
             title: "Module 4: Machine Learning Fundamentals with Scikit-Learn",
             lessons: [
-                { slug: 'ml-concepts', title: 'Introduction to machine learning concepts', content: 'Content for ML concepts.' },
-                { slug: 'supervised-learning', title: 'Supervised learning: regression and classification', content: 'Content for supervised learning.' },
-                { slug: 'unsupervised-learning', title: 'Unsupervised learning: clustering and dimensionality reduction', content: 'Content for unsupervised learning.' },
-                { slug: 'model-evaluation', title: 'Model evaluation and cross-validation', content: 'Content for model evaluation.' },
-                { slug: 'ml-pipeline', title: 'Building a complete machine learning pipeline', content: 'Content for ML pipeline.' },
+                { type: 'content', slug: 'ml-concepts', title: 'Introduction to machine learning concepts', content: 'Content for ML concepts.' },
+                { type: 'content', slug: 'supervised-learning', title: 'Supervised learning: regression and classification', content: 'Content for supervised learning.' },
+                { type: 'content', slug: 'unsupervised-learning', title: 'Unsupervised learning: clustering and dimensionality reduction', content: 'Content for unsupervised learning.' },
+                { type: 'content', slug: 'model-evaluation', title: 'Model evaluation and cross-validation', content: 'Content for model evaluation.' },
+                { type: 'content', slug: 'ml-pipeline', title: 'Building a complete machine learning pipeline', content: 'Content for ML pipeline.' },
             ]
         },
         {
             title: "Module 5: Introduction to Deep Learning",
             lessons: [
-                { slug: 'neural-networks-concepts', title: 'Core concepts of neural networks', content: 'Content for neural networks.' },
-                { slug: 'tensorflow-keras-intro', title: 'Introduction to TensorFlow and Keras (or PyTorch)', content: 'Content for TensorFlow/Keras.' },
-                { slug: 'building-a-neural-network', title: 'Building a simple neural network for classification', content: 'Content for building a neural network.' },
-                { slug: 'activation-optimizers', title: 'Understanding activation functions and optimizers', content: 'Content for activation functions.' },
+                { type: 'content', slug: 'neural-networks-concepts', title: 'Core concepts of neural networks', content: 'Content for neural networks.' },
+                { type: 'content', slug: 'tensorflow-keras-intro', title: 'Introduction to TensorFlow and Keras (or PyTorch)', content: 'Content for TensorFlow/Keras.' },
+                { type: 'content', slug: 'building-a-neural-network', title: 'Building a simple neural network for classification', content: 'Content for building a neural network.' },
+                { type: 'content', slug: 'activation-optimizers', title: 'Understanding activation functions and optimizers', content: 'Content for activation functions.' },
             ]
         },
         {
@@ -469,77 +472,72 @@ print(squares_comp) # [0, 1, 4, 9, 16]
                 { 
                     slug: "quiz-q1", 
                     title: "Question 1", 
-                    content: `### Question 1: What is the primary advantage of using Python for data science?
-
-*   A) Its performance is faster than C++
-*   B) Its simple syntax and extensive libraries
-*   C) It is the only language for web development
-*   D) It has built-in database management
-
-<br/>
-**Correct Answer: B** 
-<br/>
-**Explanation:** Python's readability and vast ecosystem of libraries like Pandas, NumPy, and Scikit-learn make it the top choice for data scientists.`
+                    type: 'quiz',
+                    content: `### What is the primary advantage of using Python for data science?`,
+                    options: [
+                        { id: 'A', text: 'Its performance is faster than C++' },
+                        { id: 'B', text: 'Its simple syntax and extensive libraries' },
+                        { id: 'C', text: 'It is the only language for web development' },
+                        { id: 'D', text: 'It has built-in database management' },
+                    ],
+                    correctAnswer: 'B',
+                    explanation: "Python's readability and vast ecosystem of libraries like Pandas, NumPy, and Scikit-learn make it the top choice for data scientists."
                 },
                 { 
                     slug: "quiz-q2", 
                     title: "Question 2", 
-                    content: `### Question 2: Which library is most commonly used for data manipulation and analysis in Python?
-
-*   A) NumPy
-*   B) Matplotlib
-*   C) Pandas
-*   D) TensorFlow
-
-<br/>
-**Correct Answer: C** 
-<br/>
-**Explanation:** Pandas provides high-performance, easy-to-use data structures (like the DataFrame) and data analysis tools.`
+                    type: 'quiz',
+                    content: `### Which library is most commonly used for data manipulation and analysis in Python?`,
+                    options: [
+                        { id: 'A', text: 'NumPy' },
+                        { id: 'B', text: 'Matplotlib' },
+                        { id: 'C', text: 'Pandas' },
+                        { id: 'D', text: 'TensorFlow' },
+                    ],
+                    correctAnswer: 'C',
+                    explanation: "Pandas provides high-performance, easy-to-use data structures (like the DataFrame) and data analysis tools."
                 },
                 { 
                     slug: "quiz-q3", 
                     title: "Question 3", 
-                    content: `### Question 3: What does the following list comprehension do? \`[x**2 for x in range(5)]\`
-
-*   A) Creates a list of numbers from 0 to 4.
-*   B) Creates a list containing the square of numbers from 0 to 4.
-*   C) Creates a list with the number 5 repeated twice.
-*   D) Throws a syntax error.
-
-<br/>
-**Correct Answer: B**
-<br/>
-**Explanation:** The list comprehension iterates from 0 up to (but not including) 5, and for each number \`x\`, it calculates \`x**2\` (x squared) and adds it to the new list, resulting in \`[0, 1, 4, 9, 16]\`.`
+                    type: 'quiz',
+                    content: "### What does the following list comprehension do? \n`[x**2 for x in range(5)]`",
+                    options: [
+                        { id: 'A', text: 'Creates a list of numbers from 0 to 4.' },
+                        { id: 'B', text: 'Creates a list containing the square of numbers from 0 to 4.' },
+                        { id: 'C', text: 'Creates a list with the number 5 repeated twice.' },
+                        { id: 'D', text: 'Throws a syntax error.' },
+                    ],
+                    correctAnswer: 'B',
+                    explanation: "The list comprehension iterates from 0 up to (but not including) 5, and for each number `x`, it calculates `x**2` (x squared) and adds it to the new list, resulting in `[0, 1, 4, 9, 16]`."
                 },
                 { 
                     slug: "quiz-q4", 
                     title: "Question 4", 
-                    content: `### Question 4: In machine learning, what is the difference between classification and regression?
-
-*   A) Classification predicts a continuous value, while regression predicts a discrete category.
-*   B) Classification is unsupervised, while regression is supervised.
-*   C) Classification predicts a discrete category, while regression predicts a continuous value.
-*   D) There is no difference.
-
-<br/>
-**Correct Answer: C**
-<br/>
-**Explanation:** Classification models predict a category (e.g., 'spam' or 'not spam'), whereas regression models predict a numerical value (e.g., house price).`
+                    type: 'quiz',
+                    content: `### In machine learning, what is the difference between classification and regression?`,
+                    options: [
+                        { id: 'A', text: 'Classification predicts a continuous value, while regression predicts a discrete category.' },
+                        { id: 'B', text: 'Classification is unsupervised, while regression is supervised.' },
+                        { id: 'C', text: 'Classification predicts a discrete category, while regression predicts a continuous value.' },
+                        { id: 'D', text: 'There is no difference.' },
+                    ],
+                    correctAnswer: 'C',
+                    explanation: "Classification models predict a category (e.g., 'spam' or 'not spam'), whereas regression models predict a numerical value (e.g., house price)."
                 },
                 { 
                     slug: "quiz-q5", 
                     title: "Question 5", 
-                    content: `### Question 5: What is the main purpose of an activation function in a neural network?
-
-*   A) To calculate the loss of the model.
-*   B) To introduce non-linearity into the network.
-*   C) To initialize the weights of the network.
-*   D) To increase the number of layers.
-
-<br/>
-**Correct Answer: B**
-<br/>
-**Explanation:** Without non-linear activation functions, a neural network would just be a linear model, unable to learn complex patterns in data.`
+                    type: 'quiz',
+                    content: `### What is the main purpose of an activation function in a neural network?`,
+                    options: [
+                        { id: 'A', text: 'To calculate the loss of the model.' },
+                        { id: 'B', text: 'To introduce non-linearity into the network.' },
+                        { id: 'C', text: 'To initialize the weights of the network.' },
+                        { id: 'D', text: 'To increase the number of layers.' },
+                    ],
+                    correctAnswer: 'B',
+                    explanation: "Without non-linear activation functions, a neural network would just be a linear model, unable to learn complex patterns in data."
                 }
             ]
         }
