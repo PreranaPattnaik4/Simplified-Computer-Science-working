@@ -359,6 +359,7 @@ export default function HomePage() {
               <ul className="space-y-2">
                 <li><a href="#" className="hover:text-accent">Home</a></li>
                 <li><a href="#" className="hover:text-accent">About</a></li>
+                <li><a href="/resources" className="hover:text-accent">Resources</a></li>
                 <li><a href="#" className="hover:text-accent">My Profile</a></li>
                 <li><a href="#" className="hover:text-accent">Contact</a></li>
                 <li><a href="#" className="hover:text-accent">FAQ</a></li>
