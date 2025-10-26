@@ -96,8 +96,8 @@ export default function Header() {
       
       {/* Full-screen Menu Overlay */}
       <div className={cn(
-          "fixed top-16 left-0 right-0 bottom-0 z-30 bg-white transition-all duration-300 ease-in-out",
-          isMenuOpen ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
+          "fixed top-16 left-0 right-0 bottom-0 z-30 bg-white transition-all duration-500 ease-in-out",
+          isMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
       )}>
         <div className="container mx-auto max-w-7xl px-4 h-full">
             {/* Navigation Links */}
