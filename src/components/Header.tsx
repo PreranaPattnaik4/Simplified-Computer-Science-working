@@ -107,7 +107,7 @@ export default function Header() {
                     return (
                         <Link key={link.href} href={link.href} onClick={() => setIsMenuOpen(false)}>
                             <div className={cn(
-                                "w-screen py-4 text-center font-bold text-xl tracking-wider text-gray-700 hover:bg-gray-100",
+                                "w-screen py-4 text-center font-bold text-lg tracking-wider text-gray-700 hover:bg-gray-100",
                                 isActive && "bg-gray-200/70 text-black"
                             )}>
                                 {link.label.toUpperCase()}
@@ -119,7 +119,7 @@ export default function Header() {
                    setIsMenuOpen(false);
                    if (!isLoggedIn) setIsAuthModalOpen(true);
                  }}>
-                    <div className="w-screen py-4 text-center font-bold text-xl tracking-wider text-gray-700 hover:bg-gray-100">
+                    <div className="w-screen py-4 text-center font-bold text-lg tracking-wider text-gray-700 hover:bg-gray-100">
                         MY PROFILE
                     </div>
                 </Link>
