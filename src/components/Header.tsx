@@ -49,14 +49,18 @@ export default function Header() {
         </div>
         
         <div className="absolute left-1/2 -translate-x-1/2 group">
-            <div className="text-center transition-transform duration-300 ease-in-out group-hover:scale-110">
-                <h1 className="text-xl font-bold tracking-wider">SCS</h1>
-                <p className="text-xs text-muted-foreground">SIMPLIFIED COMPUTER SCIENCE</p>
-            </div>
+            <Link href="/" className="cursor-pointer">
+              <div className="text-center transition-transform duration-300 ease-in-out group-hover:scale-110">
+                  <h1 className="text-xl font-bold tracking-wider">SCS</h1>
+                  <p className="text-xs text-muted-foreground">SIMPLIFIED COMPUTER SCIENCE</p>
+              </div>
+            </Link>
         </div>
 
         <div className="flex items-center gap-4">
-          <User className="h-6 w-6" />
+          <Link href="/dashboard" passHref>
+            <User className="h-6 w-6" />
+          </Link>
           <Link href="/faq" passHref>
             <HelpCircle className="h-6 w-6" />
           </Link>

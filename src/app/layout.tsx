@@ -30,12 +30,14 @@ const metadata: Metadata = {
 function LayoutWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isLearnPage = pathname ? pathname.includes('/learn/') : false;
+  const isDashboardPage = pathname ? pathname.startsWith('/dashboard') : false;
+
 
   return (
     <>
-      {!isLearnPage && <Header />}
+      {!isLearnPage && !isDashboardPage && <Header />}
       {children}
-      {!isLearnPage && <Footer />}
+      {!isLearnPage && !isDashboardPage && <Footer />}
     </>
   );
 }
