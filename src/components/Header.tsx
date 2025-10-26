@@ -42,10 +42,10 @@ export default function Header() {
           </DropdownMenu>
         </div>
         
-        <div className="absolute left-1/2 -translate-x-1/2">
+        <div className="absolute left-1/2 -translate-x-1/2 group">
             <div className="text-center">
-                <h1 className="text-xl font-bold tracking-wider">SCS</h1>
-                <p className="text-xs text-muted-foreground">SIMPLIFIED COMPUTER SCIENCE</p>
+                <h1 className="text-xl font-bold tracking-wider transition-transform duration-300 group-hover:scale-110">SCS</h1>
+                <p className="text-xs text-muted-foreground transition-transform duration-300 group-hover:scale-110">SIMPLIFIED COMPUTER SCIENCE</p>
             </div>
         </div>
 
