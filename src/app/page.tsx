@@ -205,7 +205,7 @@ export default function HomePage() {
         
         {/* Section 2: Empowering Innovation */}
         <section className="container mx-auto max-w-7xl px-4 py-16 text-center">
-          <h2 className="text-2xl font-bold font-space-grotesk tracking-[0.2em] text-gray-800 uppercase">
+          <h2 className="text-2xl font-semibold font-space-grotesk tracking-[0.2em] text-gray-800 uppercase">
             Simplifying Computer Science | Empowering Innovation: Projects Hackathons and Internships
           </h2>
           <div className="w-24 h-px bg-accent mx-auto mt-4 mb-12"></div>
