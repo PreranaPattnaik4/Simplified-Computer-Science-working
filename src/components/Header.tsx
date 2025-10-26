@@ -12,8 +12,13 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Button } from "./ui/button"
+import { useState } from "react"
 
 export default function Header() {
+  // This is a simulation of a logged-in state.
+  // In a real application, this would be determined by an authentication provider.
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
@@ -68,13 +73,22 @@ export default function Header() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <Link href="/dashboard" passHref><DropdownMenuItem>Dashboard</DropdownMenuItem></Link>
-              <Link href="#" passHref><DropdownMenuItem>Sign In</DropdownMenuItem></Link>
-              <Link href="#" passHref><DropdownMenuItem>Sign Up</DropdownMenuItem></Link>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Log out</DropdownMenuItem>
+              {isLoggedIn ? (
+                <>
+                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <Link href="/dashboard" passHref><DropdownMenuItem>Dashboard</DropdownMenuItem></Link>
+                  <Link href="/profile" passHref><DropdownMenuItem>Profile</DropdownMenuItem></Link>
+                  <Link href="#" passHref><DropdownMenuItem>Settings</DropdownMenuItem></Link>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onClick={() => setIsLoggedIn(false)}>Log out</DropdownMenuItem>
+                </>
+              ) : (
+                <>
+                  <DropdownMenuItem onClick={() => setIsLoggedIn(true)}>Sign In</DropdownMenuItem>
+                  <DropdownMenuItem>Sign Up</DropdownMenuItem>
+                </>
+              )}
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
