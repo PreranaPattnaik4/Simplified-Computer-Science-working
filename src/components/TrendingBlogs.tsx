@@ -7,26 +7,26 @@ export default function TrendingBlogs() {
   const blogs = [
     {
       author: "Prerana",
-      category: "Artificial Intelligence",
+      categories: ["Artificial Intelligence", "Futures Tech", "Insight blogs"],
       date: "May 23, 2023",
       title: "Understanding Artificial Intelligence: A Beginner's Guide to AI | Simplified Computer Science",
-      description: "In the world of digital art, AI is transforming how we create. Through my collections, AI Artistry Unleashed, ho...",
+      description: "Edit Content Click on the Edit Content button to edit/add the content. Introduction Artificial Intelligence (AI) has become a buzzword…",
       link: "#",
     },
     {
       author: "Prerana",
-      category: "Artificial Intelligence",
+      categories: ["Artificial Intelligence", "PROJECTS TIPS"],
       date: "May 23, 2023",
       title: "AI Artistry Unleashed: A Curated Collection of My Prompt-Generated Creations",
-      description: "In the world of digital art, AI is transforming how we create. Through my collections, AI Artistry Unleashed, ho...",
+      description: "In the world of digital art, AI is transforming how we create. Through my collection, “AI Artistry Unleashed,” I’m…",
       link: "#",
     },
     {
       author: "Prerana",
-      category: "Artificial Intelligence",
+      categories: ["Artificial Intelligence", "Futures Tech"],
       date: "May 23, 2023",
-      title: "Top Free AI Tools to Supercharge Your Productivity and Creativity in 2023",
-      description: "Edit Content Click on the Edit Content button to edit the current Artificial Intelligence continues to revolutionize the way we...",
+      title: "Top Free AI Tools to Supercharge Your Productivity and Creativity in 2025",
+      description: "Edit Content Click on the Edit Content button to edit/add the content. Artificial intelligence continues to revolutionize the way we…",
       link: "#",
     },
   ];
@@ -37,6 +37,7 @@ export default function TrendingBlogs() {
         {/* Section Title */}
         <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-[0.2em] uppercase font-space-grotesk text-gray-800">TRENDING BLOGS</h2>
+             <p className="mt-4 text-lg text-muted-foreground">Grab a cup of coffee and dive into our trending blogs! Discover insights, tips, and more to fuel your learning journey at Simplified Computer Science.</p>
         </div>
 
 
@@ -47,15 +48,19 @@ export default function TrendingBlogs() {
               key={index}
               className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-shadow group"
             >
-              <div className="flex items-center gap-4 text-gray-500 text-sm mb-4">
+              <div className="flex items-center gap-2 text-gray-500 text-sm mb-4 flex-wrap">
                 <div className="flex items-center gap-1.5">
                     <User size={14} />
                     <span>{blog.author}</span>
                 </div>
-                <span>|</span>
-                <div className="flex items-center gap-1.5">
-                    <span>{blog.category}</span>
-                </div>
+                {blog.categories.map((category, catIndex) => (
+                  <React.Fragment key={catIndex}>
+                    <span>|</span>
+                    <div className="flex items-center gap-1.5">
+                        <span>{category}</span>
+                    </div>
+                  </React.Fragment>
+                ))}
               </div>
 
               {/* Title */}
@@ -74,5 +79,3 @@ export default function TrendingBlogs() {
     </section>
   );
 }
-
-    

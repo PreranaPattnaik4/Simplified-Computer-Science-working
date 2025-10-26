@@ -44,7 +44,7 @@ export default function CareerTimeline() {
     },
     {
       title: "Freelancing Platforms",
-      subtitle: "Apply your skills in real-world projects.",
+      subtitle: "Apply your skills in real-world projects.Join the platforms like Upwork, Fiverr, and others",
       fullTitle: "Freelancing Opportunities to Showcase Your Skills",
       description: "Take your knowledge beyond the classroom by applying it to real-world scenarios. Freelancing allows you to work on projects for clients, contribute to open-source, or try contract work. These experiences will enhance your portfolio, help you build a professional network, and demonstrate your capability to employers or clients. Freelancing is a great way to gain practical experience, build your personal brand, and start earning while you grow.",
       icon: Code,
@@ -54,7 +54,7 @@ export default function CareerTimeline() {
       title: "LinkedIn",
       subtitle: "Build your professional brand and network",
       fullTitle: "Create a Powerful LinkedIn Profile That Highlights Your Skills and Certifications",
-      description: "LinkedIn is a powerful tool for showcasing your skills, certifications, and professional achievements. To stand out on LinkedIn, make sure your profile includes: a professional headline that clearly reflects your career goals and skills, a detailed summary that highlights your learning journey, skills and certifications related to your career path, and portfolio projects. Networking is key to building career opportunities. Connect with industry professionals, join relevant groups, and actively engage with posts in your field.",
+      description: "LinkedIn is a powerful tool for showcasing your skills, certifications, and professional achievements. This step emphasizes the importance of optimizing your LinkedIn profile to create a strong personal brand that attracts the attention of potential employers or clients.\n\nTo stand out on LinkedIn, make sure your profile includes:\n\nA professional headline that clearly reflects your career goals and skills.\nA detailed summary that highlights your learning journey, accomplishments, and aspirations.\nSkills and certifications related to your career path to demonstrate your expertise.\nPortfolio projects or work samples that show practical application of your knowledge.\nAdditionally, networking is key to building career opportunities. Connect with industry professionals, join relevant groups, and actively engage with posts and discussions in your field. Regularly share updates about your achievements, projects, and courses to increase visibility and demonstrate your ongoing growth.\n\nUsing LinkedIn effectively can help you establish credibility, build a professional network, and discover new job opportunities or freelance work.",
       icon: Linkedin,
       side: "left",
     },
@@ -62,7 +62,7 @@ export default function CareerTimeline() {
       title: "Job Applications",
       subtitle: "Secure your dream role",
       fullTitle: "Apply for Jobs with Confidence and Stand Out to Employers",
-      description: "Now that you've built a strong skill set, earned certificates, and gained real-world experience, it's time to apply for jobs. Tailor your resume and cover letter to highlight the most relevant skills. Leverage your LinkedIn profile, highlight your portfolio, prepare for interviews, and be persistent. By approaching job applications with confidence and a well-crafted personal brand, you'll be prepared to impress employers and take the next step toward your career goals.",
+      description: "Now that you've built a strong skill set, earned certificates, and gained real-world experience through internships or freelancing, it’s time to apply for jobs. This step is all about showcasing your value to potential employers and confidently navigating the job market.\n\nTo stand out:\n\nTailor Your Resume and Cover Letter: Customize each application to highlight the skills and experiences most relevant to the job.\nLeverage Your LinkedIn Profile: Ensure your profile reflects your skills, certifications, and achievements, and be proactive in connecting with recruiters and professionals in your field.\nHighlight Your Portfolio: Include links to your portfolio or project work, showing tangible evidence of your expertise.\nPrepare for Interviews: Practice common interview questions, focusing on how your unique experiences and self-driven learning make you a great fit for the role.\nBe Persistent: Keep applying to roles and expanding your network. Sometimes the right opportunity takes time to come by, but your persistence will pay off.\nBy approaching job applications with confidence and a well-crafted personal brand, you’ll be prepared to impress employers and take the next step toward your career goals.",
       icon: FileText,
       side: "right",
     },
@@ -70,7 +70,7 @@ export default function CareerTimeline() {
       title: "Lifelong Learning",
       subtitle: "Stay competitive and grow.",
       fullTitle: "Embrace Lifelong Learning to Reach New Career Heights",
-      description: "In the fast-evolving world of technology, staying on top of industry trends and continuously upgrading your skills is crucial. Stay updated with the latest trends and technologies. Enroll in specialized courses and workshops. Read industry-related blogs, attend webinars, and engage with thought leaders. Lifelong learning is the key to adapting to new challenges and positioning yourself for long-term success.",
+      description: "In the fast-evolving world of technology, staying on top of industry trends and continuously upgrading your skills is crucial. Embrace the mindset of lifelong learning to unlock new career opportunities and reach your full potential. Whether through advanced courses, certifications, or self-directed learning, ongoing education helps you remain competitive and prepared for future challenges.\n\nStay updated with the latest trends, tools, and technologies in your field.\nEnroll in specialized courses and workshops to deepen your expertise.\nRead industry-related blogs, attend webinars, and engage with thought leaders.\nReflect on your progress and seek areas where you can further improve.\nLifelong learning is the key to adapting to new challenges and positioning yourself for long-term success.",
       icon: Lightbulb,
       side: "left",
     },
@@ -114,7 +114,7 @@ export default function CareerTimeline() {
                         <h3 className="text-base font-bold text-gray-900 mb-1">{step.title}</h3>
                         <p className="text-xs text-gray-600 mb-2">{step.subtitle}</p>
                         <h4 className="text-sm font-semibold text-gray-900 mb-2">{step.fullTitle}</h4>
-                        <p className="text-gray-700 text-xs leading-relaxed">{step.description}</p>
+                        <p className="text-gray-700 text-xs leading-relaxed whitespace-pre-line">{step.description}</p>
                       </div>
                     </div>
                   </div>
@@ -128,7 +128,7 @@ export default function CareerTimeline() {
                             <h3 className="text-lg font-bold text-gray-900 mb-1">{step.title}</h3>
                             <p className="text-xs text-gray-600 mb-3">{step.subtitle}</p>
                             <h4 className="text-base font-semibold text-gray-900 mb-3">{step.fullTitle}</h4>
-                            <p className="text-gray-700 text-sm leading-relaxed">{step.description}</p>
+                            <p className="text-gray-700 text-sm leading-relaxed whitespace-pre-line">{step.description}</p>
                           </div>
                         </div>
                         <div className="w-12 h-12 rounded-full border-2 border-accent flex items-center justify-center text-accent-foreground font-bold flex-shrink-0 z-10 relative bg-accent min-w-[48px]">
@@ -147,7 +147,7 @@ export default function CareerTimeline() {
                             <h3 className="text-lg font-bold text-gray-900 mb-1">{step.title}</h3>
                             <p className="text-xs text-gray-600 mb-3">{step.subtitle}</p>
                             <h4 className="text-base font-semibold text-gray-900 mb-3">{step.fullTitle}</h4>
-                            <p className="text-gray-700 text-sm leading-relaxed">{step.description}</p>
+                            <p className="text-gray-700 text-sm leading-relaxed whitespace-pre-line">{step.description}</p>
                           </div>
                         </div>
                       </>
@@ -171,5 +171,3 @@ export default function CareerTimeline() {
     </section>
   );
 }
-
-    
