@@ -31,7 +31,7 @@ export default function IndustrySolutions() {
         </div>
 
 
-        <h2 className="text-4xl md:text-6xl font-extrabold text-gray-800 text-center my-8 font-space-grotesk">
+        <h2 className="text-5xl md:text-7xl font-extrabold text-gray-800 text-center my-8 font-space-grotesk">
           Industry Solutions
         </h2>
 
