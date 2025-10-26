@@ -101,25 +101,6 @@ export default function HomePage() {
 
   return (
     <div className="bg-background text-foreground">
-      {/* Section 1: Header & Hero Section */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
-          <div className="flex items-center gap-2">
-            <Menu className="h-6 w-6" />
-            <span className="font-semibold">MENU</span>
-          </div>
-          <div className="text-center">
-            <h1 className="text-xl font-bold tracking-wider">SCS</h1>
-            <p className="text-xs text-muted-foreground">SIMPLIFIED COMPUTER SCIENCE</p>
-          </div>
-          <div className="flex items-center gap-4">
-            <User className="h-6 w-6" />
-            <HelpCircle className="h-6 w-6" />
-            <Search className="h-6 w-6" />
-          </div>
-        </div>
-      </header>
-
       <main>
         {/* Hero Image Accordion */}
         <section className="w-full bg-black py-16 md:py-24 px-4 sm:px-6 lg:px-8">
