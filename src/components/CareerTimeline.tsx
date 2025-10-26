@@ -1,4 +1,4 @@
-import { Target, BookOpen, Award, Briefcase, Code, Linkedin, FileText, Lightbulb, Rocket } from "lucide-react";
+import { Target, BookOpen, Award, Briefcase, Code, Linkedin, FileText, Lightbulb, Rocket, Milestone } from "lucide-react";
 
 export default function CareerTimeline() {
   const steps = [
@@ -82,7 +82,7 @@ export default function CareerTimeline() {
         {/* Timeline */}
         <div className="relative">
           {/* Central Line */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-px h-full bg-accent"></div>
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gray-200"></div>
 
           <div className="space-y-12">
             {steps.map((step, index) => {
@@ -95,47 +95,49 @@ export default function CareerTimeline() {
                   <div className="md:hidden">
                     <div className="flex gap-4">
                       <div className="flex flex-col items-center">
-                        <div className="w-12 h-12 rounded-full border-2 border-accent flex items-center justify-center text-accent-foreground font-bold z-10 bg-accent">
-                          {index + 1}
+                        <div className="w-8 h-8 rounded-full border-2 border-accent flex items-center justify-center text-accent-foreground font-bold z-10 bg-accent">
+                          <Icon className="h-4 w-4" />
                         </div>
                         {index < steps.length - 1 && (
-                          <div className="w-px h-full bg-accent mt-2"></div>
+                          <div className="w-px h-full bg-gray-200 mt-2"></div>
                         )}
                       </div>
                       <div className="pb-8 flex-1">
-                        <h3 className="text-base font-bold text-gray-900 mb-1">{step.title}</h3>
-                        <p className="text-xs text-gray-600 mb-2">{step.subtitle}</p>
-                        <h4 className="text-sm font-semibold text-gray-900 mb-2">{step.fullTitle}</h4>
-                        <p className="text-gray-700 text-xs leading-relaxed whitespace-pre-line">{step.description}</p>
+                         <div className="bg-white border-gray-200 rounded-lg p-6 shadow-md h-full">
+                            <h3 className="text-base font-bold text-gray-900 mb-1">{step.title}</h3>
+                            <p className="text-xs text-gray-600 mb-2">{step.subtitle}</p>
+                            <h4 className="text-sm font-semibold text-gray-900 mb-2">{step.fullTitle}</h4>
+                            <p className="text-gray-700 text-xs leading-relaxed whitespace-pre-line">{step.description}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
 
                   {/* Desktop Layout */}
-                  <div className="hidden md:flex items-center gap-6">
+                  <div className="hidden md:flex items-center justify-center">
                     {isLeft ? (
                       <>
-                        <div className="w-1/2 pr-8">
-                          <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm h-full">
+                        <div className="w-5/12 pr-8">
+                          <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-md h-full">
                             <h3 className="text-lg font-bold text-gray-900 mb-1">{step.title}</h3>
                             <p className="text-xs text-gray-600 mb-3">{step.subtitle}</p>
                             <h4 className="text-base font-semibold text-gray-900 mb-3">{step.fullTitle}</h4>
                             <p className="text-gray-700 text-sm leading-relaxed whitespace-pre-line">{step.description}</p>
                           </div>
                         </div>
-                        <div className="w-12 h-12 rounded-full border-2 border-accent flex items-center justify-center text-accent-foreground font-bold flex-shrink-0 z-10 relative bg-accent min-w-[48px]">
-                          {index + 1}
+                        <div className="w-8 h-8 rounded-full border-2 border-white ring-4 ring-accent flex items-center justify-center text-white font-bold flex-shrink-0 z-10 relative bg-accent">
+                           <Icon className="h-4 w-4" />
                         </div>
-                        <div className="w-1/2"></div>
+                        <div className="w-5/12"></div>
                       </>
                     ) : (
                       <>
-                        <div className="w-1/2"></div>
-                        <div className="w-12 h-12 rounded-full border-2 border-accent flex items-center justify-center text-accent-foreground font-bold flex-shrink-0 z-10 relative bg-accent min-w-[48px]">
-                          {index + 1}
+                        <div className="w-5/12"></div>
+                         <div className="w-8 h-8 rounded-full border-2 border-white ring-4 ring-accent flex items-center justify-center text-white font-bold flex-shrink-0 z-10 relative bg-accent">
+                           <Icon className="h-4 w-4" />
                         </div>
-                        <div className="w-1/2 pl-8">
-                          <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm h-full">
+                        <div className="w-5/12 pl-8">
+                          <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-md h-full">
                             <h3 className="text-lg font-bold text-gray-900 mb-1">{step.title}</h3>
                             <p className="text-xs text-gray-600 mb-3">{step.subtitle}</p>
                             <h4 className="text-base font-semibold text-gray-900 mb-3">{step.fullTitle}</h4>
