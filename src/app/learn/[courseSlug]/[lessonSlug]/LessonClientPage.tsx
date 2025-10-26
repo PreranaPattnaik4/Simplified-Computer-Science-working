@@ -4,13 +4,14 @@
 import { notFound } from 'next/navigation';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import Link from 'next/link';
-import { CheckCircle, Circle, FileText, MessageSquare, BookOpen } from 'lucide-react';
+import { CheckCircle, Circle, FileText, MessageSquare, BookOpen, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useState, useMemo } from 'react';
 import { marked } from 'marked';
 import type { getCourses } from '@/app/lib/courses';
+import { cn } from '@/lib/utils';
 
 type Course = ReturnType<typeof getCourses>[0];
 
@@ -29,10 +30,18 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
 
   const parsedContent = useMemo(() => {
       if (currentLesson?.content) {
-          return marked(currentLesson.content);
+          try {
+            return marked(currentLesson.content);
+          } catch (error) {
+            console.error("Error parsing markdown:", error);
+            return "<p>Error rendering content.</p>";
+          }
       }
       return '';
   }, [currentLesson]);
+
+  const prevLesson = currentLessonIndex > 0 ? allLessons[currentLessonIndex - 1] : null;
+  const nextLesson = currentLessonIndex < allLessons.length - 1 ? allLessons[currentLessonIndex + 1] : null;
 
 
   return (
@@ -114,6 +123,30 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
                 <p>Comments feature coming soon!</p>
               </TabsContent>
             </Tabs>
+
+            <div className="mt-12 flex justify-between items-center border-t pt-8">
+                {prevLesson ? (
+                    <Link href={`/learn/${course.slug}/${prevLesson.slug}`}>
+                        <Button variant="outline">
+                            <ChevronLeft className="h-4 w-4 mr-2" />
+                            Previous Lesson
+                        </Button>
+                    </Link>
+                ) : (
+                    <div /> // Placeholder for alignment
+                )}
+                {nextLesson ? (
+                    <Link href={`/learn/${course.slug}/${nextLesson.slug}`}>
+                        <Button variant="outline">
+                            Next Lesson
+                            <ChevronRight className="h-4 w-4 ml-2" />
+                        </Button>
+                    </Link>
+                ) : (
+                    <div /> // Placeholder for alignment
+                )}
+            </div>
+
           </div>
         </div>
       </main>
