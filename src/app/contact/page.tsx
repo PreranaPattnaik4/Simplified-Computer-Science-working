@@ -90,6 +90,9 @@ export default function ContactPage() {
             <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl font-bold font-space-grotesk">Your Feedback Matters</h2>
                 <p className="mt-4 text-lg text-muted-foreground">
+                  Gain full access to our extensive library of free courses and track your progress effortlessly! While our Blogs, Tutorials, and Resources are available without signup, registering allows you to enjoy exclusive content, course certificates, and more. Most of our courses are free—start learning today with no fees, just knowledge!
+                </p>
+                <p className="mt-4 text-lg text-muted-foreground">
                   We value your feedback and are committed to continuously improving our content. If you notice any mistakes or omissions, or if you have suggestions for us, please feel free to contact us at simplifiedcomputerscience@gmail.com. Your input helps us provide the best possible experience for our users.
                 </p>
             </div>
