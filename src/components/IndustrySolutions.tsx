@@ -36,10 +36,12 @@ export default function IndustrySolutions() {
             <div className="flex flex-col items-end gap-4">
                 <Tag number="05" text="Machine Learning" color="bg-pastel-purple-bg" />
                 <Tag number="08" text="Responsible AI" color="bg-pastel-blue-bg" />
+                <Tag number="09" text="Multilingual Model" color="bg-pastel-yellow-bg" />
             </div>
             <div className="flex flex-col items-start gap-4 pt-8">
                  <Tag number="06" text="Generative Pre-Trained Transformer" color="bg-pastel-pink-bg" />
                  <Tag number="07" text="AI Ethics And Safety" color="bg-pastel-green-bg" />
+                 <Tag number="10" text="Agentic AI" color="bg-pastel-purple-bg" />
             </div>
         </div>
       </div>
