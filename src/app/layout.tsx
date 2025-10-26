@@ -30,14 +30,24 @@ const metadata: Metadata = {
 function LayoutWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isLearnPage = pathname ? pathname.includes('/learn/') : false;
-  const isDashboardPage = pathname ? pathname.startsWith('/dashboard') : false;
+  const isDashboardLayout = pathname ? pathname.startsWith('/dashboard') : false;
+
+
+  // The dashboard has its own layout, so we don't render header/footer here for it.
+  if (isDashboardLayout) {
+    return <>{children}</>;
+  }
+  
+  if (isLearnPage) {
+    return <>{children}</>;
+  }
 
 
   return (
     <>
-      {!isLearnPage && !isDashboardPage && <Header />}
+      <Header />
       {children}
-      {!isLearnPage && !isDashboardPage && <Footer />}
+      <Footer />
     </>
   );
 }
