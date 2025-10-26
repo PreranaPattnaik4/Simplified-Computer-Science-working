@@ -40,7 +40,7 @@ export default function DashboardLayout({
 }) {
   return (
     <div className="flex min-h-screen bg-gray-50/50">
-      <aside className="w-64 flex-shrink-0 border-r bg-white p-4">
+      <aside className="w-64 flex-shrink-0 border-r bg-white p-4 flex flex-col">
         <div className="flex flex-col items-center mb-8">
             <div className="w-16 h-16 rounded-full bg-gray-200 mb-2 flex items-center justify-center">
                 <span className="text-2xl font-bold text-gray-600">SCS</span>
@@ -52,15 +52,19 @@ export default function DashboardLayout({
                 <span className="text-xs text-muted-foreground ml-1">4.50 (2 Ratings)</span>
             </div>
         </div>
-        <nav className="flex flex-col space-y-1">
-            {sidebarNavItems.map(item => <NavItem key={item.title} item={item} isActive={item.title === 'Dashboard'} />)}
-        </nav>
-        <div className="mt-8">
-            <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider px-4 mb-2">Instructor</h3>
+        
+        <div className="flex-grow">
             <nav className="flex flex-col space-y-1">
-                {instructorNavItems.map(item => <NavItem key={item.title} item={item} />)}
+                {sidebarNavItems.map(item => <NavItem key={item.title} item={item} isActive={item.title === 'Dashboard'} />)}
             </nav>
+            <div className="mt-8">
+                <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider px-4 mb-2">Instructor</h3>
+                <nav className="flex flex-col space-y-1">
+                    {instructorNavItems.map(item => <NavItem key={item.title} item={item} />)}
+                </nav>
+            </div>
         </div>
+        
         <div className="mt-auto">
             <nav className="flex flex-col space-y-1">
                 <NavItem item={{ title: 'Settings', href: '#', icon: Settings }} />
