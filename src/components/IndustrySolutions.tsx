@@ -16,7 +16,7 @@ export default function IndustrySolutions() {
         
         {/* Top Tags */}
         <div className="w-full flex justify-center items-end gap-4 mb-8">
-            <Tag number="02" text="Building Intelligent Chatbots" color="bg-pastel-pink-bg" />
+            <Tag number="05" text="Machine Learning" color="bg-pastel-purple-bg" />
             <div className="flex flex-col gap-4">
                 <Tag number="01" text="Generative AI" color="bg-pastel-purple-bg" />
                 <div className="flex items-start gap-4">
@@ -27,7 +27,7 @@ export default function IndustrySolutions() {
         </div>
 
         <div className="flex justify-center mb-8">
-          <Tag number="05" text="Machine Learning" color="bg-pastel-purple-bg" />
+          <Tag number="02" text="Building Intelligent Chatbots" color="bg-pastel-pink-bg" />
         </div>
 
 
