@@ -12,8 +12,8 @@ export default function ContactPage() {
                 <Image
                     src="https://picsum.photos/seed/contact-hero/800/600"
                     alt="Astronaut exploring from a book"
-                    layout="fill"
-                    objectFit="cover"
+                    fill
+                    className="object-cover"
                     data-ai-hint="space book"
                 />
             </div>
