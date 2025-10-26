@@ -295,9 +295,132 @@ const courses = [
         {
             title: "Module 1: Python Fundamentals for Data Science",
             lessons: [
-                { slug: "introduction-to-python", title: "Introduction to Python and its data ecosystem", content: "### Objective: Understand Python's role in data science and set up your development environment.\n\n**1.1 What is Python?**\n\nPython is a high-level, interpreted programming language known for its simple syntax and readability. Its versatility makes it a top choice for web development, automation, and scientific computing.\n\n*   **Key Features:** Dynamic typing, extensive standard library, large ecosystem of third-party packages.\n*   **Why Python for Data Science?** Simplified syntax for complex logic, strong support for data manipulation (Pandas), numerical computation (NumPy), and machine learning (Scikit-learn, TensorFlow).\n\n**1.2 Setting Up Your Environment**\n\nWe recommend using the Anaconda distribution, which packages Python with essential data science libraries.\n\n1.  Download and install Anaconda from the official website.\n2.  Open the Anaconda Navigator and launch a Jupyter Notebook or Spyder IDE.\n3.  Verify your installation by running `python --version` and `conda list` in your terminal." },
-                { slug: "variables-and-data-types", title: "Variables, data types, and operators", content: "Content for variables and data types." },
-                { slug: "control-flow", title: "Control flow: loops and conditional statements", content: "Content for control flow." },
+                { 
+                    slug: "introduction-to-python", 
+                    title: "Introduction to Python and its data ecosystem", 
+                    content: `### Objective
+Understand Python's role in data science and set up your development environment.
+
+### 1.1 What is Python?
+Python is a high-level, interpreted programming language known for its simple syntax and readability. Its versatility makes it a top choice for web development, automation, and scientific computing.
+*   **Key Features:** Dynamic typing, extensive standard library, large ecosystem of third-party packages.
+*   **Why Python for Data Science?** Simplified syntax for complex logic, strong support for data manipulation (Pandas), numerical computation (NumPy), and machine learning (Scikit-learn, TensorFlow).
+
+### 1.2 Setting Up Your Environment
+We recommend using the Anaconda distribution, which packages Python with essential data science libraries.
+1.  Download and install Anaconda from the official website.
+2.  Open the Anaconda Navigator and launch a Jupyter Notebook or Spyder IDE.
+3.  Verify your installation by running \`python --version\` and \`conda list\` in your terminal.
+<br/>
+### Tip
+Use virtual environments (like \`conda create --name myenv python=3.8\`) to manage dependencies for different projects and avoid conflicts.` 
+                },
+                { 
+                    slug: "variables-and-data-types", 
+                    title: "Variables, data types, and operators", 
+                    content: `### Objective
+Understand how to store and manipulate data using Python's primitive data types.
+
+### 2.1 Variables
+A variable is a named location used to store data in memory.
+\`\`\`python
+# Variable assignment
+course_name = "Mastering Python"
+students_enrolled = 3200
+rating = 5.0
+is_free = True
+\`\`\`
+
+### 2.2 Common Data Types
+*   **String (\`str\`):** Textual data. Enclosed in single ('') or double ("") quotes.
+*   **Integer (\`int\`):** Whole numbers.
+*   **Float (\`float\`):** Numbers with a decimal point.
+*   **Boolean (\`bool\`):** Represents truth values, \`True\` or \`False\`.
+
+### 2.3 Type Casting
+You can convert variables from one type to another.
+\`\`\`python
+# Convert float to int
+rating_int = int(rating) # Becomes 5
+
+# Convert int to string
+student_count_str = str(students_enrolled) # Becomes "3200"
+\`\`\`
+
+### 2.4 Operators
+*   **Arithmetic:** \`+\`, \`-\`, \`*\`, \`/\`, \`%\` (modulo), \`**\` (exponent)
+*   **Comparison:** \`==\`, \`!=\`, \`>\`, \`<\`, \`>=\`, \`<=\`
+*   **Logical:** \`and\`, \`or\`, \`not\`
+
+### Example:
+\`\`\`python
+# Calculate the average rating after a new 4.0 review
+new_rating = 4.0
+total_ratings = 100 # assuming 100 ratings before
+current_total = rating * total_ratings
+new_average = (current_total + new_rating) / (total_ratings + 1)
+print(f"New average rating: {new_average}")
+\`\`\`` 
+                },
+                { 
+                    slug: "control-flow", 
+                    title: "Control flow: loops and conditional statements", 
+                    content: `### Objective
+Learn to control the execution flow of your program using loops and conditional logic.
+
+### 3.1 Conditional Statements (\`if\`, \`elif\`, \`else\`)
+Execute blocks of code based on whether a condition is true.
+\`\`\`python
+score = 85
+if score >= 90:
+    grade = "A"
+elif score >= 80:
+    grade = "B"
+else:
+    grade = "C"
+
+print(f"Your grade is: {grade}") # Output: Your grade is: B
+\`\`\`
+
+### 3.2 \`for\` Loops
+Iterate over a sequence (like a list, tuple, or string).
+\`\`\`python
+# Print each letter of a word
+for letter in "Python":
+    print(letter)
+
+# Iterate over a list of numbers
+numbers = [1, 2, 3, 4, 5]
+sum_of_numbers = 0
+for num in numbers:
+    sum_of_numbers += num
+print(f"Sum: {sum_of_numbers}") # Output: Sum: 15
+\`\`\`
+
+### 3.3 \`while\` Loops
+Execute a block of code as long as a condition is true.
+\`\`\`python
+# Countdown from 5
+count = 5
+while count > 0:
+    print(count)
+    count -= 1 # Crucial to avoid an infinite loop
+print("Blast off!")
+\`\`\`
+
+### Tip
+Use list comprehensions for a concise way to create lists from loops.
+\`\`\`python
+# Traditional for loop
+squares = []
+for i in range(5):
+    squares.push(i**2)
+
+# List comprehension equivalent
+squares_comp = [i**2 for i in range(5)]
+print(squares_comp) # [0, 1, 4, 9, 16]
+\`\`\`` 
+                },
                 { slug: "functions-and-modules", title: "Functions and modular programming", content: "Content for functions and modules." },
                 { slug: "file-io", title: "File I/O and working with data sources", content: "Content for file I/O." }
             ]
