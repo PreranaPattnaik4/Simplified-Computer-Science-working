@@ -31,6 +31,9 @@ export default function Header() {
             <Link href="/courses" passHref>
               <DropdownMenuItem>Courses</DropdownMenuItem>
             </Link>
+            <Link href="/blog" passHref>
+              <DropdownMenuItem>Blog</DropdownMenuItem>
+            </Link>
             <Link href="/resources" passHref>
               <DropdownMenuItem>Resources</DropdownMenuItem>
             </Link>
