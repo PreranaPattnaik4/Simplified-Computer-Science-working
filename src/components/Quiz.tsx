@@ -4,7 +4,7 @@
 import { useState, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle, XCircle } from 'lucide-react';
+import { CheckCircle, XCircle, RefreshCw } from 'lucide-react';
 import { marked } from 'marked';
 import { cn } from '@/lib/utils';
 
@@ -26,7 +26,6 @@ export default function Quiz({ lesson }: { lesson: Lesson }) {
     const [showFeedback, setShowFeedback] = useState(false);
 
     const isCorrect = selectedAnswer === lesson.correctAnswer;
-    const pointsEarned = isCorrect ? 10 : 0;
 
     const handleCheckAnswer = () => {
         if (selectedAnswer) {
@@ -34,6 +33,11 @@ export default function Quiz({ lesson }: { lesson: Lesson }) {
         }
     };
     
+    const handleTryAgain = () => {
+        setSelectedAnswer(null);
+        setShowFeedback(false);
+    };
+
     const parsedQuestion = useMemo(() => {
         if (lesson.content) {
             try {
@@ -103,14 +107,19 @@ export default function Quiz({ lesson }: { lesson: Lesson }) {
                     <div className="w-full">
                         <div className={cn("p-4 rounded-md mb-4", isCorrect ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800')}>
                             <h4 className="font-bold text-lg flex items-center gap-2">
-                                {isCorrect ? <><CheckCircle /> Correct!</> : <><XCircle /> Incorrect</>}
+                                {isCorrect ? <><CheckCircle /> Correct! Great job.</> : <><XCircle /> Not quite</>}
                             </h4>
-                             <p className="font-bold">You earned {pointsEarned} points.</p>
                         </div>
                         <div>
                             <h4 className="font-bold text-lg mb-2">Explanation</h4>
                             <p className="text-muted-foreground">{lesson.explanation}</p>
                         </div>
+                        {!isCorrect && (
+                            <Button onClick={handleTryAgain} className="mt-6">
+                                <RefreshCw className="h-4 w-4 mr-2" />
+                                Try Again
+                            </Button>
+                        )}
                     </div>
                 )}
             </CardFooter>
