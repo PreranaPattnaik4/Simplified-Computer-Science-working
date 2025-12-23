@@ -1,19 +1,24 @@
 
+
 import Image from 'next/image';
 import { Lightbulb } from 'lucide-react';
+import placeholderImages from '@/app/lib/placeholder-images.json';
 
 const heroImages = [
   {
-    src: 'https://images.pexels.com/photos/7047292/pexels-photo-7047292.jpeg',
+    src: placeholderImages.resourcesHero1.src,
     alt: 'VR Future Tech',
+    hint: placeholderImages.resourcesHero1.hint,
   },
   {
-    src: 'https://images.pexels.com/photos/3520665/pexels-photo-3520665.jpeg',
+    src: placeholderImages.resourcesHero2.src,
     alt: 'Hackathons and Internships',
+    hint: placeholderImages.resourcesHero2.hint,
   },
   {
-    src: 'https://images.pexels.com/photos/8386363/pexels-photo-8386363.jpeg',
+    src: placeholderImages.resourcesHero3.src,
     alt: 'Robotics and Circuitry',
+    hint: placeholderImages.resourcesHero3.hint,
   },
 ];
 
@@ -26,13 +31,13 @@ export default function ResourcesPage() {
           {/* Image Panels */}
           <div className="flex flex-col md:flex-row gap-4 mb-8">
             {heroImages.map((image, index) => (
-              <div key={index} className="flex-1 overflow-hidden rounded-lg">
+              <div key={index} className="flex-1 overflow-hidden rounded-lg relative h-64 md:h-80">
                 <Image
                   src={image.src}
                   alt={image.alt}
-                  width={600}
-                  height={400}
+                  fill
                   className="w-full h-auto object-cover"
+                  data-ai-hint={image.hint}
                 />
               </div>
             ))}

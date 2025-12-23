@@ -1,9 +1,11 @@
 
+
 import { BookOpen, Award, User, ShoppingCart, Star, HelpCircle, Settings, LogOut, FileText, Bell, DollarSign, BookCopy, BarChartHorizontal } from 'lucide-react';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { Button } from '@/components/ui/button';
+import placeholderImages from '@/app/lib/placeholder-images.json';
 
 const StatCard = ({ icon: Icon, title, value }: { icon: React.ElementType, title: string, value: string | number }) => (
     <Card>
@@ -40,8 +42,14 @@ export default function DashboardPage() {
                 <Card>
                     <CardContent className="p-6">
                         <div className="flex flex-col md:flex-row gap-6">
-                            <div className="w-full md:w-1/3 lg:w-1/4">
-                                <Image src="https://picsum.photos/seed/html-css/400/225" alt="Web Development Course" width={400} height={225} className="rounded-lg object-cover" />
+                            <div className="w-full md:w-1/3 lg:w-1/4 relative aspect-[16/9]">
+                                <Image 
+                                    src={placeholderImages.dashboardCourse.src} 
+                                    alt="Web Development Course" 
+                                    fill 
+                                    className="rounded-lg object-cover" 
+                                    data-ai-hint={placeholderImages.dashboardCourse.hint}
+                                />
                             </div>
                             <div className="flex-1">
                                 <div className="flex justify-between items-start">

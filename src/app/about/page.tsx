@@ -1,5 +1,7 @@
+
 import { GraduationCap, Lightbulb, Users, CheckCircle } from 'lucide-react';
 import Image from 'next/image';
+import placeholderImages from '@/app/lib/placeholder-images.json';
 
 export default function AboutPage() {
   return (
@@ -39,10 +41,11 @@ export default function AboutPage() {
             </div>
             <div className="w-full h-80 relative rounded-lg overflow-hidden shadow-lg">
                 <Image
-                    src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    src={placeholderImages.aboutMission.src}
                     alt="Our Mission"
-                    layout="fill"
-                    objectFit="cover"
+                    fill
+                    className="object-cover"
+                    data-ai-hint={placeholderImages.aboutMission.hint}
                 />
             </div>
           </div>
@@ -53,10 +56,11 @@ export default function AboutPage() {
             <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                  <div className="w-full h-80 relative rounded-lg overflow-hidden shadow-lg md:order-last">
                     <Image
-                        src="https://images.pexels.com/photos/4195342/pexels-photo-4195342.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        src={placeholderImages.aboutFounder.src}
                         alt="Founder"
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        className="object-cover"
+                        data-ai-hint={placeholderImages.aboutFounder.hint}
                     />
                 </div>
                 <div className="pl-8">

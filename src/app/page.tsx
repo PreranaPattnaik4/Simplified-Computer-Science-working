@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -40,6 +41,7 @@ import IndustrySolutions from '@/components/IndustrySolutions';
 import TrendingBlogs from '@/components/TrendingBlogs';
 import LimitlessLearning from '@/components/LimitlessLearning';
 import CareerTimeline from '@/components/CareerTimeline';
+import placeholderImages from '@/app/lib/placeholder-images.json';
 
 
 const whatWeOffer = [
@@ -89,31 +91,31 @@ export default function HomePage() {
         id: 0,
         title: "Career Tips and Roadmaps",
         subtitle: "Your career journey starts here",
-        image: "http://simplifiedcomputerscience.com/wp-content/uploads/2024/11/Screenshot-1260-1.png",
+        image: placeholderImages.homeHero1.src,
     },
     {
         id: 1,
         title: "TRENDING BLOGS",
         subtitle: "Stay updated with the latest trends",
-        image: "http://simplifiedcomputerscience.com/wp-content/uploads/2024/10/people-wearing-futuristic-high-tech-virtual-reality-glasses-scaled.jpg",
+        image: placeholderImages.homeHero2.src,
     },
     {
         id: 2,
         title: "Hackathons and Internships",
         subtitle: "Gain real-world experience",
-        image: "http://simplifiedcomputerscience.com/wp-content/uploads/2025/03/futurism-perspective-digital-nomads-lifestyle-Copy-scaled.jpg",
+        image: placeholderImages.homeHero3.src,
     },
     {
         id: 3,
         title: "PROJECTS",
         subtitle: "Build your portfolio",
-        image: "http://simplifiedcomputerscience.com/wp-content/uploads/2024/10/ai-chip-intelligence-technology-deep-learning-scaled.jpg",
+        image: placeholderImages.homeHero4.src,
     },
      {
         id: 4,
         title: "TOP TRENDING COURSES",
         subtitle: "Master in-demand skills",
-        image: "http://simplifiedcomputerscience.com/wp-content/uploads/2024/11/digital-art-ai-technology-background_23-2151719560.jpg",
+        image: placeholderImages.homeHero5.src,
     },
   ];
 
@@ -140,10 +142,11 @@ export default function HomePage() {
                         onClick={() => setActivePanel(panel.id)}
                         onMouseEnter={() => setActivePanel(panel.id)}
                     >
-                        <img
-                        src={panel.image}
-                        alt={panel.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        <Image
+                            src={panel.image}
+                            alt={panel.title}
+                            fill
+                            className="object-cover group-hover:scale-110 transition-transform duration-500"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
                         <div

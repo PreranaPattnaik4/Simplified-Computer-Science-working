@@ -1,5 +1,7 @@
+
 import { Instagram, Linkedin, Youtube, Mail } from 'lucide-react';
 import Image from 'next/image';
+import placeholderImages from '@/app/lib/placeholder-images.json';
 
 export default function ContactPage() {
   return (
@@ -10,11 +12,11 @@ export default function ContactPage() {
           <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
             <div className="w-full h-96 relative rounded-lg overflow-hidden">
                 <Image
-                    src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    src={placeholderImages.contactHero.src}
                     alt="AI technology concept"
                     fill
                     className="object-cover"
-                    data-ai-hint="AI tech"
+                    data-ai-hint={placeholderImages.contactHero.hint}
                 />
             </div>
             <div>

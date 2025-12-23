@@ -1,3 +1,4 @@
+
 {
     "course1": { "src": "https://picsum.photos/seed/course1/500/300", "hint": "AI deep learning" },
     "course2": { "src": "https://picsum.photos/seed/course2/500/300", "hint": "web development code" },
@@ -11,5 +12,17 @@
     "course10": { "src": "https://picsum.photos/seed/course10/500/300", "hint": "UI UX design" },
     "course11": { "src": "https://picsum.photos/seed/course11/500/300", "hint": "compiler code" },
     "course12": { "src": "https://picsum.photos/seed/course12/500/300", "hint": "javascript code" },
-    "course13": { "src": "https://picsum.photos/seed/course13/500/300", "hint": "python data science" }
+    "course13": { "src": "https://picsum.photos/seed/course13/500/300", "hint": "python data science" },
+    "homeHero1": { "src": "http://simplifiedcomputerscience.com/wp-content/uploads/2024/11/Screenshot-1260-1.png", "hint": "career roadmap" },
+    "homeHero2": { "src": "http://simplifiedcomputerscience.com/wp-content/uploads/2024/10/people-wearing-futuristic-high-tech-virtual-reality-glasses-scaled.jpg", "hint": "futuristic vr" },
+    "homeHero3": { "src": "http://simplifiedcomputerscience.com/wp-content/uploads/2025/03/futurism-perspective-digital-nomads-lifestyle-Copy-scaled.jpg", "hint": "digital nomad" },
+    "homeHero4": { "src": "http://simplifiedcomputerscience.com/wp-content/uploads/2024/10/ai-chip-intelligence-technology-deep-learning-scaled.jpg", "hint": "ai chip" },
+    "homeHero5": { "src": "http://simplifiedcomputerscience.com/wp-content/uploads/2024/11/digital-art-ai-technology-background_23-2151719560.jpg", "hint": "ai technology" },
+    "aboutMission": { "src": "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "hint": "team collaboration" },
+    "aboutFounder": { "src": "https://images.pexels.com/photos/4195342/pexels-photo-4195342.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "hint": "professional headshot" },
+    "contactHero": { "src": "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "hint": "ai technology" },
+    "resourcesHero1": { "src": "https://images.pexels.com/photos/7047292/pexels-photo-7047292.jpeg", "hint": "vr future" },
+    "resourcesHero2": { "src": "https://images.pexels.com/photos/3520665/pexels-photo-3520665.jpeg", "hint": "hackathon code" },
+    "resourcesHero3": { "src": "https://images.pexels.com/photos/8386363/pexels-photo-8386363.jpeg", "hint": "robotics circuitry" },
+    "dashboardCourse": { "src": "https://picsum.photos/seed/html-css/400/225", "hint": "web development" }
 }
