@@ -1,5 +1,5 @@
 
-import { BrainCircuit, Milestone, PencilRuler } from 'lucide-react';
+import { BrainCircuit, Milestone, PencilRuler, TerminalSquare } from 'lucide-react';
 import Link from 'next/link';
 
 const paths = [
@@ -7,16 +7,19 @@ const paths = [
         title: 'The Foundation Path',
         description: 'Logic & CS Basics',
         icon: <Milestone className="w-6 h-6" />,
+        href: '/learning-paths',
     },
     {
         title: 'The AI Roadmap',
         description: 'Machine Learning Fundamentals',
         icon: <BrainCircuit className="w-6 h-6" />,
+        href: '/learning-paths',
     },
     {
-        title: 'The Practice Hub',
-        description: 'Hands-on Worksheets',
-        icon: <PencilRuler className="w-6 h-6" />,
+        title: 'Live Practice Lab',
+        description: 'Execute code in real-time. Supports HTML/CSS, Python, C, SQL, and Modern JS Frameworks.',
+        icon: <TerminalSquare className="w-6 h-6" />,
+        href: '/codelab',
     },
 ];
 
@@ -27,10 +30,10 @@ export default function SCSLearningPaths() {
                 {/* Left Side */}
                 <div className="max-w-lg">
                     <h2 className="text-4xl md:text-5xl font-bold font-space-grotesk leading-tight">
-                        Mastery, Simplified.
+                        The SCS Ecosystem.
                     </h2>
                     <p className="mt-4 text-lg text-gray-300">
-                        Stop chasing random tutorials. Follow our SCS Learning Paths—curated, visual-first journeys designed to build technical intuition from the ground up.
+                        Stop chasing random tutorials. Follow our curated, visual-first journeys designed to build technical intuition from the ground up and apply your skills in a live sandbox.
                     </p>
                     <Link href="/learning-paths">
                         <button 
@@ -45,17 +48,22 @@ export default function SCSLearningPaths() {
                 {/* Right Side */}
                 <div className="space-y-4">
                     {paths.map((path, index) => (
-                        <div key={index} className="flex items-center gap-4 border border-white p-4 rounded-xl" style={{ borderRadius: '12px' }}>
-                            <div className="text-white">
-                                {path.icon}
+                        <Link href={path.href} key={index} className="block">
+                            <div className="flex items-center gap-4 border border-gray-700 hover:border-yellow-400 p-4 rounded-xl transition-colors" style={{ borderRadius: '12px' }}>
+                                <div className="text-yellow-400">
+                                    {path.icon}
+                                </div>
+                                <div>
+                                    <h3 className="text-xl font-bold" style={{ color: '#FFD700' }}>
+                                        {path.title}
+                                    </h3>
+                                    <p className="text-gray-400">{path.description}</p>
+                                    {path.title === 'Live Practice Lab' && (
+                                        <div className="text-yellow-400 font-bold mt-2">Open Sandbox</div>
+                                    )}
+                                </div>
                             </div>
-                            <div>
-                                <h3 className="text-xl font-bold" style={{ color: '#FFD700' }}>
-                                    {path.title}
-                                </h3>
-                                <p className="text-gray-400">{path.description}</p>
-                            </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>
