@@ -16,7 +16,7 @@ const paths = [
         href: '/learning-paths',
     },
     {
-        title: 'Live Practice Lab',
+        title: 'SCS DevStudio',
         description: 'Execute code in real-time. Supports HTML/CSS, Python, C, SQL, and Modern JS Frameworks.',
         icon: <TerminalSquare className="w-6 h-6" />,
         href: '/codelab',
@@ -58,7 +58,7 @@ export default function SCSLearningPaths() {
                                         {path.title}
                                     </h3>
                                     <p className="text-gray-400">{path.description}</p>
-                                    {path.title === 'Live Practice Lab' && (
+                                    {path.title === 'SCS DevStudio' && (
                                         <div className="text-yellow-400 font-bold mt-2">Open Sandbox</div>
                                     )}
                                 </div>

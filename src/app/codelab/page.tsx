@@ -19,7 +19,7 @@ const languageIcons = [
 
 export default function CodeLabPage() {
   const sampleCode = `function welcome() {
-    console.log("Welcome to the SCS Code Lab!");
+    console.log("Welcome to the SCS DevStudio!");
 }
 
 welcome();
@@ -31,7 +31,7 @@ welcome();
       <header className="flex items-center justify-between p-3 border-b border-gray-800 flex-shrink-0">
         <div className="flex items-center gap-3">
           <Code className="text-yellow-400 h-6 w-6" />
-          <h1 className="text-xl font-bold font-space-grotesk">SCS Code Lab</h1>
+          <h1 className="text-xl font-bold font-space-grotesk">SCS DevStudio</h1>
         </div>
         <div className="flex items-center gap-2">
           <Button variant="ghost" size="sm"><Save className="h-4 w-4 mr-2" />Save Snippet</Button>
@@ -75,7 +75,7 @@ welcome();
                 <TabsContent value="terminal" className="flex-1 bg-[#1E1E1E] rounded-b-lg p-4 border border-t-0 border-gray-800">
                     <div className="flex items-center gap-2">
                         <Terminal className="h-5 w-5 text-gray-400" />
-                        <p className="text-gray-400">Welcome to the SCS Code Lab!</p>
+                        <p className="text-gray-400">Welcome to the SCS DevStudio!</p>
                     </div>
                      <p className="text-green-400">&gt; Node.js v18.12.1</p>
                 </TabsContent>
