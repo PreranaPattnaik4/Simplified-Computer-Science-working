@@ -137,16 +137,13 @@ export default function HomePage() {
                             className="object-cover rounded-lg"
                             data-ai-hint={placeholderImages.designCulture.hint}
                         />
-                        <div className="absolute inset-0 grid grid-cols-4 grid-rows-4 gap-1 p-1">
-                            {[...Array(16)].map((_, i) => (
-                                <div key={i} className="border border-white/20"></div>
-                            ))}
-                        </div>
-                        <div className="absolute inset-0 grid grid-cols-4 grid-rows-4 gap-4 p-4">
-                            <div className="bg-accent rounded-sm col-start-2 row-start-2"></div>
-                            <div className="bg-accent rounded-sm col-start-1 row-start-3 col-span-2"></div>
-                            <div className="bg-accent rounded-sm col-start-4 row-start-4"></div>
-                        </div>
+                         <div
+                          className="absolute inset-0 rounded-lg"
+                          style={{
+                            backgroundImage:
+                              'linear-gradient(to right, rgba(255,255,255,0.85), rgba(255,255,255,0.55), rgba(255,255,255,0.15))',
+                          }}
+                        ></div>
 
                         <div className="absolute -bottom-10 -left-10">
                             <div className="relative w-24 h-24">
