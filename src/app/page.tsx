@@ -124,7 +124,7 @@ export default function HomePage() {
     <div className="bg-background text-foreground">
       <main>
         {/* Hero Image Accordion */}
-        <section className="w-full bg-black py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <section className="w-full bg-background py-16 md:py-24 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
                 <div className="flex gap-2 h-80 md:h-96 rounded-lg overflow-hidden">
                 {panels.map((panel) => {
