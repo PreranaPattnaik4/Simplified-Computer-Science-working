@@ -17,6 +17,7 @@ import AuthModal from "./AuthModal"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Input } from "./ui/input"
+import Image from "next/image"
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -52,9 +53,8 @@ export default function Header() {
           
           <div className="absolute left-1/2 -translate-x-1/2 group">
               <Link href="/" className="cursor-pointer">
-                <div className="text-center transition-transform duration-300 ease-in-out group-hover:scale-110">
-                    <h1 className="text-xl font-bold tracking-wider">SCS</h1>
-                    <p className="text-xs text-muted-foreground">SIMPLIFIED COMPUTER SCIENCE</p>
+                <div className="transition-transform duration-300 ease-in-out group-hover:scale-110">
+                    <Image src="https://i.postimg.cc/w34JFtXH/simplifiedcomputerscience.png" alt="Simplified Computer Science Logo" width={120} height={40} priority />
                 </div>
               </Link>
           </div>
