@@ -164,7 +164,7 @@ export default function HomePage() {
                                     Making Technology Simple, Practical, and Accessible
                                 </h2>
                                 <Link href="/courses-live">
-                                    <button className="mt-6 bg-black text-white font-bold py-3 px-8 rounded-full hover:bg-gray-800 transition-colors">
+                                    <button className="mt-6 bg-accent text-accent-foreground font-bold py-3 px-8 rounded-full hover:bg-yellow-500 transition-colors">
                                         START LEARNING
                                     </button>
                                 </Link>
