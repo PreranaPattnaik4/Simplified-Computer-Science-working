@@ -12,8 +12,8 @@ export default function TrendingBlogs() {
       categories: ["Career Tips", "Professional Skills"],
       date: "June 5, 2024",
       title: "Career Tips for Tech Professionals: Navigating Your Path to Success",
-      description: "Navigating a successful career in tech can be both exciting and challenging. Here are some key career tips to help you chart your path and reach your full potential in the tech industry.",
-      link: "#",
+      description: "Navigating a successful career in tech can be both exciting and challenging, given the industry’s rapid pace of change and constant innovation. Whether you’re just starting out or looking to level up your career, it’s important to focus not only on technical skills but also on building a strong foundation of soft skills, networking, and continuous learning. By staying adaptable and setting clear goals, tech professionals can position themselves for long-term success and growth in this dynamic field. Here are some key career tips to help you chart your path and reach your full potential in the tech industry.",
+      link: "/blog/career-tips-for-tech-professionals",
     },
     {
       author: "Prerana",
@@ -67,9 +67,9 @@ export default function TrendingBlogs() {
               </div>
 
               {/* Title */}
-              <h3 className="text-lg font-bold text-gray-800 mb-4 line-clamp-2 min-h-[56px] font-space-grotesk">
+              <a href={blog.link}><h3 className="text-lg font-bold text-gray-800 mb-4 line-clamp-2 min-h-[56px] font-space-grotesk group-hover:text-accent">
                 {blog.title}
-              </h3>
+              </h3></a>
 
               {/* Description */}
               <p className="text-gray-600 text-sm mb-6 line-clamp-2 min-h-[40px]">
