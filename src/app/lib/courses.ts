@@ -293,12 +293,12 @@ const courses = [
     isTopCourse: false,
     syllabus: [
         {
-            title: "Module 1: Python Fundamentals for Data Science",
+            title: "Module 1: Programming Fundamentals",
             lessons: [
                 { 
                     slug: "introduction-to-python", 
                     title: "Introduction to Python and its data ecosystem", 
-                    content: "### Objective\nUnderstand Python's role in data science and set up your development environment.\n\n### 1.1 What is Python?\nPython is a high-level, interpreted programming language known for its simple syntax and readability. Its versatility makes it a top choice for web development, automation, and scientific computing.\n*   **Key Features:** Dynamic typing, extensive standard library, large ecosystem of third-party packages.\n*   **Why Python for Data Science?** Simplified syntax for complex logic, strong support for data manipulation (Pandas), numerical computation (NumPy), and machine learning (Scikit-learn, TensorFlow).\n\n### 1.2 Setting Up Your Environment\nWe recommend using the Anaconda distribution, which packages Python with essential data science libraries.\n1.  Download and install Anaconda from the official website.\n2.  Open the Anaconda Navigator and launch a Jupyter Notebook or Spyder IDE.\n3.  Verify your installation by running `python --version` and `conda list` in your terminal.\n\n### Tip\nUse virtual environments (like `conda create --name myenv python=3.8`) to manage dependencies for different projects and a"
+                    content: "### Objective\nUnderstand Python's role in data science and set up your development environment.\n\n### 1.1 What is Python?\nPython is a high-level, interpreted programming language known for its simple syntax and readability. Its versatility makes it a top choice for web development, automation, and scientific computing.\n*   **Key Features:** Dynamic typing, extensive standard library, large ecosystem of third-party packages.\n*   **Why Python for Data Science?** Simplified syntax for complex logic, strong support for data manipulation (Pandas), numerical computation (NumPy), and machine learning (Scikit-learn, TensorFlow).\n\n### 1.2 Setting Up Your Environment\nWe recommend using the Anaconda distribution, which packages Python with essential data science libraries.\n1.  Download and install Anaconda from the official website.\n2.  Open the Anaconda Navigator and launch a Jupyter Notebook or Spyder IDE.\n3.  Verify your installation by running `python --version` and `conda list` in your terminal.\n\n### Tip\nUse virtual environments (like `conda create --name myenv python=3.8`) to manage dependencies for different projects and avoid conflicts."
                 },
                 { 
                     slug: "variables-and-data-types", 
@@ -308,7 +308,7 @@ const courses = [
                 { 
                     slug: "control-flow", 
                     title: "Control flow: loops and conditional statements", 
-                    content: "### Objective\nLearn to control the execution flow of your program using loops and conditional logic.\n\n### 3.1 Conditional Statements (`if`, `elif`, `else`)\nExecute blocks of code based on whether a condition is true.\n```python\nscore = 85\nif score >= 90:\n    grade = \"A\"\nelif score >= 80:\n    grade = \"B\"\nelse:\n    grade = \"C\"\n\nprint(f\"Your grade is: {grade}\") # Output: Your grade is: B\n```\n\n### 3.2 `for` Loops\nIterate over a sequence (like a list, tuple, or string).\n```python\n# Print each letter of a word\nfor letter in \"Python\":\n    print(letter)\n\n# Iterate over a list of numbers\nnumbers = [1, 2, 3, 4, 5]\nsum_of_numbers = 0\nfor num in numbers:\n    sum_of_numbers += num\nprint(f\"Sum: {sum_of_numbers}\") # Output: Sum: 15\n```\n\n### 3.3 `while` Loops\nExecute a block of code as long as a condition is true.\n```python\n# Countdown from 5\ncount = 5\nwhile count > 0:\n    print(count)\n    count -= 1 # Crucial to avoid an infinite loop\nprint(\"Blast off!\")\n```\n\n### Tip\nUse list comprehensions for a concise way to create lists from loops.\n```python\n# Traditional for loop\nsquares = []\nfor i in range(5):\n    squares.push(i**2)\n\n# List comprehension equivalent\nsquares_comp = [i**2 for i in range(5)]\nprint(squares_comp) # [0, 1, 4, 9, 16]\n```" 
+                    content: "### Objective\nLearn to control the execution flow of your program using loops and conditional logic.\n\n### 3.1 Conditional Statements (`if`, `elif`, `else`)\nExecute blocks of code based on whether a condition is true.\n```python\nscore = 85\nif score >= 90:\n    grade = \"A\"\nelif score >= 80:\n    grade = \"B\"\nelse:\n    grade = \"C\"\n\nprint(f\"Your grade is: {grade}\") # Output: Your grade is: B\n```\n\n### 3.2 `for` Loops\nIterate over a sequence (like a list, tuple, or string).\n```python\n# Print each letter of a word\nfor letter in \"Python\":\n    print(letter)\n\n# Iterate over a list of numbers\nnumbers = [1, 2, 3, 4, 5]\nsum_of_numbers = 0\nfor num in numbers:\n    sum_of_numbers += num\nprint(f\"Sum: {sum_of_numbers}\") # Output: Sum: 15\n```\n\n### 3.3 `while` Loops\nExecute a block of code as long as a condition is true.\n```python\n# Countdown from 5\ncount = 5\nwhile count > 0:\n    print(count)\n    count -= 1 # Crucial to avoid an infinite loop\nprint(\"Blast off!\")\n```\n\n### Tip\nUse list comprehensions for a concise way to create lists from loops.\n```python\n# Traditional for loop\nsquares = []\nfor i in range(5):\n    squares.append(i**2)\n\n# List comprehension equivalent\nsquares_comp = [i**2 for i in range(5)]\nprint(squares_comp) # [0, 1, 4, 9, 16]\n```" 
                 },
                 { slug: "functions-and-modules", title: "Functions and modular programming", content: "Content for functions and modules." },
                 { slug: "file-io", title: "File I/O and working with data sources", content: "Content for file I/O." }
@@ -537,5 +537,7 @@ export function getCourses() {
 export function getCourseBySlug(slug: string) {
   return courses.find(course => course.slug === slug);
 }
+
+    
 
     
