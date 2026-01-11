@@ -91,7 +91,7 @@ export default function CertificatePage() {
                         
                         {/* Logo */}
                         <div className="text-center mb-8">
-                            <Image src="https://i.postimg.cc/rs90fh6y/3.png" alt="SCS Logo" width={180} height={60} />
+                            <Image src="https://i.postimg.cc/rs90fh6y/3.png" alt="SCS Logo" width={240} height={80} />
                         </div>
 
                         <h1 className="text-5xl font-serif font-bold">Certificate of Completion</h1>
@@ -114,7 +114,7 @@ export default function CertificatePage() {
                                 <p className="font-serif text-xl font-semibold border-b border-dotted border-gray-400 pb-1 px-4">Prerana Pattnaik</p>
                                 <p className="text-xs text-gray-500 tracking-widest mt-1">COURSE DIRECTOR</p>
                             </div>
-                            <div className="relative w-28 h-28 -mb-2">
+                            <div className="relative w-36 h-36 -mb-2">
                               <Image src="https://i.postimg.cc/BnxqSkvV/Deep_Blue_Border_Certificate_of_Completion_(2)_Copy.png" alt="SCS Medal" layout="fill" objectFit="contain" />
                             </div>
                             <div className="text-center">
