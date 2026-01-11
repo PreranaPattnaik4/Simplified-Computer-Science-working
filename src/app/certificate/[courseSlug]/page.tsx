@@ -87,7 +87,7 @@ export default function CertificatePage() {
 
                 {/* Certificate */}
                 <div ref={certificateRef} className="bg-white w-full p-4 relative" style={{ width: '1100px', height: '850px', margin: '0 auto' }}>
-                    <div className="w-full h-full border-[1.5rem] border-[#004B49] p-10 flex flex-col items-center text-[#0D3A39]">
+                    <div className="w-full h-full p-10 flex flex-col items-center text-[#0D3A39]">
                         
                         {/* Logo */}
                         <div className="text-center mb-8">
