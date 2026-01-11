@@ -87,45 +87,39 @@ export default function CertificatePage() {
 
                 {/* Certificate */}
                 <div ref={certificateRef} className="bg-white w-full p-4 relative" style={{ width: '1100px', height: '850px', margin: '0 auto' }}>
-                    <div className="w-full h-full border-[1.5rem] border-[#004B49] p-10 flex flex-col text-[#004B49]">
-                        <div className="flex-grow flex flex-col items-center">
-                            
-                            {/* Logo */}
-                            <div className="text-center mb-8">
-                                <Image src="https://i.postimg.cc/rs90fh6y/3.png" alt="SCS Logo" width={180} height={60} />
-                            </div>
+                    <div className="w-full h-full border-[1.5rem] border-[#004B49] p-10 flex flex-col items-center text-[#0D3A39]">
+                        
+                        {/* Logo */}
+                        <div className="text-center mb-8">
+                            <Image src="https://i.postimg.cc/rs90fh6y/3.png" alt="SCS Logo" width={180} height={60} />
+                        </div>
 
-                            <h1 className="text-5xl font-serif font-bold">Certificate of Completion</h1>
-                            
-                            <p className="text-xl mt-8">This Certificate is awarded to</p>
-                            
-                            <div className="text-center my-6">
-                                <div className="border-t border-dotted border-gray-400 w-96 mx-auto"></div>
-                                <h2 className="text-6xl font-serif font-bold my-4 break-words max-w-full px-4">
-                                    {studentName || 'Learner Name'}
-                                </h2>
-                                <div className="border-b border-dotted border-gray-400 w-96 mx-auto"></div>
-                            </div>
-                            
-                            <p className="text-xl max-w-2xl text-center">
-                                has successfully completed the course
-                            </p>
-                            <h3 className="text-4xl font-serif font-semibold mt-4 mb-8">
-                                {course.title}
-                            </h3>
+                        <h1 className="text-5xl font-serif font-bold">Certificate of Completion</h1>
+                        
+                        <p className="text-xl mt-8">This Certificate is awarded to</p>
+                        
+                        <h2 className="text-6xl font-bold font-space-grotesk my-4 break-words max-w-full px-4 text-[#062121]">
+                            {studentName || 'Learner Name'}
+                        </h2>
+                        
+                        <p className="text-xl max-w-2xl text-center">
+                            has successfully completed the course
+                        </p>
+                        <h3 className="text-4xl font-serif font-semibold mt-4 mb-8 text-center">
+                            {course.title}
+                        </h3>
 
-                            <div className="w-full flex justify-between items-end mt-auto px-16">
-                                <div className="text-center">
-                                    <p className="font-serif text-xl font-semibold border-b border-dotted border-gray-400 pb-1 px-4">Prerana Pattnaik</p>
-                                    <p className="text-xs text-gray-500 tracking-widest mt-1">COURSE DIRECTOR</p>
-                                </div>
-                                <div className="relative w-28 h-28 -mb-2">
-                                  <Image src="https://i.postimg.cc/BnxqSkvV/Deep_Blue_Border_Certificate_of_Completion_(2)_Copy.png" alt="SCS Medal" layout="fill" objectFit="contain" />
-                                </div>
-                                <div className="text-center">
-                                    <p className="font-serif text-xl font-semibold border-b border-dotted border-gray-400 pb-1 px-4">Khusi Kumari</p>
-                                    <p className="text-xs text-gray-500 tracking-widest mt-1">PROGRAM DIRECTOR</p>
-                                </div>
+                        <div className="w-full flex justify-between items-end mt-auto px-16">
+                            <div className="text-center">
+                                <p className="font-serif text-xl font-semibold border-b border-dotted border-gray-400 pb-1 px-4">Prerana Pattnaik</p>
+                                <p className="text-xs text-gray-500 tracking-widest mt-1">COURSE DIRECTOR</p>
+                            </div>
+                            <div className="relative w-28 h-28 -mb-2">
+                              <Image src="https://i.postimg.cc/BnxqSkvV/Deep_Blue_Border_Certificate_of_Completion_(2)_Copy.png" alt="SCS Medal" layout="fill" objectFit="contain" />
+                            </div>
+                            <div className="text-center">
+                                <p className="font-serif text-xl font-semibold border-b border-dotted border-gray-400 pb-1 px-4">Khusi Kumari</p>
+                                <p className="text-xs text-gray-500 tracking-widest mt-1">PROGRAM DIRECTOR</p>
                             </div>
                         </div>
                     </div>
