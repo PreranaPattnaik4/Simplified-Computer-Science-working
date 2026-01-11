@@ -43,7 +43,7 @@ export default function Header() {
   return (
     <>
       <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
+        <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-4">
           <div className="flex items-center gap-2">
             <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="flex cursor-pointer items-center gap-2">
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -98,7 +98,7 @@ export default function Header() {
       
       {/* Full-screen Menu Overlay */}
       <div className={cn(
-          "fixed top-16 left-0 right-0 bottom-0 z-30 bg-white transition-all duration-500 ease-in-out",
+          "fixed top-20 left-0 right-0 bottom-0 z-30 bg-white transition-all duration-500 ease-in-out",
           isMenuOpen 
             ? "translate-y-0 opacity-100 visible" 
             : "-translate-y-full opacity-0 invisible"
