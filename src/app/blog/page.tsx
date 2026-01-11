@@ -32,6 +32,13 @@ const blogPosts = [
     description: 'As AI writing tools become more sophisticated, bloggers are finding new ways to integrate technology into their content creation process.',
     link: '/blog/is-ai-writing-stealing-your-job',
   },
+   {
+    category: 'Career, Interview Tips',
+    title: 'From Resume to Offer: A Complete Guide to Cracking Job Interviews',
+    date: 'August 1, 2024',
+    description: 'Landing a job in today’s competitive market requires more than just a well-crafted resume. This guide walks you through the entire journey—from crafting a standout resume to securing a job offer.',
+    link: '/blog/from-resume-to-offer',
+  },
   {
     category: 'Python',
     title: '100 Essential Python Questions & Answers: Your Ultimate Beginner’s Guide to Mastering Python',
@@ -70,6 +77,7 @@ const blogPosts = [
 ];
 
 const recentPosts = [
+    { title: "From Resume to Offer: A Complete Guide...", date: "August 1, 2024", comments: 0, link: "/blog/from-resume-to-offer" },
     { title: "Is AI Writing Stealing Your Job?...", date: "July 22, 2024", comments: 0, link: "/blog/is-ai-writing-stealing-your-job" },
     { title: "Breaking the Programming Barrier...", date: "July 15, 2024", comments: 0, link: "/blog/breaking-the-programming-barrier" },
     { title: "20 Essential Tips to Ace Corporate Interviews...", date: "1 July 2024", comments: 0, link: "/blog/20-essential-tips-to-ace-corporate-interviews-in-2025" },
