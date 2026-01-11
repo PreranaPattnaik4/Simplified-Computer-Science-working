@@ -317,7 +317,7 @@ const courses = [
         {
             title: "Module 2: Python for Data Science",
             lessons: [
-                { slug: "why-python-for-ds", title: "Why Python for Data Science?", content: "Python is the dominant language for data science due to its simplicity, readability, and the vast ecosystem of powerful libraries. Libraries like Pandas, NumPy, Matplotlib, and Scikit-learn provide all the tools needed for data manipulation, analysis, visualization, and machine learning." },
+                { slug: 'why-python-for-ds', title: 'Why Python for Data Science?', content: 'Python is the dominant language for data science due to its simplicity, readability, and the vast ecosystem of powerful libraries. Libraries like Pandas, NumPy, Matplotlib, and Scikit-learn provide all the tools needed for data manipulation, analysis, visualization, and machine learning.' },
                 { slug: "intro-to-numpy", title: "Introduction to NumPy arrays and vectorized operations", content: "Content for NumPy." },
                 { slug: "intro-to-pandas", title: "Pandas Series and DataFrame objects", content: "Content for Pandas." },
                 { slug: "data-cleaning", title: "Data cleaning, transformation, and merging", content: "Content for data cleaning." },
@@ -522,7 +522,7 @@ const courses = [
                  {
                     slug: "security-tips",
                     title: "5 Tips for Web Security & Optimization",
-                    content: "1. Use HTTPS to secure user data.\n2. Optimize images and minify CSS/JavaScript.\n3. Regularly update software and plugins.\n4. Set up automated backups.\n5. Implement content delivery networks (CDNs)."
+                    content: "1. Use HTTPS to secure user data.\n2. Optimize images and minify CSS/JavaScript.\n3. Regularly update software and plugins.\n4. Set up automated backups.\n5. Use content delivery networks (CDNs)."
                 }
             ]
         }
