@@ -314,7 +314,7 @@ We recommend using the Anaconda distribution, which packages Python with essenti
 3.  Verify your installation by running \`python --version\` and \`conda list\` in your terminal.
 <br/>
 ### Tip
-Use virtual environments (like \`conda create --name myenv python=3.8\`) to manage dependencies for different projects and avoid conflicts.` 
+Use virtual environments (like \`conda create --name myenv python=3.8\`) to manage dependencies for different projects and a"
                 },
                 { 
                     type: 'content',
@@ -539,6 +539,60 @@ print(squares_comp) # [0, 1, 4, 9, 16]
                     correctAnswer: 'B',
                     explanation: "Without non-linear activation functions, a neural network would just be a linear model, unable to learn complex patterns in data."
                 }
+            ]
+        }
+    ]
+  },
+  {
+    slug: 'cs-basics-get-started',
+    title: 'Computer Science Basics: Everything You Need to Know to Get Started',
+    description: 'This course will introduce you to the essential concepts, key terminology, and foundational topics that make up the heart of Computer Science.',
+    level: 'Beginner',
+    primaryCategory: 'Software Development',
+    suggestedTags: ['Computer Science', 'Algorithms', 'Python'],
+    image: placeholderImages.course14.src,
+    rating: 5,
+    students: 0,
+    comments: 0,
+    author: 'Prerana',
+    isTopCourse: false,
+    syllabus: [
+        {
+            title: "Module 1: Introduction to Computer Science",
+            lessons: [
+                { 
+                    slug: "what-is-cs", 
+                    title: "What is Computer Science?", 
+                    content: `Computer Science is the study of computers and computational systems. It involves understanding how computers process information, how software is developed, and how data is handled. While many think of Computer Science as just coding or programming, the field is far more extensive. It covers areas like data structures, algorithms, artificial intelligence, databases, and much more.\n\nFor beginners, it’s helpful to think of Computer Science as the science of problem-solving using computers. The tools and techniques learned here are applicable to solving real-world problems efficiently and effectively.`
+                }
+            ]
+        },
+        {
+            title: "Module 2: Key Areas of Computer Science",
+            lessons: [
+                { slug: "algorithms-data-structures", title: "Algorithms and Data Structures", content: "Algorithms are step-by-step instructions that tell the computer how to perform a task. Understanding algorithms allows you to write code that solves problems in an optimized way.\n\nData Structures organize and store data. Common types include arrays, linked lists, trees, and graphs. Learning these structures is fundamental because they affect the performance of your program." },
+                { slug: "programming-languages", title: "Programming Languages", content: "Programming is at the heart of Computer Science. Some popular programming languages include Python, Java, C++, and JavaScript. Each language has its strengths, and knowing the right one for the task is essential.\n\nThe 2024 syllabus focuses on Python for beginners due to its readability and widespread use in educational settings." },
+                { slug: "software-engineering", title: "Software Engineering", content: "Software Engineering deals with designing, building, and maintaining software applications. It includes methodologies like Agile and Waterfall, as well as tools for version control (e.g., Git)." },
+                { slug: "ai-ml", title: "Artificial Intelligence and Machine Learning", content: "AI is the simulation of human intelligence processes by machines. It includes Machine Learning, where computers learn from data to make decisions without explicit programming. The 2024 syllabus emphasizes the growing importance of AI in fields like healthcare, finance, and robotics." },
+                { slug: "databases", title: "Databases", content: "Understanding how to organize, store, and retrieve data is crucial for any programmer. Databases like MySQL and MongoDB are commonly used in real-world applications." },
+                { slug: "networking-security", title: "Networking and Security", content: "Networking is about connecting computers and systems, allowing them to communicate and share resources. It covers everything from local networks to the global Internet.\n\nCybersecurity ensures the protection of data and systems from malicious threats. In the 2024 syllabus, this area focuses on encryption, firewalls, and secure software development practices." }
+            ]
+        },
+        {
+            title: "Module 3: The 2024 Syllabus Overview",
+            lessons: [
+                { slug: "programming-fundamentals", title: "Fundamentals of Programming", content: "Students are introduced to basic programming concepts, using languages like Python. Topics covered include variables, data types, loops, conditionals, and functions." },
+                { slug: "problem-solving-techniques", title: "Problem-Solving Techniques", content: "Problem-solving is a critical skill for any computer scientist. The syllabus encourages students to break down problems into smaller, manageable parts using algorithms and data structures." },
+                { slug: "computer-systems", title: "Understanding Computer Systems", content: "Basic hardware concepts like CPUs, memory, and storage are covered, providing students with an understanding of how software interacts with hardware." },
+                { slug: "web-development-intro", title: "Introduction to Web Development", content: "Basic HTML, CSS, and JavaScript are introduced to help students understand how websites are created and structured." },
+                { slug: "ethical-computing", title: "Ethical Computing", content: "With technology advancing rapidly, students are also taught the ethical implications of computing. This includes data privacy, the environmental impact of technology, and the importance of ethical decision-making in software development." }
+            ]
+        },
+        {
+            title: "Module 4: Your Journey in Computer Science",
+            lessons: [
+                { slug: "why-learn-cs", title: "Why Learn Computer Science?", content: "Versatility and Career Opportunities: Computer Science is a gateway to a wide range of careers. From software development to data science, cybersecurity, and AI, there is an increasing demand for skilled professionals.\n\nProblem-Solving and Critical Thinking: Learning Computer Science enhances your ability to approach problems logically and solve them efficiently. It encourages critical thinking, pattern recognition, and creativity.\n\nInnovation and Future-Proofing: With technology constantly evolving, understanding Computer Science positions you for future innovations in fields like quantum computing, AI, and blockchain." },
+                { slug: "how-to-start", title: "How to Start Your Journey", content: "If you’re a complete beginner, don’t worry! Here’s how you can get started:\n\n1.  **Pick a Programming Language**: Start with Python, which is simple, easy to understand, and powerful enough for advanced topics. Numerous online platforms like Codecademy, freeCodeCamp, and Coursera offer free resources to learn programming.\n2.  **Practice Problem-Solving**: Websites like LeetCode and HackerRank provide practice problems that help you improve your algorithmic thinking and coding skills.\n3.  **Build Small Projects**: Apply what you’ve learned by building simple projects. Start with things like a calculator, a to-do list, or a personal blog. These projects will give you hands-on experience and make abstract concepts concrete.\n4.  **Explore Advanced Topics**: Once you’re comfortable with the basics, dive into more advanced topics like data structures, algorithms, and AI. Participate in open-source projects and collaborate with others to grow your skills." }
             ]
         }
     ]
