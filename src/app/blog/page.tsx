@@ -1,6 +1,7 @@
 
 'use client';
 import { Search, User, Calendar, Tag } from 'lucide-react';
+import Link from 'next/link';
 
 const blogPosts = [
   {
@@ -16,6 +17,13 @@ const blogPosts = [
     date: '1 July 2024',
     description: 'Corporate interviews are a crucial step in securing your dream job. Whether you are a fresher or an experienced professional, mastering the interview process is key to standing out among other candidates. As we step into 2025, the job market continues to evolve, making it even more important to stay ahead of the curve.',
     link: '/blog/20-essential-tips-to-ace-corporate-interviews-in-2025',
+  },
+   {
+    category: 'Artificial Intelligence, Software Development',
+    title: 'Breaking the Programming Barrier: AI Supercharges Developers to Build the Unthinkable',
+    date: 'July 15, 2024',
+    description: 'In recent years, artificial intelligence (AI) has become a game-changer in the tech industry, especially in software development, enabling developers to push the boundaries of what was once thought possible.',
+    link: '/blog/breaking-the-programming-barrier',
   },
   {
     category: 'Python',
@@ -55,13 +63,13 @@ const blogPosts = [
 ];
 
 const recentPosts = [
+    { title: "Breaking the Programming Barrier...", date: "July 15, 2024", comments: 0, link: "/blog/breaking-the-programming-barrier" },
     { title: "20 Essential Tips to Ace Corporate Interviews...", date: "1 July 2024", comments: 0, link: "/blog/20-essential-tips-to-ace-corporate-interviews-in-2025" },
     { title: "Career Tips for Tech Professionals...", date: "5 June 2024", comments: 0, link: "/blog/career-tips-for-tech-professionals" },
     { title: "100 Essential Python Questions & Answers...", date: "10 February 2025", comments: 0, link: "#" },
     { title: "Private: post templates", date: "30 December 2024", comments: 0, link: "#" },
     { title: "Understanding Artificial Intelligence: A Beginner’s Guide...", date: "7 October 2024", comments: 0, link: "#" },
     { title: "Project Management: The Ultimate Guide...", date: "9 September 2024", comments: 0, link: "#" },
-    { title: "Effective Project Execution: From Inception to Completion", date: "9 September 2024", comments: 0, link: "#" },
 ];
 
 const tags = [
@@ -111,11 +119,11 @@ export default function BlogPage() {
                      <div className="flex-grow">
                         <div className="text-xs text-gray-500 mb-2 uppercase tracking-wider">{post.category}</div>
                         <h2 className="text-2xl font-bold font-space-grotesk text-gray-900 mb-2">
-                          <a href={post.link} className="group-hover:text-accent transition-colors">{post.title}</a>
+                          <Link href={post.link} className="group-hover:text-accent transition-colors">{post.title}</Link>
                         </h2>
                         <div className="text-sm text-gray-500 mb-3">{post.date}</div>
                         <p className="text-gray-600 leading-relaxed line-clamp-3">{post.description}</p>
-                         <a href={post.link} className="text-accent font-semibold mt-4 inline-block hover:underline">Read More</a>
+                         <Link href={post.link} className="text-accent font-semibold mt-4 inline-block hover:underline">Read More</Link>
                     </div>
                   </article>
                 ))}
@@ -135,7 +143,7 @@ export default function BlogPage() {
                 <ul className="space-y-4">
                   {recentPosts.map((post, index) => (
                      <li key={index}>
-                        <a href={post.link} className="font-semibold text-gray-800 hover:text-accent">{post.title}</a>
+                        <Link href={post.link} className="font-semibold text-gray-800 hover:text-accent">{post.title}</Link>
                         <div className="text-xs text-gray-500 mt-1">{post.date} / {post.comments} Comments</div>
                     </li>
                   ))}

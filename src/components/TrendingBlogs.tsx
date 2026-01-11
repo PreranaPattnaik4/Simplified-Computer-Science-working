@@ -12,7 +12,7 @@ export default function TrendingBlogs() {
       categories: ["Career Tips", "Professional Skills"],
       date: "June 5, 2024",
       title: "Career Tips for Tech Professionals: Navigating Your Path to Success",
-      description: "Navigating a successful career in tech can be both exciting and challenging, given the industry’s rapid pace of change and constant innovation. Whether you’re just starting out or looking to level up your career, it’s important to focus not only on technical skills but also on building a strong foundation of soft skills, networking, and continuous learning. By staying adaptable and setting clear goals, tech professionals can position themselves for long-term success and growth in this dynamic field. Here are some key career tips to help you chart your path and reach your full potential in the tech industry.",
+      description: "Navigating a successful career in tech can be both exciting and challenging, given the industry’s rapid pace of change and constant innovation...",
       link: "/blog/career-tips-for-tech-professionals",
     },
     {
@@ -20,16 +20,16 @@ export default function TrendingBlogs() {
       categories: ["Interview Tips", "Career"],
       date: "July 1, 2024",
       title: "20 Essential Tips to Ace Corporate Interviews in 2025",
-      description: "Corporate interviews are a crucial step in securing your dream job. As we step into 2025, the job market continues to evolve, making it even more important to stay ahead of the curve.",
+      description: "Corporate interviews are a crucial step in securing your dream job. As we step into 2025, the job market continues to evolve...",
       link: "/blog/20-essential-tips-to-ace-corporate-interviews-in-2025",
     },
     {
       author: "Prerana",
-      categories: ["Artificial Intelligence", "Futures Tech", "Insight blogs"],
-      date: "May 23, 2023",
-      title: "Understanding Artificial Intelligence: A Beginner's Guide to AI | Simplified Computer Science",
-      description: "Edit Content Click on the Edit Content button to edit/add the content. Introduction Artificial Intelligence (AI) has become a buzzword…",
-      link: "#",
+      categories: ["Artificial Intelligence", "Software Development"],
+      date: "July 15, 2024",
+      title: "Breaking the Programming Barrier: AI Supercharges Developers",
+      description: "In recent years, artificial intelligence (AI) has become a game-changer in the tech industry, especially in software development...",
+      link: "/blog/breaking-the-programming-barrier",
     },
     
   ];
@@ -67,9 +67,9 @@ export default function TrendingBlogs() {
               </div>
 
               {/* Title */}
-              <a href={blog.link}><h3 className="text-lg font-bold text-gray-800 mb-4 line-clamp-2 min-h-[56px] font-space-grotesk group-hover:text-accent">
+              <Link href={blog.link}><h3 className="text-lg font-bold text-gray-800 mb-4 line-clamp-2 min-h-[56px] font-space-grotesk group-hover:text-accent">
                 {blog.title}
-              </h3></a>
+              </h3></Link>
 
               {/* Description */}
               <p className="text-gray-600 text-sm mb-6 line-clamp-2 min-h-[40px]">
