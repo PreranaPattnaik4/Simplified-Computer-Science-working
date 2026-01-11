@@ -12,26 +12,6 @@ import { jsPDF } from 'jspdf';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const MedalIcon = () => (
-    <svg width="100" height="100" viewBox="0 0 100 120" className="mx-auto">
-        <path d="M20 0 L50 30 L80 0 L50 20 Z" fill="#60A5FA" />
-        <path d="M50 20 L20 0 L50 30 Z" fill="#3B82F6" />
-        <circle cx="50" cy="70" r="30" fill="#FBBF24"/>
-        <polygon points="50,55 55,68 70,70 58,80 62,95 50,85 38,95 42,80 30,70 45,68" fill="white"/>
-         <g transform="translate(50, 70)">
-            <path d="M0 -35 L5 -38 L0 -41 L-5 -38 Z" fill="#FBBF24" />
-            <path d="M35 0 L38 -5 L41 0 L38 5 Z" fill="#FBBF24" />
-            <path d="M0 35 L5 38 L0 41 L-5 38 Z" fill="#FBBF24" />
-            <path d="M-35 0 L-38 -5 L-41 0 L-38 5 Z" fill="#FBBF24" />
-            <path d="M25 -25 L28 -22 L25 -19 L22 -22 Z" fill="#FBBF24" />
-            <path d="M25 25 L28 22 L25 19 L22 22 Z" fill="#FBBF24" />
-            <path d="M-25 25 L-28 22 L-25 19 L-22 22 Z" fill="#FBBF24" />
-            <path d="M-25 -25 L-28 -22 L-25 -19 L-22 -22 Z" fill="#FBBF24" />
-        </g>
-    </svg>
-);
-
-
 export default function CertificatePage() {
     const [studentName, setStudentName] = useState('Learner Name');
     const { courseSlug } = useParams<{ courseSlug: string }>();
@@ -139,8 +119,8 @@ export default function CertificatePage() {
                                     <p className="font-serif text-xl font-semibold border-b border-dotted border-gray-400 pb-1 px-4">Prerana Pattnaik</p>
                                     <p className="text-xs text-gray-500 tracking-widest mt-1">COURSE DIRECTOR</p>
                                 </div>
-                                <div className="-mb-2">
-                                  <MedalIcon />
+                                <div className="relative w-28 h-28 -mb-2">
+                                  <Image src="https://i.postimg.cc/BnxqSkvV/Deep_Blue_Border_Certificate_of_Completion_(2)_Copy.png" alt="SCS Medal" layout="fill" objectFit="contain" />
                                 </div>
                                 <div className="text-center">
                                     <p className="font-serif text-xl font-semibold border-b border-dotted border-gray-400 pb-1 px-4">Khusi Kumari</p>
