@@ -9,11 +9,11 @@ export default function TrendingBlogs() {
   const blogs = [
     {
       author: "Prerana",
-      categories: ["Career Tips", "Professional Skills"],
-      date: "June 5, 2024",
-      title: "Career Tips for Tech Professionals: Navigating Your Path to Success",
-      description: "Navigating a successful career in tech can be both exciting and challenging, given the industry’s rapid pace of change and constant innovation...",
-      link: "/blog/career-tips-for-tech-professionals",
+      categories: ["Artificial Intelligence", "Blogging"],
+      date: "July 22, 2024",
+      title: "Is AI Writing Stealing Your Job? The Future of Blogging in the Age of Artificial Intelligence",
+      description: "As AI writing tools become more sophisticated, bloggers are finding new ways to integrate technology into their content creation process.",
+      link: "/blog/is-ai-writing-stealing-your-job",
     },
     {
       author: "Prerana",

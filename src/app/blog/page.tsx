@@ -26,6 +26,13 @@ const blogPosts = [
     link: '/blog/breaking-the-programming-barrier',
   },
   {
+    category: 'Artificial Intelligence, Blogging',
+    title: 'Is AI Writing Stealing Your Job? The Future of Blogging in the Age of Artificial Intelligence',
+    date: 'July 22, 2024',
+    description: 'As AI writing tools become more sophisticated, bloggers are finding new ways to integrate technology into their content creation process.',
+    link: '/blog/is-ai-writing-stealing-your-job',
+  },
+  {
     category: 'Python',
     title: '100 Essential Python Questions & Answers: Your Ultimate Beginner’s Guide to Mastering Python',
     date: '10 February 2025',
@@ -63,13 +70,13 @@ const blogPosts = [
 ];
 
 const recentPosts = [
+    { title: "Is AI Writing Stealing Your Job?...", date: "July 22, 2024", comments: 0, link: "/blog/is-ai-writing-stealing-your-job" },
     { title: "Breaking the Programming Barrier...", date: "July 15, 2024", comments: 0, link: "/blog/breaking-the-programming-barrier" },
     { title: "20 Essential Tips to Ace Corporate Interviews...", date: "1 July 2024", comments: 0, link: "/blog/20-essential-tips-to-ace-corporate-interviews-in-2025" },
     { title: "Career Tips for Tech Professionals...", date: "5 June 2024", comments: 0, link: "/blog/career-tips-for-tech-professionals" },
     { title: "100 Essential Python Questions & Answers...", date: "10 February 2025", comments: 0, link: "#" },
     { title: "Private: post templates", date: "30 December 2024", comments: 0, link: "#" },
     { title: "Understanding Artificial Intelligence: A Beginner’s Guide...", date: "7 October 2024", comments: 0, link: "#" },
-    { title: "Project Management: The Ultimate Guide...", date: "9 September 2024", comments: 0, link: "#" },
 ];
 
 const tags = [
