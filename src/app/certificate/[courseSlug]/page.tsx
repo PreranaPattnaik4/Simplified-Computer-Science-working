@@ -86,32 +86,32 @@ export default function CertificatePage() {
                 </div>
 
                 {/* Certificate */}
-                <div ref={certificateRef} className="relative" style={{ width: '1100px', height: '850px', margin: '0 auto', backgroundColor: '#00003D' }}>
-                    <div className="absolute inset-[20px]" style={{backgroundColor: 'hsl(var(--primary))'}}>
-                         <div className="absolute inset-[2px] bg-white">
+                <div ref={certificateRef} className="relative" style={{ width: '1100px', height: '850px', backgroundColor: 'white' }}>
+                     <div className="absolute inset-0 border-[10px] border-blue-900">
+                        <div className="absolute inset-[2px] border-[3px] border-yellow-400">
                             <div className="w-full h-full p-10 flex flex-col items-center text-[#0D3A39]">
                                 
                                 {/* Logo */}
-                                <div className="text-center mb-10">
-                                    <Image src="https://i.postimg.cc/rs90fh6y/3.png" alt="SCS Logo" width={180} height={60} />
+                                <div className="text-center mb-6">
+                                    <Image src="https://i.postimg.cc/rs90fh6y/3.png" alt="SCS Logo" width={220} height={74} />
                                 </div>
 
-                                <h1 className="text-5xl font-serif font-bold">Certificate of Completion</h1>
+                                <h1 className="text-4xl font-serif font-bold">Certificate of Completion</h1>
                                 
-                                <p className="text-xl mt-6">This Certificate is awarded to</p>
+                                <p className="text-lg mt-4">This Certificate is awarded to</p>
                                 
-                                <h2 className="text-6xl font-bold font-space-grotesk my-4 break-words max-w-full px-4 text-[#062121]">
+                                <h2 className="text-5xl font-bold font-space-grotesk my-3 break-words max-w-full px-4 text-[#062121]">
                                     {studentName || 'Learner Name'}
                                 </h2>
                                 
-                                <p className="text-xl max-w-2xl text-center">
+                                <p className="text-lg max-w-2xl text-center">
                                     has successfully completed the course
                                 </p>
-                                <h3 className="text-4xl font-serif font-semibold mt-4 mb-8 text-center">
+                                <h3 className="text-3xl font-serif font-semibold mt-3 mb-6 text-center">
                                     {course.title}
                                 </h3>
                                 
-                                <div className="relative w-32 h-32 mt-auto mb-10">
+                                <div className="relative w-40 h-40 mt-auto mb-8">
                                       <Image src="https://i.postimg.cc/BnxqSkvV/Deep_Blue_Border_Certificate_of_Completion_(2)_Copy.png" alt="SCS Medal" layout="fill" objectFit="contain" />
                                 </div>
 
