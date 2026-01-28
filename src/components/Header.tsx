@@ -24,6 +24,7 @@ const navLinks = [
   { href: "/blog", label: "Blogs" },
   { href: "/resources", label: "Resources" },
   { href: "/tech-guide", label: "Tech Guide" },
+  { href: "/career-tips-and-roadmaps", label: "Career Tips" },
   { href: "/contact", label: "Contact" },
   { href: "/about", label: "About" },
 ];

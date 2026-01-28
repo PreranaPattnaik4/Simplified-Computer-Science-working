@@ -332,12 +332,14 @@ export default function HomePage() {
         title: "Career Tips and Roadmaps",
         subtitle: "Your career journey starts here",
         image: placeholderImages.homeHero1.src,
+        href: "/career-tips-and-roadmaps",
     },
     {
         id: 1,
         title: "TRENDING BLOGS",
         subtitle: "Stay updated with the latest trends",
         image: placeholderImages.homeHero2.src,
+        href: "/blog",
     },
     {
         id: 2,
@@ -351,12 +353,14 @@ export default function HomePage() {
         title: "PROJECTS",
         subtitle: "Build your portfolio",
         image: placeholderImages.homeHero4.src,
+        href: "/codelab",
     },
      {
         id: 4,
         title: "TOP TRENDING COURSES",
         subtitle: "Master in-demand skills",
         image: placeholderImages.homeHero5.src,
+        href: "/courses-live",
     },
   ];
   
