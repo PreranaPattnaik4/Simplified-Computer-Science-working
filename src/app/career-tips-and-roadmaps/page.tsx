@@ -295,8 +295,8 @@ export default function CareerTipsAndRoadmapsPage() {
         <CareerTimeline />
 
         {/* New Sections */}
-        <ProfessionalSkillsSection />
         <InterviewPrepSection />
+        <ProfessionalSkillsSection />
       </main>
     </div>
   );
