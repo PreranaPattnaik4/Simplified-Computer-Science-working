@@ -1,3 +1,4 @@
+
 import { Instagram, Linkedin, Youtube } from 'lucide-react';
 import Image from 'next/image';
 
@@ -31,6 +32,7 @@ export default function Footer() {
                     <ul className="space-y-2">
                     <li><a href="/blog" className="hover:text-accent">Blogs</a></li>
                     <li><a href="/courses-live" className="hover:text-accent">Courses Live!</a></li>
+                    <li><a href="/tech-guide" className="hover:text-accent">Tech Guide</a></li>
                     <li><a href="/resources" className="hover:text-accent">Resources</a></li>
                     <li><a href="/services" className="hover:text-accent">Services</a></li>
                     </ul>
