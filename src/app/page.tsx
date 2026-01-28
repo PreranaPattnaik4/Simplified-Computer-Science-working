@@ -89,6 +89,25 @@ const faqItems = [
 
 const innovationTabs = [
     {
+        id: 'Agentic AI',
+        title: 'Agentic AI',
+        content: {
+            heading: 'The Rise of Agentic AI',
+            description: 'Agentic AI refers to autonomous systems that can perceive their environment, make decisions, and take actions to achieve specific goals without direct human intervention. These agents can learn, adapt, and collaborate, paving the way for highly sophisticated automation.',
+            features: {
+                title: 'Characteristics of AI Agents:',
+                list: [
+                    'Autonomy: Operates independently to perform tasks.',
+                    'Reactivity: Senses and responds to changes in its environment.',
+                    'Proactiveness: Takes initiative to achieve goals rather than just reacting.',
+                    'Goal-Oriented: Designed with specific objectives to pursue.',
+                    'Learning: Adapts its behavior based on experience and data.'
+                ]
+            },
+            conclusion: 'Agentic AI is moving us from tools that require instruction to partners that can take on complex tasks autonomously.'
+        }
+    },
+    {
         id: 'AI Specialists',
         title: 'Artificial Intelligence Specialists',
         content: {
@@ -145,6 +164,44 @@ const innovationTabs = [
         }
     },
     {
+        id: 'MLOps',
+        title: 'MLOps',
+        content: {
+            heading: 'MLOps: Bridging Development and Operations',
+            description: 'MLOps (Machine Learning Operations) is a set of practices that aims to deploy and maintain machine learning models in production reliably and efficiently. It is the intersection of machine learning, data engineering, and DevOps.',
+            features: {
+                title: 'Core MLOps Practices:',
+                list: [
+                    'CI/CD Automation: Continuous Integration and Continuous Deployment for ML pipelines.',
+                    'Model Versioning: Tracking changes to models, data, and code.',
+                    'Monitoring: Observing model performance and drift in production.',
+                    'Reproducibility: Ensuring that experiments and model training processes are fully reproducible.',
+                    'Scalability: Building systems that can handle growing data and user loads.'
+                ]
+            },
+            conclusion: 'MLOps streamlines the ML lifecycle, enabling businesses to operationalize AI and derive value from their models faster.'
+        }
+    },
+    {
+        id: 'Cloud Engineering',
+        title: 'Cloud Engineering',
+        content: {
+            heading: 'Cloud Engineering: Building the Future on the Cloud',
+            description: 'Cloud Engineering involves designing, building, and managing applications and infrastructure on cloud platforms like AWS, Google Cloud, and Azure. It enables scalability, flexibility, and cost-efficiency for modern tech solutions, including AI.',
+            features: {
+                title: 'Key Cloud Concepts:',
+                list: [
+                    'Infrastructure as Code (IaC): Managing infrastructure through code using tools like Terraform or CloudFormation.',
+                    'Serverless Computing: Running code without provisioning or managing servers (e.g., AWS Lambda, Google Cloud Functions).',
+                    'Containerization: Packaging applications with all their dependencies using Docker and orchestrating them with Kubernetes.',
+                    'Cloud-Native Services: Leveraging managed services for databases, storage, and AI/ML.',
+                    'Security & Compliance: Implementing robust security measures in the cloud environment.'
+                ]
+            },
+            conclusion: 'Cloud Engineering is the backbone of modern technology, providing the scalable and resilient infrastructure needed to power everything from startups to enterprise-scale AI.'
+        }
+    },
+    {
         id: 'Python',
         title: 'Python',
         content: {
@@ -186,7 +243,7 @@ const innovationTabs = [
 
 export default function HomePage() {
   const [activePanel, setActivePanel] = useState(2);
-  const [activeInnovationTab, setActiveInnovationTab] = useState('Python');
+  const [activeInnovationTab, setActiveInnovationTab] = useState('Agentic AI');
 
   const panels = [
     {
@@ -336,7 +393,7 @@ export default function HomePage() {
                     return (
                     <div
                         key={panel.id}
-                        className={`relative overflow-hidden cursor-pointer group transition-all duration-500 ease-out rounded-lg`}
+                        className={'relative overflow-hidden cursor-pointer group transition-all duration-500 ease-out rounded-lg'}
                         style={{
                             width: `${width}%`,
                             flexShrink: 0,
