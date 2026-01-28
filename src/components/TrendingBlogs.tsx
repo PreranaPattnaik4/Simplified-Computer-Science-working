@@ -13,7 +13,7 @@ export default function TrendingBlogs() {
       date: "July 22, 2024",
       title: "Is AI Writing Stealing Your Job? The Future of Blogging in the Age of Artificial Intelligence",
       description: "As AI writing tools become more sophisticated, bloggers are finding new ways to integrate technology into their content creation process.",
-      link: "/blog/is-ai-writing-stealing-your-job",
+      link: "/blogs/is-ai-writing-stealing-your-job",
     },
     {
       author: "Prerana",
@@ -21,7 +21,7 @@ export default function TrendingBlogs() {
       date: "July 1, 2024",
       title: "20 Essential Tips to Ace Corporate Interviews in 2025",
       description: "Corporate interviews are a crucial step in securing your dream job. As we step into 2025, the job market continues to evolve...",
-      link: "/blog/20-essential-tips-to-ace-corporate-interviews-in-2025",
+      link: "/blogs/20-essential-tips-to-ace-corporate-interviews-in-2025",
     },
     {
       author: "Prerana",
@@ -29,7 +29,7 @@ export default function TrendingBlogs() {
       date: "July 15, 2024",
       title: "Breaking the Programming Barrier: AI Supercharges Developers",
       description: "In recent years, artificial intelligence (AI) has become a game-changer in the tech industry, especially in software development...",
-      link: "/blog/breaking-the-programming-barrier",
+      link: "/blogs/breaking-the-programming-barrier",
     },
     
   ];
@@ -79,7 +79,7 @@ export default function TrendingBlogs() {
           ))}
         </div>
          <div className="text-center mt-12">
-            <Link href="/blog">
+            <Link href="/blogs">
                 <Button>
                     View All Blogs
                     <ArrowRight className="ml-2 h-4 w-4" />

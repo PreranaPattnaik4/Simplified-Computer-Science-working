@@ -30,7 +30,7 @@ export default function Footer() {
                 <div>
                     <h3 className="mb-4 text-lg font-bold text-white font-space-grotesk">EXPLORER</h3>
                     <ul className="space-y-2">
-                    <li><a href="/blog" className="hover:text-accent">Blogs</a></li>
+                    <li><a href="/blogs" className="hover:text-accent">Blogs</a></li>
                     <li><a href="/courses-live" className="hover:text-accent">Courses Live!</a></li>
                     <li><a href="/tech-guide" className="hover:text-accent">Tech Guide</a></li>
                     <li><a href="/resources" className="hover:text-accent">Resources</a></li>

@@ -157,7 +157,7 @@ const foundationsTabs = [
                 list: [
                     'Readability: Python’s simple syntax makes it easy to read and write, reducing the complexity of software development.',
                     'Extensive Libraries: Python offers a vast collection of libraries and frameworks, such as Django, Flask, NumPy, and pandas, that speed up development.',
-                    'Cross-Platform Compatibility: Python runs on various platforms, including Windows, Linux, and macOS, making it a versatile choice for developers.',
+                    'Cross-Platform Compatibility: Python runs on various platforms, including Windows, Linux, and macOS, making it a versatile choice for a developer.',
                     'Automation & Scripting: Python is commonly used for automating tasks, from simple scripts to complex workflows.',
                     'Data Science & Machine Learning: Python is a go-to language for data analysis, statistical computing, and building machine learning models, with libraries like TensorFlow, scikit-learn, and Keras.'
                 ]
@@ -339,7 +339,7 @@ export default function HomePage() {
         title: "TRENDING BLOGS",
         subtitle: "Stay updated with the latest trends",
         image: placeholderImages.homeHero2.src,
-        href: "/blog",
+        href: "/blogs",
     },
     {
         id: 2,

@@ -21,7 +21,7 @@ import Image from "next/image"
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/courses-live", label: "Courses" },
-  { href: "/blog", label: "Blogs" },
+  { href: "/blogs", label: "Blogs" },
   { href: "/resources", label: "Resources" },
   { href: "/tech-guide", label: "Tech Guide" },
   { href: "/career-tips-and-roadmaps", label: "Career Tips" },

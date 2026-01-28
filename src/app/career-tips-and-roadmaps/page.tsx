@@ -184,10 +184,10 @@ const InterviewPrepSection = () => (
                 From crafting the perfect resume to acing the final interview, our guides cover everything you need to know to land your dream job in tech.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-                <Link href="/blog/from-resume-to-offer">
+                <Link href="/blogs/from-resume-to-offer">
                     <Button size="lg">Resume to Offer Guide</Button>
                 </Link>
-                <Link href="/blog/20-essential-tips-to-ace-corporate-interviews-in-2025">
+                <Link href="/blogs/20-essential-tips-to-ace-corporate-interviews-in-2025">
                     <Button size="lg" variant="secondary">20 Interview Tips for 2025</Button>
                 </Link>
             </div>

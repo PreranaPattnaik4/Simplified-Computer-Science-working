@@ -28,6 +28,18 @@ const nextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/blogs',
+        destination: '/blog',
+      },
+      {
+        source: '/blogs/:slug*',
+        destination: '/blog/:slug*',
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
