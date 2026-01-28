@@ -127,6 +127,25 @@ const foundationsTabs = [
         }
     },
     {
+        id: 'UI/UX Design',
+        title: 'UI/UX Design',
+        content: {
+            heading: 'UI/UX Design: Crafting User-Centered Experiences',
+            description: 'User Interface (UI) and User Experience (UX) Design are critical for creating products that are not only visually appealing but also intuitive, easy to use, and enjoyable for the user. UI focuses on the look and feel, while UX focuses on the overall experience and usability.',
+            features: {
+                title: 'Core Principles:',
+                list: [
+                    'User Research: Understanding user behaviors, needs, and motivations through interviews and surveys.',
+                    'Wireframing & Prototyping: Creating low-fidelity and high-fidelity mockups to visualize the product structure.',
+                    'Interaction Design: Designing the way users interact with the product.',
+                    'Usability Testing: Evaluating the product with real users to identify and fix usability issues.',
+                    'Visual Design: Focusing on aesthetics, including color theory, typography, and layout.',
+                ]
+            },
+            conclusion: 'Effective UI/UX design is essential for product success, leading to higher user satisfaction and engagement.'
+        }
+    },
+    {
         id: 'Python',
         title: 'Python',
         content: {
