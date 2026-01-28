@@ -1,6 +1,223 @@
 
 import CareerTimeline from "@/components/CareerTimeline";
 import React from 'react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Award, Briefcase, BrainCircuit, Code, MessageSquare, Users, GitBranch, Cloud, Shield, Palette, Settings, Laptop, FolderKanban, BarChartHorizontal } from 'lucide-react';
+import Link from "next/link";
+
+const professionalSkillsList = [
+    { title: "Communication", description: "Clearly articulate ideas, listen actively, and share feedback constructively.", icon: <MessageSquare className="h-6 w-6 text-accent" /> },
+    { title: "Teamwork & Collaboration", description: "Collaborate effectively with diverse teams to achieve common goals.", icon: <Users className="h-6 w-6 text-accent" /> },
+    { title: "Problem-Solving", description: "Analyze complex issues, think critically, and develop innovative solutions.", icon: <BrainCircuit className="h-6 w-6 text-accent" /> },
+    { title: "Adaptability", description: "Embrace change, learn new skills quickly, and thrive in dynamic environments.", icon: <Settings className="h-6 w-6 text-accent" /> },
+    { title: "Time Management", description: "Prioritize tasks, manage deadlines, and optimize productivity.", icon: <Briefcase className="h-6 w-6 text-accent" /> },
+    { title: "Leadership", description: "Inspire and guide teams, make decisions, and drive projects forward.", icon: <Award className="h-6 w-6 text-accent" /> },
+];
+
+const roadmaps = [
+    {
+        title: "AI/Machine Learning Engineer",
+        icon: <BrainCircuit className="h-5 w-5" />,
+        description: "Specializes in building and deploying AI models. This role requires strong programming skills and a deep understanding of ML algorithms.",
+        steps: [
+            "Master Python and its data science libraries (NumPy, Pandas, Scikit-learn).",
+            "Learn deep learning frameworks like TensorFlow or PyTorch.",
+            "Understand data structures, algorithms, and computer science fundamentals.",
+            "Build a portfolio of AI projects (e.g., image recognition, NLP chatbot).",
+            "Get certified in a cloud platform's ML services (e.g., AWS, GCP).",
+        ],
+    },
+    {
+        title: "Data Scientist",
+        icon: <BarChartHorizontal className="h-5 w-5" />,
+        description: "Extracts insights from data to help organizations make better decisions. Combines statistics, computer science, and business knowledge.",
+        steps: [
+            "Strong foundation in statistics and probability.",
+            "Proficiency in Python or R for data analysis and visualization.",
+            "Experience with SQL for data querying and manipulation.",
+            "Knowledge of data visualization tools (e.g., Tableau, Matplotlib, Seaborn).",
+            "Familiarity with machine learning concepts and libraries.",
+        ],
+    },
+    {
+        title: "Full-Stack Developer",
+        icon: <Code className="h-5 w-5" />,
+        description: "Works on both the front-end (client-side) and back-end (server-side) of an application.",
+        steps: [
+            "Learn front-end technologies: HTML, CSS, JavaScript, and a framework like React or Vue.",
+            "Learn back-end technologies: A language like Node.js, Python, or Java, and a framework like Express or Django.",
+            "Understand database technologies, both SQL (e.g., PostgreSQL) and NoSQL (e.g., MongoDB).",
+            "Gain experience with RESTful APIs and/or GraphQL.",
+            "Practice deploying applications to cloud platforms.",
+        ],
+    },
+    {
+        title: "Cloud Engineer",
+        icon: <Cloud className="h-5 w-5" />,
+        description: "Designs, manages, and maintains an organization's cloud infrastructure on platforms like AWS, Azure, or GCP.",
+        steps: [
+            "Understand core cloud concepts (IaaS, PaaS, SaaS).",
+            "Get certified in a major cloud platform (e.g., AWS Certified Solutions Architect).",
+            "Learn infrastructure as code (IaC) with tools like Terraform or CloudFormation.",
+            "Gain experience with networking, security, and databases in the cloud.",
+            "Familiarity with containerization (Docker) and orchestration (Kubernetes).",
+        ],
+    },
+    {
+        title: "Cybersecurity Analyst",
+        icon: <Shield className="h-5 w-5" />,
+        description: "Protects an organization's computer systems and networks from cyber threats and attacks.",
+        steps: [
+            "Understand networking fundamentals (TCP/IP, firewalls).",
+            "Learn about common security vulnerabilities and attack vectors.",
+            "Gain experience with security tools (e.g., SIEM, IDS/IPS).",
+            "Get certifications like CompTIA Security+ or Certified Ethical Hacker (CEH).",
+            "Stay updated on the latest cybersecurity trends and threats.",
+        ],
+    },
+    {
+        title: "DevOps Engineer",
+        icon: <GitBranch className="h-5 w-5" />,
+        description: "Bridges the gap between software development and IT operations, focusing on automation and CI/CD pipelines.",
+        steps: [
+            "Proficiency in scripting languages like Python or Bash.",
+            "Experience with CI/CD tools (e.g., Jenkins, GitLab CI, GitHub Actions).",
+            "Deep understanding of version control with Git.",
+            "Knowledge of containerization (Docker) and orchestration (Kubernetes).",
+            "Familiarity with configuration management tools (e.g., Ansible, Puppet).",
+        ],
+    },
+    {
+        title: "Software Engineer",
+        icon: <Laptop className="h-5 w-5" />,
+        description: "A foundational role focused on designing, developing, and maintaining software applications.",
+        steps: [
+            "Master at least one programming language (e.g., Python, Java, C++, JavaScript).",
+            "Strong understanding of data structures, algorithms, and OOPS principles.",
+            "Experience with software development lifecycle (SDLC) and Agile methodologies.",
+            "Proficiency with Git and version control.",
+            "Build a portfolio of diverse software projects.",
+        ],
+    },
+    {
+        title: "Product Manager (Tech)",
+        icon: <FolderKanban className="h-5 w-5" />,
+        description: "Defines the 'why,' 'what,' and 'when' of a product, acting as the bridge between business, technology, and user experience.",
+        steps: [
+            "Develop strong communication and leadership skills.",
+            "Understand market research, user research, and competitive analysis.",
+            "Learn about Agile development and project management.",
+            "Gain a solid technical understanding to communicate effectively with engineers.",
+            "Practice creating product roadmaps and writing user stories.",
+        ],
+    },
+    {
+        title: "UI/UX Designer",
+        icon: <Palette className="h-5 w-5" />,
+        description: "Focuses on creating intuitive, accessible, and visually appealing interfaces for users.",
+        steps: [
+            "Learn design principles (color theory, typography, layout).",
+            "Master design and prototyping tools (e.g., Figma, Adobe XD, Sketch).",
+            "Understand user research and usability testing methodologies.",
+            "Build a strong portfolio showcasing your design process and solutions.",
+            "Develop an understanding of HTML/CSS to better collaborate with developers.",
+        ],
+    },
+    {
+        title: "Blockchain Developer",
+        icon: <Award className="h-5 w-5" />,
+        description: "Develops decentralized applications (dApps) and smart contracts on blockchain platforms.",
+        steps: [
+            "Understand blockchain fundamentals (decentralization, consensus algorithms).",
+            "Learn a smart contract language like Solidity (for Ethereum).",
+            "Gain experience with blockchain development frameworks (e.g., Hardhat, Truffle).",
+            "Understand cryptography and security principles.",
+            "Build and deploy your own dApps on a testnet.",
+        ],
+    },
+];
+
+const ProfessionalSkillsSection = () => (
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold font-space-grotesk text-gray-900 text-center mb-12">
+                Essential Professional Skills
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {professionalSkillsList.map(skill => (
+                    <Card key={skill.title} className="hover:shadow-lg transition-shadow">
+                        <CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2">
+                            <div className="bg-accent/10 p-3 rounded-full">{skill.icon}</div>
+                            <CardTitle className="font-space-grotesk text-xl">{skill.title}</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <p className="text-muted-foreground">{skill.description}</p>
+                        </CardContent>
+                    </Card>
+                ))}
+            </div>
+        </div>
+    </section>
+);
+
+const InterviewPrepSection = () => (
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold font-space-grotesk text-gray-900 mb-6">
+                Interview Preparation
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
+                From crafting the perfect resume to acing the final interview, our guides cover everything you need to know to land your dream job in tech.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+                <Link href="/blog/from-resume-to-offer">
+                    <Button size="lg">Resume to Offer Guide</Button>
+                </Link>
+                <Link href="/blog/20-essential-tips-to-ace-corporate-interviews-in-2025">
+                    <Button size="lg" variant="secondary">20 Interview Tips for 2025</Button>
+                </Link>
+            </div>
+        </div>
+    </section>
+);
+
+const CareerRoadmapsSection = () => (
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold font-space-grotesk text-gray-900 text-center mb-12">
+                Top 10 Tech Career Roadmaps for 2026
+            </h2>
+            <div className="max-w-4xl mx-auto">
+                <Accordion type="single" collapsible className="w-full">
+                    {roadmaps.map((roadmap, index) => (
+                        <AccordionItem key={index} value={`item-${index}`}>
+                            <AccordionTrigger className="text-lg font-semibold font-space-grotesk hover:no-underline">
+                                <div className="flex items-center gap-4">
+                                    {roadmap.icon}
+                                    <span>{roadmap.title}</span>
+                                </div>
+                            </AccordionTrigger>
+                            <AccordionContent className="pt-2">
+                                <p className="text-muted-foreground mb-4">{roadmap.description}</p>
+                                <ul className="space-y-2">
+                                    {roadmap.steps.map((step, i) => (
+                                        <li key={i} className="flex items-start gap-2">
+                                            <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2.5 flex-shrink-0"></div>
+                                            <span className="text-muted-foreground">{step}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </AccordionContent>
+                        </AccordionItem>
+                    ))}
+                </Accordion>
+            </div>
+        </div>
+    </section>
+);
+
 
 export default function CareerTipsAndRoadmapsPage() {
   return (
@@ -20,6 +237,11 @@ export default function CareerTipsAndRoadmapsPage() {
 
         {/* Timeline Section */}
         <CareerTimeline />
+
+        {/* New Sections */}
+        <ProfessionalSkillsSection />
+        <InterviewPrepSection />
+        <CareerRoadmapsSection />
       </main>
     </div>
   );
