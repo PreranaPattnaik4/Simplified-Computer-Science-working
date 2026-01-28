@@ -1,4 +1,6 @@
 import { Target, BookOpen, Award, Briefcase, Code, Linkedin, FileText, Lightbulb, Rocket, Milestone, FolderKanban, BrainCircuit } from "lucide-react";
+import React from 'react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export default function CareerTimeline() {
   const steps = [
@@ -119,11 +121,23 @@ export default function CareerTimeline() {
                         )}
                       </div>
                       <div className="pb-8 flex-1">
-                         <div className="bg-white border-gray-200 rounded-lg p-6 shadow-md h-full">
-                            <h3 className="text-base font-bold text-gray-900 mb-1">{step.title}</h3>
-                            <p className="text-xs text-gray-600 mb-2">{step.subtitle}</p>
-                            <h4 className="text-sm font-semibold text-gray-900 mb-2">{step.fullTitle}</h4>
-                            <p className="text-gray-700 text-xs leading-relaxed whitespace-pre-line">{step.description}</p>
+                         <div className="bg-white border-gray-200 rounded-lg shadow-md h-full overflow-hidden">
+                            <Accordion type="single" collapsible className="w-full">
+                                <AccordionItem value={`item-m-${index}`} className="border-b-0">
+                                    <AccordionTrigger className="p-6 text-left hover:no-underline w-full">
+                                        <div className="flex-1">
+                                            <h3 className="text-base font-bold text-gray-900 mb-1">{step.title}</h3>
+                                            <p className="text-xs text-gray-600 mb-2">{step.subtitle}</p>
+                                            <h4 className="text-sm font-semibold text-gray-900">{step.fullTitle}</h4>
+                                        </div>
+                                    </AccordionTrigger>
+                                    <AccordionContent>
+                                        <div className="px-6 pb-6">
+                                            <p className="text-gray-700 text-xs leading-relaxed whitespace-pre-line">{step.description}</p>
+                                        </div>
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </Accordion>
                         </div>
                       </div>
                     </div>
@@ -134,12 +148,24 @@ export default function CareerTimeline() {
                     {isLeft ? (
                       <>
                         <div className="w-5/12 pr-8">
-                          <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-md h-full">
-                            <h3 className="text-lg font-bold text-gray-900 mb-1">{step.title}</h3>
-                            <p className="text-xs text-gray-600 mb-3">{step.subtitle}</p>
-                            <h4 className="text-base font-semibold text-gray-900 mb-3">{step.fullTitle}</h4>
-                            <p className="text-gray-700 text-sm leading-relaxed whitespace-pre-line">{step.description}</p>
-                          </div>
+                           <div className="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden">
+                                <Accordion type="single" collapsible className="w-full">
+                                    <AccordionItem value={`item-d-${index}`} className="border-b-0">
+                                        <AccordionTrigger className="p-6 text-left hover:no-underline w-full">
+                                            <div className="flex-1">
+                                                <h3 className="text-lg font-bold text-gray-900 mb-1">{step.title}</h3>
+                                                <p className="text-xs text-gray-600 mb-3">{step.subtitle}</p>
+                                                <h4 className="text-base font-semibold text-gray-900">{step.fullTitle}</h4>
+                                            </div>
+                                        </AccordionTrigger>
+                                        <AccordionContent>
+                                            <div className="px-6 pb-6">
+                                                <p className="text-gray-700 text-sm leading-relaxed whitespace-pre-line">{step.description}</p>
+                                            </div>
+                                        </AccordionContent>
+                                    </AccordionItem>
+                                </Accordion>
+                            </div>
                         </div>
                         <div className="w-8 h-8 rounded-full border-2 border-white ring-4 ring-accent flex items-center justify-center text-white font-bold flex-shrink-0 z-10 relative bg-accent">
                            <Icon className="h-4 w-4" />
@@ -153,12 +179,24 @@ export default function CareerTimeline() {
                            <Icon className="h-4 w-4" />
                         </div>
                         <div className="w-5/12 pl-8">
-                          <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-md h-full">
-                            <h3 className="text-lg font-bold text-gray-900 mb-1">{step.title}</h3>
-                            <p className="text-xs text-gray-600 mb-3">{step.subtitle}</p>
-                            <h4 className="text-base font-semibold text-gray-900 mb-3">{step.fullTitle}</h4>
-                            <p className="text-gray-700 text-sm leading-relaxed whitespace-pre-line">{step.description}</p>
-                          </div>
+                           <div className="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden">
+                                <Accordion type="single" collapsible className="w-full">
+                                    <AccordionItem value={`item-d-${index}`} className="border-b-0">
+                                        <AccordionTrigger className="p-6 text-left hover:no-underline w-full">
+                                            <div className="flex-1">
+                                                <h3 className="text-lg font-bold text-gray-900 mb-1">{step.title}</h3>
+                                                <p className="text-xs text-gray-600 mb-3">{step.subtitle}</p>
+                                                <h4 className="text-base font-semibold text-gray-900">{step.fullTitle}</h4>
+                                            </div>
+                                        </AccordionTrigger>
+                                        <AccordionContent>
+                                            <div className="px-6 pb-6">
+                                                <p className="text-gray-700 text-sm leading-relaxed whitespace-pre-line">{step.description}</p>
+                                            </div>
+                                        </AccordionContent>
+                                    </AccordionItem>
+                                </Accordion>
+                            </div>
                         </div>
                       </>
                     )}
