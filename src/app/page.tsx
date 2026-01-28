@@ -45,6 +45,7 @@ import CareerTimeline from '@/components/CareerTimeline';
 import placeholderImages from '@/app/lib/placeholder-images.json';
 import SCSLearningPaths from '@/components/SCSLearningPaths';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
 
 
 const whatWeOffer = [
@@ -86,8 +87,106 @@ const faqItems = [
     }
 ];
 
+const innovationTabs = [
+    {
+        id: 'AI Specialists',
+        title: 'Artificial Intelligence Specialists',
+        content: {
+            heading: 'The Role of an AI Specialist',
+            description: 'AI Specialists design and implement artificial intelligence models to solve real-world problems. They work on everything from natural language processing and computer vision to complex decision-making systems. This role requires a strong foundation in programming, machine learning, and deep learning.',
+            features: {
+                title: 'Core Competencies:',
+                list: [
+                    'Expertise in Python for AI development.',
+                    'Deep understanding of Machine Learning and Deep Learning frameworks like TensorFlow and PyTorch.',
+                    'Ability to design, train, and validate complex neural networks.',
+                    'Experience with data preprocessing and feature engineering.',
+                    'Knowledge of cloud platforms (AWS, Google Cloud) for deploying AI models at scale.'
+                ]
+            },
+            conclusion: 'AI Specialists are at the forefront of innovation, creating intelligent systems that can learn, reason, and act.'
+        }
+    },
+    {
+        id: 'Generative AI',
+        title: 'Generative AI',
+        content: {
+            heading: 'Exploring Generative AI',
+            description: 'Generative AI is a branch of artificial intelligence that can create new and original content, such as text, images, music, and code. It learns patterns from existing data and uses that knowledge to generate novel outputs. Large Language Models (LLMs) like GPT are a prime example of generative AI.',
+            features: {
+                title: 'Key Applications:',
+                list: [
+                    'Content Creation: Automating the generation of articles, marketing copy, and social media posts.',
+                    'Art and Design: Creating unique images, illustrations, and designs from text descriptions.',
+                    'Code Generation: Assisting developers by writing boilerplate code, functions, and even entire scripts.',
+                    'Drug Discovery and Research: Simulating molecular structures and accelerating scientific research.',
+                    'Personalized Experiences: Powering chatbots and virtual assistants that offer human-like conversation.'
+                ]
+            },
+            conclusion: 'Generative AI is revolutionizing creative and technical fields by augmenting human capabilities and automating content production.'
+        }
+    },
+    {
+        id: 'Machine Learning',
+        title: 'Machine Learning',
+        content: {
+            heading: 'Fundamentals of Machine Learning',
+            description: 'Machine Learning (ML) is a subset of AI that focuses on building systems that can learn from and make decisions based on data. Instead of being explicitly programmed, an ML model identifies patterns in data to make predictions or classifications.',
+            features: {
+                title: 'Common ML Paradigms:',
+                list: [
+                    'Supervised Learning: Training a model on labeled data to predict outcomes (e.g., spam detection, house price prediction).',
+                    'Unsupervised Learning: Finding hidden patterns or structures in unlabeled data (e.g., customer segmentation, anomaly detection).',
+                    'Reinforcement Learning: Training an agent to make a sequence of decisions by rewarding it for good actions and penalizing it for bad ones (e.g., game playing, robotics).',
+                    'Model Evaluation: Using metrics to assess the performance and accuracy of models before deployment.',
+                ]
+            },
+            conclusion: 'Machine Learning is the engine that powers many of the AI applications we use daily, from recommendation systems to predictive analytics.'
+        }
+    },
+    {
+        id: 'Python',
+        title: 'Python',
+        content: {
+            heading: 'Python: The Heart of Modern AI and LLM Development',
+            description: 'Python is a powerful, easy-to-learn programming language that supports multiple programming paradigms, including procedural, object-oriented, and functional programming. It is widely used for web development, automation, machine learning, data analysis, and artificial intelligence. Python’s extensive standard library and vibrant community contribute to its popularity in various industries.',
+            features: {
+                title: 'Key Features of Python Development:',
+                list: [
+                    'Readability: Python’s simple syntax makes it easy to read and write, reducing the complexity of software development.',
+                    'Extensive Libraries: Python offers a vast collection of libraries and frameworks, such as Django, Flask, NumPy, and pandas, that speed up development.',
+                    'Cross-Platform Compatibility: Python runs on various platforms, including Windows, Linux, and macOS, making it a versatile choice for developers.',
+                    'Automation & Scripting: Python is commonly used for automating tasks, from simple scripts to complex workflows.',
+                    'Data Science & Machine Learning: Python is a go-to language for data analysis, statistical computing, and building machine learning models, with libraries like TensorFlow, scikit-learn, and Keras.'
+                ]
+            },
+            conclusion: 'With Python’s flexibility and powerful features, developers can create anything from web applications to data-driven solutions and AI models, making it an essential tool in modern development.'
+        }
+    },
+    {
+        id: 'Data Scientists',
+        title: 'Data Scientists And Analysts',
+        content: {
+            heading: 'The Role of Data Scientists and Analysts',
+            description: 'Data Scientists and Analysts are professionals who extract insights and knowledge from data. Analysts often focus on describing what happened, while Data Scientists may build models to predict what will happen. Both roles are critical for data-driven decision-making in any organization.',
+            features: {
+                title: 'Essential Skills & Tools:',
+                list: [
+                    'Data Wrangling and Cleaning: Using tools like Python (Pandas) and SQL to prepare data for analysis.',
+                    'Statistical Analysis: Applying statistical methods to interpret data and uncover trends.',
+                    'Data Visualization: Creating charts and dashboards with libraries like Matplotlib, Seaborn, or tools like Tableau to communicate findings.',
+                    'Business Acumen: Understanding the business context to ask the right questions and provide actionable insights.',
+                    'Machine Learning (for Data Scientists): Building predictive models to forecast future outcomes.'
+                ]
+            },
+            conclusion: 'These roles transform raw data into a strategic asset, guiding business strategy and uncovering new opportunities.'
+        }
+    }
+];
+
 export default function HomePage() {
   const [activePanel, setActivePanel] = useState(2);
+  const [activeInnovationTab, setActiveInnovationTab] = useState('Python');
 
   const panels = [
     {
@@ -121,6 +220,8 @@ export default function HomePage() {
         image: placeholderImages.homeHero5.src,
     },
   ];
+  
+  const activeTabData = innovationTabs.find(tab => tab.id === activeInnovationTab)?.content;
 
   return (
     <div className="bg-background text-foreground">
@@ -191,24 +292,33 @@ export default function HomePage() {
           <div className="w-24 h-px bg-accent mx-auto mt-4 mb-12"></div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
               <div className="col-span-1 space-y-4">
-                  <div className="bg-black p-6 rounded-lg text-white font-bold text-lg">Artificial Intelligence Specialists</div>
-                  <div className="bg-black p-6 rounded-lg text-white font-bold text-lg">Generative AI</div>
-                  <div className="bg-black p-6 rounded-lg text-white font-bold text-lg">Machine Learning</div>
-                  <div className="bg-black p-6 rounded-lg text-white font-bold text-lg">Python</div>
-                  <div className="bg-black p-6 rounded-lg text-white font-bold text-lg">Data Scientists And Analysts</div>
+                  {innovationTabs.map(tab => (
+                      <button
+                          key={tab.id}
+                          onClick={() => setActiveInnovationTab(tab.id)}
+                          className={cn(
+                              "w-full p-6 rounded-lg text-white font-bold text-lg text-left transition-colors",
+                              activeInnovationTab === tab.id ? 'bg-accent text-accent-foreground' : 'bg-black hover:bg-gray-800'
+                          )}
+                      >
+                          {tab.title}
+                      </button>
+                  ))}
               </div>
               <div className="col-span-2 rounded-lg border bg-card p-8 text-card-foreground text-left">
-                  <h3 className="text-2xl font-bold mb-4 font-space-grotesk">Python: The Heart of Modern AI and LLM Development</h3>
-                  <p className="mb-6 text-muted-foreground">Python is a powerful, easy-to-learn programming language that supports multiple programming paradigms, including procedural, object-oriented, and functional programming. It is widely used for web development, automation, machine learning, data analysis, and artificial intelligence. Python’s extensive standard library and vibrant community contribute to its popularity in various industries.</p>
-                  <h4 className="text-xl font-bold mb-2 font-space-grotesk">Key Features of Python Development:</h4>
-                  <ul className="list-disc list-inside space-y-2 mb-6">
-                      <li>Readability: Python’s simple syntax makes it easy to read and write, reducing the complexity of software development.</li>
-                      <li>Extensive Libraries: Python offers a vast collection of libraries and frameworks, such as Django, Flask, NumPy, and pandas, that speed up development.</li>
-                      <li>Cross-Platform Compatibility: Python runs on various platforms, including Windows, Linux, and macOS, making it a versatile choice for developers.</li>
-                      <li>Automation & Scripting: Python is commonly used for automating tasks, from simple scripts to complex workflows.</li>
-                       <li>Data Science & Machine Learning: Python is a go-to language for data analysis, statistical computing, and building machine learning models, with libraries like TensorFlow, scikit-learn, and Keras.</li>
-                  </ul>
-                   <p className="text-muted-foreground">With Python’s flexibility and powerful features, developers can create anything from web applications to data-driven solutions and AI models, making it an essential tool in modern development.</p>
+                  {activeTabData && (
+                      <>
+                          <h3 className="text-2xl font-bold mb-4 font-space-grotesk">{activeTabData.heading}</h3>
+                          <p className="mb-6 text-muted-foreground">{activeTabData.description}</p>
+                          <h4 className="text-xl font-bold mb-2 font-space-grotesk">{activeTabData.features.title}</h4>
+                          <ul className="list-disc list-inside space-y-2 mb-6">
+                              {activeTabData.features.list.map((item, index) => (
+                                  <li key={index}>{item}</li>
+                              ))}
+                          </ul>
+                          <p className="text-muted-foreground">{activeTabData.conclusion}</p>
+                      </>
+                  )}
               </div>
           </div>
         </section>
