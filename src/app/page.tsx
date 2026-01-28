@@ -3,6 +3,7 @@
 
 import Image from 'next/image';
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import {
   Menu,
   User,
@@ -320,6 +321,7 @@ const advancedTabs = [
 ];
 
 export default function HomePage() {
+  const router = useRouter();
   const [activePanel, setActivePanel] = useState(2);
   const [activeFoundationTab, setActiveFoundationTab] = useState('Programming Fundamentals');
   const [activeAdvancedTab, setActiveAdvancedTab] = useState('Machine Learning');
@@ -339,9 +341,10 @@ export default function HomePage() {
     },
     {
         id: 2,
-        title: "Hackathons and Internships",
-        subtitle: "Gain real-world experience",
+        title: "Tutorials",
+        subtitle: "Explore our Tech Guide",
         image: placeholderImages.homeHero3.src,
+        href: "/tech-guide",
     },
     {
         id: 3,
@@ -517,7 +520,13 @@ export default function HomePage() {
                             width: `${width}%`,
                             flexShrink: 0,
                         }}
-                        onClick={() => setActivePanel(panel.id)}
+                        onClick={() => {
+                            if (panel.href) {
+                                router.push(panel.href);
+                            } else {
+                                setActivePanel(panel.id);
+                            }
+                        }}
                         onMouseEnter={() => setActivePanel(panel.id)}
                     >
                         <Image
