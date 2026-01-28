@@ -4,8 +4,10 @@ import React from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Award, Briefcase, BrainCircuit, Code, MessageSquare, Users, GitBranch, Cloud, Shield, Palette, Settings, Laptop, FolderKanban, BarChartHorizontal } from 'lucide-react';
+import { Award, Briefcase, BrainCircuit, Code, MessageSquare, Users, GitBranch, Cloud, Shield, Palette, Settings, Laptop, FolderKanban, BarChartHorizontal, CheckCircle } from 'lucide-react';
 import Link from "next/link";
+import Image from "next/image";
+import placeholderImages from "@/app/lib/placeholder-images.json";
 
 const professionalSkillsList = [
     { title: "Communication", description: "Clearly articulate ideas, listen actively, and share feedback constructively.", icon: <MessageSquare className="h-6 w-6 text-accent" /> },
@@ -228,21 +230,63 @@ const CareerRoadmapsSection = () => (
     </section>
 );
 
+const GuideDetail = ({ title, items }: { title: string; items: string[] }) => (
+    <div>
+        <h3 className="font-semibold text-lg text-accent mb-2">{title}</h3>
+        <ul className="text-gray-300 space-y-1">
+            {items.map((item, index) => (
+                <li key={index} className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-accent/80 mt-1 flex-shrink-0" />
+                    <span>{item}</span>
+                </li>
+            ))}
+        </ul>
+    </div>
+);
+
 
 export default function CareerTipsAndRoadmapsPage() {
+    const whatYoullFind = [
+        "Step-by-step career timeline from goal setting to job application.",
+        "Breakdown of essential professional and soft skills.",
+        "Comprehensive interview preparation guides.",
+        "Detailed roadmaps for top 10 tech jobs in 2026.",
+        "Tips on building a powerful resume, portfolio, and personal brand.",
+    ];
+
+    const whoThisIsFor = [
+        "Students and recent graduates planning their career.",
+        "Professionals looking to transition into a tech role.",
+        "Developers aiming to level up or specialize.",
+        "Anyone preparing for tech interviews and job hunting.",
+    ];
+
   return (
     <div className="bg-background text-foreground">
       <main>
-        {/* Hero Section */}
-        <section className="bg-gradient-to-r from-gray-50 via-gray-100 to-gray-200 py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold font-space-grotesk text-gray-900">
-              Career Tips and Roadmaps
-            </h1>
-            <p className="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              Your guide to navigating the tech industry and building a successful career.
-            </p>
-          </div>
+        {/* New Hero Section */}
+        <section className="relative bg-black text-white py-20 px-4 sm:px-6 lg:px-8">
+            <Image 
+                src={placeholderImages.careerTipsHero.src}
+                alt="Career path abstract"
+                fill
+                className="object-cover opacity-20"
+                data-ai-hint={placeholderImages.careerTipsHero.hint}
+            />
+            <div className="relative max-w-7xl mx-auto">
+                <div className="text-center mb-12">
+                    <h1 className="text-4xl md:text-6xl font-bold font-space-grotesk text-accent">
+                        Career Tips & Roadmaps
+                    </h1>
+                    <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+                        Your strategic guide to navigating the tech industry, acing interviews, and building a successful career.
+                    </p>
+                </div>
+                <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                    <GuideDetail title="What you’ll find here:" items={whatYoullFind} />
+                    <GuideDetail title="Who this is for:" items={whoThisIsFor} />
+                </div>
+            </div>
         </section>
 
         {/* Timeline Section */}
