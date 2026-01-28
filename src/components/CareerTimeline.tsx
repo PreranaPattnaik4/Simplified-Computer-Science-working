@@ -1,4 +1,4 @@
-import { Target, BookOpen, Award, Briefcase, Code, Linkedin, FileText, Lightbulb, Rocket, Milestone, FolderKanban, BrainCircuit } from "lucide-react";
+import { Target, BookOpen, Award, Briefcase, Code, Network, FileText, Lightbulb, Rocket, Milestone, FolderKanban, BrainCircuit } from "lucide-react";
 import React from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -61,11 +61,11 @@ export default function CareerTimeline() {
       side: "left",
     },
     {
-      title: "LinkedIn",
-      subtitle: "Build your professional brand and network",
-      fullTitle: "Create a Powerful LinkedIn Profile That Highlights Your Skills and Certifications",
-      description: "LinkedIn is a powerful tool for showcasing your skills, certifications, and professional achievements. This step emphasizes the importance of optimizing your LinkedIn profile to create a strong personal brand that attracts the attention of potential employers or clients.\n\nTo stand out on LinkedIn, make sure your profile includes:\n\nA professional headline that clearly reflects your career goals and skills.\nA detailed summary that highlights your learning journey, accomplishments, and aspirations.\nSkills and certifications related to your career path to demonstrate your expertise.\nPortfolio projects or work samples that show practical application of your knowledge.\nAdditionally, networking is key to building career opportunities. Connect with industry professionals, join relevant groups, and actively engage with posts and discussions in your field. Regularly share updates about your achievements, projects, and courses to increase visibility and demonstrate your ongoing growth.\n\nUsing LinkedIn effectively can help you establish credibility, build a professional network, and discover new job opportunities or freelance work.",
-      icon: Linkedin,
+      title: "Professional Presence",
+      subtitle: "Leverage LinkedIn, Naukri, and other platforms",
+      fullTitle: "Build a Strong Online Presence on Professional Platforms",
+      description: "Showcase your skills and connect with opportunities on professional networking sites and job boards. Platforms like LinkedIn are essential for building your personal brand and networking with industry professionals. Job portals like Naukri and Indeed are critical for actively searching for openings.\n\nTo stand out:\n\nOptimize Your Profiles: Create a powerful profile on LinkedIn, Naukri, and other relevant platforms. Use a professional headline, a detailed summary, and list your skills and certifications.\nBuild Your Network: Actively connect with recruiters, alumni, and professionals in your target industry. Engage with content to increase your visibility.\nShowcase Your Work: Link to your portfolio and projects directly from your profiles to provide tangible proof of your abilities.\nUsing these platforms effectively will help you establish credibility, build a professional network, and discover new job opportunities or freelance work.",
+      icon: Network,
       side: "right",
     },
     {
