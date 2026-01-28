@@ -87,7 +87,7 @@ const faqItems = [
     }
 ];
 
-const innovationTabs = [
+const foundationsTabs = [
     {
         id: 'Programming Fundamentals',
         title: 'Programming Fundamentals',
@@ -164,6 +164,27 @@ const innovationTabs = [
             conclusion: 'These roles transform raw data into a strategic asset, guiding business strategy and uncovering new opportunities.'
         }
     },
+    {
+        id: 'Deployment',
+        title: 'Deployment',
+        content: {
+            heading: 'Deployment: Bringing Your Application to Life',
+            description: 'Deployment is the process of making your software application available for users. This crucial step involves moving your code from a development environment to a production environment where it can be accessed by the world.',
+            features: {
+                title: 'Common Deployment Strategies:',
+                list: [
+                    'CI/CD Pipelines: Automating the build, test, and deployment process for faster and more reliable releases.',
+                    'Containerization: Packaging an application and its dependencies into a container (using Docker) for consistency across environments.',
+                    'Cloud Platforms: Utilizing services from AWS, Google Cloud, or Azure to host and scale applications.',
+                    "Monitoring & Logging: Tracking the application's performance and health in production to quickly identify and fix issues.",
+                ]
+            },
+            conclusion: 'A smooth deployment process is key to delivering value to users quickly and maintaining a stable, reliable service.'
+        }
+    },
+];
+
+const advancedTabs = [
     {
         id: 'Machine Learning',
         title: 'Machine Learning',
@@ -259,24 +280,6 @@ const innovationTabs = [
         }
     },
     {
-        id: 'Deployment',
-        title: 'Deployment',
-        content: {
-            heading: 'Deployment: Bringing Your Application to Life',
-            description: 'Deployment is the process of making your software application available for users. This crucial step involves moving your code from a development environment to a production environment where it can be accessed by the world.',
-            features: {
-                title: 'Common Deployment Strategies:',
-                list: [
-                    'CI/CD Pipelines: Automating the build, test, and deployment process for faster and more reliable releases.',
-                    'Containerization: Packaging an application and its dependencies into a container (using Docker) for consistency across environments.',
-                    'Cloud Platforms: Utilizing services from AWS, Google Cloud, or Azure to host and scale applications.',
-                    "Monitoring & Logging: Tracking the application's performance and health in production to quickly identify and fix issues.",
-                ]
-            },
-            conclusion: 'A smooth deployment process is key to delivering value to users quickly and maintaining a stable, reliable service.'
-        }
-    },
-    {
         id: 'MLOps',
         title: 'MLOps',
         content: {
@@ -299,7 +302,8 @@ const innovationTabs = [
 
 export default function HomePage() {
   const [activePanel, setActivePanel] = useState(2);
-  const [activeInnovationTab, setActiveInnovationTab] = useState('Programming Fundamentals');
+  const [activeFoundationTab, setActiveFoundationTab] = useState('Programming Fundamentals');
+  const [activeAdvancedTab, setActiveAdvancedTab] = useState('Machine Learning');
 
   const panels = [
     {
@@ -334,7 +338,8 @@ export default function HomePage() {
     },
   ];
   
-  const activeTabData = innovationTabs.find(tab => tab.id === activeInnovationTab)?.content;
+  const activeFoundationTabData = foundationsTabs.find(tab => tab.id === activeFoundationTab)?.content;
+  const activeAdvancedTabData = advancedTabs.find(tab => tab.id === activeAdvancedTab)?.content;
 
   return (
     <div className="bg-background text-foreground">
@@ -397,21 +402,21 @@ export default function HomePage() {
             </div>
         </section>
 
-        {/* Section 2: Empowering Innovation */}
+        {/* Section 2.1: Foundational Concepts */}
         <section className="container mx-auto max-w-7xl px-4 py-16 text-center">
           <h2 className="text-2xl font-semibold font-space-grotesk tracking-[0.2em] text-gray-800 uppercase">
-            Simplifying Computer Science | Empowering Innovation: Projects Hackathons and Internships
+            Foundational Concepts
           </h2>
           <div className="w-24 h-px bg-accent mx-auto mt-4 mb-12"></div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
               <div className="col-span-1 space-y-4">
-                  {innovationTabs.map(tab => (
+                  {foundationsTabs.map(tab => (
                       <button
                           key={tab.id}
-                          onClick={() => setActiveInnovationTab(tab.id)}
+                          onClick={() => setActiveFoundationTab(tab.id)}
                           className={cn(
                               "w-full p-6 rounded-lg text-white font-bold text-lg text-left transition-colors",
-                              activeInnovationTab === tab.id ? 'bg-accent text-accent-foreground' : 'bg-black hover:bg-gray-800'
+                              activeFoundationTab === tab.id ? 'bg-accent text-accent-foreground' : 'bg-black hover:bg-gray-800'
                           )}
                       >
                           {tab.title}
@@ -419,17 +424,56 @@ export default function HomePage() {
                   ))}
               </div>
               <div className="col-span-2 rounded-lg border bg-card p-8 text-card-foreground text-left">
-                  {activeTabData && (
+                  {activeFoundationTabData && (
                       <>
-                          <h3 className="text-2xl font-bold mb-4 font-space-grotesk">{activeTabData.heading}</h3>
-                          <p className="mb-6 text-muted-foreground">{activeTabData.description}</p>
-                          <h4 className="text-xl font-bold mb-2 font-space-grotesk">{activeTabData.features.title}</h4>
+                          <h3 className="text-2xl font-bold mb-4 font-space-grotesk">{activeFoundationTabData.heading}</h3>
+                          <p className="mb-6 text-muted-foreground">{activeFoundationTabData.description}</p>
+                          <h4 className="text-xl font-bold mb-2 font-space-grotesk">{activeFoundationTabData.features.title}</h4>
                           <ul className="list-disc list-inside space-y-2 mb-6">
-                              {activeTabData.features.list.map((item, index) => (
+                              {activeFoundationTabData.features.list.map((item, index) => (
                                   <li key={index}>{item}</li>
                               ))}
                           </ul>
-                          <p className="text-muted-foreground">{activeTabData.conclusion}</p>
+                          <p className="text-muted-foreground">{activeFoundationTabData.conclusion}</p>
+                      </>
+                  )}
+              </div>
+          </div>
+        </section>
+
+        {/* Section 2.2: Advanced & AI Topics */}
+        <section className="container mx-auto max-w-7xl px-4 py-16 text-center">
+          <h2 className="text-2xl font-semibold font-space-grotesk tracking-[0.2em] text-gray-800 uppercase">
+            Advanced & AI Topics
+          </h2>
+          <div className="w-24 h-px bg-accent mx-auto mt-4 mb-12"></div>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+              <div className="col-span-1 space-y-4">
+                  {advancedTabs.map(tab => (
+                      <button
+                          key={tab.id}
+                          onClick={() => setActiveAdvancedTab(tab.id)}
+                          className={cn(
+                              "w-full p-6 rounded-lg text-white font-bold text-lg text-left transition-colors",
+                              activeAdvancedTab === tab.id ? 'bg-accent text-accent-foreground' : 'bg-black hover:bg-gray-800'
+                          )}
+                      >
+                          {tab.title}
+                      </button>
+                  ))}
+              </div>
+              <div className="col-span-2 rounded-lg border bg-card p-8 text-card-foreground text-left">
+                  {activeAdvancedTabData && (
+                      <>
+                          <h3 className="text-2xl font-bold mb-4 font-space-grotesk">{activeAdvancedTabData.heading}</h3>
+                          <p className="mb-6 text-muted-foreground">{activeAdvancedTabData.description}</p>
+                          <h4 className="text-xl font-bold mb-2 font-space-grotesk">{activeAdvancedTabData.features.title}</h4>
+                          <ul className="list-disc list-inside space-y-2 mb-6">
+                              {activeAdvancedTabData.features.list.map((item, index) => (
+                                  <li key={index}>{item}</li>
+                              ))}
+                          </ul>
+                          <p className="text-muted-foreground">{activeAdvancedTabData.conclusion}</p>
                       </>
                   )}
               </div>
@@ -598,5 +642,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-    
