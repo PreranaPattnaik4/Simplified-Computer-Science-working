@@ -30,5 +30,6 @@
     "learningPathRoadmap": { "src": "https://picsum.photos/seed/roadmap/1200/400", "hint": "product roadmap" },
     "complexDiagram": { "src": "https://picsum.photos/seed/complex/200/200", "hint": "complex diagram" },
     "simpleDiagram": { "src": "https://picsum.photos/seed/simple/200/200", "hint": "simple diagram" },
-    "designCulture": { "src": "https://i.postimg.cc/13BB8HfS/plant-growing-from-soil.jpg", "hint": "plant growth" }
+    "designCulture": { "src": "https://i.postimg.cc/13BB8HfS/plant-growing-from-soil.jpg", "hint": "plant growth" },
+    "techGuideHero": { "src": "https://picsum.photos/seed/techGuide/1200/600", "hint": "tech guide" }
 }

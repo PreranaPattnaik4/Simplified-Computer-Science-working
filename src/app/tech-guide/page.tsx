@@ -2,10 +2,12 @@
 'use client';
 
 import React from 'react';
-import { BrainCircuit, Feather, PenTool, Lightbulb, Code, Briefcase, TerminalSquare, FolderKanban, PencilRuler, BarChart, Server, User, Rocket, Cloud, GitBranch } from 'lucide-react';
+import { BrainCircuit, Feather, PenTool, Lightbulb, Code, Briefcase, TerminalSquare, FolderKanban, PencilRuler, BarChart, Server, User, Rocket, Cloud, GitBranch, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
+import placeholderImages from '@/app/lib/placeholder-images.json';
 
 const techGuideTabs = [
     {
@@ -368,6 +370,20 @@ const advancedTabs = [
     }
 ];
 
+const GuideDetail = ({ title, items }: { title: string; items: string[] }) => (
+    <div>
+        <h3 className="font-semibold text-lg text-accent mb-2">{title}</h3>
+        <ul className="text-gray-300 space-y-1">
+            {items.map((item, index) => (
+                <li key={index} className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-accent/80 mt-1 flex-shrink-0" />
+                    <span>{item}</span>
+                </li>
+            ))}
+        </ul>
+    </div>
+);
+
 export default function TechGuidePage() {
     const [activeTab, setActiveTab] = useState('AI & Content Creation');
     const activeTabData = techGuideTabs.find(tab => tab.id === activeTab)?.content;
@@ -378,18 +394,48 @@ export default function TechGuidePage() {
     const [activeAdvancedTab, setActiveAdvancedTab] = useState('Machine Learning');
     const activeAdvancedTabData = advancedTabs.find(tab => tab.id === activeAdvancedTab)?.content;
 
+    const whatYoullFind = [
+        "Core CS Foundations – DSA, OS, DBMS, Networks, System Design",
+        "Development – Frontend, Backend, Full Stack, APIs",
+        "AI & Data – AI, ML, GenAI, NLP, Data Science",
+        "Cloud & DevOps – Cloud Platforms, CI/CD, Docker, Kubernetes",
+        "Security – Cybersecurity, Cloud Security",
+        "Tools – Git, GitHub, Linux, IDEs",
+        "Trends – In-demand skills, modern tech stacks, industry insights"
+    ];
+
+    const whoThisIsFor = [
+        "Students & beginners",
+        "Software & AI engineers",
+        "Product & tech professionals",
+        "Anyone preparing for the future of tech"
+    ];
+
     return (
         <div className="bg-background text-foreground">
             <main>
                 {/* Hero Section */}
-                <section className="bg-gradient-to-r from-gray-50 via-gray-100 to-gray-200 py-20 px-4 sm:px-6 lg:px-8">
-                    <div className="max-w-7xl mx-auto text-center">
-                        <h1 className="text-4xl md:text-6xl font-bold font-space-grotesk text-gray-900">
-                            Tech Guide for Beginners
-                        </h1>
-                        <p className="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                            Your starting point for navigating the world of tech. Explore curated resources on AI, content creation, web development, and professional skills.
-                        </p>
+                <section className="relative bg-black text-white py-20 px-4 sm:px-6 lg:px-8">
+                    <Image 
+                        src={placeholderImages.techGuideHero.src}
+                        alt="Tech Abstract"
+                        fill
+                        className="object-cover opacity-20"
+                        data-ai-hint={placeholderImages.techGuideHero.hint}
+                    />
+                    <div className="relative max-w-7xl mx-auto">
+                        <div className="text-center mb-12">
+                            <h1 className="text-4xl md:text-6xl font-bold font-space-grotesk text-accent">
+                                Tech Guide
+                            </h1>
+                            <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+                                A complete guide to core computer science topics, in-demand technologies, and modern tools shaping today’s IT industry.
+                            </p>
+                        </div>
+                        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                            <GuideDetail title="What you’ll find here:" items={whatYoullFind} />
+                            <GuideDetail title="Who this is for:" items={whoThisIsFor} />
+                        </div>
                     </div>
                 </section>
 
