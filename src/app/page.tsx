@@ -89,6 +89,44 @@ const faqItems = [
 
 const innovationTabs = [
     {
+        id: 'Programming Fundamentals',
+        title: 'Programming Fundamentals',
+        content: {
+            heading: 'Programming Fundamentals: The Building Blocks of Code',
+            description: 'Programming fundamentals are the essential concepts and principles that form the foundation of all software development. Mastering these basics is the first step to becoming a proficient programmer, regardless of the language or technology you choose.',
+            features: {
+                title: 'Core Concepts:',
+                list: [
+                    'Variables & Data Types: Storing and managing different kinds of information.',
+                    'Control Flow: Using loops and conditional statements (if/else) to direct the logic of a program.',
+                    'Functions: Writing reusable blocks of code to perform specific tasks.',
+                    'Data Structures: Understanding how to organize data with structures like arrays and lists.',
+                    'Problem-Solving: Breaking down complex problems into smaller, manageable steps.',
+                ]
+            },
+            conclusion: 'A strong grasp of these fundamentals is crucial for writing clean, efficient, and effective code.'
+        }
+    },
+    {
+        id: 'Software Engineering',
+        title: 'Software Engineering',
+        content: {
+            heading: 'Software Engineering: Building Robust and Scalable Applications',
+            description: "Software Engineering applies engineering principles to software development. It's not just about writing code, but about designing, building, testing, and maintaining software systems in a systematic and disciplined way.",
+            features: {
+                title: 'Key Practices:',
+                list: [
+                    'System Design: Architecting the components and structure of a software application.',
+                    'Version Control: Using tools like Git to track changes and collaborate with teams.',
+                    'Testing: Implementing unit, integration, and end-to-end tests to ensure quality and reliability.',
+                    'Agile Methodologies: Following iterative development cycles to adapt to changing requirements.',
+                    'Code Quality: Writing clean, maintainable, and well-documented code.',
+                ]
+            },
+            conclusion: 'Good software engineering practices ensure that projects are delivered on time, within budget, and meet user needs.'
+        }
+    },
+    {
         id: 'Python',
         title: 'Python',
         content: {
@@ -221,6 +259,24 @@ const innovationTabs = [
         }
     },
     {
+        id: 'Deployment',
+        title: 'Deployment',
+        content: {
+            heading: 'Deployment: Bringing Your Application to Life',
+            description: 'Deployment is the process of making your software application available for users. This crucial step involves moving your code from a development environment to a production environment where it can be accessed by the world.',
+            features: {
+                title: 'Common Deployment Strategies:',
+                list: [
+                    'CI/CD Pipelines: Automating the build, test, and deployment process for faster and more reliable releases.',
+                    'Containerization: Packaging an application and its dependencies into a container (using Docker) for consistency across environments.',
+                    'Cloud Platforms: Utilizing services from AWS, Google Cloud, or Azure to host and scale applications.',
+                    "Monitoring & Logging: Tracking the application's performance and health in production to quickly identify and fix issues.",
+                ]
+            },
+            conclusion: 'A smooth deployment process is key to delivering value to users quickly and maintaining a stable, reliable service.'
+        }
+    },
+    {
         id: 'MLOps',
         title: 'MLOps',
         content: {
@@ -243,7 +299,7 @@ const innovationTabs = [
 
 export default function HomePage() {
   const [activePanel, setActivePanel] = useState(2);
-  const [activeInnovationTab, setActiveInnovationTab] = useState('Python');
+  const [activeInnovationTab, setActiveInnovationTab] = useState('Programming Fundamentals');
 
   const panels = [
     {
