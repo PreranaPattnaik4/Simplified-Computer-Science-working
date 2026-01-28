@@ -89,22 +89,59 @@ const faqItems = [
 
 const innovationTabs = [
     {
-        id: 'Agentic AI',
-        title: 'Agentic AI',
+        id: 'Python',
+        title: 'Python',
         content: {
-            heading: 'The Rise of Agentic AI',
-            description: 'Agentic AI refers to autonomous systems that can perceive their environment, make decisions, and take actions to achieve specific goals without direct human intervention. These agents can learn, adapt, and collaborate, paving the way for highly sophisticated automation.',
+            heading: 'Python: The Heart of Modern AI and LLM Development',
+            description: 'Python is a powerful, easy-to-learn programming language that supports multiple programming paradigms, including procedural, object-oriented, and functional programming. It is widely used for web development, automation, machine learning, data analysis, and artificial intelligence. Python’s extensive standard library and vibrant community contribute to its popularity in various industries.',
             features: {
-                title: 'Characteristics of AI Agents:',
+                title: 'Key Features of Python Development:',
                 list: [
-                    'Autonomy: Operates independently to perform tasks.',
-                    'Reactivity: Senses and responds to changes in its environment.',
-                    'Proactiveness: Takes initiative to achieve goals rather than just reacting.',
-                    'Goal-Oriented: Designed with specific objectives to pursue.',
-                    'Learning: Adapts its behavior based on experience and data.'
+                    'Readability: Python’s simple syntax makes it easy to read and write, reducing the complexity of software development.',
+                    'Extensive Libraries: Python offers a vast collection of libraries and frameworks, such as Django, Flask, NumPy, and pandas, that speed up development.',
+                    'Cross-Platform Compatibility: Python runs on various platforms, including Windows, Linux, and macOS, making it a versatile choice for developers.',
+                    'Automation & Scripting: Python is commonly used for automating tasks, from simple scripts to complex workflows.',
+                    'Data Science & Machine Learning: Python is a go-to language for data analysis, statistical computing, and building machine learning models, with libraries like TensorFlow, scikit-learn, and Keras.'
                 ]
             },
-            conclusion: 'Agentic AI is moving us from tools that require instruction to partners that can take on complex tasks autonomously.'
+            conclusion: 'With Python’s flexibility and powerful features, developers can create anything from web applications to data-driven solutions and AI models, making it an essential tool in modern development.'
+        }
+    },
+    {
+        id: 'Data Scientists',
+        title: 'Data Scientists And Analysts',
+        content: {
+            heading: 'The Role of Data Scientists and Analysts',
+            description: 'Data Scientists and Analysts are professionals who extract insights and knowledge from data. Analysts often focus on describing what happened, while Data Scientists may build models to predict what will happen. Both roles are critical for data-driven decision-making in any organization.',
+            features: {
+                title: 'Essential Skills & Tools:',
+                list: [
+                    'Data Wrangling and Cleaning: Using tools like Python (Pandas) and SQL to prepare data for analysis.',
+                    'Statistical Analysis: Applying statistical methods to interpret data and uncover trends.',
+                    'Data Visualization: Creating charts and dashboards with libraries like Matplotlib, Seaborn, or tools like Tableau to communicate findings.',
+                    'Business Acumen: Understanding the business context to ask the right questions and provide actionable insights.',
+                    'Machine Learning (for Data Scientists): Building predictive models to forecast future outcomes.'
+                ]
+            },
+            conclusion: 'These roles transform raw data into a strategic asset, guiding business strategy and uncovering new opportunities.'
+        }
+    },
+    {
+        id: 'Machine Learning',
+        title: 'Machine Learning',
+        content: {
+            heading: 'Fundamentals of Machine Learning',
+            description: 'Machine Learning (ML) is a subset of AI that focuses on building systems that can learn from and make decisions based on data. Instead of being explicitly programmed, an ML model identifies patterns in data to make predictions or classifications.',
+            features: {
+                title: 'Common ML Paradigms:',
+                list: [
+                    'Supervised Learning: Training a model on labeled data to predict outcomes (e.g., spam detection, house price prediction).',
+                    'Unsupervised Learning: Finding hidden patterns or structures in unlabeled data (e.g., customer segmentation, anomaly detection).',
+                    'Reinforcement Learning: Training an agent to make a sequence of decisions by rewarding it for good actions and penalizing it for bad ones (e.g., game playing, robotics).',
+                    'Model Evaluation: Using metrics to assess the performance and accuracy of models before deployment.',
+                ]
+            },
+            conclusion: 'Machine Learning is the engine that powers many of the AI applications we use daily, from recommendation systems to predictive analytics.'
         }
     },
     {
@@ -146,40 +183,22 @@ const innovationTabs = [
         }
     },
     {
-        id: 'Machine Learning',
-        title: 'Machine Learning',
+        id: 'Agentic AI',
+        title: 'Agentic AI',
         content: {
-            heading: 'Fundamentals of Machine Learning',
-            description: 'Machine Learning (ML) is a subset of AI that focuses on building systems that can learn from and make decisions based on data. Instead of being explicitly programmed, an ML model identifies patterns in data to make predictions or classifications.',
+            heading: 'The Rise of Agentic AI',
+            description: 'Agentic AI refers to autonomous systems that can perceive their environment, make decisions, and take actions to achieve specific goals without direct human intervention. These agents can learn, adapt, and collaborate, paving the way for highly sophisticated automation.',
             features: {
-                title: 'Common ML Paradigms:',
+                title: 'Characteristics of AI Agents:',
                 list: [
-                    'Supervised Learning: Training a model on labeled data to predict outcomes (e.g., spam detection, house price prediction).',
-                    'Unsupervised Learning: Finding hidden patterns or structures in unlabeled data (e.g., customer segmentation, anomaly detection).',
-                    'Reinforcement Learning: Training an agent to make a sequence of decisions by rewarding it for good actions and penalizing it for bad ones (e.g., game playing, robotics).',
-                    'Model Evaluation: Using metrics to assess the performance and accuracy of models before deployment.',
+                    'Autonomy: Operates independently to perform tasks.',
+                    'Reactivity: Senses and responds to changes in its environment.',
+                    'Proactiveness: Takes initiative to achieve goals rather than just reacting.',
+                    'Goal-Oriented: Designed with specific objectives to pursue.',
+                    'Learning: Adapts its behavior based on experience and data.'
                 ]
             },
-            conclusion: 'Machine Learning is the engine that powers many of the AI applications we use daily, from recommendation systems to predictive analytics.'
-        }
-    },
-    {
-        id: 'MLOps',
-        title: 'MLOps',
-        content: {
-            heading: 'MLOps: Bridging Development and Operations',
-            description: 'MLOps (Machine Learning Operations) is a set of practices that aims to deploy and maintain machine learning models in production reliably and efficiently. It is the intersection of machine learning, data engineering, and DevOps.',
-            features: {
-                title: 'Core MLOps Practices:',
-                list: [
-                    'CI/CD Automation: Continuous Integration and Continuous Deployment for ML pipelines.',
-                    'Model Versioning: Tracking changes to models, data, and code.',
-                    'Monitoring: Observing model performance and drift in production.',
-                    'Reproducibility: Ensuring that experiments and model training processes are fully reproducible.',
-                    'Scalability: Building systems that can handle growing data and user loads.'
-                ]
-            },
-            conclusion: 'MLOps streamlines the ML lifecycle, enabling businesses to operationalize AI and derive value from their models faster.'
+            conclusion: 'Agentic AI is moving us from tools that require instruction to partners that can take on complex tasks autonomously.'
         }
     },
     {
@@ -202,48 +221,29 @@ const innovationTabs = [
         }
     },
     {
-        id: 'Python',
-        title: 'Python',
+        id: 'MLOps',
+        title: 'MLOps',
         content: {
-            heading: 'Python: The Heart of Modern AI and LLM Development',
-            description: 'Python is a powerful, easy-to-learn programming language that supports multiple programming paradigms, including procedural, object-oriented, and functional programming. It is widely used for web development, automation, machine learning, data analysis, and artificial intelligence. Python’s extensive standard library and vibrant community contribute to its popularity in various industries.',
+            heading: 'MLOps: Bridging Development and Operations',
+            description: 'MLOps (Machine Learning Operations) is a set of practices that aims to deploy and maintain machine learning models in production reliably and efficiently. It is the intersection of machine learning, data engineering, and DevOps.',
             features: {
-                title: 'Key Features of Python Development:',
+                title: 'Core MLOps Practices:',
                 list: [
-                    'Readability: Python’s simple syntax makes it easy to read and write, reducing the complexity of software development.',
-                    'Extensive Libraries: Python offers a vast collection of libraries and frameworks, such as Django, Flask, NumPy, and pandas, that speed up development.',
-                    'Cross-Platform Compatibility: Python runs on various platforms, including Windows, Linux, and macOS, making it a versatile choice for developers.',
-                    'Automation & Scripting: Python is commonly used for automating tasks, from simple scripts to complex workflows.',
-                    'Data Science & Machine Learning: Python is a go-to language for data analysis, statistical computing, and building machine learning models, with libraries like TensorFlow, scikit-learn, and Keras.'
+                    'CI/CD Automation: Continuous Integration and Continuous Deployment for ML pipelines.',
+                    'Model Versioning: Tracking changes to models, data, and code.',
+                    'Monitoring: Observing model performance and drift in production.',
+                    'Reproducibility: Ensuring that experiments and model training processes are fully reproducible.',
+                    'Scalability: Building systems that can handle growing data and user loads.'
                 ]
             },
-            conclusion: 'With Python’s flexibility and powerful features, developers can create anything from web applications to data-driven solutions and AI models, making it an essential tool in modern development.'
-        }
-    },
-    {
-        id: 'Data Scientists',
-        title: 'Data Scientists And Analysts',
-        content: {
-            heading: 'The Role of Data Scientists and Analysts',
-            description: 'Data Scientists and Analysts are professionals who extract insights and knowledge from data. Analysts often focus on describing what happened, while Data Scientists may build models to predict what will happen. Both roles are critical for data-driven decision-making in any organization.',
-            features: {
-                title: 'Essential Skills & Tools:',
-                list: [
-                    'Data Wrangling and Cleaning: Using tools like Python (Pandas) and SQL to prepare data for analysis.',
-                    'Statistical Analysis: Applying statistical methods to interpret data and uncover trends.',
-                    'Data Visualization: Creating charts and dashboards with libraries like Matplotlib, Seaborn, or tools like Tableau to communicate findings.',
-                    'Business Acumen: Understanding the business context to ask the right questions and provide actionable insights.',
-                    'Machine Learning (for Data Scientists): Building predictive models to forecast future outcomes.'
-                ]
-            },
-            conclusion: 'These roles transform raw data into a strategic asset, guiding business strategy and uncovering new opportunities.'
+            conclusion: 'MLOps streamlines the ML lifecycle, enabling businesses to operationalize AI and derive value from their models faster.'
         }
     }
 ];
 
 export default function HomePage() {
   const [activePanel, setActivePanel] = useState(2);
-  const [activeInnovationTab, setActiveInnovationTab] = useState('Agentic AI');
+  const [activeInnovationTab, setActiveInnovationTab] = useState('Python');
 
   const panels = [
     {
@@ -542,3 +542,5 @@ export default function HomePage() {
     </div>
   );
 }
+
+    
