@@ -1,6 +1,7 @@
 
 'use client';
 
+import React from 'react';
 import { BrainCircuit, Feather, PenTool, Lightbulb, Code, Briefcase } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
