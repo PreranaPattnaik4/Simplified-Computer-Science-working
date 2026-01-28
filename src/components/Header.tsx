@@ -1,4 +1,3 @@
-
 "use client"
 
 import { Menu, User, Search, LogIn, UserPlus, X } from "lucide-react"
@@ -106,7 +105,7 @@ export default function Header() {
       )}>
         <div className="container mx-auto max-w-7xl px-4 h-full">
             {/* Navigation Links */}
-            <nav className="flex flex-col items-center gap-4 pt-16">
+            <nav className="flex flex-col items-center pt-16">
                 {navLinks.map((link) => {
                     const isActive = (pathname === '/' && link.href === '/') || (link.href !== '/' && pathname.startsWith(link.href));
                     return (
