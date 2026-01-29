@@ -123,11 +123,13 @@ export default function CertificatePage() {
                                     {course.title}
                                 </h3>
                                 
-                                <div className="relative w-40 h-40 mt-auto mb-8">
-                                      <Image src="https://i.postimg.cc/BnxqSkvV/Deep_Blue_Border_Certificate_of_Completion_(2)_Copy.png" alt="SCS Medal" layout="fill" objectFit="contain" />
+                                <div className="flex-grow" />
+
+                                <div className="relative w-24 h-24 mb-4">
+                                     <Image src="https://i.postimg.cc/BnxqSkvV/Deep_Blue_Border_Certificate_of_Completion_(2)_Copy.png" alt="SCS Medal" layout="fill" objectFit="contain" />
                                 </div>
 
-                                <div className="w-full flex justify-between items-end px-16 absolute bottom-16">
+                                <div className="w-full flex justify-between items-end px-16">
                                     <div className="text-left text-xs text-gray-700">
                                         <p className="font-bold">Issued By: Simplified Computer Science</p>
                                         <p className="mt-1"><span className="font-bold">Date of Completion:</span> {completionDate}</p>
