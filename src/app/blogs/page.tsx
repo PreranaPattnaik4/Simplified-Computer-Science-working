@@ -168,7 +168,7 @@ export default function BlogPage() {
                       className={`px-4 py-2 text-sm font-semibold rounded-full transition-colors ${
                         selectedCategory === category
                           ? 'bg-accent text-accent-foreground'
-                          : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                          : 'bg-blue-600 text-white hover:bg-blue-700'
                       }`}
                     >
                       {category}
