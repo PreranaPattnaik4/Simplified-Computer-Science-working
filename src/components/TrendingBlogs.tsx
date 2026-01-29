@@ -4,35 +4,11 @@ import React from 'react';
 import { ArrowRight, User, Calendar } from "lucide-react";
 import { Button } from './ui/button';
 import Link from 'next/link';
+import { getBlogPosts } from '@/app/lib/posts';
 
 export default function TrendingBlogs() {
-  const blogs = [
-    {
-      author: "Prerana",
-      categories: ["Artificial Intelligence", "Blogging"],
-      date: "July 22, 2024",
-      title: "Is AI Writing Stealing Your Job? The Future of Blogging in the Age of Artificial Intelligence",
-      description: "As AI writing tools become more sophisticated, bloggers are finding new ways to integrate technology into their content creation process.",
-      link: "/blogs/is-ai-writing-stealing-your-job",
-    },
-    {
-      author: "Prerana",
-      categories: ["Interview Tips", "Career"],
-      date: "July 1, 2024",
-      title: "20 Essential Tips to Ace Corporate Interviews in 2025",
-      description: "Corporate interviews are a crucial step in securing your dream job. As we step into 2025, the job market continues to evolve...",
-      link: "/blogs/20-essential-tips-to-ace-corporate-interviews-in-2025",
-    },
-    {
-      author: "Prerana",
-      categories: ["Artificial Intelligence", "Software Development"],
-      date: "July 15, 2024",
-      title: "Breaking the Programming Barrier: AI Supercharges Developers",
-      description: "In recent years, artificial intelligence (AI) has become a game-changer in the tech industry, especially in software development...",
-      link: "/blogs/breaking-the-programming-barrier",
-    },
-    
-  ];
+  const allPosts = getBlogPosts();
+  const blogs = allPosts.slice(0, 3);
 
   return (
     <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white">
@@ -54,16 +30,14 @@ export default function TrendingBlogs() {
               <div className="flex items-center gap-2 text-gray-500 text-sm mb-4 flex-wrap">
                 <div className="flex items-center gap-1.5">
                     <User size={14} />
-                    <span>{blog.author}</span>
+                    <span>{blog.author || 'Prerana'}</span>
                 </div>
-                {blog.categories.map((category, catIndex) => (
-                  <React.Fragment key={catIndex}>
+                  <React.Fragment>
                     <span>|</span>
                     <div className="flex items-center gap-1.5">
-                        <span>{category}</span>
+                        <span>{blog.category}</span>
                     </div>
                   </React.Fragment>
-                ))}
               </div>
 
               {/* Title */}
@@ -79,7 +53,7 @@ export default function TrendingBlogs() {
           ))}
         </div>
          <div className="text-center mt-12">
-            <Link href="/blogs">
+            <Link href="/blog">
                 <Button>
                     View All Blogs
                     <ArrowRight className="ml-2 h-4 w-4" />
