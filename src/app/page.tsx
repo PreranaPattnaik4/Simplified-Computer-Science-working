@@ -33,6 +33,8 @@ import {
   FileBadge,
   ArrowDown,
   Bot,
+  TerminalSquare,
+  Milestone,
 } from 'lucide-react';
 import {
   Accordion,
@@ -394,23 +396,6 @@ export default function HomePage() {
 
         <SCSLearningPaths />
         
-        {/* What We Offer Section */}
-        <section className="container mx-auto max-w-7xl px-4 py-16">
-            <h2 className="mb-12 text-center text-4xl font-bold font-space-grotesk">What We Offer</h2>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                {whatWeOffer.map((item, index) => (
-                    <div key={index} className="relative flex flex-col items-center text-center p-6 border rounded-lg shadow-sm">
-                        {item.tag && <span className="absolute top-2 right-2 py-1 px-3 rounded-full bg-pink-500 text-white text-xs font-bold">{item.tag}</span>}
-                        <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-secondary text-accent">
-                            {React.cloneElement(item.icon, { className: "h-8 w-8" })}
-                        </div>
-                        <h3 className="mb-2 text-xl font-semibold font-space-grotesk">{item.title}</h3>
-                        <p className="text-muted-foreground text-sm">{item.description}</p>
-                    </div>
-                ))}
-            </div>
-        </section>
-        
         <TrendingBlogs />
         <LimitlessLearning />
         <IndustrySolutions />
@@ -440,6 +425,23 @@ export default function HomePage() {
                         </Link>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        {/* What We Offer Section */}
+        <section className="container mx-auto max-w-7xl px-4 py-16">
+            <h2 className="mb-12 text-center text-4xl font-bold font-space-grotesk">What We Offer</h2>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {whatWeOffer.map((item, index) => (
+                    <div key={index} className="relative flex flex-col items-center text-center p-6 border rounded-lg shadow-sm">
+                        {item.tag && <span className="absolute top-2 right-2 py-1 px-3 rounded-full bg-pink-500 text-white text-xs font-bold">{item.tag}</span>}
+                        <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-secondary text-accent">
+                            {React.cloneElement(item.icon, { className: "h-8 w-8" })}
+                        </div>
+                        <h3 className="mb-2 text-xl font-semibold font-space-grotesk">{item.title}</h3>
+                        <p className="text-muted-foreground text-sm">{item.description}</p>
+                    </div>
+                ))}
             </div>
         </section>
 
@@ -493,8 +495,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-    
-
-    
-
