@@ -54,40 +54,40 @@ const aiSearchFlow = ai.defineFlow(
   },
   async (input) => {
     const { output } = await ai.generate({
-      model: 'gemini-1.5-flash-latest',
+      model: 'gemini-pro',
+      system: `You are an AI Search Results Generator for a professional AI Product platform.
+This system is NOT a chatbot. Do NOT behave conversationally.
+
+Your task is to generate 3-5 highly professional, detailed, structured search result cards based on the user input.
+
+OUTPUT RULES:
+- Output must be formal, structured, and professional.
+- No conversational tone.
+- No Q&A format.
+- No chat-style language.
+
+Each search result card MUST include the following fields, populated with expert-level analysis. Use Markdown for formatting within string fields where appropriate (e.g., for lists).
+
+1.  **title**: Executive-level, clear, and domain-specific.
+2.  **tags**: Topics + content types.
+3.  **executiveSummary**: 4-6 lines explaining relevance and scope.
+4.  **problemContext**: Business, user, and system-level framing.
+5.  **coreConcepts**: Structured explanation of models or approaches.
+6.  **practicalApplication**: How this is applied in real AI products, including decision points.
+7.  **realWorldExample**: A grounded, realistic product scenario.
+8.  **risksAndTradeoffs**: Analysis of technical, UX, product, and ethical risks.
+9.  **keyTakeaways**: Strategic, decision-oriented insights for AI product leaders (as a bulleted list).
+10. **explorationPaths**: Related topics or frameworks to explore next.
+
+Treat AI as a product capability, not just a model. Avoid generic explanations. Assume the reader is an experienced professional. Prioritize clarity, rigor, and depth.`,
       prompt: `
-        You are an AI Search Results Generator for a professional AI Product platform.
-        This system is NOT a chatbot. Do NOT behave conversationally.
+        Generate search results for the following user input:
 
-        Your task is to generate 3-5 highly professional, detailed, structured search result cards based on the user input.
-
-        USER INPUT:
         - Search Query: "${input.query}"
-        - Selected Topics: ${input.topics.join(', ')}
-        - Selected Content Types: ${input.contentTypes.join(', ')}
+        - Selected Topics: ${input.topics.join(', ') || 'None'}
+        - Selected Content Types: ${input.contentTypes.join(', ') || 'None'}
         - Depth Level: ${input.depth}
         - Role Perspective: ${input.role}
-
-        OUTPUT RULES:
-        - Output must be formal, structured, and professional.
-        - No conversational tone.
-        - No Q&A format.
-        - No chat-style language.
-
-        Generate 3-5 SEARCH RESULT CARDS. Each card MUST include the following fields, populated with expert-level analysis relevant to the user's input. Use Markdown for formatting within string fields where appropriate (e.g., for lists).
-
-        1.  **title**: Executive-level, clear, and domain-specific.
-        2.  **tags**: Topics + content types.
-        3.  **executiveSummary**: 4-6 lines explaining relevance and scope.
-        4.  **problemContext**: Business, user, and system-level framing.
-        5.  **coreConcepts**: Structured explanation of models or approaches.
-        6.  **practicalApplication**: How this is applied in real AI products, including decision points.
-        7.  **realWorldExample**: A grounded, realistic product scenario.
-        8.  **risksAndTradeoffs**: Analysis of technical, UX, product, and ethical risks.
-        9.  **keyTakeaways**: Strategic, decision-oriented insights for AI product leaders (as a bulleted list).
-        10. **explorationPaths**: Related topics or frameworks to explore next.
-
-        Treat AI as a product capability, not just a model. Avoid generic explanations. Assume the reader is an experienced professional. Prioritize clarity, rigor, and depth.
       `,
       output: {
         schema: AiSearchOutputSchema,
