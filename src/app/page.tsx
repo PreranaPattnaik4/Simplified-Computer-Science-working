@@ -90,7 +90,82 @@ const faqItems = [
     }
 ];
 
-const foundationsTabs = [
+const coreConceptsTabs = [
+    {
+        id: 'Agentic AI',
+        title: 'Agentic AI',
+        content: {
+            heading: 'The Rise of Agentic AI',
+            description: 'Agentic AI refers to autonomous systems that can perceive their environment, make decisions, and take actions to achieve specific goals without direct human intervention. These agents can learn, adapt, and collaborate, paving the way for highly sophisticated automation.',
+            features: {
+                title: 'Characteristics of AI Agents:',
+                list: [
+                    'Autonomy: Operates independently to perform tasks.',
+                    'Reactivity: Senses and responds to changes in its environment.',
+                    'Proactiveness: Takes initiative to achieve goals rather than just reacting.',
+                    'Goal-Oriented: Designed with specific objectives to pursue.',
+                    'Learning: Adapts its behavior based on experience and data.'
+                ]
+            },
+            conclusion: 'Agentic AI is moving us from tools that require instruction to partners that can take on complex tasks autonomously.'
+        }
+    },
+    {
+        id: 'Generative AI',
+        title: 'Generative AI',
+        content: {
+            heading: 'Exploring Generative AI',
+            description: 'Generative AI is a branch of artificial intelligence that can create new and original content, such as text, images, music, and code. It learns patterns from existing data and uses that knowledge to generate novel outputs. Large Language Models (LLMs) like GPT are a prime example of generative AI.',
+            features: {
+                title: 'Key Applications:',
+                list: [
+                    'Content Creation: Automating the generation of articles, marketing copy, and social media posts.',
+                    'Art and Design: Creating unique images, illustrations, and designs from text descriptions.',
+                    'Code Generation: Assisting developers by writing boilerplate code, functions, and even entire scripts.',
+                    'Drug Discovery and Research: Simulating molecular structures and accelerating scientific research.',
+                    'Personalized Experiences: Powering chatbots and virtual assistants that offer human-like conversation.'
+                ]
+            },
+            conclusion: 'Generative AI is revolutionizing creative and technical fields by augmenting human capabilities and automating content production.'
+        }
+    },
+    {
+        id: 'Data Scientists',
+        title: 'Data Scientists And Analysts',
+        content: {
+            heading: 'The Role of Data Scientists and Analysts',
+            description: 'Data Scientists and Analysts are professionals who extract insights and knowledge from data. Analysts often focus on describing what happened, while Data Scientists may build models to predict what will happen. Both roles are critical for data-driven decision-making in any organization.',
+            features: {
+                title: 'Essential Skills & Tools:',
+                list: [
+                    'Data Wrangling and Cleaning: Using tools like Python (Pandas) and SQL to prepare data for analysis.',
+                    'Statistical Analysis: Applying statistical methods to interpret data and uncover trends.',
+                    'Data Visualization: Creating charts and dashboards with libraries like Matplotlib, Seaborn, or tools like Tableau to communicate findings.',
+                    'Business Acumen: Understanding the business context to ask the right questions and provide actionable insights.',
+                    'Machine Learning (for Data Scientists): Building predictive models to forecast future outcomes.'
+                ]
+            },
+            conclusion: 'These roles transform raw data into a strategic asset, guiding business strategy and uncovering new opportunities.'
+        }
+    },
+    {
+        id: 'Web Development',
+        title: "Web Development",
+        content: {
+            heading: "Web Development: From Concept to Live Site",
+            description: "Build a solid foundation in web development. Understand the core technologies and frameworks needed to build modern, responsive, and user-friendly websites and applications.",
+             features: {
+                title: 'Key Areas:',
+                list: [
+                    'Frontend: Learn HTML for structure, CSS for styling, and JavaScript for interactivity.',
+                    'Backend: Understand server-side logic, databases, and APIs to power your application.',
+                    'Frameworks: Utilize modern frameworks like React and Next.js to build complex applications efficiently.',
+                    'Deployment: Learn how to take your project from your local machine to a live server for the world to see.',
+                ]
+            },
+            conclusion: 'A strong understanding of web development opens the door to creating powerful digital experiences.'
+        }
+    },
     {
         id: 'Programming Fundamentals',
         title: 'Programming Fundamentals',
@@ -129,205 +204,11 @@ const foundationsTabs = [
             conclusion: 'Good software engineering practices ensure that projects are delivered on time, within budget, and meet user needs.'
         }
     },
-    {
-        id: 'UI/UX Design',
-        title: 'UI/UX Design',
-        content: {
-            heading: 'UI/UX Design: Crafting User-Centered Experiences',
-            description: 'User Interface (UI) and User Experience (UX) Design are critical for creating products that are not only visually appealing but also intuitive, easy to use, and enjoyable for the user. UI focuses on the look and feel, while UX focuses on the overall experience and usability.',
-            features: {
-                title: 'Core Principles:',
-                list: [
-                    'User Research: Understanding user behaviors, needs, and motivations through interviews and surveys.',
-                    'Wireframing & Prototyping: Creating low-fidelity and high-fidelity mockups to visualize the product structure.',
-                    'Interaction Design: Designing the way users interact with the product.',
-                    'Usability Testing: Evaluating the product with real users to identify and fix usability issues.',
-                    'Visual Design: Focusing on aesthetics, including color theory, typography, and layout.',
-                ]
-            },
-            conclusion: 'Effective UI/UX design is essential for product success, leading to higher user satisfaction and engagement.'
-        }
-    },
-    {
-        id: 'Python',
-        title: 'Python',
-        content: {
-            heading: 'Python: The Heart of Modern AI and LLM Development',
-            description: 'Python is a powerful, easy-to-learn programming language that supports multiple programming paradigms, including procedural, object-oriented, and functional programming. It is widely used for web development, automation, machine learning, data analysis, and artificial intelligence. Python’s extensive standard library and vibrant community contribute to its popularity in various industries.',
-            features: {
-                title: 'Key Features of Python Development:',
-                list: [
-                    'Readability: Python’s simple syntax makes it easy to read and write, reducing the complexity of software development.',
-                    'Extensive Libraries: Python offers a vast collection of libraries and frameworks, such as Django, Flask, NumPy, and pandas, that speed up development.',
-                    'Cross-Platform Compatibility: Python runs on various platforms, including Windows, Linux, and macOS, making it a versatile choice for a developer.',
-                    'Automation & Scripting: Python is commonly used for automating tasks, from simple scripts to complex workflows.',
-                    'Data Science & Machine Learning: Python is a go-to language for data analysis, statistical computing, and building machine learning models, with libraries like TensorFlow, scikit-learn, and Keras.'
-                ]
-            },
-            conclusion: 'With Python’s flexibility and powerful features, developers can create anything from web applications to data-driven solutions and AI models, making it an essential tool in modern development.'
-        }
-    },
-    {
-        id: 'Data Scientists',
-        title: 'Data Scientists And Analysts',
-        content: {
-            heading: 'The Role of Data Scientists and Analysts',
-            description: 'Data Scientists and Analysts are professionals who extract insights and knowledge from data. Analysts often focus on describing what happened, while Data Scientists may build models to predict what will happen. Both roles are critical for data-driven decision-making in any organization.',
-            features: {
-                title: 'Essential Skills & Tools:',
-                list: [
-                    'Data Wrangling and Cleaning: Using tools like Python (Pandas) and SQL to prepare data for analysis.',
-                    'Statistical Analysis: Applying statistical methods to interpret data and uncover trends.',
-                    'Data Visualization: Creating charts and dashboards with libraries like Matplotlib, Seaborn, or tools like Tableau to communicate findings.',
-                    'Business Acumen: Understanding the business context to ask the right questions and provide actionable insights.',
-                    'Machine Learning (for Data Scientists): Building predictive models to forecast future outcomes.'
-                ]
-            },
-            conclusion: 'These roles transform raw data into a strategic asset, guiding business strategy and uncovering new opportunities.'
-        }
-    },
-    {
-        id: 'Deployment',
-        title: 'Deployment',
-        content: {
-            heading: 'Deployment: Bringing Your Application to Life',
-            description: 'Deployment is the process of making your software application available for users. This crucial step involves moving your code from a development environment to a production environment where it can be accessed by the world.',
-            features: {
-                title: 'Common Deployment Strategies:',
-                list: [
-                    'CI/CD Pipelines: Automating the build, test, and deployment process for faster and more reliable releases.',
-                    'Containerization: Packaging an application and its dependencies into a container (using Docker) for consistency across environments.',
-                    'Cloud Platforms: Utilizing services from AWS, Google Cloud, or Azure to host and scale applications.',
-                    "Monitoring & Logging: Tracking the application's performance and health in production to quickly identify and fix issues.",
-                ]
-            },
-            conclusion: 'A smooth deployment process is key to delivering value to users quickly and maintaining a stable, reliable service.'
-        }
-    },
-];
-
-const advancedTabs = [
-    {
-        id: 'Machine Learning',
-        title: 'Machine Learning',
-        content: {
-            heading: 'Fundamentals of Machine Learning',
-            description: 'Machine Learning (ML) is a subset of AI that focuses on building systems that can learn from and make decisions based on data. Instead of being explicitly programmed, an ML model identifies patterns in data to make predictions or classifications.',
-            features: {
-                title: 'Common ML Paradigms:',
-                list: [
-                    'Supervised Learning: Training a model on labeled data to predict outcomes (e.g., spam detection, house price prediction).',
-                    'Unsupervised Learning: Finding hidden patterns or structures in unlabeled data (e.g., customer segmentation, anomaly detection).',
-                    'Reinforcement Learning: Training an agent to make a sequence of decisions by rewarding it for good actions and penalizing it for bad ones (e.g., game playing, robotics).',
-                    'Model Evaluation: Using metrics to assess the performance and accuracy of models before deployment.',
-                ]
-            },
-            conclusion: 'Machine Learning is the engine that powers many of the AI applications we use daily, from recommendation systems to predictive analytics.'
-        }
-    },
-    {
-        id: 'AI Specialists',
-        title: 'Artificial Intelligence Specialists',
-        content: {
-            heading: 'The Role of an AI Specialist',
-            description: 'AI Specialists design and implement artificial intelligence models to solve real-world problems. They work on everything from natural language processing and computer vision to complex decision-making systems. This role requires a strong foundation in programming, machine learning, and deep learning.',
-            features: {
-                title: 'Core Competencies:',
-                list: [
-                    'Expertise in Python for AI development.',
-                    'Deep understanding of Machine Learning and Deep Learning frameworks like TensorFlow and PyTorch.',
-                    'Ability to design, train, and validate complex neural networks.',
-                    'Experience with data preprocessing and feature engineering.',
-                    'Knowledge of cloud platforms (AWS, Google Cloud) for deploying AI models at scale.'
-                ]
-            },
-            conclusion: 'AI Specialists are at the forefront of innovation, creating intelligent systems that can learn, reason, and act.'
-        }
-    },
-    {
-        id: 'Generative AI',
-        title: 'Generative AI',
-        content: {
-            heading: 'Exploring Generative AI',
-            description: 'Generative AI is a branch of artificial intelligence that can create new and original content, such as text, images, music, and code. It learns patterns from existing data and uses that knowledge to generate novel outputs. Large Language Models (LLMs) like GPT are a prime example of generative AI.',
-            features: {
-                title: 'Key Applications:',
-                list: [
-                    'Content Creation: Automating the generation of articles, marketing copy, and social media posts.',
-                    'Art and Design: Creating unique images, illustrations, and designs from text descriptions.',
-                    'Code Generation: Assisting developers by writing boilerplate code, functions, and even entire scripts.',
-                    'Drug Discovery and Research: Simulating molecular structures and accelerating scientific research.',
-                    'Personalized Experiences: Powering chatbots and virtual assistants that offer human-like conversation.'
-                ]
-            },
-            conclusion: 'Generative AI is revolutionizing creative and technical fields by augmenting human capabilities and automating content production.'
-        }
-    },
-    {
-        id: 'Agentic AI',
-        title: 'Agentic AI',
-        content: {
-            heading: 'The Rise of Agentic AI',
-            description: 'Agentic AI refers to autonomous systems that can perceive their environment, make decisions, and take actions to achieve specific goals without direct human intervention. These agents can learn, adapt, and collaborate, paving the way for highly sophisticated automation.',
-            features: {
-                title: 'Characteristics of AI Agents:',
-                list: [
-                    'Autonomy: Operates independently to perform tasks.',
-                    'Reactivity: Senses and responds to changes in its environment.',
-                    'Proactiveness: Takes initiative to achieve goals rather than just reacting.',
-                    'Goal-Oriented: Designed with specific objectives to pursue.',
-                    'Learning: Adapts its behavior based on experience and data.'
-                ]
-            },
-            conclusion: 'Agentic AI is moving us from tools that require instruction to partners that can take on complex tasks autonomously.'
-        }
-    },
-    {
-        id: 'Cloud Engineering',
-        title: 'Cloud Engineering',
-        content: {
-            heading: 'Cloud Engineering: Building the Future on the Cloud',
-            description: 'Cloud Engineering involves designing, building, and managing applications and infrastructure on cloud platforms like AWS, Google Cloud, and Azure. It enables scalability, flexibility, and cost-efficiency for modern tech solutions, including AI.',
-            features: {
-                title: 'Key Cloud Concepts:',
-                list: [
-                    'Infrastructure as Code (IaC): Managing infrastructure through code using tools like Terraform or CloudFormation.',
-                    'Serverless Computing: Running code without provisioning or managing servers (e.g., AWS Lambda, Google Cloud Functions).',
-                    'Containerization: Packaging an application and its dependencies into a container (using Docker) and orchestrating them with Kubernetes.',
-                    'Cloud-Native Services: Leveraging managed services for databases, storage, and AI/ML.',
-                    'Security & Compliance: Implementing robust security measures in the cloud environment.',
-                ]
-            },
-            conclusion: 'Cloud Engineering is the backbone of modern technology, providing the scalable and resilient infrastructure needed to power everything from startups to enterprise-scale AI.'
-        }
-    },
-    {
-        id: 'MLOps',
-        title: 'MLOps',
-        content: {
-            heading: 'MLOps: Bridging Development and Operations',
-            description: 'MLOps (Machine Learning Operations) is a set of practices that aims to deploy and maintain machine learning models in production reliably and efficiently. It is the intersection of machine learning, data engineering, and DevOps.',
-            features: {
-                title: 'Core MLOps Practices:',
-                list: [
-                    'CI/CD Automation: Continuous Integration and Continuous Deployment for ML pipelines.',
-                    'Model Versioning: Tracking changes to models, data, and code.',
-                    'Monitoring: Observing model performance and drift in production.',
-                    'Reproducibility: Ensuring that experiments and model training processes are fully reproducible.',
-                    'Scalability: Building systems that can handle growing data and user loads.'
-                ]
-            },
-            conclusion: 'MLOps streamlines the ML lifecycle, enabling businesses to operationalize AI and derive value from their models faster.'
-        }
-    }
 ];
 
 export default function HomePage() {
-  const [activeFoundationTab, setActiveFoundationTab] = useState('Programming Fundamentals');
-  const [activeAdvancedTab, setActiveAdvancedTab] = useState('Machine Learning');
-  
-  const activeFoundationTabData = foundationsTabs.find(tab => tab.id === activeFoundationTab)?.content;
-  const activeAdvancedTabData = advancedTabs.find(tab => tab.id === activeAdvancedTab)?.content;
+  const [activeCoreConceptTab, setActiveCoreConceptTab] = useState('Agentic AI');
+  const activeCoreConceptData = coreConceptsTabs.find(tab => tab.id === activeCoreConceptTab)?.content;
 
   const explorationCards = [
     {
@@ -428,21 +309,21 @@ export default function HomePage() {
             </div>
         </section>
 
-        {/* Section 2.1: Foundational Concepts */}
+        {/* Section 2: Core Technical Concepts */}
         <section className="container mx-auto max-w-7xl px-4 py-16 text-center">
           <h2 className="text-2xl font-semibold font-space-grotesk tracking-[0.2em] text-gray-800 uppercase">
-            Foundational Concepts
+            Core Technical Concepts
           </h2>
           <div className="w-24 h-px bg-accent mx-auto mt-4 mb-12"></div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
               <div className="col-span-1 space-y-4">
-                  {foundationsTabs.map(tab => (
+                  {coreConceptsTabs.map(tab => (
                       <button
                           key={tab.id}
-                          onClick={() => setActiveFoundationTab(tab.id)}
+                          onClick={() => setActiveCoreConceptTab(tab.id)}
                           className={cn(
                               "w-full p-6 rounded-lg text-white font-bold text-lg text-left transition-colors",
-                              activeFoundationTab === tab.id ? 'bg-accent text-accent-foreground' : 'bg-black hover:bg-gray-800'
+                              activeCoreConceptTab === tab.id ? 'bg-accent text-accent-foreground' : 'bg-black hover:bg-gray-800'
                           )}
                       >
                           {tab.title}
@@ -450,56 +331,17 @@ export default function HomePage() {
                   ))}
               </div>
               <div className="col-span-2 rounded-lg border bg-card p-8 text-card-foreground text-left">
-                  {activeFoundationTabData && (
+                  {activeCoreConceptData && (
                       <>
-                          <h3 className="text-2xl font-bold mb-4 font-space-grotesk">{activeFoundationTabData.heading}</h3>
-                          <p className="mb-6 text-muted-foreground">{activeFoundationTabData.description}</p>
-                          <h4 className="text-xl font-bold mb-2 font-space-grotesk">{activeFoundationTabData.features.title}</h4>
+                          <h3 className="text-2xl font-bold mb-4 font-space-grotesk">{activeCoreConceptData.heading}</h3>
+                          <p className="mb-6 text-muted-foreground">{activeCoreConceptData.description}</p>
+                          <h4 className="text-xl font-bold mb-2 font-space-grotesk">{activeCoreConceptData.features.title}</h4>
                           <ul className="list-disc list-inside space-y-2 mb-6">
-                              {activeFoundationTabData.features.list.map((item, index) => (
+                              {activeCoreConceptData.features.list.map((item, index) => (
                                   <li key={index}>{item}</li>
                               ))}
                           </ul>
-                          <p className="text-muted-foreground">{activeFoundationTabData.conclusion}</p>
-                      </>
-                  )}
-              </div>
-          </div>
-        </section>
-
-        {/* Section 2.2: Advanced & AI Topics */}
-        <section className="container mx-auto max-w-7xl px-4 py-16 text-center">
-          <h2 className="text-2xl font-semibold font-space-grotesk tracking-[0.2em] text-gray-800 uppercase">
-            Advanced & AI Topics
-          </h2>
-          <div className="w-24 h-px bg-accent mx-auto mt-4 mb-12"></div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-              <div className="col-span-1 space-y-4">
-                  {advancedTabs.map(tab => (
-                      <button
-                          key={tab.id}
-                          onClick={() => setActiveAdvancedTab(tab.id)}
-                          className={cn(
-                              "w-full p-6 rounded-lg text-white font-bold text-lg text-left transition-colors",
-                              activeAdvancedTab === tab.id ? 'bg-accent text-accent-foreground' : 'bg-black hover:bg-gray-800'
-                          )}
-                      >
-                          {tab.title}
-                      </button>
-                  ))}
-              </div>
-              <div className="col-span-2 rounded-lg border bg-card p-8 text-card-foreground text-left">
-                  {activeAdvancedTabData && (
-                      <>
-                          <h3 className="text-2xl font-bold mb-4 font-space-grotesk">{activeAdvancedTabData.heading}</h3>
-                          <p className="mb-6 text-muted-foreground">{activeAdvancedTabData.description}</p>
-                          <h4 className="text-xl font-bold mb-2 font-space-grotesk">{activeAdvancedTabData.features.title}</h4>
-                          <ul className="list-disc list-inside space-y-2 mb-6">
-                              {activeAdvancedTabData.features.list.map((item, index) => (
-                                  <li key={index}>{item}</li>
-                              ))}
-                          </ul>
-                          <p className="text-muted-foreground">{activeAdvancedTabData.conclusion}</p>
+                          <p className="text-muted-foreground">{activeCoreConceptData.conclusion}</p>
                       </>
                   )}
               </div>
@@ -655,3 +497,4 @@ export default function HomePage() {
     
 
     
+
