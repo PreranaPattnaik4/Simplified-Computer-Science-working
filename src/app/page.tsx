@@ -610,6 +610,9 @@ export default function HomePage() {
             </div>
         </section>
         
+        {/* Section 3: Trending Blogs */}
+        <TrendingBlogs />
+
         {/* Section 4: Gateway to Mastering CS & AI */}
         <LimitlessLearning />
 
@@ -629,9 +632,6 @@ export default function HomePage() {
 
         {/* Section 7: Step-by-Step Career Timeline */}
         <CareerTimeline />
-
-        {/* Section 3: Trending Blogs */}
-        <TrendingBlogs />
 
         {/* Section 9: FAQ Section */}
         <section className="container mx-auto max-w-7xl px-4 py-16">
@@ -674,5 +674,7 @@ export default function HomePage() {
     </div>
   );
 }
+
+    
 
     
