@@ -281,7 +281,7 @@ const courses = [
   {
     slug: 'mastering-python-for-data-science-and-ai',
     title: 'Mastering Python for Data Science & AI',
-    description: 'A comprehensive course covering Python fundamentals and its advanced applications in data science and artificial intelligence. Perfect for aspiring data scientists and AI specialists.',
+    description: 'A comprehensive course covering Python fundamentals and its advanced applications in data science and artificial intelligence. Perfect for aspiring data scientists and AI specialists.\n\n**Learning Outcomes:**\n- Apply Python fundamentals for complex data analysis.\n- Build and evaluate machine learning models using Scikit-learn.\n- Implement deep learning solutions with TensorFlow and Keras.\n- Create compelling data visualizations to communicate insights.\n- Deploy a machine learning model as a web service.',
     level: 'Intermediate',
     primaryCategory: 'Data Science & Analytics',
     suggestedTags: ['Python', 'TensorFlow', 'PyTorch'],
@@ -292,71 +292,70 @@ const courses = [
     author: 'Prerana',
     isTopCourse: false,
     syllabus: [
-        {
-            title: "Module 1: Programming Fundamentals",
-            lessons: [
-                { 
-                    slug: "introduction-to-python", 
-                    title: "Introduction to Python and its data ecosystem", 
-                    content: "### Objective\nUnderstand Python's role in data science and set up your development environment.\n\n### 1.1 What is Python?\nPython is a high-level, interpreted programming language known for its simple syntax and readability. Its versatility makes it a top choice for web development, automation, and scientific computing.\n*   **Key Features:** Dynamic typing, extensive standard library, large ecosystem of third-party packages.\n*   **Why Python for Data Science?** Simplified syntax for complex logic, strong support for data manipulation (Pandas), numerical computation (NumPy), and machine learning (Scikit-learn, TensorFlow).\n\n### 1.2 Setting Up Your Environment\nWe recommend using the Anaconda distribution, which packages Python with essential data science libraries.\n1.  Download and install Anaconda from the official website.\n2.  Open the Anaconda Navigator and launch a Jupyter Notebook or Spyder IDE.\n3.  Verify your installation by running `python --version` and `conda list` in your terminal.\n\n### Tip\nUse virtual environments (like `conda create --name myenv python=3.8`) to manage dependencies for different projects and avoid conflicts."
-                },
-                { 
-                    slug: "variables-and-data-types", 
-                    title: "Variables, data types, and operators", 
-                    content: "### Objective\nUnderstand how to store and manipulate data using Python's primitive data types.\n\n### 2.1 Variables\nA variable is a named location used to store data in memory.\n```python\n# Variable assignment\ncourse_name = \"Mastering Python\"\nstudents_enrolled = 3200\nrating = 5.0\nis_free = True\n```\n\n### 2.2 Common Data Types\n*   **String (`str`):** Textual data. Enclosed in single ('') or double (\"\") quotes.\n*   **Integer (`int`):** Whole numbers.\n*   **Float (`float`):** Numbers with a decimal point.\n*   **Boolean (`bool`):** Represents truth values, `True` or `False`.\n\n### 2.3 Type Casting\nYou can convert variables from one type to another.\n```python\n# Convert float to int\nrating_int = int(rating) # Becomes 5\n\n# Convert int to string\nstudent_count_str = str(students_enrolled) # Becomes \"3200\"\n```\n\n### 2.4 Operators\n*   **Arithmetic:** `+`, `-`, `*`, `/`, `%` (modulo), `**` (exponent)\n*   **Comparison:** `==`, `!=`, `>`, `<`, `>=`, `<=`\n*   **Logical:** `and`, `or`, `not`\n\n### Example:\n```python\n# Calculate the average rating after a new 4.0 review\nnew_rating = 4.0\ntotal_ratings = 100 # assuming 100 ratings before\ncurrent_total = rating * total_ratings\nnew_average = (current_total + new_rating) / (total_ratings + 1)\nprint(f\"New average rating: {new_average}\")\n```"
-                },
-                { 
-                    slug: "control-flow", 
-                    title: "Control flow: loops and conditional statements", 
-                    content: "### Objective\nLearn to control the execution flow of your program using loops and conditional logic.\n\n### 3.1 Conditional Statements (`if`, `elif`, `else`)\nExecute blocks of code based on whether a condition is true.\n```python\nscore = 85\nif score >= 90:\n    grade = \"A\"\nelif score >= 80:\n    grade = \"B\"\nelse:\n    grade = \"C\"\n\nprint(f\"Your grade is: {grade}\") # Output: Your grade is: B\n```\n\n### 3.2 `for` Loops\nIterate over a sequence (like a list, tuple, or string).\n```python\n# Print each letter of a word\nfor letter in \"Python\":\n    print(letter)\n\n# Iterate over a list of numbers\nnumbers = [1, 2, 3, 4, 5]\nsum_of_numbers = 0\nfor num in numbers:\n    sum_of_numbers += num\nprint(f\"Sum: {sum_of_numbers}\") # Output: Sum: 15\n```\n\n### 3.3 `while` Loops\nExecute a block of code as long as a condition is true.\n```python\n# Countdown from 5\ncount = 5\nwhile count > 0:\n    print(count)\n    count -= 1 # Crucial to avoid an infinite loop\nprint(\"Blast off!\")\n```\n\n### Tip\nUse list comprehensions for a concise way to create lists from loops.\n```python\n# Traditional for loop\nsquares = []\nfor i in range(5):\n    squares.append(i**2)\n\n# List comprehension equivalent\nsquares_comp = [i**2 for i in range(5)]\nprint(squares_comp) # [0, 1, 4, 9, 16]\n```" 
-                },
-                { slug: "functions-and-modules", title: "Functions and modular programming", content: "Content for functions and modules." },
-                { slug: "file-io", title: "File I/O and working with data sources", content: "Content for file I/O." }
-            ]
-        },
-        {
-            title: "Module 2: Python for Data Science",
-            lessons: [
-                { slug: 'why-python-for-ds', title: 'Why Python for Data Science?', content: 'Python is the dominant language for data science due to its simplicity, readability, and the vast ecosystem of powerful libraries. Libraries like Pandas, NumPy, Matplotlib, and Scikit-learn provide all the tools needed for data manipulation, analysis, visualization, and machine learning.' },
-                { slug: "intro-to-numpy", title: "Introduction to NumPy arrays and vectorized operations", content: "Content for NumPy." },
-                { slug: "intro-to-pandas", title: "Pandas Series and DataFrame objects", content: "Content for Pandas." },
-                { slug: "data-cleaning", title: "Data cleaning, transformation, and merging", content: "Content for data cleaning." },
-            ]
-        },
-        {
-            title: "Module 3: Data Visualization with Matplotlib and Seaborn",
-            lessons: [
-                { slug: 'visualization-principles', title: 'Principles of effective data visualization', content: 'Content for visualization principles.' },
-                { slug: 'matplotlib-plotting', title: 'Creating various plot types with Matplotlib', content: 'Content for Matplotlib.' },
-                { slug: 'seaborn-plotting', title: 'Statistical data visualization with Seaborn', content: 'Content for Seaborn.' },
-                { slug: 'customizing-plots', title: 'Customizing plots for presentations', content: 'Content for customizing plots.' },
-            ]
-        },
-        {
-            title: "Module 4: Machine Learning Fundamentals with Scikit-Learn",
-            lessons: [
-                { slug: 'ml-concepts', title: 'Introduction to machine learning concepts', content: 'Content for ML concepts.' },
-                { slug: 'supervised-learning', title: 'Supervised learning: regression and classification', content: 'Content for supervised learning.' },
-                { slug: 'unsupervised-learning', title: 'Unsupervised learning: clustering and dimensionality reduction', content: 'Content for unsupervised learning.' },
-                { slug: 'model-evaluation', title: 'Model evaluation and cross-validation', content: 'Content for model evaluation.' },
-                { slug: 'ml-pipeline', title: 'Building a complete machine learning pipeline', content: 'Content for ML pipeline.' },
-            ]
-        },
-        {
-            title: "Module 5: Introduction to Deep Learning",
-            lessons: [
-                { slug: 'neural-networks-concepts', title: 'Core concepts of neural networks', content: 'Content for neural networks.' },
-                { slug: 'tensorflow-keras-intro', title: 'Introduction to TensorFlow and Keras (or PyTorch)', content: 'Content for TensorFlow/Keras.' },
-                { slug: 'building-a-neural-network', title: 'Building a simple neural network for classification', content: 'Content for building a neural network.' },
-                { slug: 'activation-optimizers', title: 'Understanding activation functions and optimizers', content: 'Content for activation functions.' },
-            ]
-        }
-    ]
+      {
+        title: "Module 1: Python Fundamentals for Data Science",
+        lessons: [
+            { 
+                slug: "python-for-ds-overview", 
+                title: "Why Python for Data Science?", 
+                content: "### Objective\nUnderstand Python's dominant role in the data science ecosystem and set up a professional development environment.\n\n### 1.1 What Makes Python the Lingua Franca of Data?\nPython's design philosophy emphasizes code readability and simplicity, which makes it ideal for the iterative nature of data science projects. Its gentle learning curve allows beginners to become productive quickly, while its powerful features support complex scientific computing tasks.\n\n*   **Key Strengths:**\n    *   **Vast Ecosystem:** A rich collection of libraries like Pandas for data manipulation, NumPy for numerical operations, Matplotlib and Seaborn for visualization, and Scikit-learn, TensorFlow, and PyTorch for machine learning.\n    *   **Versatility:** Python is a general-purpose language, meaning you can handle everything from data extraction and cleaning to model deployment and web integration within a single language.\n    *   **Strong Community:** A massive global community contributes to a wealth of tutorials, forums, and third-party packages, making it easy to find help and solutions.\n\n### 1.2 Setting Up Your Professional Data Science Environment\nA well-configured environment is crucial for productivity and reproducibility. We will use Anaconda, the industry standard for Python data science.\n\n1.  **Install Anaconda:** Download and install the Anaconda Distribution from the [official website](https://www.anaconda.com/products/distribution). It bundles Python with all the essential data science libraries.\n2.  **Use Virtual Environments:** To avoid dependency conflicts between projects, it's best practice to use virtual environments. Create one for this course:\n    ```bash\n    conda create --name scs_python_course python=3.9\n    ```\n3.  **Activate the Environment:**\n    ```bash\n    conda activate scs_python_course\n    ```\n4.  **Launch Jupyter Notebook:** The Jupyter Notebook is an interactive, web-based tool perfect for data exploration and analysis.\n    ```bash\n    jupyter notebook\n    ```\n\n### Industry Best Practice\nAlways create a separate virtual environment for each new project. This ensures that your project's dependencies are isolated and your work is reproducible by others."
+            },
+            { 
+                slug: "python-core-concepts", 
+                title: "Core Python: Variables, Data Types, and Operators", 
+                content: "### Objective\nMaster the fundamental building blocks of Python to store, represent, and manipulate data effectively.\n\n### 2.1 Variables: Naming Your Data\nA variable is a symbolic name that is a reference or pointer to an object. Once an object is assigned to a variable, you can refer to the object by that name.\n\n```python\n# Variable assignment\nproject_name = 'AI Stock Predictor'\naccuracy_target = 0.95\nnum_features = 50\n```\n\n### 2.2 Python's Primary Data Types\n*   **`int` (Integer):** For whole numbers (e.g., `num_features = 50`).\n*   **`float` (Floating-Point Number):** For numbers with a decimal point (e.g., `accuracy_target = 0.95`).\n*   **`str` (String):** For textual data. Enclosed in single `'...'` or double `\"...\"` quotes (e.g., `project_name = 'AI Stock Predictor'`).\n*   **`bool` (Boolean):** For truth values `True` or `False` (e.g., `is_deployed = False`).\n\n### 2.3 Data Structures: Collections of Data\n*   **`list`:** An ordered, mutable (changeable) collection of items. `features = ['volume', 'price', 'moving_avg']`\n*   **`tuple`:** An ordered, immutable (unchangeable) collection. `model_version = (1, 2, 0)`\n*   **`dict` (Dictionary):** An unordered collection of key-value pairs. `hyperparameters = {'learning_rate': 0.01, 'epochs': 100}`\n\n### 2.4 Operators for Data Manipulation\n*   **Arithmetic:** `+`, `-`, `*`, `/`, `**` (exponent), `//` (floor division), `%` (modulo).\n*   **Comparison:** `==`, `!=`, `>`, `<`, `>=`, `<=` for creating boolean expressions.\n*   **Logical:** `and`, `or`, `not` for combining boolean expressions.\n\n### Real-World Scenario\nImagine you're calculating the performance improvement of a new model.\n```python\n# Model performance data\nold_model_accuracy = 0.88\nnew_model_accuracy = 0.91\n\n# Calculate the percentage improvement\nimprovement = ((new_model_accuracy - old_model_accuracy) / old_model_accuracy) * 100\n\n# The f-string is a modern and readable way to format strings\nprint(f\"Model improvement: {improvement:.2f}%\")\n\n# Decision-making with logical operators\nis_significant_improvement = improvement > 2.0\nneeds_ceo_approval = is_significant_improvement and new_model_accuracy > 0.9\n\nprint(f\"Does it need CEO approval? {needs_ceo_approval}\")\n```"
+            },
+            { 
+                slug: "python-control-flow", 
+                title: "Logic and Control Flow", 
+                content: "### Objective\nDirect the flow of your program's execution using conditional statements and loops to handle complex logic and repetitive tasks.\n\n### 3.1 Conditional Logic with `if`, `elif`, `else`\nThis is the primary way to make decisions in your code.\n\n**Scenario:** Classifying a stock as 'Buy', 'Hold', or 'Sell' based on an analyst's rating.\n```python\nanalyst_rating = 4.2  # On a scale of 1 to 5\n\nif analyst_rating >= 4.5:\n    recommendation = 'Strong Buy'\nelif analyst_rating >= 3.5:\n    recommendation = 'Hold'\nelse:\n    recommendation = 'Sell'\n\nprint(f\"Recommendation: {recommendation}\") # Output: Recommendation: Hold\n```\n\n### 3.2 `for` Loops: Iterating Over Sequences\n`for` loops are used when you have a collection of items (like a list of stocks) and you want to perform an action on each item.\n\n**Scenario:** Calculating the average price of a list of stocks.\n```python\nstock_prices = [150.25, 152.50, 149.75, 155.00]\ntotal_price = 0\n\nfor price in stock_prices:\n    total_price += price\n\naverage_price = total_price / len(stock_prices)\nprint(f\"Average stock price: ${average_price:.2f}\")\n```\n\n### 3.3 `while` Loops: Repeating Until a Condition is Met\n`while` loops are useful when you don't know in advance how many times you need to loop.\n\n**Scenario:** Simulating a stock price until it reaches a target.\n```python\nimport random\n\ncurrent_price = 100\ntarget_price = 110\ndays = 0\n\nwhile current_price < target_price:\n    # Simulate a random daily change between -1 and +1\n    daily_change = random.uniform(-1, 1)\n    current_price += daily_change\n    days += 1\n    print(f\"Day {days}: Price = {current_price:.2f}\")\n\nprint(f\"Target price of ${target_price} reached in {days} days.\")\n```\n\n### Mastery Tip: List Comprehensions\nList comprehensions provide a concise, readable way to create lists. They are very 'Pythonic'.\n\n**Scenario:** Filtering a list of stocks to find only those above a certain price.\n```python\nprices = {'AAPL': 150, 'GOOG': 2800, 'MSFT': 300, 'AMZN': 3400}\n\n# Find stocks with price > 1000\nexpensive_stocks = [stock for stock, price in prices.items() if price > 1000]\n\nprint(expensive_stocks) # Output: ['GOOG', 'AMZN']\n```"
+            },
+            {
+                slug: 'python-module-1-quiz',
+                title: 'Module 1 Quiz',
+                type: 'quiz',
+                content: 'A data analyst has a list of customer satisfaction scores: `scores = [5, 4, 5, 3, 2, 5, 4, 2]`. They need to calculate the average score but only for scores that are 3 or higher. Which code snippet correctly performs this calculation?',
+                options: [
+                    { id: 'A', text: '`filtered_scores = [s for s in scores if s >= 3] \nprint(sum(filtered_scores) / len(filtered_scores))`' },
+                    { id: 'B', text: '`total = 0\nfor s in scores:\n  if s > 3:\n    total += s\nprint(total / len(scores))`' },
+                    { id: 'C', text: '`filtered_scores = scores.filter(s > 3)\nprint(sum(filtered_scores) / len(filtered_scores))`' },
+                    { id: 'D', text: '`total = sum(scores)\ncount = len(scores)\nprint(total / count)`' }
+                ],
+                correctAnswer: 'A',
+                explanation: 'Option A is the most Pythonic and correct solution. It uses a list comprehension to first filter the list for scores >= 3, and then calculates the average of that new, filtered list. Option B has a logic error (it divides by the length of the original list). Option C uses a non-existent `.filter()` method for lists. Option D calculates the average of all scores, not the filtered ones.'
+            }
+        ]
+    },
+    {
+        title: "Module 2: Machine Learning Fundamentals with Scikit-Learn",
+        lessons: [
+            { 
+                slug: 'intro-to-scikit-learn', 
+                title: 'Scikit-Learn: The Core of Practical ML in Python', 
+                content: '### Objective\nUnderstand the architecture and core principles of Scikit-learn, the go-to library for traditional machine learning in Python.\n\n### What is Scikit-learn?\nScikit-learn provides a simple and efficient tool for data mining and data analysis. It is built on NumPy, SciPy, and Matplotlib. Its key strength is its consistent and easy-to-use API.\n\n### The Scikit-learn API: A Consistent Pattern\n1.  **Choose a model:** Import the class of the model you want to use.\n2.  **Instantiate the model:** Create an instance of the model with desired hyperparameters.\n3.  **Arrange data:** Arrange your data into a features matrix (X) and a target vector (y).\n4.  **Fit the model:** Train the model on your data using the `.fit()` method.\n5.  **Predict:** Use the trained model to make predictions on new data with the `.predict()` method.\n\n```python\nfrom sklearn.linear_model import LogisticRegression\n\n# 1 & 2: Choose and instantiate the model\nmodel = LogisticRegression()\n\n# 3: Arrange data (X_train, y_train are assumed to be ready)\n# 4: Fit the model\n# model.fit(X_train, y_train)\n\n# 5: Predict on new data\n# predictions = model.predict(X_test)\n```\nThis simple pattern is used across almost all models in the library, making it incredibly easy to experiment with different algorithms.' 
+            },
+            {
+                slug: 'ml-quiz-1',
+                title: 'Module 2 Quiz: Model Training',
+                type: 'quiz',
+                content: 'An ML engineer is building a model to predict customer churn. They have their feature data in a Pandas DataFrame `X` and the target labels (0 for no churn, 1 for churn) in a Series `y`. They have chosen a `RandomForestClassifier`. What is the correct Scikit-learn code to train this model?',
+                options: [
+                    { id: 'A', text: '`from sklearn.ensemble import RandomForestClassifier\nmodel = RandomForestClassifier()\nmodel.train(X, y)`' },
+                    { id: 'B', text: '`from sklearn.ensemble import RandomForestClassifier\nmodel = RandomForestClassifier()\nmodel.fit(X, y)`' },
+                    { id: 'C', text: '`from sklearn.ensemble import RandomForestClassifier\nmodel = RandomForestClassifier(X, y)\nmodel.fit()`' },
+                    { id: 'D', text: '`from sklearn.ensemble import RandomForestClassifier\nmodel = RandomForestClassifier.fit(X, y)`' }
+                ],
+                correctAnswer: 'B',
+                explanation: 'The standard Scikit-learn API pattern for training a model is to first instantiate the model object (`model = RandomForestClassifier()`) and then call the `.fit()` method on that object with the training data (`model.fit(X, y)`). The other options misuse the API.'
+            }
+        ]
+    }
+]
   },
-  {
+   {
     slug: 'cs-basics-get-started',
     title: 'Computer Science Basics: Everything You Need to Know to Get Started',
-    description: 'This course will introduce you to the essential concepts, key terminology, and foundational topics that make up the heart of Computer Science.',
+    description: 'This course will introduce you to the essential concepts, key terminology, and foundational topics that make up the heart of Computer Science.\n\n**Learning Outcomes:**\n- Explain the fundamental pillars of Computer Science.\n- Write basic programs using core programming concepts.\n- Understand how computer hardware and software interact.\n- Describe the basics of web technology and the internet.',
     level: 'Beginner',
     primaryCategory: 'Software Development',
     suggestedTags: ['Computer Science', 'Algorithms', 'Python'],
@@ -368,41 +367,61 @@ const courses = [
     isTopCourse: false,
     syllabus: [
         {
-            title: "Module 1: Introduction to Computer Science",
+            title: "Module 1: The World of Computer Science",
             lessons: [
                 { 
                     slug: "what-is-cs", 
                     title: "What is Computer Science?",
-                    content: "Computer Science is the study of computers and computational systems. It involves understanding how computers process information, how software is developed, and how data is handled. While many think of Computer Science as just coding or programming, the field is far more extensive. It covers areas like data structures, algorithms, artificial intelligence, databases, and much more.\n\nFor beginners, it’s helpful to think of Computer Science as the science of problem-solving using computers. The tools and techniques learned here are applicable to solving real-world problems efficiently and effectively."
+                    content: "### Objective\nDefine Computer Science and understand that it's more than just programming.\n\n### Computer Science is the Science of Problem-Solving\nAt its heart, Computer Science (CS) is the study of how to solve problems using computers. It's a field that blends logic, creativity, and engineering. While programming is the tool we use to implement solutions, CS is about designing those solutions in the first place.\n\nIt encompasses:\n- **Theory:** The fundamental principles of computation and information.\n- **Design:** How to structure software and hardware systems.\n- **Application:** Creating useful tools and technologies that impact the world."
+                },
+                { 
+                    slug: "key-areas-of-cs", 
+                    title: "Key Areas of Computer Science",
+                    content: "### Objective\nGet a high-level overview of the major disciplines within Computer Science.\n\nComputer Science is a vast field with many specializations. Here are some of the core pillars:\n\n1.  **Algorithms & Data Structures:** The study of efficient problem-solving methods and ways to organize data.\n2.  **Programming Languages:** The tools we use to communicate instructions to computers.\n3.  **Computer Architecture:** The design and structure of computer hardware systems.\n4.  **Operating Systems:** The software that manages all hardware and software resources.\n5.  **Computer Networks:** The principles behind how computers connect and communicate (e.g., the Internet).\n6.  **Databases:** How to store, manage, and retrieve large amounts of data efficiently.\n7.  **Artificial Intelligence (AI):** The science of creating machines that can think, learn, and act intelligently."
+                },
+                {
+                    slug: 'cs-basics-quiz-1',
+                    title: 'Module 1 Quiz',
+                    type: 'quiz',
+                    content: 'Which of the following best describes the primary goal of Computer Science?',
+                    options: [
+                        { id: 'A', text: 'To learn as many programming languages as possible.' },
+                        { id: 'B', text: 'To design efficient and effective solutions to problems using computation.' },
+                        { id: 'C', text: 'To build faster computer hardware.' },
+                        { id: 'D', text: 'To become an expert in using specific software applications like Microsoft Word.' }
+                    ],
+                    correctAnswer: 'B',
+                    explanation: 'Computer Science is fundamentally about problem-solving. While learning languages and understanding hardware are parts of it, the central goal is to design computational solutions to problems. It is a creative and analytical discipline, not just a technical skill.'
                 }
             ]
         },
         {
-            title: "Module 2: Key Areas of Computer Science",
+            title: "Module 2: Speaking to Computers - Programming Fundamentals",
             lessons: [
-                { slug: "algorithms-data-structures", title: "Algorithms and Data Structures", content: "Algorithms are step-by-step instructions that tell the computer how to perform a task. Understanding algorithms allows you to write code that solves problems in an optimized way.\n\nData Structures organize and store data. Common types include arrays, linked lists, trees, and graphs. Learning these structures is fundamental because they affect the performance of your program." },
-                { slug: "programming-languages", title: "Programming Languages", content: "Programming is at the heart of Computer Science. Some popular programming languages include Python, Java, C++, and JavaScript. Each language has its strengths, and knowing the right one for the task is essential.\n\nThe 2024 syllabus focuses on Python for beginners due to its readability and widespread use in educational settings." },
-                { slug: "software-engineering", title: "Software Engineering", content: "Software Engineering deals with designing, building, and maintaining software applications. It includes methodologies like Agile and Waterfall, as well as tools for version control (e.g., Git)." },
-                { slug: "ai-ml", title: "Artificial Intelligence and Machine Learning", content: "AI is the simulation of human intelligence processes by machines. It includes Machine Learning, where computers learn from data to make decisions without explicit programming. The 2024 syllabus emphasizes the growing importance of AI in fields like healthcare, finance, and robotics." },
-                { slug: "databases", title: "Databases", content: "Understanding how to organize, store, and retrieve data is crucial for any programmer. Databases like MySQL and MongoDB are commonly used in real-world applications." },
-                { slug: "networking-security", title: "Networking and Security", content: "Networking is about connecting computers and systems, allowing them to communicate and share resources. It covers everything from local networks to the global Internet.\n\nCybersecurity ensures the protection of data and systems from malicious threats. In the 2024 syllabus, this area focuses on encryption, firewalls, and secure software development practices." }
-            ]
-        },
-        {
-            title: "Module 3: The 2024 Syllabus Overview",
-            lessons: [
-                { slug: "programming-fundamentals", title: "Fundamentals of Programming", content: "Students are introduced to basic programming concepts, using languages like Python. Topics covered include variables, data types, loops, conditionals, and functions." },
-                { slug: "problem-solving-techniques", title: "Problem-Solving Techniques", content: "Problem-solving is a critical skill for any computer scientist. The syllabus encourages students to break down problems into smaller, manageable parts using algorithms and data structures." },
-                { slug: "computer-systems", title: "Understanding Computer Systems", content: "Basic hardware concepts like CPUs, memory, and storage are covered, providing students with an understanding of how software interacts with hardware." },
-                { slug: "web-development-intro", title: "Introduction to Web Development", content: "Basic HTML, CSS, and JavaScript are introduced to help students understand how websites are created and structured." },
-                { slug: "ethical-computing", title: "Ethical Computing", content: "With technology advancing rapidly, students are also taught the ethical implications of computing. This includes data privacy, the environmental impact of technology, and the importance of ethical decision-making in software development." }
-            ]
-        },
-        {
-            title: "Module 4: Your Journey in Computer Science",
-            lessons: [
-                { slug: "why-learn-cs", title: "Why Learn Computer Science?", content: "Versatility and Career Opportunities: Computer Science is a gateway to a wide range of careers. From software development to data science, cybersecurity, and AI, there is an increasing demand for skilled professionals.\n\nProblem-Solving and Critical Thinking: Learning Computer Science enhances your ability to approach problems logically and solve them efficiently. It encourages critical thinking, pattern recognition, and creativity.\n\nInnovation and Future-Proofing: With technology constantly evolving, understanding Computer Science positions you for future innovations in fields like quantum computing, AI, and blockchain." },
-                { slug: "how-to-start", title: "How to Start Your Journey", content: "If you’re a complete beginner, don’t worry! Here’s how you can get started:\n\n1.  **Pick a Programming Language**: Start with Python, which is simple, easy to understand, and powerful enough for advanced topics. Numerous online platforms like Codecademy, freeCodeCamp, and Coursera offer free resources to learn programming.\n2.  **Practice Problem-Solving**: Websites like LeetCode and HackerRank provide practice problems that help you improve your algorithmic thinking and coding skills.\n3.  **Build Small Projects**: Apply what you’ve learned by building simple projects. Start with things like a calculator, a to-do list, or a personal blog. These projects will give you hands-on experience and make abstract concepts concrete.\n4.  **Explore Advanced Topics**: Once you’re comfortable with the basics, dive into more advanced topics like data structures, algorithms, and AI. Participate in open-source projects and collaborate with others to grow your skills." }
+                { 
+                    slug: "programming-intro", 
+                    title: "Introduction to Programming with Python", 
+                    content: "### Objective\nUnderstand the role of a programming language and write your first lines of code using Python.\n\n### Why Start with Python?\nPython is famous for its simple and readable syntax, which looks a lot like plain English. This makes it an ideal first language for beginners, allowing you to focus on learning programming concepts without getting bogged down by complex rules.\n\n### Your First Program: \"Hello, World!\"\nIt's a tradition in programming to start by making the computer say \"Hello, World!\". In Python, it's just one line:\n```python\nprint(\"Hello, World!\")\n```\nThis simple command tells the computer to call the `print` function and give it the text \"Hello, World!\" to display on the screen."
+                },
+                { 
+                    slug: "variables-data-types", 
+                    title: "Variables and Data Types", 
+                    content: "### Objective\nLearn how to store and categorize information in a program.\n\n### What are Variables?\nA variable is like a labeled box where you can store a piece of information. You give it a name and put a value inside it.\n```python\n# 'message' is the variable name, \"Welcome to CS Basics!\" is the value.\nmessage = \"Welcome to CS Basics!\"\nstudent_count = 50\n```\n\n### Common Data Types\n- **String (`str`):** Text (e.g., `\"Hello\"`).\n- **Integer (`int`):** Whole numbers (e.g., `101`).\n- **Float (`float`):** Numbers with decimals (e.g., `99.9`).\n- **Boolean (`bool`):** `True` or `False`.\n\nPython automatically figures out the data type for you when you assign a value to a variable."
+                },
+                {
+                    slug: 'cs-basics-quiz-2',
+                    title: 'Module 2 Quiz',
+                    type: 'quiz',
+                    content: 'A programmer writes the following code: `age = 25`. What is the data type of the `age` variable?',
+                    options: [
+                        { id: 'A', text: 'String' },
+                        { id: 'B', text: 'Float' },
+                        { id: 'C', text: 'Integer' },
+                        { id: 'D', text: 'Boolean' }
+                    ],
+                    correctAnswer: 'C',
+                    explanation: 'The value `25` is a whole number, so Python assigns it the integer (`int`) data type. A string would be in quotes (e.g., `"25"`), a float would have a decimal (e.g., `25.0`), and a boolean would be `True` or `False`.'
+                }
             ]
         }
     ]
@@ -410,7 +429,7 @@ const courses = [
   {
     slug: 'web-dev-guide',
     title: 'The Ultimate Guide to Website Development with Coding',
-    description: 'A complete guide covering everything from front-end and back-end development to full-stack technologies, security best practices, and performance optimization.',
+    description: 'A complete guide covering everything from front-end and back-end development to full-stack technologies, security best practices, and performance optimization.\n\n**Learning Outcomes:**\n- Build structured and semantic web pages with HTML.\n- Style modern, responsive layouts using CSS, Flexbox, and Grid.\n- Add interactivity to websites using JavaScript and the DOM.\n- Develop a complete full-stack MERN application (MongoDB, Express, React, Node.js).\n- Deploy a web application to a live server.',
     level: 'Intermediate',
     primaryCategory: 'Software Development',
     suggestedTags: ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js'],
@@ -422,107 +441,60 @@ const courses = [
     isTopCourse: false,
     syllabus: [
         {
-            title: "Module 1: Introduction to Web Development",
+            title: "Module 1: Front-End Foundations",
             lessons: [
                 {
-                    slug: "what-is-web-development",
-                    title: "What is Web Development?",
-                    content: "Welcome to the world of web development! At its core, web development is the work involved in developing a website for the Internet. This can range from developing a simple single static page of plain text to complex web applications, electronic businesses, and social network services.\n\nWeb development is broadly divided into two main areas:\n*   **Front-End Development:** This is the part of the website that users interact with directly. It's often called the \"client-side\" of the application. It includes everything that users experience directly: text colors and styles, images, graphs and tables, buttons, and navigation menus.\n*   **Back-End Development:** This is the \"server-side\" of a website. It stores and organizes data, and also makes sure everything on the client-side of the website works fine. It is the part of the website that you cannot see and interact with. It is the software that runs on servers.\n\nThis course will guide you through both front-end and back-end technologies, giving you the skills to become a full-stack developer."
+                    slug: "html-structure",
+                    title: "HTML: The Skeleton of the Web",
+                    content: "### Objective\nUnderstand the role of HTML and learn to create well-structured, semantic web pages.\n\n### What is HTML?\nHyperText Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser. It is the backbone of every website.\n\n### Core Concepts\n- **Elements & Tags:** HTML consists of elements, which are represented by tags. For example, `<p>` is a tag for a paragraph element.\n- **Document Structure:** Every HTML document has a basic structure:\n  ```html\n  <!DOCTYPE html>\n  <html>\n  <head>\n    <title>Page Title</title>\n  </head>\n  <body>\n    <h1>This is a Heading</h1>\n    <p>This is a paragraph.</p>\n  </body>\n  </html>\n  ```\n- **Semantic HTML:** Using HTML tags that describe the meaning of the content, such as `<header>`, `<footer>`, `<nav>`, and `<article>`. This is crucial for accessibility and SEO."
                 },
                 {
-                    slug: "how-websites-work",
-                    title: "How Websites Work: Clients and Servers",
-                    content: "Every time you open a website in your browser, a complex interaction happens between your computer (the **client**) and a powerful computer elsewhere (the **server**).\n\nHere's a simple breakdown:\n1.  **The Client (Your Browser):** When you type a website address (like www.simplifiedcomputerscience.com) into your browser, you are making a request. Your browser is the client.\n2.  **The Request (HTTP):** The browser sends a request to the server using the Hypertext Transfer Protocol (HTTP). This request asks the server for the files needed to display the website.\n3.  **The Server:** The server is a computer that stores the website's files (HTML, CSS, JavaScript, images, etc.). When it receives a request, it finds the required files.\n4.  **The Response:** The server sends the files back to your browser.\n5.  **Rendering:** Your browser receives the files and \"renders\" them, which means it interprets the code (HTML for structure, CSS for styling, JavaScript for interactivity) and displays the visual website you see on your screen.\n\nUnderstanding this client-server relationship is fundamental to web development."
+                    slug: "css-styling",
+                    title: "CSS: The Art of Styling",
+                    content: "### Objective\nLearn how to use Cascading Style Sheets (CSS) to control the visual appearance of your website.\n\n### What is CSS?\nCSS is a stylesheet language used to describe the presentation of a document written in HTML. It controls colors, fonts, spacing, layout, and more.\n\n### Core Concepts\n- **Selectors:** Target specific HTML elements to apply styles to. (e.g., `p`, `.my-class`, `#my-id`).\n- **Properties & Values:** `color: blue;` `font-size: 16px;`\n- **The Box Model:** Every HTML element is a rectangular box. The box model describes the content, padding, border, and margin of this box.\n- **Layouts with Flexbox & Grid:** Modern CSS provides powerful tools for creating complex, responsive layouts. **Flexbox** is for one-dimensional layouts (rows or columns), while **Grid** is for two-dimensional layouts (rows and columns)."
                 },
                 {
-                    slug: "essential-tools",
-                    title: "Essential Tools for Web Developers",
-                    content: "To start your web development journey, you only need a few essential tools.\n\n*   **Code Editor:** This is where you'll write your code. While you could use a simple text editor, specialized code editors offer features like syntax highlighting, auto-completion, and error checking.\n    *   **Popular Choice:** [Visual Studio Code (VS Code)](https://code.visualstudio.com/) is a free, powerful, and highly popular code editor used by millions of developers. We highly recommend starting with it.\n\n*   **Web Browser:** You'll need a modern web browser to view your websites and use its developer tools.\n    *   **Popular Choices:** Google Chrome, Mozilla Firefox, and Microsoft Edge are all excellent choices. They come with powerful \"Developer Tools\" (often opened by pressing F12) that let you inspect your HTML, CSS, and JavaScript in real-time.\n\n*   **Version Control (Git):** Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later.\n    *   **The Standard:** Git is the most widely used version control system. It allows you to track your project's history and collaborate with other developers. [GitHub](https://github.com/) is a platform that hosts Git repositories and is essential for modern development workflows."
+                    slug: 'web-dev-quiz-1',
+                    title: 'Module 1 Quiz',
+                    type: 'quiz',
+                    content: 'A developer wants to create a navigation bar at the top of their page that contains a list of links. What is the most *semantic* HTML structure for this?',
+                    options: [
+                        { id: 'A', text: '`<div><ul><li><a href=\"#\">Home</a></li></ul></div>`' },
+                        { id: 'B', text: '`<nav><ul><li><a href=\"#\">Home</a></li></ul></nav>`' },
+                        { id: 'C', text: '`<span><p><a href=\"#\">Home</a></p></span>`' },
+                        { id: 'D', text: '`<section><ul><li><a href=\"#\">Home</a></li></ul></section>`' }
+                    ],
+                    correctAnswer: 'B',
+                    explanation: 'The `<nav>` tag is the most semantic choice because it explicitly tells the browser and screen readers that this section of the page is for navigation. While other tags might work visually, `<nav>` provides important context about the content\'s purpose.'
                 }
             ]
         },
         {
-            title: "Module 2: Front-End Development",
-            lessons: [
-                { 
-                    slug: "frontend-intro", 
-                    title: "Introduction to Front-End", 
-                    content: "Front-end development focuses on the visual and interactive aspects of a website that users see and engage with. It's all about creating a great user experience.\n\n**Key Components:**\n*   **HTML (HyperText Markup Language):** The backbone of web pages, defining structure and content. It provides essential elements such as headings, paragraphs, lists, and links.\n*   **CSS (Cascading Style Sheets):** Used for styling elements like colors, fonts, and layouts. CSS makes websites visually appealing and responsive.\n*   **JavaScript:** Adds interactivity, animations, and dynamic content to web pages, enabling user-friendly and engaging web applications.\n*   **TypeScript:** A superset of JavaScript that provides static typing, making it easier to manage large-scale applications."
-                },
-                {
-                    slug: "frontend-frameworks", 
-                    title: "Frameworks & Libraries", 
-                    content: "Frameworks and libraries provide pre-written code to help you build applications faster.\n\n*   **Bootstrap:** A responsive CSS framework for fast and mobile-friendly development.\n*   **Tailwind CSS:** A utility-first CSS framework for flexible styling.\n*   **React.js:** A JavaScript library for building interactive UIs with reusable components.\n*   **Vue.js:** A progressive framework for developing user interfaces efficiently.\n*   **Next.js:** A React framework that enables server-side rendering for better performance and SEO."
-                },
-                {
-                    slug: "responsive-design",
-                    title: "Responsive Design",
-                    content: "Responsive design ensures your website looks great on all devices.\n\n*   **Media Queries:** Adapting layouts based on screen size.\n*   **Flexbox:** A layout model for aligning elements dynamically.\n*   **Grid Layout:** A powerful system for designing structured web pages."
-                },
-                {
-                    slug: "frontend-tips",
-                    title: "5 Tips for Effective Front-End Development",
-                    content: "1. Keep your code clean and well-structured.\n2. Use browser developer tools to debug and optimize.\n3. Follow accessibility guidelines (WCAG).\n4. Test across different devices and browsers.\n5. Minimize HTTP requests by combining files."
-                }
-            ]
-        },
-        {
-            title: "Module 3: Back-End Development",
+            title: "Module 2: Building Interactivity with JavaScript",
             lessons: [
                 {
-                    slug: "backend-intro",
-                    title: "Introduction to Back-End",
-                    content: "Back-end development powers the functionality of a website, managing data, logic, and security.\n\n**Programming Languages:**\n*   **Python (Django, Flask):** For robust and scalable web applications.\n*   **PHP:** A server-side scripting language for dynamic websites.\n*   **Node.js:** A runtime environment for executing JavaScript on the server.\n*   **Ruby on Rails:** A web application framework for rapid development."
+                    slug: "js-fundamentals",
+                    title: "JavaScript Fundamentals",
+                    content: "### Objective\nLearn the core concepts of the JavaScript language, the engine of dynamic websites.\n\n### What is JavaScript?\nJavaScript (JS) is a programming language that allows you to implement complex features on web pages. Every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved.\n\n### Core Concepts\n- **Variables:** `let`, `const`.\n- **Data Types:** String, Number, Boolean, Array, Object.\n- **Operators:** Arithmetic, Comparison, Logical.\n- **Control Flow:** `if/else`, `for` loops, `while` loops.\n- **Functions:** Reusable blocks of code."
                 },
                 {
-                    slug: "databases",
-                    title: "Databases",
-                    content: "Databases are used to store and manage data.\n\n*   **MySQL:** A widely used relational database.\n*   **PostgreSQL:** A powerful, open-source relational database.\n*   **MongoDB:** A NoSQL database for flexible, JSON-like documents.\n*   **Firebase:** A real-time database by Google for cloud-based storage."
-                },
-                {
-                    slug: "api-development",
-                    title: "API Development",
-                    content: "APIs allow different applications to communicate with each other.\n\n*   **RESTful APIs:** Standard APIs for communication between client and server.\n*   **GraphQL:** A query language for efficient data retrieval.\n*   **API Security:** Implementing token-based authentication and rate limiting."
-                },
-                {
-                    slug: "backend-tips",
-                    title: "5 Tips for Efficient Back-End Development",
-                    content: "1. Write modular and reusable code.\n2. Optimize database queries for performance.\n3. Implement error handling and logging.\n4. Keep authentication and authorization secure.\n5. Regularly update dependencies."
-                }
-            ]
-        },
-        {
-            title: "Module 4: Full-Stack Development",
-            lessons: [
-                {
-                    slug: "fullstack-intro",
-                    title: "What is Full-Stack?",
-                    content: "Full-stack developers handle both front-end and back-end development, creating complete web applications.\n\n**Popular Stacks:**\n*   **MERN Stack:** MongoDB, Express.js, React, Node.js.\n*   **LAMP Stack:** Linux, Apache, MySQL, PHP.\n*   **MEVN Stack:** MongoDB, Express.js, Vue.js, Node.js.\n*   **Django & Flask Stack:** Python-based frameworks."
-                },
-                {
-                    slug: "fullstack-tips",
-                    title: "5 Tips for Successful Full-Stack Development",
-                    content: "1. Keep front-end and back-end components loosely coupled.\n2. Use version control systems like Git.\n3. Follow best practices for API design.\n4. Implement server-side rendering (SSR) for better SEO.\n5. Use automated testing to ensure code quality."
-                }
-            ]
-        },
-        {
-            title: "Module 5: Security & Optimization",
-            lessons: [
-                {
-                    slug: "web-security",
-                    title: "Website Security Best Practices",
-                    content: "*   **SSL (Secure Socket Layer):** Encrypts data between the user and the server.\n*   **Authentication:** Implementing user authentication systems (OAuth, JWT).\n*   **SQL Injection Prevention:** Protecting against database attacks.\n*   **Web Application Firewall (WAF):** Protects websites from malicious traffic."
-                },
-                {
-                    slug: "performance-optimization",
-                    title: "Performance Optimization Techniques",
-                    content: "*   **Caching:** Storing frequently accessed data for faster loading.\n*   **Lazy Loading:** Loading images and resources only when needed.\n*   **Image Optimization:** Compressing images to improve page speed.\n*   **Content Delivery Network (CDN):** Distributes website content across multiple servers for faster load times."
+                    slug: "dom-manipulation",
+                    title: "Interacting with the Page: The DOM",
+                    content: "### Objective\nLearn how to use JavaScript to manipulate the Document Object Model (DOM) to create dynamic and interactive user experiences.\n\n### What is the DOM?\nThe DOM is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects; that way, programming languages can connect to the page.\n\n### Common Tasks\n- **Selecting Elements:** `document.getElementById('myId')`, `document.querySelector('.myClass')`.\n- **Changing Content:** `element.textContent = 'New text!'`.\n- **Changing Styles:** `element.style.color = 'red'`.\n- **Event Handling:** Responding to user actions like clicks and key presses. `element.addEventListener('click', myFunction)`."
                 },
                  {
-                    slug: "security-tips",
-                    title: "5 Tips for Web Security & Optimization",
-                    content: "1. Use HTTPS to secure user data.\n2. Optimize images and minify CSS/JavaScript.\n3. Regularly update software and plugins.\n4. Set up automated backups.\n5. Use content delivery networks (CDNs)."
+                    slug: 'web-dev-quiz-2',
+                    title: 'Module 2 Quiz',
+                    type: 'quiz',
+                    content: 'A developer wants to change the text of a paragraph with the ID `welcome-message` to "Welcome!" when a button with the ID `login-btn` is clicked. Which JavaScript snippet correctly accomplishes this?',
+                    options: [
+                        { id: 'A', text: '`document.getElementById(\"login-btn\").addEventListener(\"click\", () => {\n  document.getElementById(\"welcome-message\").textContent = \"Welcome!\";\n});`' },
+                        { id: 'B', text: '`document.querySelector(\"#login-btn\").onClick = {\n  document.querySelector(\"#welcome-message\").innerHTML = \"Welcome!\";\n};`' },
+                        { id: 'C', text: '`document.getElementById(\"welcome-message\").textContent = \"Welcome!\";`' },
+                        { id: 'D', text: '`#login-btn.click(() => {\n  #welcome-message.text(\"Welcome!\");\n});`' }
+                    ],
+                    correctAnswer: 'A',
+                    explanation: 'Option A correctly uses `addEventListener` to listen for a click event on the button. When the event occurs, it executes a function that selects the paragraph by its ID and updates its `textContent`. Option B has incorrect syntax for an event handler. Option C changes the text immediately, not on a button click. Option D uses jQuery-like syntax, not standard JavaScript.'
                 }
             ]
         }
@@ -531,7 +503,7 @@ const courses = [
   {
     slug: 'cs-top-10-topics',
     title: 'The 10 Most Important Topics in Computer Science',
-    description: 'A comprehensive course covering the 10 most important topics that form the backbone of computer science, from algorithms to AI.',
+    description: 'A comprehensive course covering the 10 most important topics that form the backbone of computer science, from algorithms to AI.\n\n**Learning Outcomes:**\n- Explain the function and importance of core data structures and algorithms.\n- Describe the roles of an operating system and a computer network.\n- Differentiate between various programming paradigms.\n- Understand the fundamentals of software engineering, cybersecurity, and AI.',
     level: 'Beginner',
     primaryCategory: 'Computer Science',
     suggestedTags: ['Algorithms', 'Data Structures', 'Operating Systems', 'Cybersecurity', 'AI'],
@@ -547,8 +519,22 @@ const courses = [
         lessons: [
             { 
                 slug: "cs-topic-algorithms", 
-                title: "Algorithms: The Foundation", 
-                content: `### What is an Algorithm?\n\nAn algorithm is a finite sequence of well-defined, computer-implementable instructions, typically to solve a class of specific problems or to perform a computation. Think of it as a recipe for a computer to follow.\n\n### Why Do They Matter?\n\nAlgorithms are the core of computer science. They determine how efficiently a program runs. A small change in an algorithm can be the difference between a program that runs in a fraction of a second and one that takes years!\n\n### Measuring Efficiency: Big O Notation\n\nWe use **Big O Notation** to describe an algorithm's performance or complexity. It characterizes how the runtime or space requirements grow as the input size grows. For example:\n\n- **O(1):** Constant time (e.g., accessing an array element by index).\n- **O(log n):** Logarithmic time (e.g., binary search).\n- **O(n):** Linear time (e.g., searching an unsorted list).\n- **O(n²):** Quadratic time (e.g., a simple bubble sort).\n\n### Common Examples\n\n**1. Searching Algorithms:**\n*   **Linear Search:** Checks every element in a list sequentially. Simple, but slow for large lists.\n*   **Binary Search:** Efficiently finds an item in a **sorted** list by repeatedly dividing the search interval in half.\n\n**2. Sorting Algorithms:**\n*   **Bubble Sort:** Repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. Simple to understand, but very inefficient (O(n²)).\n*   **Merge Sort:** A more efficient, recursive algorithm that divides the list into halves, sorts them, and then merges them back together. Its complexity is O(n log n).\n`
+                title: "Algorithms: The Foundation of Computation", 
+                content: `### What is an Algorithm?\nAn algorithm is a step-by-step procedure for solving a problem or accomplishing a task. In computer science, it's a sequence of instructions a computer follows to transform input into output. Think of it as a recipe: a finite set of clear steps to achieve a specific outcome.\n\n### Why They Matter\nAlgorithms are the heart of computer science. The efficiency of an algorithm can make the difference between an application that runs in milliseconds and one that takes hours. Understanding algorithms is key to writing efficient and scalable code.\n\n### Measuring Efficiency: Big O Notation\nWe use **Big O Notation** to analyze the performance of an algorithm. It describes how the runtime or memory usage grows as the input size (\\\`n\\\`) increases.\n- **O(1) - Constant Time:** The time taken is the same, regardless of input size. (e.g., accessing an array element at a known index).\n- **O(log n) - Logarithmic Time:** Runtime grows logarithmically. Very efficient. (e.g., Binary Search).\n- **O(n) - Linear Time:** Runtime grows linearly with the input size. (e.g., searching an unsorted list).\n- **O(n²) - Quadratic Time:** Runtime grows quadratically. Becomes slow very quickly. (e.g., Bubble Sort).`
+            },
+             {
+                slug: 'cs-topics-quiz-1',
+                title: 'Algorithms Quiz',
+                type: 'quiz',
+                content: 'An algorithm needs to find a specific name in a phone book containing 1,000,000 sorted names. Which search algorithm would be most efficient, and what is its Big O complexity?',
+                options: [
+                    { id: 'A', text: 'Linear Search, O(n)' },
+                    { id: 'B', text: 'Binary Search, O(log n)' },
+                    { id: 'C', text: 'Bubble Sort, O(n²)' },
+                    { id: 'D', text: 'A hash map lookup, O(1)' }
+                ],
+                correctAnswer: 'B',
+                explanation: 'Because the names in a phone book are sorted, Binary Search is the most efficient algorithm. It works by repeatedly dividing the search interval in half. Its time complexity is O(log n), which is incredibly fast for large datasets. Linear Search (O(n)) would be far too slow.'
             }
         ]
       },
@@ -557,88 +543,52 @@ const courses = [
         lessons: [
             { 
                 slug: "cs-topic-data-structures", 
-                title: "Data Structures: Organizing Information", 
-                content: `### What are Data Structures?\n\nData structures are specialized formats for organizing, processing, retrieving, and storing data. They provide a way to manage large amounts of data efficiently for uses such as large databases and internet indexing services. The choice of data structure directly impacts an algorithm's performance.\n\n### Common Data Structures\n\n**1. Arrays:**\n*   A collection of items stored at contiguous memory locations.\n*   **Use case:** Storing a list of elements of the same type. Fast access to elements using an index (O(1)).\n\n**2. Linked Lists:**\n*   A linear collection of data elements whose order is not given by their physical placement in memory. Each element points to the next.\n*   **Use case:** When you need efficient insertions or deletions from any position in the sequence.\n\n**3. Stacks:**\n*   A LIFO (Last-In, First-Out) structure. The last element added is the first one to be removed.\n*   **Use case:** Managing function calls (the "call stack"), undo functionality in an editor.\n\n**4. Queues:**\n*   A FIFO (First-In, First-Out) structure. The first element added is the first one to be removed.\n*   **Use case:** Managing tasks in a print queue, handling requests on a server.\n\n**5. Trees:**\n*   A hierarchical structure with a root value and subtrees of children with a parent node.\n*   **Use case:** File systems, representing hierarchical data like an organization chart. Binary search trees allow for fast searching, insertion, and deletion.\n\n**6. Graphs:**\n*   A set of nodes (vertices) and edges that connect pairs of nodes.\n*   **Use case:** Social networks, mapping applications (cities and roads), computer networks.`
+                title: "Data Structures: Organizing Information for Efficiency", 
+                content: `### What are Data Structures?\nData structures are formats for organizing, managing, and storing data that enable efficient access and modification. The choice of data structure can have a massive impact on an algorithm's performance.\n\n### Common Data Structures\n- **Arrays:** A simple collection of items stored in contiguous memory locations. Offers fast access by index (O(1)).\n- **Linked Lists:** A sequence of nodes where each node points to the next. Allows for efficient insertions and deletions.\n- **Stacks:** A Last-In, First-Out (LIFO) structure. Think of a stack of plates. Used for managing function calls and undo features.\n- **Queues:** A First-In, First-Out (FIFO) structure. Like a checkout line. Used for managing tasks and requests.\n- **Trees:** A hierarchical structure with a root node and child nodes. Used for file systems and databases.\n- **Graphs:** A collection of nodes (vertices) and edges connecting them. Used to model networks like social media connections or road maps.\n- **Hash Tables (or Dictionaries):** A structure that maps keys to values for highly efficient lookups. Often provides O(1) average time complexity for insertion, deletion, and retrieval.`
+            },
+            {
+                slug: 'cs-topics-quiz-2',
+                title: 'Data Structures Quiz',
+                type: 'quiz',
+                content: 'You are designing a feature for a music app that allows users to go back to the previously played song. Which data structure is best suited for managing the song history for this "back" button functionality?',
+                options: [
+                    { id: 'A', text: 'Queue' },
+                    { id: 'B', text: 'Stack' },
+                    { id: 'C', text: 'Array' },
+                    { id: 'D', text: 'Linked List' }
+                ],
+                correctAnswer: 'B',
+                explanation: 'A Stack is the perfect data structure for this. As a new song is played, you "push" it onto the stack. When the user hits the "back" button, you "pop" the most recently played song off the stack to reveal the previous one. This is a classic Last-In, First-Out (LIFO) problem.'
             }
         ]
       },
-      {
+       {
         title: "Module 3: Operating Systems",
         lessons: [
             { 
                 slug: "cs-topic-os", 
-                title: "Operating Systems: Bridging Software and Hardware", 
-                content: `### What is an Operating System (OS)?\n\nThe OS is the most important software that runs on a computer. It manages the computer's memory and processes, as well as all of its software and hardware. It also allows you to communicate with the computer without knowing how to speak the computer's language.\n\n### Core Responsibilities\n\n**1. Process Management:**\n*   A **process** is a program in execution. The OS manages the lifecycle of processes, including creation, deletion, and scheduling.\n*   **Scheduling:** The OS decides which process gets to use the CPU and for how long. Common algorithms include First-Come, First-Served (FCFS), and Round Robin.\n*   **Threads:** A thread is a lightweight process. A single process can have multiple threads, allowing for multitasking (e.g., a web browser using one thread to display images and another to fetch data).\n\n**2. Memory Management:**\n*   The OS manages the computer's primary memory (RAM).\n*   It keeps track of which parts of memory are currently being used and by whom.\n*   It allocates and deallocates memory space as needed for programs and processes.\n*   **Virtual Memory:** A technique that allows the execution of a process that may not be completely in memory, using disk space as an extension of RAM.\n\n**3. File System Management:**\n*   The OS provides a structured way to store and retrieve files on storage devices like hard drives.\n\n**4. Device Management:**\n*   The OS communicates with hardware devices through their respective drivers.` 
+                title: "Operating Systems: The Computer's Manager", 
+                content: "An Operating System (OS) is the software that manages all of the computer's hardware and software resources. It acts as an intermediary between the user and the computer hardware. Examples include Windows, macOS, and Linux.\n\n### Core Responsibilities:\n- **Process Management:** Manages the execution of programs (processes) and scheduling of tasks.\n- **Memory Management:** Allocates and deallocates RAM to various processes.\n- **File System Management:** Organizes and keeps track of files and directories on storage devices.\n- **Device Management:** Controls hardware devices through drivers."
             }
         ]
       },
-      {
+       {
         title: "Module 4: Computer Networks",
         lessons: [
             { 
                 slug: "cs-topic-networks", 
-                title: "Computer Networks: How Computers Communicate", 
-                content: `### What is a Computer Network?\n\nA computer network is a set of computers sharing resources located on or provided by network nodes. The computers use common communication protocols over digital interconnections to communicate with each other.\n\n### The Internet & The TCP/IP Model\n\nThe internet is a global network of computers. Its communication is standardized by the **TCP/IP protocol suite**. This model is divided into layers:\n\n1.  **Application Layer (e.g., HTTP, FTP):** Where network applications and their protocols reside. Your web browser uses HTTP (Hypertext Transfer Protocol).\n2.  **Transport Layer (e.g., TCP, UDP):** Provides host-to-host communication services. **TCP (Transmission Control Protocol)** is reliable and connection-oriented, ensuring all data arrives in order. **UDP (User Datagram Protocol)** is faster but less reliable.\n3.  **Internet Layer (e.g., IP):** Responsible for addressing, routing, and packaging data packets. The **IP (Internet Protocol)** address is a unique identifier for each device on the network.\n4.  **Link Layer:** Handles the physical connection to the network.\n\n### Key Concepts\n\n*   **DNS (Domain Name System):** The phonebook of the Internet. It translates human-readable domain names (like \`www.google.com\`) into machine-readable IP addresses.\n*   **HTTP/HTTPS:** The protocol used for transmitting web pages. HTTPS is the secure version, encrypting data between your browser and the server.\n*   **Routing:** The process of selecting a path for traffic in a network, or between or across multiple networks.`
+                title: "Computer Networks: Connecting the World", 
+                content: "Computer networking is the practice of connecting computers together to share data and resources. The internet is the largest example of a computer network.\n\n### Key Concepts:\n- **TCP/IP Model:** The foundational protocol suite of the internet. It defines how data is broken into packets, addressed, transmitted, routed, and received.\n- **HTTP/HTTPS:** The protocol used for viewing web pages in a browser. HTTPS is the secure, encrypted version.\n- **DNS (Domain Name System):** The internet's phonebook. It translates human-readable domain names (like `google.com`) into computer-readable IP addresses."
             }
         ]
       },
       {
-        title: "Module 5: Databases & DBMS",
+        title: "Module 5: Databases",
         lessons: [
             { 
                 slug: "cs-topic-databases", 
                 title: "Databases: Storing and Retrieving Data", 
-                content: `### What is a Database?\n\nA database is an organized collection of structured information, or data, typically stored electronically in a computer system. A **Database Management System (DBMS)** is the software that interacts with end users, applications, and the database itself to capture and analyze the data.\n\n### Types of Databases\n\n**1. Relational Databases (SQL):**\n*   Data is organized into tables (rows and columns).\n*   Uses **SQL (Structured Query Language)** for defining and manipulating the data.\n*   Emphasizes rigidity and consistency of data (schema-on-write).\n*   **Examples:** MySQL, PostgreSQL, Microsoft SQL Server.\n\n**2. Non-Relational Databases (NoSQL):**\n*   Data can be stored in various ways: document (JSON-like), key-value, wide-column, or graph.\n*   Offers more flexibility (schema-on-read).\n*   Often better for large-scale, unstructured data.\n*   **Examples:** MongoDB (document), Redis (key-value), Cassandra (wide-column), Neo4j (graph).\n\n### Core Concepts\n\n*   **Indexing:** A data structure technique to efficiently retrieve records from a database file. An index is like the index in the back of a book; it helps you find data without searching every row.\n*   **Transactions (ACID Properties):** A transaction is a single logical unit of work. In relational databases, transactions adhere to ACID properties (Atomicity, Consistency, Isolation, Durability) to guarantee data integrity even in the event of errors or power failures.` 
-            }
-        ]
-      },
-      {
-        title: "Module 6: Programming Languages & Paradigms",
-        lessons: [
-            { 
-                slug: "cs-topic-languages", 
-                title: "Programming Languages & Paradigms", 
-                content: `### What is a Programming Paradigm?\n\nA programming paradigm is a style or “way” of programming. It's an approach to solving problems using some programming language. Some languages are designed for one paradigm, while others support multiple.\n\n### Common Paradigms\n\n**1. Procedural Programming:**\n*   Based on the concept of the procedure call. Procedures, also known as routines or functions, simply contain a series of computational steps to be carried out.\n*   Code is structured into procedures that perform specific tasks.\n*   **Example Languages:** C, Pascal.\n\n**2. Object-Oriented Programming (OOP):**\n*   Based on the concept of "objects", which can contain data in the form of fields (often known as attributes or properties), and code, in the form of procedures (often known as methods).\n*   **Core Concepts:**\n    *   **Encapsulation:** Bundling data and methods that operate on the data within one unit.\n    *   **Inheritance:** A mechanism for creating new classes from existing ones.\n    *   **Polymorphism:** The ability to present the same interface for differing underlying forms (data types).\n*   **Example Languages:** Java, Python, C++.\n\n**3. Functional Programming:**\n*   Treats computation as the evaluation of mathematical functions and avoids changing-state and mutable data.\n*   Emphasizes the use of "pure functions" which have no side effects.\n*   **Example Languages:** Haskell, Lisp, F#. JavaScript and Python also support functional programming styles.`
-            }
-        ]
-      },
-      {
-        title: "Module 7: Software Engineering",
-        lessons: [
-            { 
-                slug: "cs-topic-software-engineering", 
-                title: "Software Engineering: Building Real Software", 
-                content: `### What is Software Engineering?\n\nSoftware engineering is the branch of computer science that deals with the design, development, testing, and maintenance of software applications. It applies engineering principles to create robust, efficient, and scalable software.\n\n### Software Development Life Cycle (SDLC)\n\nThe SDLC is a process followed for a software project. It consists of a detailed plan describing how to develop, maintain, replace and alter or enhance specific software. Common models include:\n\n*   **Waterfall Model:** A linear, sequential approach. Each phase must be completed before the next begins.\n*   **Agile Model:** An iterative approach. Development is done in short cycles (sprints), allowing for flexibility and adaptation to change.\n\n### Key Concepts\n\n**1. Design Patterns:**\n*   General, reusable solutions to commonly occurring problems within a given context in software design. They are not finished designs that can be transformed directly into code, but templates for how to solve a problem.\n*   **Examples:** Singleton Pattern, Factory Pattern, Observer Pattern.\n\n**2. Testing:**\n*   The process of evaluating a software application to find any bugs or errors.\n*   **Levels of Testing:**\n    *   **Unit Testing:** Testing individual components or functions.\n    *   **Integration Testing:** Testing how multiple components work together.\n    *   **System Testing:** Testing the complete, integrated system.\n\n**3. Version Control:**\n*   A system that records changes to a file or set of files over time so that you can recall specific versions later. **Git** is the most popular version control system, and **GitHub** is a platform for hosting Git repositories.`
-            }
-        ]
-      },
-      {
-        title: "Module 8: Computer Architecture",
-        lessons: [
-            { 
-                slug: "cs-topic-architecture", 
-                title: "Computer Architecture: Inside the Machine", 
-                content: `### What is Computer Architecture?\n\nComputer architecture is a set of rules and methods that describe the functionality, organization, and implementation of computer systems. It's the blueprint that tells us how the hardware components are connected and interact to create a working computer.\n\n### Core Components\n\n**1. CPU (Central Processing Unit):**\n*   The "brain" of the computer. It performs most of the processing inside a computer, executing instructions from programs.\n*   The CPU's performance is often measured in gigahertz (GHz).\n\n**2. Memory (RAM - Random Access Memory):**\n*   A form of volatile memory used to store working data and machine code. Data in RAM is lost when the power is turned off.\n*   The CPU can access data in RAM very quickly.\n\n**3. Storage (Hard Drive/SSD):**\n*   Non-volatile memory where software, documents, and other files are stored. Data here persists even when the power is off.\n*   Slower than RAM, but provides long-term storage.\n\n### How it Works Together: The Instruction Cycle\n\nThe basic operation of a computer is the instruction cycle (also known as the fetch-decode-execute cycle):\n1.  **Fetch:** The CPU retrieves an instruction from memory.\n2.  **Decode:** The CPU decodes the instruction to understand what action to perform.\n3.  **Execute:** The CPU performs the action. This might involve reading/writing from/to memory or performing a calculation.\n\n**Cache:** A smaller, faster memory closer to the CPU that stores copies of the data from frequently used main memory locations. It's used to reduce the average time to access data from the main memory.`
-            }
-        ]
-      },
-      {
-        title: "Module 9: Cybersecurity",
-        lessons: [
-            { 
-                slug: "cs-topic-cybersecurity", 
-                title: "Cybersecurity: Protecting Our Digital World", 
-                content: `### What is Cybersecurity?\n\nCybersecurity is the practice of protecting systems, networks, and programs from digital attacks. These cyberattacks are usually aimed at accessing, changing, or destroying sensitive information; extorting money from users; or interrupting normal business processes.\n\n### The CIA Triad\n\nA core model for guiding security policies:\n\n*   **Confidentiality:** Ensuring that data is accessible only to those with authorized access.\n*   **Integrity:** Maintaining the consistency, accuracy, and trustworthiness of data.\n*   **Availability:** Ensuring that systems and data are available to authorized users when needed.\n\n### Key Concepts\n\n**1. Encryption:**\n*   The process of converting data into a code to prevent unauthorized access. The data can only be read after it's been decrypted with a specific key.\n*   Used in HTTPS to secure web traffic.\n\n**2. Authentication:**\n*   The process of verifying the identity of a user or process. \n*   **Methods:** Passwords, biometrics (fingerprints), multi-factor authentication (MFA).\n\n**3. Firewalls:**\n*   A network security device that monitors incoming and outgoing network traffic and decides whether to allow or block specific traffic based on a defined set of security rules.\n\n**4. Common Attacks:**\n*   **Phishing:** Fraudulent attempts to obtain sensitive information by disguising as a trustworthy entity in an electronic communication.\n*   **Malware:** Malicious software designed to disrupt, damage, or gain unauthorized access to a computer system.\n*   **Denial-of-Service (DoS):** An attack meant to shut down a machine or network, making it inaccessible to its intended users.`
-            }
-        ]
-      },
-      {
-        title: "Module 10: Artificial Intelligence & Machine Learning",
-        lessons: [
-            { 
-                slug: "cs-topic-ai-ml", 
-                title: "AI & Machine Learning: The Future of Tech", 
-                content: `### What is Artificial Intelligence (AI)?\n\nAI is a broad area of computer science that makes computers seem like they have human intelligence. It is the science of training machines to learn, reason, and make decisions.\n\n### What is Machine Learning (ML)?\n\nMachine Learning is a subset of AI. It's the "learning" part. Instead of being explicitly programmed with rules, an ML system is trained on large amounts of data, which allows it to learn to make predictions or decisions.\n\n### Common Paradigms of Machine Learning\n\n**1. Supervised Learning:**\n*   The model is trained on **labeled data**. This means the training data includes the desired output (the "right answer").\n*   **Use cases:**\n    *   **Classification:** Predicting a category (e.g., "spam" or "not spam").\n    *   **Regression:** Predicting a continuous value (e.g., predicting a house price).\n\n**2. Unsupervised Learning:**\n*   The model is trained on **unlabeled data** and tries to find patterns on its own.\n*   **Use cases:**\n    *   **Clustering:** Grouping similar data points together (e.g., customer segmentation).\n    *   **Dimensionality Reduction:** Reducing the number of variables in a dataset.\n\n**3. Deep Learning:**\n*   A subfield of ML based on **artificial neural networks** with many layers (hence "deep").\n*   It has been particularly successful in areas like image recognition (Computer Vision) and natural language processing (NLP).`
+                content: "Databases are systems for storing and retrieving data efficiently. A Database Management System (DBMS) is the software used to manage the database.\n\n### Types of Databases:\n- **Relational (SQL):** Organizes data into structured tables with rows and columns. Uses SQL (Structured Query Language). Examples: MySQL, PostgreSQL.\n- **Non-Relational (NoSQL):** Provides more flexibility and is often used for large-scale or unstructured data. Examples: MongoDB (document-based), Redis (key-value)."
             }
         ]
       }
