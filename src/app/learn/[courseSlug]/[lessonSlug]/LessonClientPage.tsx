@@ -1,3 +1,4 @@
+
 'use client'
 
 import { notFound } from 'next/navigation';
@@ -217,8 +218,8 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
                             </Button>
                         </Link>
                     ) : (
-                        <Link href={`/courses-live`}>
-                            <Button disabled={!isCurrentLessonCompleted}>Back to Courses</Button>
+                        <Link href={`/certificate/${course.slug}`}>
+                            <Button disabled={!isCurrentLessonCompleted}>Finish Course</Button>
                         </Link>
                     )}
                 </div>
