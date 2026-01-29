@@ -115,14 +115,10 @@ export default function CertificatePage() {
                                       <Image src="https://i.postimg.cc/BnxqSkvV/Deep_Blue_Border_Certificate_of_Completion_(2)_Copy.png" alt="SCS Medal" layout="fill" objectFit="contain" />
                                 </div>
 
-                                <div className="w-full flex justify-between items-end px-16 absolute bottom-16">
+                                <div className="w-full flex justify-center items-end px-16 absolute bottom-16">
                                     <div className="text-center">
                                         <p className="font-serif text-xl font-semibold border-b border-dotted border-gray-400 pb-1 px-4">Prerana Pattnaik</p>
                                         <p className="text-xs text-gray-500 tracking-widest mt-1">COURSE DIRECTOR</p>
-                                    </div>
-                                    <div className="text-center">
-                                        <p className="font-serif text-xl font-semibold border-b border-dotted border-gray-400 pb-1 px-4">Khusi Kumari</p>
-                                        <p className="text-xs text-gray-500 tracking-widest mt-1">PROGRAM DIRECTOR</p>
                                     </div>
                                 </div>
                             </div>
