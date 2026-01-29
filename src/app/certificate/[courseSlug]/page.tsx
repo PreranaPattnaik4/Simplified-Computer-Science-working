@@ -108,24 +108,24 @@ export default function CertificatePage() {
                                     <Image src="https://i.postimg.cc/rs90fh6y/3.png" alt="SCS Logo" width={220} height={74} />
                                 </div>
 
-                                <h1 className="text-4xl font-serif font-bold">Certificate of Completion</h1>
+                                <h1 className="text-3xl font-serif font-bold">Certificate of Completion</h1>
                                 
-                                <p className="text-lg mt-4">This Certificate is awarded to</p>
+                                <p className="text-base mt-4">This Certificate is awarded to</p>
                                 
-                                <h2 className="text-5xl font-bold font-space-grotesk my-3 break-words max-w-full px-4 text-[#062121]">
+                                <h2 className="text-4xl font-bold font-space-grotesk my-3 break-words max-w-full px-4 text-[#062121]">
                                     {studentName || 'Learner Name'}
                                 </h2>
                                 
-                                <p className="text-lg max-w-2xl text-center">
+                                <p className="text-base max-w-2xl text-center">
                                     has successfully completed the course
                                 </p>
-                                <h3 className="text-3xl font-serif font-semibold mt-3 mb-6 text-center">
+                                <h3 className="text-2xl font-serif font-semibold mt-3 mb-6 text-center">
                                     {course.title}
                                 </h3>
                                 
                                 <div className="flex-grow" />
 
-                                <div className="relative w-24 h-24 mb-4">
+                                <div className="relative w-28 h-28 mb-4">
                                      <Image src="https://i.postimg.cc/BnxqSkvV/Deep_Blue_Border_Certificate_of_Completion_(2)_Copy.png" alt="SCS Medal" layout="fill" objectFit="contain" />
                                 </div>
 
@@ -161,3 +161,4 @@ export default function CertificatePage() {
         </div>
     );
 }
+
