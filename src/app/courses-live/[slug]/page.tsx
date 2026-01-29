@@ -1,11 +1,11 @@
 
 import { getCourseBySlug, getCourses } from '@/app/lib/courses';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle, Clock, BarChart, Users, Star, Award, ListChecks } from 'lucide-react';
+import { CheckCircle, Star, ListChecks } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import CourseSidebar from '@/components/CourseSidebar';
 
 export async function generateStaticParams() {
   const courses = getCourses();
@@ -102,45 +102,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
 
           {/* Sidebar */}
           <div className="lg:col-span-1">
-            <div className="sticky top-24">
-              <Card className="overflow-hidden shadow-lg">
-                <div className="relative">
-                  <Image
-                    src={course.image}
-                    alt={course.title}
-                    width={500}
-                    height={300}
-                    className="w-full h-56 object-cover"
-                  />
-                  {course.isTopCourse && (
-                    <div className="absolute top-3 right-3 bg-blue-600 text-white text-xs font-bold uppercase px-3 py-1.5 rounded-full flex items-center gap-1 shadow-md">
-                        <Award size={14} />
-                        <span>Top Course 2026</span>
-                    </div>
-                  )}
-                </div>
-                <div className="p-6">
-                  <h2 className="text-3xl font-bold mb-4">Free</h2>
-                  <Link href={`/learn/${course.slug}/${firstLessonSlug}`} passHref>
-                    <Button className="w-full h-12 text-lg font-bold bg-accent text-accent-foreground hover:bg-yellow-500">Enroll Now</Button>
-                  </Link>
-                  <div className="mt-6 space-y-3 text-muted-foreground">
-                    <p className="flex items-center gap-3"><Clock size={18} /><span>Approx. 25 hours to complete</span></p>
-                    <p className="flex items-center gap-3"><BarChart size={18} /><span>{course.level}</span></p>
-                    <p className="flex items-center gap-3"><Users size={18} /><span>{course.students.toLocaleString()} students</span></p>
-                    <p className="flex items-center gap-3"><Award size={18} /><span>Certificate of completion</span></p>
-                  </div>
-                  <div className="mt-6">
-                    <h4 className="font-bold font-space-grotesk text-gray-800 mb-2">Tags</h4>
-                    <div className="flex flex-wrap gap-2">
-                        {course.suggestedTags.map(tag => (
-                            <span key={tag} className="bg-gray-100 text-gray-700 px-3 py-1 text-sm rounded-full">{tag}</span>
-                        ))}
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            </div>
+            <CourseSidebar course={course} firstLessonSlug={firstLessonSlug} />
           </div>
         </div>
         
