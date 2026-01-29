@@ -40,6 +40,13 @@ const blogPosts = [
     link: '/blogs/from-resume-to-offer',
   },
   {
+    category: 'Career Tips, Work-Life Balance',
+    title: 'The Future of Work-Life Balance: Myth or Modern Necessity?',
+    date: 'August 5, 2024',
+    description: 'Examining the evolving concept of work-life balance in the modern world, discussing whether it is an achievable goal or a myth, and exploring its significance for today’s workforce.',
+    link: '/blogs/the-future-of-work-life-balance',
+  },
+  {
     category: 'Python',
     title: 'Mastering Python in 2025: A Comprehensive Guide with Tips and Insights',
     date: '10 February 2025',
@@ -84,6 +91,7 @@ const blogPosts = [
 ];
 
 const recentPosts = [
+    { title: "The Future of Work-Life Balance...", date: "August 5, 2024", comments: 0, link: "/blogs/the-future-of-work-life-balance" },
     { title: "From Resume to Offer: A Complete Guide...", date: "August 1, 2024", comments: 0, link: "/blogs/from-resume-to-offer" },
     { title: "Is AI Writing Stealing Your Job?...", date: "July 22, 2024", comments: 0, link: "/blogs/is-ai-writing-stealing-your-job" },
     { title: "Breaking the Programming Barrier...", date: "July 15, 2024", comments: 0, link: "/blogs/breaking-the-programming-barrier" },
