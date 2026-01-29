@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { notFound, useParams } from 'next/navigation';
 import { getCourseBySlug } from '@/app/lib/courses';
 import { Button } from '@/components/ui/button';
@@ -17,9 +17,16 @@ export default function CertificatePage() {
     const { courseSlug } = useParams<{ courseSlug: string }>();
     const certificateRef = useRef<HTMLDivElement>(null);
     
-    // Use state to hold dynamic values so they are generated once per visit.
-    const [completionDate] = useState(`${new Date().toLocaleString('default', { month: 'long' })} ${new Date().getFullYear()}`);
-    const [certificateId] = useState(`SCS-${Math.floor(1000 + Math.random() * 9000)}-${Math.floor(1000 + Math.random() * 9000)}`);
+    // Use state to hold dynamic values and generate them client-side to avoid hydration errors.
+    const [completionDate, setCompletionDate] = useState('');
+    const [certificateId, setCertificateId] = useState('');
+
+    useEffect(() => {
+        // These values are generated only on the client, after hydration.
+        setCompletionDate(`${new Date().toLocaleString('default', { month: 'long' })} ${new Date().getFullYear()}`);
+        setCertificateId(`SCS-${Math.floor(1000 + Math.random() * 9000)}-${Math.floor(1000 + Math.random() * 9000)}`);
+    }, []); // Empty dependency array ensures this runs only once on mount.
+
 
     const course = getCourseBySlug(courseSlug);
 
