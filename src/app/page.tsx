@@ -361,7 +361,7 @@ export default function HomePage() {
     {
         title: "SCS AI Assistant",
         subtitle: "Your personal guide to SCS. Ask me anything about our courses, content, or career paths.",
-        href: "#", // This can be wired up to open the chatbot
+        href: "/ai-assistant",
         image: placeholderImages.aiAssistant.src,
         hint: placeholderImages.aiAssistant.hint
     }
