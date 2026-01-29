@@ -48,6 +48,16 @@ const nextConfig = {
       },
     ];
   },
+  webpack: (config, { isServer, webpack }) => {
+    if (!isServer) {
+      config.plugins.push(
+        new webpack.IgnorePlugin({
+          resourceRegExp: /^(require-in-the-middle|@opentelemetry\/instrumentation|@opentelemetry\/sdk-node)$/,
+        })
+      );
+    }
+    return config;
+  },
 };
 
 module.exports = nextConfig;
