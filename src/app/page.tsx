@@ -339,19 +339,22 @@ export default function HomePage() {
         title: "Tech Guide",
         subtitle: "Deep-dive into core concepts.",
         href: "/tech-guide",
-        image: placeholderImages.homeHero3.src
+        image: placeholderImages.techGuideHero.src,
+        hint: placeholderImages.techGuideHero.hint
     },
     {
         title: "Hands-On Projects",
         subtitle: "Apply your skills in the DevStudio.",
         href: "/codelab",
-        image: placeholderImages.homeHero4.src
+        image: placeholderImages.course2.src,
+        hint: placeholderImages.course2.hint
     },
     {
         title: "Trending Blogs",
         subtitle: "Stay updated with the latest insights.",
         href: "/blog",
-        image: placeholderImages.homeHero2.src
+        image: placeholderImages.homeHero3.src,
+        hint: placeholderImages.homeHero3.hint
     }
   ];
 
@@ -530,6 +533,8 @@ export default function HomePage() {
             </div>
         </section>
 
+        <SCSLearningPaths />
+        
         {/* What We Offer Section */}
         <section className="container mx-auto max-w-7xl px-4 py-16">
             <h2 className="mb-12 text-center text-4xl font-bold font-space-grotesk">What We Offer</h2>
@@ -550,7 +555,6 @@ export default function HomePage() {
         <TrendingBlogs />
         <LimitlessLearning />
         <IndustrySolutions />
-        <SCSLearningPaths />
         <CareerTimeline />
 
         <section className="bg-gray-50/50 py-20 px-4 sm:px-6 lg:px-8">
