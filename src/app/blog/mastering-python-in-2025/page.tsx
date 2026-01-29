@@ -59,7 +59,7 @@ export default function MasteringPythonPage() {
             </div>
             <span>|</span>
             <div className="flex items-center gap-2">
-                <Folder size={16} /> Python, Programming
+                <Folder size={16} /> Software Development
             </div>
         </div>
         

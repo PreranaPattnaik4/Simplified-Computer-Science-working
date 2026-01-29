@@ -53,7 +53,7 @@ export default function WorkLifeBalancePage() {
             </div>
             <span>|</span>
             <div className="flex items-center gap-2">
-                <Folder size={16} /> Career Tips, Work-Life Balance
+                <Folder size={16} /> Career Development
             </div>
         </div>
         

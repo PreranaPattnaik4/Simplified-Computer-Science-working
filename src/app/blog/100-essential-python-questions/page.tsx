@@ -82,7 +82,7 @@ export default function PythonQuestionsPage() {
             </div>
             <span>|</span>
             <div className="flex items-center gap-2">
-                <Folder size={16} /> Python, FAQ, Beginners
+                <Folder size={16} /> Software Development
             </div>
         </div>
         

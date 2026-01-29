@@ -51,7 +51,7 @@ export default function AiWritingJobPage() {
             </div>
             <span>|</span>
             <div className="flex items-center gap-2">
-                <Folder size={16} /> Artificial Intelligence, Blogging
+                <Folder size={16} /> Tech Insights
             </div>
         </div>
         

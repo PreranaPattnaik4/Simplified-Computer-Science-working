@@ -45,7 +45,7 @@ export default function InterviewTipsPage() {
             </div>
             <span>|</span>
             <div className="flex items-center gap-2">
-                <Folder size={16} /> Interview Tips, Career
+                <Folder size={16} /> Career Development
             </div>
         </div>
         

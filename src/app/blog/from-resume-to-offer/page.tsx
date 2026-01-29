@@ -51,7 +51,7 @@ export default function ResumeToOfferPage() {
             </div>
             <span>|</span>
             <div className="flex items-center gap-2">
-                <Folder size={16} /> Career, Interview Tips
+                <Folder size={16} /> Career Development
             </div>
         </div>
         

@@ -45,7 +45,7 @@ export default function CareerTipsPage() {
             </div>
             <span>|</span>
             <div className="flex items-center gap-2">
-                <Folder size={16} /> Career Tips, Professional Skills
+                <Folder size={16} /> Career Development
             </div>
         </div>
         

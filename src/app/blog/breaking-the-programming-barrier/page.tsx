@@ -51,7 +51,7 @@ export default function AiProgrammingBarrierPage() {
             </div>
             <span>|</span>
             <div className="flex items-center gap-2">
-                <Folder size={16} /> Artificial Intelligence, Software Development
+                <Folder size={16} /> Artificial Intelligence
             </div>
         </div>
         

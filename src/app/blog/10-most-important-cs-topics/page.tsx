@@ -179,7 +179,7 @@ export default function ImportantCSTopicsPage() {
             </div>
             <span>|</span>
             <div className="flex items-center gap-2">
-                <Folder size={16} /> Computer Science, Fundamentals
+                <Folder size={16} /> Software Development
             </div>
         </div>
         
