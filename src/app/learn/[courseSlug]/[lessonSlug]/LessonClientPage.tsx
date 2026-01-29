@@ -1,4 +1,3 @@
-
 'use client'
 
 import { notFound } from 'next/navigation';
@@ -46,13 +45,18 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
   const currentLesson = allLessons[currentLessonIndex] as Lesson;
   
   const totalLessons = allLessons.length;
-  const progress = (completedLessons.size / totalLessons) * 100;
+  const progress = totalLessons > 0 ? (completedLessons.size / totalLessons) * 100 : 0;
 
   const prevLesson = currentLessonIndex > 0 ? allLessons[currentLessonIndex - 1] : null;
   const nextLesson = currentLessonIndex < allLessons.length - 1 ? allLessons[currentLessonIndex + 1] : null;
 
   const handleMarkComplete = () => {
-    setCompletedLessons(prev => new Set(prev).add(lessonSlug));
+    // When a lesson is marked complete, all preceding lessons are also marked complete.
+    const newCompleted = new Set(completedLessons);
+    for (let i = 0; i <= currentLessonIndex; i++) {
+        newCompleted.add(allLessons[i].slug);
+    }
+    setCompletedLessons(newCompleted);
   };
   
   const isCurrentLessonCompleted = completedLessons.has(lessonSlug);
