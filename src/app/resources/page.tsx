@@ -1,7 +1,8 @@
+
 'use client';
 
 import Image from 'next/image';
-import { Download, Code, FileText, BrainCircuit, Bot, CheckCircle } from 'lucide-react';
+import { Download, Code, FileText, BrainCircuit, Bot, CheckCircle, Briefcase } from 'lucide-react';
 import placeholderImages from '@/app/lib/placeholder-images.json';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -30,6 +31,12 @@ const resources = [
         title: "Beginner's Guide to Prompt Engineering",
         description: "Learn the art of crafting effective prompts to get the most out of AI models like GPT.",
         icon: <Bot className="h-8 w-8 text-accent" />,
+        downloadLink: "#",
+    },
+    {
+        title: "20 Essential Interview Tips for 2025",
+        description: "A complete guide to help you prepare for and ace corporate interviews in 2025.",
+        icon: <Briefcase className="h-8 w-8 text-accent" />,
         downloadLink: "#",
     }
 ];
