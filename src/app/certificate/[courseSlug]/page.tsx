@@ -16,6 +16,10 @@ export default function CertificatePage() {
     const [studentName, setStudentName] = useState('Learner Name');
     const { courseSlug } = useParams<{ courseSlug: string }>();
     const certificateRef = useRef<HTMLDivElement>(null);
+    
+    // Use state to hold dynamic values so they are generated once per visit.
+    const [completionDate] = useState(`${new Date().toLocaleString('default', { month: 'long' })} ${new Date().getFullYear()}`);
+    const [certificateId] = useState(`SCS-${Math.floor(1000 + Math.random() * 9000)}-${Math.floor(1000 + Math.random() * 9000)}`);
 
     const course = getCourseBySlug(courseSlug);
 
@@ -54,7 +58,8 @@ export default function CertificatePage() {
     };
 
     const handleShareToLinkedIn = () => {
-        const linkedInUrl = `https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${encodeURIComponent(course.title)}&organizationName=${encodeURIComponent('Simplified Computer Science')}&issueYear=${new Date().getFullYear()}&issueMonth=${new Date().getMonth() + 1}&certUrl=${encodeURIComponent(window.location.href)}`;
+        const certUrl = typeof window !== 'undefined' ? window.location.href : '';
+        const linkedInUrl = `https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${encodeURIComponent(course.title)}&organizationName=${encodeURIComponent('Simplified Computer Science')}&issueYear=${new Date().getFullYear()}&issueMonth=${new Date().getMonth() + 1}&certUrl=${encodeURIComponent(certUrl)}&certId=${encodeURIComponent(certificateId)}`;
         window.open(linkedInUrl, '_blank');
     };
 
@@ -115,7 +120,13 @@ export default function CertificatePage() {
                                       <Image src="https://i.postimg.cc/BnxqSkvV/Deep_Blue_Border_Certificate_of_Completion_(2)_Copy.png" alt="SCS Medal" layout="fill" objectFit="contain" />
                                 </div>
 
-                                <div className="w-full flex justify-center items-end px-16 absolute bottom-16">
+                                <div className="w-full flex justify-between items-end px-16 absolute bottom-16">
+                                    <div className="text-left text-xs text-gray-700">
+                                        <p className="font-bold">Issued By: Simplified Computer Science</p>
+                                        <p className="mt-1"><span className="font-bold">Date of Completion:</span> {completionDate}</p>
+                                        <p className="mt-1"><span className="font-bold">Certificate ID:</span> {certificateId}</p>
+                                    </div>
+
                                     <div className="text-center">
                                         <p className="font-serif text-xl font-semibold border-b border-dotted border-gray-400 pb-1 px-4">Prerana Pattnaik</p>
                                         <p className="text-xs text-gray-500 tracking-widest mt-1">COURSE DIRECTOR</p>
