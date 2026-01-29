@@ -211,15 +211,15 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
                         <div /> // Placeholder for alignment
                     )}
                     {nextLesson ? (
-                        <Link href={`/learn/${course.slug}/${nextLesson.slug}`}>
-                            <Button disabled={!isCurrentLessonCompleted}>
+                        <Link href={`/learn/${course.slug}/${nextLesson.slug}`} passHref>
+                            <Button onClick={handleMarkComplete}>
                                 Next Lesson
                                 <ChevronRight className="h-4 w-4 ml-2" />
                             </Button>
                         </Link>
                     ) : (
-                        <Link href={`/certificate/${course.slug}`}>
-                            <Button disabled={!isCurrentLessonCompleted}>Finish Course</Button>
+                        <Link href={`/certificate/${course.slug}`} passHref>
+                            <Button onClick={handleMarkComplete}>Finish Course</Button>
                         </Link>
                     )}
                 </div>
