@@ -1,6 +1,6 @@
 "use client"
 
-import { Menu, User, Search, LogIn, UserPlus, X, BookText, GraduationCap, Loader2 } from "lucide-react"
+import { Menu, User, Search, LogIn, UserPlus, X, BookText, GraduationCap, Loader2, ListChecks } from "lucide-react"
 import Link from "next/link"
 import {
   DropdownMenu,
@@ -27,6 +27,7 @@ const navLinks = [
   { href: "/resources", label: "Resources" },
   { href: "/tech-guide", label: "Tech Guide" },
   { href: "/career-tips-and-roadmaps", label: "Career Tips" },
+  { href: "/ai-search", label: "AI Search" },
   { href: "/contact", label: "Contact" },
   { href: "/about", label: "About" },
 ];
