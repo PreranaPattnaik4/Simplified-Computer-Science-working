@@ -334,7 +334,8 @@ export default function HomePage() {
         title: "Career Roadmaps",
         subtitle: "Chart your path to success in tech.",
         href: "/career-tips-and-roadmaps",
-        image: placeholderImages.homeHero1.src
+        image: placeholderImages.homeHero1.src,
+        hint: placeholderImages.homeHero1.hint
     },
     {
         title: "Trending Courses",
@@ -342,6 +343,13 @@ export default function HomePage() {
         href: "/courses-live",
         image: placeholderImages.homeHero5.src,
         hint: placeholderImages.homeHero5.hint
+    },
+    {
+        title: "Tech Guide",
+        subtitle: "A deep-dive into core CS topics and modern technologies.",
+        href: "/tech-guide",
+        image: placeholderImages.techGuideHero.src,
+        hint: placeholderImages.techGuideHero.hint
     },
     {
         title: "SCS DevStudio",
@@ -507,7 +515,7 @@ export default function HomePage() {
                         Dive into our main offerings, each designed to provide a clear path to mastering new skills and concepts.
                     </p>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
                     {explorationCards.map(card => (
                         <Link href={card.href} key={card.title}>
                             <div className="group relative block h-96 overflow-hidden rounded-xl shadow-lg">
@@ -515,7 +523,8 @@ export default function HomePage() {
                                     src={card.image} 
                                     alt={card.title} 
                                     fill 
-                                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-105" 
+                                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                                    data-ai-hint={card.hint}
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent transition-opacity duration-500 opacity-0 group-hover:opacity-100 motion-reduce:opacity-0"></div>
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
