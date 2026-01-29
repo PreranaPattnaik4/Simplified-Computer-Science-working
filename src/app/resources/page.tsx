@@ -2,7 +2,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Download, Code, FileText, BrainCircuit, Bot, CheckCircle, Briefcase, HeartHandshake } from 'lucide-react';
+import { Download, Code, FileText, BrainCircuit, Bot, CheckCircle, Briefcase, HeartHandshake, Users } from 'lucide-react';
 import placeholderImages from '@/app/lib/placeholder-images.json';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -37,13 +37,19 @@ const resources = [
         title: "20 Essential Interview Tips for 2025",
         description: "A complete guide to help you prepare for and ace corporate interviews in 2025.",
         icon: <Briefcase className="h-8 w-8 text-accent" />,
-        downloadLink: "#",
+        downloadLink: "/blog/20-essential-tips-to-ace-corporate-interviews-in-2025",
     },
     {
         title: "The Future of Work-Life Balance: A Modern Guide",
         description: "Explore the importance of work-life balance and strategies to achieve it in today's demanding world.",
         icon: <HeartHandshake className="h-8 w-8 text-accent" />,
-        downloadLink: "#",
+        downloadLink: "/blog/the-future-of-work-life-balance",
+    },
+    {
+        title: "Mastering Soft Skills for Tech Professionals",
+        description: "A guide to the most important interpersonal skills for a successful career in technology.",
+        icon: <Users className="h-8 w-8 text-accent" />,
+        downloadLink: "/blog/unlocking-career-success-soft-skills",
     }
 ];
 

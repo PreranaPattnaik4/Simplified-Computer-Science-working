@@ -47,6 +47,13 @@ const blogPosts = [
     link: '/blogs/the-future-of-work-life-balance',
   },
   {
+    category: 'Career Tips, Professional Skills',
+    title: 'Unlocking Career Success: Mastering Soft Skills for Tech Professionals',
+    date: 'August 12, 2024',
+    description: 'In today’s fast-paced technology-driven world, technical knowledge and hard skills are essential, but they are no longer enough to secure success in your career. This post explores why soft skills matter and how to develop them.',
+    link: '/blogs/unlocking-career-success-soft-skills',
+  },
+  {
     category: 'Python',
     title: 'Mastering Python in 2025: A Comprehensive Guide with Tips and Insights',
     date: '10 February 2025',
@@ -91,6 +98,7 @@ const blogPosts = [
 ];
 
 const recentPosts = [
+    { title: "Unlocking Career Success: Mastering Soft Skills...", date: "August 12, 2024", comments: 0, link: "/blogs/unlocking-career-success-soft-skills" },
     { title: "The Future of Work-Life Balance...", date: "August 5, 2024", comments: 0, link: "/blogs/the-future-of-work-life-balance" },
     { title: "From Resume to Offer: A Complete Guide...", date: "August 1, 2024", comments: 0, link: "/blogs/from-resume-to-offer" },
     { title: "Is AI Writing Stealing Your Job?...", date: "July 22, 2024", comments: 0, link: "/blogs/is-ai-writing-stealing-your-job" },
