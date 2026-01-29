@@ -37,25 +37,25 @@ const resources = [
         title: "20 Essential Interview Tips for 2025",
         description: "A complete guide to help you prepare for and ace corporate interviews in 2025.",
         icon: <Briefcase className="h-8 w-8 text-accent" />,
-        downloadLink: "/blogs/20-essential-tips-to-ace-corporate-interviews-in-2025",
+        downloadLink: "/blog/20-essential-tips-to-ace-corporate-interviews-in-2025",
     },
     {
         title: "The Future of Work-Life Balance: A Modern Guide",
         description: "Explore the importance of work-life balance and strategies to achieve it in today's demanding world.",
         icon: <HeartHandshake className="h-8 w-8 text-accent" />,
-        downloadLink: "/blogs/the-future-of-work-life-balance",
+        downloadLink: "/blog/the-future-of-work-life-balance",
     },
     {
         title: "Mastering Soft Skills for Tech Professionals",
         description: "A guide to the most important interpersonal skills for a successful career in technology.",
         icon: <Users className="h-8 w-8 text-accent" />,
-        downloadLink: "/blogs/unlocking-career-success-soft-skills",
+        downloadLink: "/blog/unlocking-career-success-soft-skills",
     },
     {
         title: "10 Most Important Topics in CS Cheat Sheet",
         description: "A quick reference guide for the 10 most important topics in Computer Science.",
         icon: <BookOpen className="h-8 w-8 text-accent" />,
-        downloadLink: "/blogs/10-most-important-cs-topics",
+        downloadLink: "/blog/10-most-important-cs-topics",
     },
 ];
 

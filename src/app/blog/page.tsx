@@ -1,71 +1,79 @@
 
 'use client';
-import { Search, User, Calendar, Tag } from 'lucide-react';
+import { Search } from 'lucide-react';
 import Link from 'next/link';
+import { useState } from 'react';
 
 const blogPosts = [
   {
-    category: 'Career Tips, Professional Skills',
-    title: 'Career Tips for Tech Professionals: Navigating Your Path to Success',
-    date: '5 June 2024',
-    description: 'Navigating a successful career in tech can be both exciting and challenging, given the industry’s rapid pace of change and constant innovation. Whether you’re just starting out or looking to level up your career, it’s important to focus not only on technical skills but also on building a strong foundation of soft skills, networking, and continuous learning. By staying adaptable and setting clear goals, tech professionals can position themselves for long-term success and growth in this dynamic field. Here are some key career tips to help you chart your path and reach your full potential in the tech industry.\n\nHere are some valuable career tips for tech professionals to help you navigate your path to success:\n1. Continuous Learning is Key\nThe tech industry evolves rapidly, so staying up-to-date with new technologies is essential. Whether it’s learning about emerging programming languages, AI tools, or cloud platforms, prioritize continuous learning. Online courses, certifications, and workshops are great resources for staying ahead.\n2. Develop a Specialization\nWhile general knowledge is important, becoming an expert in a specific area can set you apart. Consider specializing in fields like Artificial Intelligence, Data Science, Cloud Computing, Cybersecurity, or Web Development. Specializing allows you to stand out and be seen as an authority in that niche.\n3. Build a Personal Brand\nBuilding a personal brand helps you establish credibility and visibility in the tech community. Share your knowledge through blog posts, LinkedIn articles, YouTube tutorials, or podcasts. Networking and collaborating with others in the industry also enhances your reputation.\n4. Master Soft Skills\nTechnical expertise is crucial, but soft skills like communication, teamwork, and leadership are equally important. Strong communication helps in explaining complex technical concepts to non-technical stakeholders, while leadership and collaboration foster a productive work environment.\n5. Seek Mentorship\nMentors can guide you through challenges, provide career advice, and offer insights based on their own experiences. Building a relationship with a mentor in your area of interest can be an invaluable tool for growth.\n6. Get Hands-on Experience\nTheoretical knowledge is important, but hands-on experience is what will set you apart in the tech world. Contribute to open-source projects, participate in hackathons, or start your own personal projects to build a portfolio that showcases your abilities.\n7. Stay Adaptable\nThe tech industry is known for its fast-paced change. Adaptability is crucial to surviving and thriving. Don’t be afraid to switch gears and learn something new if the industry shifts or if a new opportunity arises. Flexibility is one of the most valuable traits in tech careers.\n8. Network with Industry Professionals\nNetworking opens doors to opportunities and collaborations. Attend tech conferences, webinars, or meetups to connect with other professionals. Platforms like LinkedIn also allow you to stay in touch with industry trends and career opportunities.\n9. Set Clear Career Goals\nWhether you’re aiming for a leadership role, want to switch to a different technology stack, or plan to start your own tech company, setting clear goals helps you stay focused and motivated. Regularly evaluate your progress and make adjustments as needed.\n10. Understand the Business Side\nIn addition to technical skills, understanding how technology drives business decisions is important. Learn how your work aligns with business goals and be proactive in showing how tech solutions can add value to the organization.\n11. Pursue Certifications\nCertifications can boost your credibility and make you more competitive in the job market. Platforms like Coursera, Udemy, and edX offer various certifications in programming, cloud computing, cybersecurity, and more.\n12. Work on Soft Tech Skills\nApart from technical skills, focus on skills like problem-solving, time management, and critical thinking. These can enhance your ability to deliver quality solutions and manage projects more effectively.\n13. Balance Work and Life\nWhile it’s important to invest in your career, maintaining a healthy work-life balance is equally important for long-term success. Burnout can affect your productivity and career growth. Take time to relax and recharge to stay at your best.\nBy focusing on these strategies, tech professionals can create a successful, fulfilling career that adapts to the ever-changing tech landscape.',
-    link: '/blogs/career-tips-for-tech-professionals',
-  },
-  {
-    category: 'Interview Tips, Career',
-    title: '20 Essential Tips to Ace Corporate Interviews in 2025',
-    date: '1 July 2024',
-    description: 'Corporate interviews are a crucial step in securing your dream job. Whether you are a fresher or an experienced professional, mastering the interview process is key to standing out among other candidates. As we step into 2025, the job market continues to evolve, making it even more important to stay ahead of the curve.',
-    link: '/blogs/20-essential-tips-to-ace-corporate-interviews-in-2025',
-  },
-   {
-    category: 'Artificial Intelligence, Software Development',
-    title: 'Breaking the Programming Barrier: AI Supercharges Developers to Build the Unthinkable',
-    date: 'July 15, 2024',
-    description: 'In recent years, artificial intelligence (AI) has become a game-changer in the tech industry, especially in software development, enabling developers to push the boundaries of what was once thought possible.',
-    link: '/blogs/breaking-the-programming-barrier',
-  },
-  {
-    category: 'Artificial Intelligence, Blogging',
-    title: 'Is AI Writing Stealing Your Job? The Future of Blogging in the Age of Artificial Intelligence',
-    date: 'July 22, 2024',
-    description: 'As AI writing tools become more sophisticated, bloggers are finding new ways to integrate technology into their content creation process.',
-    link: '/blogs/is-ai-writing-stealing-your-job',
-  },
-   {
-    category: 'Career, Interview Tips',
-    title: 'From Resume to Offer: A Complete Guide to Cracking Job Interviews',
-    date: 'August 1, 2024',
-    description: 'Landing a job in today’s competitive market requires more than just a well-crafted resume. This guide walks you through the entire journey—from crafting a standout resume to securing a job offer.',
-    link: '/blogs/from-resume-to-offer',
-  },
-  {
-    category: 'Career Tips, Work-Life Balance',
-    title: 'The Future of Work-Life Balance: Myth or Modern Necessity?',
-    date: 'August 5, 2024',
-    description: 'Examining the evolving concept of work-life balance in the modern world, discussing whether it is an achievable goal or a myth, and exploring its significance for today’s workforce.',
-    link: '/blogs/the-future-of-work-life-balance',
+    category: 'Computer Science, Fundamentals',
+    title: 'The 10 Most Important Topics in Computer Science',
+    date: 'August 13, 2024',
+    description: 'A breakdown of the 10 most crucial topics that form the backbone of modern computer science and software engineering.',
+    link: '/blog/10-most-important-cs-topics',
   },
   {
     category: 'Career Tips, Professional Skills',
     title: 'Unlocking Career Success: Mastering Soft Skills for Tech Professionals',
     date: 'August 12, 2024',
     description: 'In today’s fast-paced technology-driven world, technical knowledge and hard skills are essential, but they are no longer enough to secure success in your career. This post explores why soft skills matter and how to develop them.',
-    link: '/blogs/unlocking-career-success-soft-skills',
+    link: '/blog/unlocking-career-success-soft-skills',
+  },
+  {
+    category: 'Career Tips, Work-Life Balance',
+    title: 'The Future of Work-Life Balance: Myth or Modern Necessity?',
+    date: 'August 5, 2024',
+    description: 'Examining the evolving concept of work-life balance in the modern world, discussing whether it is an achievable goal or a myth, and exploring its significance for today’s workforce.',
+    link: '/blog/the-future-of-work-life-balance',
+  },
+  {
+    category: 'Career, Interview Tips',
+    title: 'From Resume to Offer: A Complete Guide to Cracking Job Interviews',
+    date: 'August 1, 2024',
+    description: 'Landing a job in today’s competitive market requires more than just a well-crafted resume. This guide walks you through the entire journey—from crafting a standout resume to securing a job offer.',
+    link: '/blog/from-resume-to-offer',
+  },
+  {
+    category: 'Artificial Intelligence, Blogging',
+    title: 'Is AI Writing Stealing Your Job? The Future of Blogging in the Age of Artificial Intelligence',
+    date: 'July 22, 2024',
+    description: 'As AI writing tools become more sophisticated, bloggers are finding new ways to integrate technology into their content creation process.',
+    link: '/blog/is-ai-writing-stealing-your-job',
+  },
+  {
+    category: 'Artificial Intelligence, Software Development',
+    title: 'Breaking the Programming Barrier: AI Supercharges Developers to Build the Unthinkable',
+    date: 'July 15, 2024',
+    description: 'In recent years, artificial intelligence (AI) has become a game-changer in the tech industry, especially in software development, enabling developers to push the boundaries of what was once thought possible.',
+    link: '/blog/breaking-the-programming-barrier',
+  },
+  {
+    category: 'Interview Tips, Career',
+    title: '20 Essential Tips to Ace Corporate Interviews in 2025',
+    date: '1 July 2024',
+    description: 'Corporate interviews are a crucial step in securing your dream job. Whether you are a fresher or an experienced professional, mastering the interview process is key to standing out among other candidates. As we step into 2025, the job market continues to evolve, making it even more important to stay ahead of the curve.',
+    link: '/blog/20-essential-tips-to-ace-corporate-interviews-in-2025',
+  },
+  {
+    category: 'Career Tips, Professional Skills',
+    title: 'Career Tips for Tech Professionals: Navigating Your Path to Success',
+    date: '5 June 2024',
+    description: 'Navigating a successful career in tech can be both exciting and challenging, given the industry’s rapid pace of change and constant innovation. Whether you’re just starting out or looking to level up your career, it’s important to focus not only on technical skills but also on building a strong foundation of soft skills, networking, and continuous learning. By staying adaptable and setting clear goals, tech professionals can position themselves for long-term success and growth in this dynamic field. Here are some key career tips to help you chart your path and reach your full potential in the tech industry.\n\nHere are some valuable career tips for tech professionals to help you navigate your path to success:\n1. Continuous Learning is Key\nThe tech industry evolves rapidly, so staying up-to-date with new technologies is essential. Whether it’s learning about emerging programming languages, AI tools, or cloud platforms, prioritize continuous learning. Online courses, certifications, and workshops are great resources for staying ahead.\n2. Develop a Specialization\nWhile general knowledge is important, becoming an expert in a specific area can set you apart. Consider specializing in fields like Artificial Intelligence, Data Science, Cloud Computing, Cybersecurity, or Web Development. Specializing allows you to stand out and be seen as an authority in that niche.\n3. Build a Personal Brand\nBuilding a personal brand helps you establish credibility and visibility in the tech community. Share your knowledge through blog posts, LinkedIn articles, YouTube tutorials, or podcasts. Networking and collaborating with others in the industry also enhances your reputation.\n4. Master Soft Skills\nTechnical expertise is crucial, but soft skills like communication, teamwork, and leadership are equally important. Strong communication helps in explaining complex technical concepts to non-technical stakeholders, while leadership and collaboration foster a productive work environment.\n5. Seek Mentorship\nMentors can guide you through challenges, provide career advice, and offer insights based on their own experiences. Building a relationship with a mentor in your area of interest can be an invaluable tool for growth.\n6. Get Hands-on Experience\nTheoretical knowledge is important, but hands-on experience is what will set you apart in the tech world. Contribute to open-source projects, participate in hackathons, or start your own personal projects to build a portfolio that showcases your abilities.\n7. Stay Adaptable\nThe tech industry is known for its fast-paced change. Adaptability is crucial to surviving and thriving. Don’t be afraid to switch gears and learn something new if the industry shifts or if a new opportunity arises. Flexibility is one of the most valuable traits in tech careers.\n8. Network with Industry Professionals\nNetworking opens doors to opportunities and collaborations. Attend tech conferences, webinars, or meetups to connect with other professionals. Platforms like LinkedIn also allow you to stay in touch with industry trends and career opportunities.\n9. Set Clear Career Goals\nWhether you’re aiming for a leadership role, want to switch to a different technology stack, or plan to start your own tech company, setting clear goals helps you stay focused and motivated. Regularly evaluate your progress and make adjustments as needed.\n10. Understand the Business Side\nIn addition to technical skills, understanding how technology drives business decisions is important. Learn how your work aligns with business goals and be proactive in showing how tech solutions can add value to the organization.\n11. Pursue Certifications\nCertifications can boost your credibility and make you more competitive in the job market. Platforms like Coursera, Udemy, and edX offer various certifications in programming, cloud computing, cybersecurity, and more.\n12. Work on Soft Tech Skills\nApart from technical skills, focus on skills like problem-solving, time management, and critical thinking. These can enhance your ability to deliver quality solutions and manage projects more effectively.\n13. Balance Work and Life\nWhile it’s important to invest in your career, maintaining a healthy work-life balance is equally important for long-term success. Burnout can affect your productivity and career growth. Take time to relax and recharge to stay at your best.\nBy focusing on these strategies, tech professionals can create a successful, fulfilling career that adapts to the ever-changing tech landscape.',
+    link: '/blog/career-tips-for-tech-professionals',
   },
   {
     category: 'Python',
     title: 'Mastering Python in 2025: A Comprehensive Guide with Tips and Insights',
     date: '10 February 2025',
     description: 'Python has become one of the most popular and versatile programming languages in the world. This guide provides an in-depth look into Python, from its basics to advanced applications.',
-    link: '/blogs/mastering-python-in-2025',
+    link: '/blog/mastering-python-in-2025',
   },
   {
     category: 'Python, Beginners',
     title: '100 Essential Python Questions & Answers: Your Ultimate Beginner’s Guide to Mastering Python',
     date: '11 February 2025',
     description: 'Python is one of the most beginner-friendly programming languages, widely used in web development, data science, artificial intelligence, and automation...',
-    link: '/blogs/100-essential-python-questions',
+    link: '/blog/100-essential-python-questions',
   },
   {
     category: 'Artificial Intelligence, Futures Tech, Insight blogs',
@@ -98,15 +106,16 @@ const blogPosts = [
 ];
 
 const recentPosts = [
-    { title: "Unlocking Career Success: Mastering Soft Skills...", date: "August 12, 2024", comments: 0, link: "/blogs/unlocking-career-success-soft-skills" },
-    { title: "The Future of Work-Life Balance...", date: "August 5, 2024", comments: 0, link: "/blogs/the-future-of-work-life-balance" },
-    { title: "From Resume to Offer: A Complete Guide...", date: "August 1, 2024", comments: 0, link: "/blogs/from-resume-to-offer" },
-    { title: "Is AI Writing Stealing Your Job?...", date: "July 22, 2024", comments: 0, link: "/blogs/is-ai-writing-stealing-your-job" },
-    { title: "Breaking the Programming Barrier...", date: "July 15, 2024", comments: 0, link: "/blogs/breaking-the-programming-barrier" },
-    { title: "20 Essential Tips to Ace Corporate Interviews...", date: "1 July 2024", comments: 0, link: "/blogs/20-essential-tips-to-ace-corporate-interviews-in-2025" },
-    { title: "Career Tips for Tech Professionals...", date: "5 June 2024", comments: 0, link: "/blogs/career-tips-for-tech-professionals" },
-    { title: "Mastering Python in 2025...", date: "10 February 2025", comments: 0, link: "/blogs/mastering-python-in-2025" },
-    { title: "100 Essential Python Questions & Answers...", date: "11 February 2025", comments: 0, link: "/blogs/100-essential-python-questions" },
+    { title: "The 10 Most Important Topics in Computer Science", date: "August 13, 2024", comments: 0, link: "/blog/10-most-important-cs-topics" },
+    { title: "Unlocking Career Success: Mastering Soft Skills...", date: "August 12, 2024", comments: 0, link: "/blog/unlocking-career-success-soft-skills" },
+    { title: "The Future of Work-Life Balance...", date: "August 5, 2024", comments: 0, link: "/blog/the-future-of-work-life-balance" },
+    { title: "From Resume to Offer: A Complete Guide...", date: "August 1, 2024", comments: 0, link: "/blog/from-resume-to-offer" },
+    { title: "Is AI Writing Stealing Your Job?...", date: "July 22, 2024", comments: 0, link: "/blog/is-ai-writing-stealing-your-job" },
+    { title: "Breaking the Programming Barrier...", date: "July 15, 2024", comments: 0, link: "/blog/breaking-the-programming-barrier" },
+    { title: "20 Essential Tips to Ace Corporate Interviews...", date: "1 July 2024", comments: 0, link: "/blog/20-essential-tips-to-ace-corporate-interviews-in-2025" },
+    { title: "Career Tips for Tech Professionals...", date: "5 June 2024", comments: 0, link: "/blog/career-tips-for-tech-professionals" },
+    { title: "Mastering Python in 2025...", date: "10 February 2025", comments: 0, link: "/blog/mastering-python-in-2025" },
+    { title: "100 Essential Python Questions & Answers...", date: "11 February 2025", comments: 0, link: "/blog/100-essential-python-questions" },
     { title: "Understanding Artificial Intelligence: A Beginner’s Guide...", date: "7 October 2024", comments: 0, link: "#" },
 ];
 
@@ -118,8 +127,29 @@ const tags = [
     "Social Media", "Software Engineering", "Website Development"
 ];
 
+const filterCategories = ['All', 'Artificial Intelligence', 'Futures Tech', 'Insight blogs'];
+const POSTS_PER_PAGE = 5;
+
 
 export default function BlogPage() {
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [visibleCount, setVisibleCount] = useState(POSTS_PER_PAGE);
+
+  const filteredPosts = blogPosts.filter(post => 
+    selectedCategory === 'All' || post.category.includes(selectedCategory)
+  );
+  
+  const postsToShow = filteredPosts.slice(0, visibleCount);
+
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    setVisibleCount(POSTS_PER_PAGE);
+  };
+
+  const loadMore = () => {
+    setVisibleCount(prevCount => prevCount + POSTS_PER_PAGE);
+  };
+
   return (
     <div className="bg-white text-gray-800">
       <main>
@@ -145,14 +175,23 @@ export default function BlogPage() {
             {/* Blog Posts */}
             <div className="w-full lg:w-2/3">
               <div className="flex flex-wrap gap-2 mb-8 border-b pb-4">
-                  <button className="px-4 py-2 text-sm font-semibold bg-accent text-accent-foreground rounded-full">All</button>
-                  <button className="px-4 py-2 text-sm font-semibold text-gray-600 hover:bg-gray-200 rounded-full">Artificial Intelligence</button>
-                  <button className="px-4 py-2 text-sm font-semibold text-gray-600 hover:bg-gray-200 rounded-full">Futures Tech</button>
-                  <button className="px-4 py-2 text-sm font-semibold text-gray-600 hover:bg-gray-200 rounded-full">Insight blogs</button>
+                  {filterCategories.map(category => (
+                    <button 
+                      key={category}
+                      onClick={() => handleCategoryChange(category)}
+                      className={`px-4 py-2 text-sm font-semibold rounded-full transition-colors ${
+                        selectedCategory === category
+                          ? 'bg-accent text-accent-foreground'
+                          : 'bg-blue-600 text-white hover:bg-blue-700'
+                      }`}
+                    >
+                      {category}
+                    </button>
+                  ))}
               </div>
 
               <div className="space-y-12">
-                {blogPosts.map((post, index) => (
+                {postsToShow.map((post, index) => (
                   <article key={index} className="flex flex-col md:flex-row gap-6 group">
                      <div className="flex-grow">
                         <div className="text-xs text-gray-500 mb-2 uppercase tracking-wider">{post.category}</div>
@@ -167,11 +206,16 @@ export default function BlogPage() {
                 ))}
               </div>
 
-              <div className="mt-12 text-center">
-                  <button className="bg-accent text-accent-foreground font-bold py-3 px-8 rounded-full hover:bg-yellow-500 transition-colors">
-                      Load More
-                  </button>
-              </div>
+              {visibleCount < filteredPosts.length && (
+                <div className="mt-12 text-center">
+                    <button 
+                      onClick={loadMore}
+                      className="bg-accent text-accent-foreground font-bold py-3 px-8 rounded-full hover:bg-yellow-500 transition-colors"
+                    >
+                        Load More
+                    </button>
+                </div>
+              )}
             </div>
 
             {/* Sidebar */}
