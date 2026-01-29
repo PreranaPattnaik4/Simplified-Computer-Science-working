@@ -64,27 +64,27 @@ const whatWeOffer = [
 const faqItems = [
     {
         question: "Who is Simplified Computer Science for?",
-        answer: "Our platform is designed for learners of all levels, from beginners to advanced users. Whether you’re a student, a professional, or simply curious about computer science and AI, you’ll find valuable resources here to help you learn and grow. Get Online Certificate Courses SIGN UP TODAY!"
+        answer: "Our platform is for learners of all levels, from absolute beginners to experienced professionals. We offer resources to help you start your journey in tech or upskill in areas like computer science and AI."
     },
     {
-        question: "Who is the founder of Simplified Computer Science?",
-        answer: "Simplified Computer Science was founded by Prerana, a passionate tech enthusiast and educator dedicated to making computer science accessible to everyone."
+        question: "Who is the founder?",
+        answer: "Simplified Computer Science was founded by Prerana Kailash Pattnaik, a tech educator and content creator dedicated to making technology education accessible to everyone."
     },
     {
-        question: "Does Simplified Computer Science offer certificates for course completion?",
-        answer: "Yes, we offer certificates for most of our courses upon successful completion. These certificates can be a great addition to your professional profile and demonstrate your commitment to learning."
+        question: "Do you offer certificates?",
+        answer: "Yes, we offer certificates for most courses upon successful completion. They are a great way to showcase your skills and commitment to learning."
     },
     {
-        question: "Can I add the courses completed on Simplified Computer Science to my resume or LinkedIn profile?",
-        answer: "Absolutely! We encourage you to showcase your achievements. Adding your completed courses and certificates to your resume and LinkedIn profile can significantly boost your career prospects."
+        question: "Can I add courses to my resume?",
+        answer: "Absolutely! We encourage you to add completed courses and certificates to your resume and LinkedIn profile to demonstrate your skills to potential employers."
     },
     {
-      question: "Will completing your courses provide me with any formal recognition or accreditation?",
-      answer: "While our certificates are a great way to showcase your skills, they are not formally accredited. However, they are highly valued by employers as evidence of your commitment to continuous learning and professional development."
+      question: "Are the certificates accredited?",
+      answer: "While our certificates are not formally accredited, they are recognized by employers as valuable proof of your dedication to continuous learning and professional development."
     },
     {
-      question: "What kind of content will I receive in the newsletter?",
-      answer: "Our newsletter is packed with valuable content, including our latest articles, tutorials, course announcements, and exclusive tips and tricks to help you stay ahead in the tech world."
+      question: "What's in the newsletter?",
+      answer: "Our newsletter includes updates on new courses, the latest blog posts, and exclusive tips and tricks to help you stay ahead in the fast-paced world of technology."
     }
 ];
 
@@ -637,7 +637,7 @@ export default function HomePage() {
         <section className="container mx-auto max-w-7xl px-4 py-16">
             <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
                 <div>
-                    <h2 className="text-4xl font-bold font-space-grotesk">We're Here To All Your Questions</h2>
+                    <h2 className="text-4xl font-bold font-space-grotesk">Frequently Asked Questions</h2>
                     <p className="mt-4 text-lg text-muted-foreground">
                         Our platform is designed for learners of all levels, from absolute beginners looking to start their journey in tech, to experienced professionals aiming to upskill. We provide a comprehensive range of resources to support your learning goals.
                     </p>
@@ -674,3 +674,5 @@ export default function HomePage() {
     </div>
   );
 }
+
+    
