@@ -36,6 +36,22 @@ type Lesson = Course['syllabus'][0]['lessons'][0] & {
 
 export default function LessonClientPage({ course, currentLessonIndex, lessonSlug }: { course: Course, currentLessonIndex: number, lessonSlug: string }) {
   const [completedLessons, setCompletedLessons] = useState<Set<string>>(new Set());
+  const [progressLoaded, setProgressLoaded] = useState(false);
+
+  useEffect(() => {
+    const savedProgress = localStorage.getItem(`progress_${course.slug}`);
+    if (savedProgress) {
+        setCompletedLessons(new Set(JSON.parse(savedProgress)));
+    }
+    setProgressLoaded(true);
+  }, [course.slug]);
+
+  useEffect(() => {
+    if (progressLoaded) {
+        localStorage.setItem(`progress_${course.slug}`, JSON.stringify(Array.from(completedLessons)));
+    }
+  }, [completedLessons, progressLoaded, course.slug]);
+
 
   if (!course || !course.syllabus) {
     notFound();
