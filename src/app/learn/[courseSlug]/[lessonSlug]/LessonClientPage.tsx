@@ -8,14 +8,27 @@ import { CheckCircle, Circle, FileText, MessageSquare, BookOpen, ChevronLeft, Ch
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { marked } from 'marked';
 import type { getCourses } from '@/app/lib/courses';
 import { cn } from '@/lib/utils';
 import Quiz from '@/components/Quiz';
 
 type Course = ReturnType<typeof getCourses>[0];
-type Lesson = Course['syllabus'][0]['lessons'][0];
+
+type ContentCard = {
+    cardTitle: string;
+    cardSubtitle: string;
+    cardContent: string;
+};
+
+type Lesson = Course['syllabus'][0]['lessons'][0] & {
+    type?: string;
+    options?: any[];
+    correctAnswer?: string;
+    explanation?: string;
+    content: string | ContentCard[];
+};
 
 export default function LessonClientPage({ course, currentLessonIndex, lessonSlug }: { course: Course, currentLessonIndex: number, lessonSlug: string }) {
   const [isCompleted, setIsCompleted] = useState(false);
@@ -26,22 +39,10 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
   }
   
   const allLessons = course.syllabus.flatMap(module => module.lessons);
-  const currentLesson = allLessons[currentLessonIndex] as Lesson & { type?: string; options?: any[]; correctAnswer?: string; explanation?: string; };
+  const currentLesson = allLessons[currentLessonIndex] as Lesson;
   
   const totalLessons = allLessons.length;
   const progress = ((currentLessonIndex + 1) / totalLessons) * 100;
-
-  const parsedContent = useMemo(() => {
-      if (currentLesson?.content) {
-          try {
-            return marked(currentLesson.content);
-          } catch (error) {
-            console.error("Error parsing markdown:", error);
-            return "<p>Error rendering content.</p>";
-          }
-      }
-      return '';
-  }, [currentLesson]);
 
   const prevLesson = currentLessonIndex > 0 ? allLessons[currentLessonIndex - 1] : null;
   const nextLesson = currentLessonIndex < allLessons.length - 1 ? allLessons[currentLessonIndex + 1] : null;
@@ -85,7 +86,7 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
 
 
   return (
-    <div className="flex h-screen bg-gray-50">
+    <div className="flex h-screen bg-white">
       {/* Sidebar */}
       <aside className="w-80 min-w-80 flex-shrink-0 border-r bg-white flex flex-col">
         <div className="p-4 border-b">
@@ -152,8 +153,8 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
                 </div>
             </div>
         </div>
-        <div className="flex-1 overflow-y-auto p-8">
-          <div className="container mx-auto max-w-4xl">
+        <div className="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8 flex justify-center bg-gray-50">
+          <div className="w-full max-w-4xl">
             <h2 className="text-3xl font-bold font-space-grotesk mb-2">{currentLesson.title}</h2>
             <div className="h-px bg-gray-200 mb-8"></div>
             
@@ -164,16 +165,39 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
               </TabsList>
               <TabsContent value="overview">
                 {currentLesson.type === 'quiz' ? (
-                  <Quiz lesson={currentLesson} onCorrect={() => setIsCompleted(true)} />
+                  <Quiz lesson={currentLesson as any} onCorrect={() => setIsCompleted(true)} />
                 ) : (
-                  <article className="prose lg:prose-lg max-w-none">
-                    {/* Note: In a real app, you would sanitize this HTML */}
-                    <div dangerouslySetInnerHTML={{ __html: parsedContent }} />
-                  </article>
+                  <>
+                  {Array.isArray(currentLesson.content) ? (
+                    <Accordion type="single" collapsible className="w-full space-y-4">
+                      {(currentLesson.content as ContentCard[]).map((card, index) => (
+                        <AccordionItem key={index} value={`item-${index}`} className="border rounded-xl shadow-sm bg-white overflow-hidden">
+                          <AccordionTrigger className="p-6 text-left hover:no-underline data-[state=open]:border-b">
+                            <div className="flex-1">
+                              <h3 className="text-xl font-bold font-space-grotesk text-gray-900">{card.cardTitle}</h3>
+                              <p className="text-sm text-muted-foreground mt-1">{card.cardSubtitle}</p>
+                            </div>
+                          </AccordionTrigger>
+                          <AccordionContent className="p-6 pt-4">
+                            <div 
+                              className="prose prose-lg max-w-none" 
+                              dangerouslySetInnerHTML={{ __html: marked(card.cardContent) }} 
+                            />
+                          </AccordionContent>
+                        </AccordionItem>
+                      ))}
+                    </Accordion>
+                  ) : (
+                    // Fallback for old string content format
+                    <article className="prose prose-lg max-w-none p-6 bg-white rounded-xl border shadow-sm">
+                      <div dangerouslySetInnerHTML={{ __html: marked(currentLesson.content as string) }} />
+                    </article>
+                  )}
+                  </>
                 )}
               </TabsContent>
               <TabsContent value="comments">
-                <div className="bg-gray-100 p-8 rounded-lg text-center">
+                <div className="bg-white p-8 rounded-xl border text-center">
                   <MessageSquare className="mx-auto text-gray-400 h-12 w-12 mb-4" />
                   <h3 className="font-bold font-space-grotesk text-xl">Comments are coming soon!</h3>
                   <p className="text-muted-foreground mt-2">Have a question or want to share your thoughts? A discussion area will be available here shortly.</p>
@@ -194,7 +218,7 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
                 )}
                 {isLastQuizQuestion ? (
                     <Button onClick={handleQuizCompletion} disabled={!isCompleted}>
-                        Finish Quiz
+                        Finish Course
                         <CheckCircle className="h-4 w-4 ml-2" />
                     </Button>
                 ) : nextLesson ? (
