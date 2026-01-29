@@ -8,7 +8,6 @@ import { cn } from "@/lib/utils";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { usePathname } from 'next/navigation';
-import Chatbot from "@/components/Chatbot";
 
 const fontSans = Inter({
   subsets: ["latin"],
@@ -49,7 +48,6 @@ function LayoutWrapper({ children }: { children: React.ReactNode }) {
       <Header />
       {children}
       <Footer />
-      <Chatbot />
     </>
   );
 }
