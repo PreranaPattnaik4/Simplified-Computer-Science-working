@@ -1,3 +1,4 @@
+
 "use client"
 
 import { Menu, User, Search, LogIn, UserPlus, X, BookText, GraduationCap, Loader2, ListChecks } from "lucide-react"
@@ -25,7 +26,7 @@ const navLinks = [
   { href: "/ai-search", label: "AI Search" },
   { href: "/courses-live", label: "Courses" },
   { href: "/tech-guide", label: "Tech Guide" },
-  { href: "/career-tips-and-roadmaps", label: "Career Tips" },
+  { href: "/career-tips-and-roadmaps", label: "Career Roadmaps" },
   { href: "/resources", label: "Resources" },
   { href: "/blog", label: "Blogs" },
   { href: "/about", label: "About" },

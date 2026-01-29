@@ -276,7 +276,7 @@ export default function CareerTipsAndRoadmapsPage() {
             <div className="relative max-w-7xl mx-auto">
                 <div className="text-center mb-12">
                     <h1 className="text-4xl md:text-6xl font-bold font-space-grotesk text-accent">
-                        Career Tips & Roadmaps
+                        Career Roadmaps
                     </h1>
                     <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
                         Your strategic guide to navigating the tech industry, acing interviews, and building a successful career.

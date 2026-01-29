@@ -1,3 +1,4 @@
+
 import { Target, BookOpen, Award, Briefcase, Code, Network, FileText, Lightbulb, Rocket, Milestone, FolderKanban, BrainCircuit } from "lucide-react";
 import React from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -243,15 +244,6 @@ export default function CareerTimeline() {
                       </>
                     )}
                   </div>
-
-                  {/* Mid-section headline */}
-                  {index === 4 && (
-                    <div className="my-16 text-center px-4">
-                      <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
-                        Advancing Your Career: From Gaining Experience to Becoming an Industry Expert
-                      </h3>
-                    </div>
-                  )}
                 </div>
               );
             })}

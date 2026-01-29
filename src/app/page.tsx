@@ -47,6 +47,7 @@ import placeholderImages from '@/app/lib/placeholder-images.json';
 import SCSLearningPaths from '@/components/SCSLearningPaths';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
 
 
 const whatWeOffer = [
@@ -329,7 +330,7 @@ export default function HomePage() {
   const panels = [
     {
         id: 0,
-        title: "Career Tips and Roadmaps",
+        title: "Career Roadmaps",
         subtitle: "Your career journey starts here",
         image: placeholderImages.homeHero1.src,
         href: "/career-tips-and-roadmaps",
@@ -629,6 +630,34 @@ export default function HomePage() {
 
         {/* The SCS Ecosystem Section */}
         <SCSLearningPaths />
+
+        {/* Section: Career Roadmap CTA */}
+        <section className="bg-gray-50/50 py-20 px-4 sm:px-6 lg:px-8">
+            <div className="container mx-auto max-w-7xl">
+                <div className="grid md:grid-cols-2 gap-12 items-center">
+                    <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+                        <Image 
+                            src={placeholderImages.careerTipsHero.src} 
+                            alt="A winding path representing a career roadmap" 
+                            fill 
+                            className="object-cover"
+                            data-ai-hint={placeholderImages.careerTipsHero.hint}
+                        />
+                    </div>
+                    <div className="text-center md:text-left">
+                        <h2 className="text-3xl md:text-4xl font-bold font-space-grotesk text-gray-900">Chart Your Course with Career Roadmaps</h2>
+                        <p className="mt-4 text-lg text-muted-foreground">
+                            Navigate your career in tech with our detailed roadmaps. Get step-by-step guidance for top roles like AI/ML Engineer, Full-Stack Developer, and more.
+                        </p>
+                        <Link href="/career-tips-and-roadmaps">
+                           <Button className="mt-8">
+                                Explore Roadmaps
+                           </Button>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         {/* Section 7: Step-by-Step Career Timeline */}
         <CareerTimeline />
