@@ -120,7 +120,6 @@ export default function Header() {
                     <DropdownMenuLabel>My Account</DropdownMenuLabel>
                     <DropdownMenuSeparator />
                     <Link href="/dashboard" passHref><DropdownMenuItem>Dashboard</DropdownMenuItem></Link>
-                    <Link href="/profile" passHref><DropdownMenuItem>Profile</DropdownMenuItem></Link>
                     <Link href="#" passHref><DropdownMenuItem>Settings</DropdownMenuItem></Link>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem onClick={() => setIsLoggedIn(false)}>Log out</DropdownMenuItem>
@@ -166,12 +165,12 @@ export default function Header() {
                         </Link>
                     )
                 })}
-                 <Link href={isLoggedIn ? "/profile" : "#"} onClick={() => {
+                 <Link href={isLoggedIn ? "/dashboard" : "#"} onClick={() => {
                    setIsMenuOpen(false);
                    if (!isLoggedIn) setIsAuthModalOpen(true);
                  }}>
                     <div className="w-screen py-2 text-center font-bold text-lg tracking-wider text-gray-700 hover:bg-gray-100">
-                        MY PROFILE
+                        MY DASHBOARD
                     </div>
                 </Link>
             </nav>

@@ -22,7 +22,6 @@ export default function Footer() {
                     <li><a href="/" className="hover:text-accent">Home</a></li>
                     <li><a href="/about" className="hover:text-accent">About</a></li>
                     <li><a href="/resources" className="hover:text-accent">Resources</a></li>
-                    <li><a href="/profile" className="hover:text-accent">My Profile</a></li>
                     <li><a href="/contact" className="hover:text-accent">Contact</a></li>
                     <li><a href="/faq" className="hover:text-accent">FAQ</a></li>
                     </ul>

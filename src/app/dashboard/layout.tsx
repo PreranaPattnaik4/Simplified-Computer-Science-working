@@ -5,7 +5,6 @@ import Image from 'next/image';
 
 const sidebarNavItems = [
     { title: 'Dashboard', href: '/dashboard', icon: Laptop },
-    { title: 'My Profile', href: '/profile', icon: User },
     { title: 'Enrolled Courses', href: '#', icon: BookOpen },
     { title: 'Reviews', href: '#', icon: Star },
     { title: 'My Quiz Attempts', href: '#', icon: BarChartHorizontal },
