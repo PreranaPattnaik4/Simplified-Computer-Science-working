@@ -25,9 +25,9 @@ const navLinks = [
   { href: "/ai-search", label: "AI Search" },
   { href: "/courses-live", label: "Courses" },
   { href: "/tech-guide", label: "Tech Guide" },
+  { href: "/career-tips-and-roadmaps", label: "Career Tips" },
   { href: "/resources", label: "Resources" },
   { href: "/blog", label: "Blogs" },
-  { href: "/career-tips-and-roadmaps", label: "Career Tips" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
