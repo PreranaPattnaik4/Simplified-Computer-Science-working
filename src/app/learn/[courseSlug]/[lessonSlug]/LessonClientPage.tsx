@@ -22,18 +22,22 @@ type ContentCard = {
     cardContent: string;
 };
 
+type Question = {
+    question: string;
+    options: { id: string; text: string }[];
+    correctAnswer: string;
+    explanation: string;
+}
+
 type Lesson = Course['syllabus'][0]['lessons'][0] & {
     type?: string;
-    options?: any[];
-    correctAnswer?: string;
-    explanation?: string;
     content: string | ContentCard[];
+    questions?: Question[];
 };
 
 export default function LessonClientPage({ course, currentLessonIndex, lessonSlug }: { course: Course, currentLessonIndex: number, lessonSlug: string }) {
-  const [isCompleted, setIsCompleted] = useState(false);
-  const [quizFinished, setQuizFinished] = useState(false);
-  
+  const [completedLessons, setCompletedLessons] = useState<Set<string>>(new Set());
+
   if (!course || !course.syllabus) {
     notFound();
   }
@@ -42,48 +46,16 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
   const currentLesson = allLessons[currentLessonIndex] as Lesson;
   
   const totalLessons = allLessons.length;
-  const progress = ((currentLessonIndex + 1) / totalLessons) * 100;
+  const progress = (completedLessons.size / totalLessons) * 100;
 
   const prevLesson = currentLessonIndex > 0 ? allLessons[currentLessonIndex - 1] : null;
   const nextLesson = currentLessonIndex < allLessons.length - 1 ? allLessons[currentLessonIndex + 1] : null;
 
-  const isLastQuizQuestion = currentLesson.type === 'quiz' && !nextLesson;
-
-  // Reset completion state when lesson changes
-  useEffect(() => {
-    setIsCompleted(false);
-    if (lessonSlug !== allLessons[allLessons.length - 1].slug) {
-      setQuizFinished(false);
-    }
-  }, [lessonSlug, allLessons, currentLessonIndex]);
-
-  const handleQuizCompletion = () => {
-    if (isCompleted) {
-      setQuizFinished(true);
-    }
-  }
-
-  if (quizFinished) {
-    return (
-        <div className="flex h-screen bg-gray-50 items-center justify-center">
-            <div className="text-center bg-white p-12 rounded-lg shadow-xl">
-                <PartyPopper className="w-16 h-16 text-accent mx-auto mb-4" />
-                <h2 className="text-3xl font-bold font-space-grotesk text-gray-900">Congratulations!</h2>
-                <p className="mt-2 text-lg text-muted-foreground">You have successfully completed the course.</p>
-                <p className="mt-1 text-muted-foreground">You're one step closer to mastering {course.title}.</p>
-                <div className="mt-8 flex justify-center gap-4">
-                    <Link href={`/courses-live/${course.slug}`}>
-                        <Button variant="outline">Back to Course</Button>
-                    </Link>
-                    <Link href={`/certificate/${course.slug}`}>
-                        <Button>Get Your Certificate</Button>
-                    </Link>
-                </div>
-            </div>
-        </div>
-    );
-  }
-
+  const handleMarkComplete = () => {
+    setCompletedLessons(prev => new Set(prev).add(lessonSlug));
+  };
+  
+  const isCurrentLessonCompleted = completedLessons.has(lessonSlug);
 
   return (
     <div className="flex h-screen bg-white">
@@ -106,8 +78,7 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
                   <ul className="space-y-1 mt-1">
                     {module.lessons.map((lesson, lessonIndex) => {
                       const isActive = lesson.slug === lessonSlug;
-                      const globalLessonIndex = course.syllabus.slice(0, moduleIndex).reduce((acc, mod) => acc + mod.lessons.length, 0) + lessonIndex;
-                      const isLessonCompleted = globalLessonIndex < currentLessonIndex;
+                      const isLessonCompleted = completedLessons.has(lesson.slug);
 
                       return (
                         <li key={lessonIndex}>
@@ -142,14 +113,16 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
                          <Progress value={progress} className="h-2" />
                          <p className="text-xs text-muted-foreground mt-1 text-right">{Math.round(progress)}% Complete</p>
                     </div>
-                    <Button 
-                      variant={isCompleted ? "default" : "outline"} 
-                      size="sm"
-                      onClick={() => setIsCompleted(true)}
-                      disabled={isCompleted || currentLesson.type === 'quiz'}
-                    >
-                      {isCompleted ? "Completed" : "Mark as Complete"}
-                    </Button>
+                    {currentLesson.type !== 'quiz' && (
+                        <Button 
+                          variant={isCurrentLessonCompleted ? "default" : "outline"} 
+                          size="sm"
+                          onClick={handleMarkComplete}
+                          disabled={isCurrentLessonCompleted}
+                        >
+                          {isCurrentLessonCompleted ? "Completed" : "Mark as Complete"}
+                        </Button>
+                    )}
                 </div>
             </div>
         </div>
@@ -165,7 +138,7 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
               </TabsList>
               <TabsContent value="overview">
                 {currentLesson.type === 'quiz' ? (
-                  <Quiz lesson={currentLesson as any} onCorrect={() => setIsCompleted(true)} />
+                  <Quiz lesson={currentLesson as any} courseSlug={course.slug} onComplete={handleMarkComplete} />
                 ) : (
                   <>
                   {Array.isArray(currentLesson.content) ? (
@@ -188,7 +161,6 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
                       ))}
                     </Accordion>
                   ) : (
-                    // Fallback for old string content format
                     <article className="prose prose-lg max-w-none p-6 bg-white rounded-xl border shadow-sm">
                       <div dangerouslySetInnerHTML={{ __html: marked(currentLesson.content as string) }} />
                     </article>
@@ -205,36 +177,32 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
               </TabsContent>
             </Tabs>
 
-            <div className="mt-12 flex justify-between items-center border-t pt-8">
-                {prevLesson ? (
-                    <Link href={`/learn/${course.slug}/${prevLesson.slug}`}>
-                        <Button variant="outline">
-                            <ChevronLeft className="h-4 w-4 mr-2" />
-                            Previous Lesson
-                        </Button>
-                    </Link>
-                ) : (
-                    <div /> // Placeholder for alignment
-                )}
-                {isLastQuizQuestion ? (
-                    <Button onClick={handleQuizCompletion} disabled={!isCompleted}>
-                        Finish Course
-                        <CheckCircle className="h-4 w-4 ml-2" />
-                    </Button>
-                ) : nextLesson ? (
-                    <Link href={`/learn/${course.slug}/${nextLesson.slug}`}>
-                        <Button disabled={!isCompleted && currentLesson.type !== 'quiz'}>
-                            Next Lesson
-                            <ChevronRight className="h-4 w-4 ml-2" />
-                        </Button>
-                    </Link>
-                ) : (
-                    <Link href={`/certificate/${course.slug}`}>
-                        <Button disabled={!isCompleted}>Get Certificate</Button>
-                    </Link>
-                )}
-            </div>
-
+            {currentLesson.type !== 'quiz' && (
+                <div className="mt-12 flex justify-between items-center border-t pt-8">
+                    {prevLesson ? (
+                        <Link href={`/learn/${course.slug}/${prevLesson.slug}`}>
+                            <Button variant="outline">
+                                <ChevronLeft className="h-4 w-4 mr-2" />
+                                Previous Lesson
+                            </Button>
+                        </Link>
+                    ) : (
+                        <div /> // Placeholder for alignment
+                    )}
+                    {nextLesson ? (
+                        <Link href={`/learn/${course.slug}/${nextLesson.slug}`}>
+                            <Button disabled={!isCurrentLessonCompleted}>
+                                Next Lesson
+                                <ChevronRight className="h-4 w-4 ml-2" />
+                            </Button>
+                        </Link>
+                    ) : (
+                        <Link href={`/courses-live`}>
+                            <Button disabled={!isCurrentLessonCompleted}>Back to Courses</Button>
+                        </Link>
+                    )}
+                </div>
+            )}
           </div>
         </div>
       </main>

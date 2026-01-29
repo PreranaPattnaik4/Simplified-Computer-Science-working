@@ -367,20 +367,6 @@ const courses = [
                         cardContent: "List comprehensions provide a more elegant syntax for creating new lists based on existing ones. Scenario: Filtering a list of stocks to find only those above a certain price. ```python\nprices = {'AAPL': 150, 'GOOG': 2800, 'MSFT': 300, 'AMZN': 3400}\nexpensive_stocks = [stock for stock, price in prices.items() if price > 1000]\nprint(expensive_stocks)\n```"
                     }
                 ]
-            },
-            {
-                slug: 'python-module-1-quiz',
-                title: 'Module 1 Quiz',
-                type: 'quiz',
-                content: 'A data analyst has a list of customer satisfaction scores: `scores = [5, 4, 5, 3, 2, 5, 4, 2]`. They need to calculate the average score but only for scores that are 3 or higher. Which code snippet correctly performs this calculation?',
-                options: [
-                    { id: 'A', text: '`filtered_scores = [s for s in scores if s >= 3] \\nprint(sum(filtered_scores) / len(filtered_scores))`' },
-                    { id: 'B', text: '`total = 0\\nfor s in scores:\\n  if s > 3:\\n    total += s\\nprint(total / len(scores))`' },
-                    { id: 'C', text: '`filtered_scores = scores.filter(s > 3)\\nprint(sum(filtered_scores) / len(filtered_scores))`' },
-                    { id: 'D', text: '`total = sum(scores)\\ncount = len(scores)\\nprint(total / count)`' }
-                ],
-                correctAnswer: 'A',
-                explanation: 'Option A is the most Pythonic and correct solution. It uses a list comprehension to first filter the list for scores >= 3, and then calculates the average of that new, filtered list. Option B has a logic error (it divides by the length of the original list). Option C uses a non-existent `.filter()` method for lists. Option D calculates the average of all scores, not the filtered ones.'
             }
         ]
     },
@@ -404,27 +390,136 @@ const courses = [
                     {
                         cardTitle: "Code Example: Logistic Regression",
                         cardSubtitle: "See the 5-step pattern in action with a practical code example.",
-                        cardContent: "```python\nfrom sklearn.linear_model import LogisticRegression\n\nmodel = LogisticRegression()\n\n\nmodel.fit(X_train, y_train)\n\n\npredictions = model.predict(X_test)\n```"
+                        cardContent: "```python\nfrom sklearn.linear_model import LogisticRegression\n\nmodel = LogisticRegression()\n\nmodel.fit(X_train, y_train)\n\npredictions = model.predict(X_test)\n```"
                     }
                 ]
             },
+        ]
+    },
+    {
+      title: "Module 3: Final Assessment",
+      lessons: [
+        {
+          slug: 'python-for-ds-final-quiz',
+          title: 'Final Quiz: Python for Data Science',
+          type: 'quiz',
+          content: "Test your knowledge on Python for Data Science fundamentals.",
+          questions: [
             {
-                slug: 'ml-quiz-1',
-                title: 'Module 2 Quiz: Model Training',
-                type: 'quiz',
-                content: 'An ML engineer is building a model to predict customer churn. They have their feature data in a Pandas DataFrame `X` and the target labels (0 for no churn, 1 for churn) in a Series `y`. They have chosen a `RandomForestClassifier`. What is the correct Scikit-learn code to train this model?',
+              question: "Which of the following is the primary advantage of using a virtual environment in a Python project?",
+              options: [
+                { id: 'A', text: 'It makes your code run faster.' },
+                { id: 'B', text: 'It isolates project dependencies to avoid conflicts.' },
+                { id: 'C', 'text': 'It automatically formats your code.' },
+                { id: 'D', 'text': 'It is required to use the Jupyter Notebook.' }
+              ],
+              correctAnswer: 'B',
+              explanation: "Virtual environments create isolated spaces for each project, so the specific versions of libraries used in one project don't interfere with others."
+            },
+            {
+              question: "A data scientist has a list of customer ages: `ages = [22, 35, 42, 28, 55, 35]`. What is the correct data structure to store unique ages, where the order doesn't matter?",
+              options: [
+                { id: 'A', text: 'A `list`' },
+                { id: 'B', text: 'A `tuple`' },
+                { id: 'C', 'text': 'A `set`' },
+                { id: 'D', 'text': 'A `dict`' }
+              ],
+              correctAnswer: 'C',
+              explanation: "A `set` is an unordered collection of unique items. It's the perfect data structure for this use case, as it will automatically handle duplicates."
+            },
+            {
+              question: "What is the output of the following list comprehension?\n\n```python\nnumbers = [1, 2, 3, 4, 5]\nsquares = [n*n for n in numbers if n % 2 == 0]\nprint(squares)\n```",
+              options: [
+                { id: 'A', text: '[1, 4, 9, 16, 25]' },
+                { id: 'B', text: '[2, 4]' },
+                { id: 'C', 'text': '[4, 16]' },
+                { id: 'D', 'text': '[1, 9, 25]' }
+              ],
+              correctAnswer: 'C',
+              explanation: "The list comprehension iterates through `numbers`, checks if a number `n` is even (`n % 2 == 0`), and if so, it calculates its square (`n*n`). This applies only to 2 and 4, resulting in `[4, 16]`."
+            },
+            {
+              question: "In Scikit-learn, which method is used to train a machine learning model on a dataset?",
+              options: [
+                { id: 'A', text: '`.predict()`' },
+                { id: 'B', text: '`.train()`' },
+                { id: 'C', 'text': '`.run()`' },
+                { id: 'D', 'text': '`.fit()`' }
+              ],
+              correctAnswer: 'D',
+              explanation: "The `.fit(X, y)` method is the standard Scikit-learn API for training a model, where `X` is the feature data and `y` is the target labels."
+            },
+            {
+              question: "You want to classify an email as 'spam' or 'not spam'. Which type of machine learning problem is this?",
+              options: [
+                { id: 'A', text: 'Regression' },
+                { id: 'B', text: 'Clustering' },
+                { id: 'C', 'text': 'Classification' },
+                { id: 'D', 'text': 'Reinforcement Learning' }
+              ],
+              correctAnswer: 'C',
+              explanation: "Classification is a supervised learning task where the goal is to predict a categorical label. In this case, the labels are 'spam' and 'not spam'."
+            },
+            {
+                question: "Which library is most commonly used for data manipulation and analysis in Pandas?",
                 options: [
-                    { id: 'A', text: '`from sklearn.ensemble import RandomForestClassifier\\nmodel = RandomForestClassifier()\\nmodel.train(X, y)`' },
-                    { id: 'B', text: '`from sklearn.ensemble import RandomForestClassifier\\nmodel = RandomForestClassifier()\\nmodel.fit(X, y)`' },
-                    { id: 'C', text: '`from sklearn.ensemble import RandomForestClassifier\\nmodel = RandomForestClassifier(X, y)\\nmodel.fit()`' },
-                    { id: 'D', text: '`from sklearn.ensemble import RandomForestClassifier\\nmodel = RandomForestClassifier.fit(X, y)`' }
+                  { id: 'A', text: 'NumPy' },
+                  { id: 'B', text: 'Pandas' },
+                  { id: 'C', 'text': 'Matplotlib' },
+                  { id: 'D', 'text': 'Scikit-learn' }
+                ],
+                correctAnswer: 'B',
+                explanation: "Pandas is the de-facto standard library for data manipulation in Python, providing powerful data structures like the DataFrame."
+            },
+            {
+                question: "What does the `.fit()` method in a Scikit-learn model achieve?",
+                options: [
+                  { id: 'A', text: 'It makes predictions on new data.' },
+                  { id: 'B', text: 'It evaluates the model\'s performance.' },
+                  { id: 'C', 'text': 'It trains the model by learning patterns from the training data.' },
+                  { id: 'D', 'text': 'It preprocesses the data.' }
+                ],
+                correctAnswer: 'C',
+                explanation: "The `.fit()` method is the core training step where the model learns the relationships between the features and the target variable."
+            },
+            {
+                question: "What is the primary purpose of a `while` loop?",
+                options: [
+                  { id: 'A', text: 'To iterate over a fixed sequence of items.' },
+                  { id: 'B', text: 'To repeat a block of code as long as a certain condition is true.' },
+                  { id: 'C', 'text': 'To define a reusable block of code.' },
+                  { id: 'D', 'text': 'To make a single decision in the code.' }
+                ],
+                correctAnswer: 'B',
+                explanation: "`while` loops are used for iteration that depends on a condition being met, rather than iterating over a pre-defined sequence."
+            },
+            {
+                question: "Which data type would you use to store a collection of key-value pairs, like a user's profile with 'name' and 'email' keys?",
+                options: [
+                  { id: 'A', text: 'List' },
+                  { id: 'B', text: 'Tuple' },
+                  { id: 'C', 'text': 'Set' },
+                  { id: 'D', 'text': 'Dictionary' }
+                ],
+                correctAnswer: 'D',
+                explanation: "A dictionary (`dict`) is designed specifically for storing data as key-value pairs, making it ideal for structured data like a user profile."
+            },
+            {
+                question: "An ML engineer is building a model to predict customer churn. They have their feature data in a Pandas DataFrame `X` and the target labels (0 for no churn, 1 for churn) in a Series `y`. They have chosen a `RandomForestClassifier`. What is the correct Scikit-learn code to train this model?",
+                options: [
+                  { id: 'A', text: '`from sklearn.ensemble import RandomForestClassifier\nmodel = RandomForestClassifier()\nmodel.train(X, y)`' },
+                  { id: 'B', text: '`from sklearn.ensemble import RandomForestClassifier\nmodel = RandomForestClassifier()\nmodel.fit(X, y)`' },
+                  { id: 'C', 'text': '`from sklearn.ensemble import RandomForestClassifier\nmodel = RandomForestClassifier(X, y)\nmodel.fit()`' },
+                  { id: 'D', 'text': '`from sklearn.ensemble import RandomForestClassifier\nmodel = RandomForestClassifier.fit(X, y)`' }
                 ],
                 correctAnswer: 'B',
                 explanation: 'The standard Scikit-learn API pattern for training a model is to first instantiate the model object (`model = RandomForestClassifier()`) and then call the `.fit()` method on that object with the training data (`model.fit(X, y)`). The other options misuse the API.'
             }
-        ]
+          ]
+        }
+      ]
     }
-]
+  ]
   },
    {
     slug: 'cs-basics-get-started',
@@ -452,20 +547,6 @@ const courses = [
                     slug: "key-areas-of-cs", 
                     title: "Key Areas of Computer Science", 
                     content: "Objective: Get a high-level overview of the major disciplines within Computer Science. Computer Science is a vast field with many specializations. Here are some of the core pillars: 1.  Algorithms & Data Structures: The study of efficient problem-solving methods and ways to organize data. 2.  Programming Languages: The tools we use to communicate instructions to computers. 3.  Computer Architecture: The design and structure of computer hardware systems. 4.  Operating Systems: The software that manages all hardware and software resources. 5.  Computer Networks: The principles behind how computers connect and communicate (e.g., the Internet). 6.  Databases: How to store, manage, and retrieve large amounts of data efficiently. 7.  Artificial Intelligence (AI): The science of creating machines that can think, learn, and act intelligently."
-                },
-                {
-                    slug: 'cs-basics-quiz-1',
-                    title: 'Module 1 Quiz',
-                    type: 'quiz',
-                    content: 'Which of the following best describes the primary goal of Computer Science?',
-                    options: [
-                        { id: 'A', text: 'To learn as many programming languages as possible.' },
-                        { id: 'B', text: 'To design efficient and effective solutions to problems using computation.' },
-                        { id: 'C', text: 'To build faster computer hardware.' },
-                        { id: 'D', text: 'To become an expert in using specific software applications like Microsoft Word.' }
-                    ],
-                    correctAnswer: 'B',
-                    explanation: "Computer Science is fundamentally about problem-solving. While learning languages and understanding hardware are parts of it, the central goal is to design computational solutions to problems. It is a creative and analytical discipline, not just a technical skill."
                 }
             ]
         },
@@ -481,20 +562,129 @@ const courses = [
                     slug: "variables-data-types", 
                     title: "Variables and Data Types", 
                     content: "Objective: Learn how to store and categorize information in a program. What are Variables? A variable is like a labeled box where you can store a piece of information. You give it a name and put a value inside it. ```python\nmessage = \"Welcome to CS Basics!\"\nstudent_count = 50\n``` Common Data Types - String (`str`): Text (e.g., `\"Hello\"`). - Integer (`int`): Whole numbers (e.g., `101`). - Float (`float`): Numbers with decimals (e.g., `99.9`). - Boolean (`bool`): `True` or `False`. Python automatically figures out the data type for you when you assign a value to a variable."
-                },
+                }
+            ]
+        },
+        {
+            title: "Module 3: Final Assessment",
+            lessons: [
                 {
-                    slug: 'cs-basics-quiz-2',
-                    title: 'Module 2 Quiz',
+                    slug: 'cs-basics-final-quiz',
+                    title: 'Final Quiz: Computer Science Basics',
                     type: 'quiz',
-                    content: 'A programmer writes the following code: `age = 25`. What is the data type of the `age` variable?',
-                    options: [
-                        { id: 'A', text: 'String' },
-                        { id: 'B', text: 'Float' },
-                        { id: 'C', text: 'Integer' },
-                        { id: 'D', text: 'Boolean' }
-                    ],
-                    correctAnswer: 'C',
-                    explanation: "The value `25` is a whole number, so Python assigns it the integer (`int`) data type. A string would be in quotes (e.g., `\"25\"`), a float would have a decimal (e.g., `25.0`), and a boolean would be `True` or `False`."
+                    content: "Test your knowledge on the fundamental concepts of Computer Science.",
+                    questions: [
+                        {
+                            question: "Which of the following best describes the primary goal of Computer Science?",
+                            options: [
+                                { id: 'A', text: 'To learn as many programming languages as possible.' },
+                                { id: 'B', text: 'To design efficient and effective solutions to problems using computation.' },
+                                { id: 'C', 'text': 'To build faster computer hardware.' },
+                                { id: 'D', 'text': 'To become an expert in using specific software applications like Microsoft Word.' }
+                            ],
+                            correctAnswer: 'B',
+                            explanation: "Computer Science is fundamentally about problem-solving. While learning languages and understanding hardware are parts of it, the central goal is to design computational solutions to problems."
+                        },
+                        {
+                            question: 'A programmer writes the following code: `age = 25`. What is the data type of the `age` variable in Python?',
+                            options: [
+                                { id: 'A', text: 'String' },
+                                { id: 'B', text: 'Float' },
+                                { id: 'C', 'text': 'Integer' },
+                                { id: 'D', 'text': 'Boolean' }
+                            ],
+                            correctAnswer: 'C',
+                            explanation: "The value `25` is a whole number, so Python assigns it the integer (`int`) data type. A string would be in quotes (e.g., `\"25\"`), a float would have a decimal (e.g., `25.0`), and a boolean would be `True` or `False`."
+                        },
+                        {
+                            question: "Which of these is NOT considered a core pillar of Computer Science?",
+                            options: [
+                                { id: 'A', text: 'Algorithms & Data Structures' },
+                                { id: 'B', text: 'Operating Systems' },
+                                { id: 'C', 'text': 'Marketing and Sales' },
+                                { id: 'D', 'text': 'Computer Networks' }
+                            ],
+                            correctAnswer: 'C',
+                            explanation: "Marketing and Sales are business functions, not core technical disciplines of Computer Science. Algorithms, OS, and Networks are all fundamental areas of study in CS."
+                        },
+                        {
+                            question: "What is the main purpose of a variable in programming?",
+                            options: [
+                                { id: 'A', text: 'To end the program.' },
+                                { id: 'B', text: 'To print text to the screen.' },
+                                { id: 'C', 'text': 'To store a piece of information with a name.' },
+                                { id: 'D', 'text': 'To perform a mathematical calculation.' }
+                            ],
+                            correctAnswer: 'C',
+                            explanation: "A variable acts as a named container or label for a value, allowing programmers to store and refer to information throughout a program."
+                        },
+                        {
+                            question: "What will the following Python code output?\n\n```python\nprint(\"Hello, World!\")\n```",
+                            options: [
+                                { id: 'A', text: '`Hello, World!` with quotes.' },
+                                { id: 'B', text: '`Hello, World!` without quotes.' },
+                                { id: 'C', 'text': 'An error, because it is too simple.' },
+                                { id: 'D', 'text': 'Nothing will be printed.' }
+                            ],
+                            correctAnswer: 'B',
+                            explanation: "The `print()` function in Python displays the given text (or value) to the screen. The quotes are used to define the string but are not part of the output."
+                        },
+                        {
+                            question: "Which of the following data types would you use to represent a student's GPA, like 3.8?",
+                            options: [
+                                { id: 'A', text: 'Integer (int)' },
+                                { id: 'B', text: 'Float (float)' },
+                                { id: 'C', 'text': 'String (str)' },
+                                { id: 'D', 'text': 'Boolean (bool)' }
+                            ],
+                            correctAnswer: 'B',
+                            explanation: "A float is used for numbers that have a decimal point, making it the correct choice for representing a GPA."
+                        },
+                        {
+                            question: "The study of efficient problem-solving methods is known as:",
+                            options: [
+                                { id: 'A', text: 'Computer Architecture' },
+                                { id: 'B', text: 'Databases' },
+                                { id: 'C', 'text': 'Algorithms & Data Structures' },
+                                { id: 'D', 'text': 'Artificial Intelligence' }
+                            ],
+                            correctAnswer: 'C',
+                            explanation: "Algorithms and Data Structures is the area of computer science focused on designing and analyzing efficient procedures for solving problems."
+                        },
+                        {
+                            question: "What is the data type for a value that can only be `True` or `False`?",
+                            options: [
+                                { id: 'A', text: 'Integer' },
+                                { id: 'B', text: 'String' },
+                                { id: 'C', 'text': 'Boolean' },
+                                { id: 'D', 'text': 'Float' }
+                            ],
+                            correctAnswer: 'C',
+                            explanation: "The Boolean (`bool`) data type is used to represent truth values, which can only be `True` or `False`."
+                        },
+                        {
+                            question: "Which area of Computer Science deals with managing a computer's hardware and software resources?",
+                            options: [
+                                { id: 'A', text: 'Programming Languages' },
+                                { id: 'B', text: 'Operating Systems' },
+                                { id: 'C', 'text': 'Databases' },
+                                { id: 'D', 'text': 'Computer Networks' }
+                            ],
+                            correctAnswer: 'B',
+                            explanation: "An Operating System (OS) is responsible for managing all hardware (like CPU and memory) and software resources on a computer."
+                        },
+                        {
+                            question: "Why is Python often recommended as a first programming language for beginners?",
+                            options: [
+                                { id: 'A', text: 'It is the fastest programming language.' },
+                                { id: 'B', text: 'It has a simple, readable syntax similar to English.' },
+                                { id: 'C', 'text': 'It can only be used for building websites.' },
+                                { id: 'D', 'text': 'It is the oldest programming language.' }
+                            ],
+                            correctAnswer: 'B',
+                            explanation: "Python's clear and readable syntax allows beginners to focus on learning programming concepts without being overwhelmed by complex rules, making it an excellent first language."
+                        }
+                    ]
                 }
             ]
         }
@@ -526,20 +716,6 @@ const courses = [
                     slug: "css-styling",
                     title: "CSS: The Art of Styling",
                     content: "Objective: Learn how to use Cascading Style Sheets (CSS) to control the visual appearance of your website. What is CSS? CSS is a stylesheet language used to describe the presentation of a document written in HTML. It controls colors, fonts, spacing, layout, and more. Core Concepts - Selectors: Target specific HTML elements to apply styles to. (e.g., `p`, `.my-class`, `#my-id`). - Properties & Values: `color: blue;` `font-size: 16px;` - The Box Model: Every HTML element is a rectangular box. The box model describes the content, padding, border, and margin of this box. - Layouts with Flexbox & Grid: Modern CSS provides powerful tools for creating complex, responsive layouts. Flexbox is for one-dimensional layouts (rows or columns), while Grid is for two-dimensional layouts (rows and columns)."
-                },
-                {
-                    slug: 'web-dev-quiz-1',
-                    title: 'Module 1 Quiz',
-                    type: 'quiz',
-                    content: 'A developer wants to create a navigation bar at the top of their page that contains a list of links. What is the most semantic HTML structure for this?',
-                    options: [
-                        { id: 'A', text: '`<div><ul><li><a href=\"#\">Home</a></li></ul></div>`' },
-                        { id: 'B', text: '`<nav><ul><li><a href=\"#\">Home</a></li></ul></nav>`' },
-                        { id: 'C', text: '`<span><p><a href=\"#\">Home</a></p></span>`' },
-                        { id: 'D', text: '`<section><ul><li><a href=\"#\">Home</a></li></ul></section>`' }
-                    ],
-                    correctAnswer: 'B',
-                    explanation: 'The `<nav>` tag is the most semantic choice because it explicitly tells the browser and screen readers that this section of the page is for navigation. While other tags might work visually, `<nav>` provides important context about the content\'s purpose.'
                 }
             ]
         },
@@ -555,20 +731,129 @@ const courses = [
                     slug: "dom-manipulation",
                     title: "Interacting with the Page: The DOM",
                     content: "Objective: Learn how to use JavaScript to manipulate the Document Object Model (DOM) to create dynamic and interactive user experiences. What is the DOM? The DOM is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects; that way, programming languages can connect to the page. Common Tasks - Selecting Elements: `document.getElementById('myId')`, `document.querySelector('.myClass')`. - Changing Content: `element.textContent = 'New text!'`. - Changing Styles: `element.style.color = 'red'`. - Event Handling: Responding to user actions like clicks and key presses. `element.addEventListener('click', myFunction)`."
-                },
-                 {
-                    slug: 'web-dev-quiz-2',
-                    title: 'Module 2 Quiz',
+                }
+            ]
+        },
+        {
+            title: "Module 3: Final Assessment",
+            lessons: [
+                {
+                    slug: 'web-dev-final-quiz',
+                    title: 'Final Quiz: Web Development Fundamentals',
                     type: 'quiz',
-                    content: 'A developer wants to change the text of a paragraph with the ID `welcome-message` to "Welcome!" when a button with the ID `login-btn` is clicked. Which JavaScript snippet correctly accomplishes this?',
-                    options: [
-                        { id: 'A', text: '`document.getElementById(\"login-btn\").addEventListener(\"click\", () => {\\n  document.getElementById(\"welcome-message\").textContent = \"Welcome!\";\\n});`' },
-                        { id: 'B', text: '`document.querySelector(\"#login-btn\").onClick = {\\n  document.querySelector(\"#welcome-message\").innerHTML = \"Welcome!\";\\n};`' },
-                        { id: 'C', text: '`document.getElementById(\"welcome-message\").textContent = \"Welcome!\";`' },
-                        { id: 'D', text: '`#login-btn.click(() => {\\n  #welcome-message.text(\"Welcome!\");\\n});`' }
-                    ],
-                    correctAnswer: 'A',
-                    explanation: 'Option A correctly uses `addEventListener` to listen for a click event on the button. When the event occurs, it executes a function that selects the paragraph by its ID and updates its `textContent`. Option B has incorrect syntax for an event handler. Option C changes the text immediately, not on a button click. Option D uses jQuery-like syntax, not standard JavaScript.'
+                    content: "Test your knowledge on the core concepts of web development.",
+                    questions: [
+                        {
+                            question: 'A developer wants to create a navigation bar at the top of their page that contains a list of links. What is the most semantic HTML structure for this?',
+                            options: [
+                                { id: 'A', text: '`<div><ul><li><a href=\"#\">Home</a></li></ul></div>`' },
+                                { id: 'B', text: '`<nav><ul><li><a href=\"#\">Home</a></li></ul></nav>`' },
+                                { id: 'C', 'text': '`<span><p><a href=\"#\">Home</a></p></span>`' },
+                                { id: 'D', 'text': '`<section><ul><li><a href=\"#\">Home</a></li></ul></section>`' }
+                            ],
+                            correctAnswer: 'B',
+                            explanation: 'The `<nav>` tag is the most semantic choice because it explicitly tells the browser and screen readers that this section of the page is for navigation.'
+                        },
+                        {
+                            question: 'A developer wants to change the text of a paragraph with the ID `welcome-message` to "Welcome!" when a button with the ID `login-btn` is clicked. Which JavaScript snippet correctly accomplishes this?',
+                            options: [
+                                { id: 'A', text: '`document.getElementById(\"login-btn\").addEventListener(\"click\", () => {\\n  document.getElementById(\"welcome-message\").textContent = \"Welcome!\";\\n});`' },
+                                { id: 'B', text: '`document.querySelector(\"#login-btn\").onClick = {\\n  document.querySelector(\"#welcome-message\").innerHTML = \"Welcome!\";\\n};`' },
+                                { id: 'C', 'text': '`document.getElementById(\"welcome-message\").textContent = \"Welcome!\";`' },
+                                { id: 'D', 'text': '`#login-btn.click(() => {\\n  #welcome-message.text(\"Welcome!\");\\n});`' }
+                            ],
+                            correctAnswer: 'A',
+                            explanation: 'Option A correctly uses `addEventListener` to listen for a click event on the button. When the event occurs, it executes a function that selects the paragraph by its ID and updates its `textContent`.'
+                        },
+                        {
+                            question: "Which technology is responsible for the styling and visual presentation of a webpage?",
+                            options: [
+                                { id: 'A', text: 'HTML' },
+                                { id: 'B', text: 'CSS' },
+                                { id: 'C', 'text': 'JavaScript' },
+                                { id: 'D', 'text': 'SQL' }
+                            ],
+                            correctAnswer: 'B',
+                            explanation: "CSS (Cascading Style Sheets) is used to control the layout, colors, fonts, and overall visual appearance of HTML elements."
+                        },
+                        {
+                            question: "What is the primary purpose of 'semantic HTML'?",
+                            options: [
+                                { id: 'A', text: 'To make the website look more colorful.' },
+                                { id: 'B', text: 'To use tags that describe the meaning of the content, improving accessibility and SEO.' },
+                                { id: 'C', 'text': 'To make the HTML code shorter.' },
+                                { id: 'D', 'text': 'To load the website faster.' }
+                            ],
+                            correctAnswer: 'B',
+                            explanation: "Semantic tags like `<header>`, `<nav>`, and `<article>` give meaning to the content, which helps search engines and screen readers understand the structure and importance of different parts of the page."
+                        },
+                        {
+                            question: "In CSS, what does the 'box model' consist of?",
+                            options: [
+                                { id: 'A', text: 'Width, Height, and Color' },
+                                { id: 'B', text: 'Flexbox, Grid, and Position' },
+                                { id: 'C', 'text': 'Content, Padding, Border, and Margin' },
+                                { id: 'D', 'text': 'Header, Footer, and Body' }
+                            ],
+                            correctAnswer: 'C',
+                            explanation: "The CSS box model describes the rectangular boxes that are generated for elements. It consists of the content area, surrounded by padding, a border, and a margin."
+                        },
+                        {
+                            question: "What is the Document Object Model (DOM)?",
+                            options: [
+                                { id: 'A', text: 'A style sheet language for web pages.' },
+                                { id: 'B', text: 'A server-side programming language.' },
+                                { id: 'C', 'text': 'A programming interface for web documents that represents the page as a tree of objects.' },
+                                { id: 'D', 'text': 'A type of database for storing website content.' }
+                            ],
+                            correctAnswer: 'C',
+                            explanation: "The DOM is an object-based representation of the HTML document, which allows programming languages like JavaScript to dynamically interact with and modify the page's content and structure."
+                        },
+                        {
+                            question: "Which JavaScript keyword is used to declare a variable that cannot be reassigned?",
+                            options: [
+                                { id: 'A', text: '`var`' },
+                                { id: 'B', text: '`let`' },
+                                { id: 'C', 'text': '`const`' },
+                                { id: 'D', 'text': '`static`' }
+                            ],
+                            correctAnswer: 'C',
+                            explanation: "The `const` keyword is used to declare a constant, which is a block-scoped variable whose value cannot be changed or redeclared."
+                        },
+                        {
+                            question: "What is the purpose of a `function` in JavaScript?",
+                            options: [
+                                { id: 'A', text: 'To store a single value.' },
+                                { id: 'B', text: 'To create a reusable block of code that performs a specific task.' },
+                                { id: 'C', 'text': 'To loop over a collection of items.' },
+                                { id: 'D', 'text': 'To apply styles to HTML elements.' }
+                            ],
+                            correctAnswer: 'B',
+                            explanation: "Functions allow you to encapsulate a piece of logic into a named block that can be executed multiple times, promoting code reuse and organization."
+                        },
+                        {
+                            question: "What does the 'C' in CSS stand for?",
+                            options: [
+                                { id: 'A', text: 'Creative' },
+                                { id: 'B', text: 'Computer' },
+                                { id: 'C', 'text': 'Cascading' },
+                                { id: 'D', 'text': 'Colorful' }
+                            ],
+                            correctAnswer: 'C',
+                            explanation: "CSS stands for Cascading Style Sheets. The 'Cascading' part refers to the rules that determine how styles are applied when multiple style rules apply to the same element."
+                        },
+                        {
+                            question: "Which HTML tag is used to create a hyperlink?",
+                            options: [
+                                { id: 'A', text: '`<link>`' },
+                                { id: 'B', text: '`<a>`' },
+                                { id: 'C', 'text': '`<hlink>`' },
+                                { id: 'D', 'text': '`<url>`' }
+                            ],
+                            correctAnswer: 'B',
+                            explanation: "The `<a>` (anchor) tag, along with its `href` attribute, is used to create hyperlinks to other web pages or locations within the same page."
+                        }
+                    ]
                 }
             ]
         }
@@ -589,7 +874,7 @@ const courses = [
     isTopCourse: false,
     syllabus: [
       {
-        title: "Module 1: Algorithms",
+        title: "Module 1: Algorithms & Data Structures",
         lessons: [
             { 
                 slug: "cs-topic-algorithms", 
@@ -607,59 +892,21 @@ We use Big O Notation to analyze the performance of an algorithm. It describes h
 - O(n) - Linear Time: Runtime grows linearly with the input size. (e.g., searching an unsorted list).
 - O(n²) - Quadratic Time: Runtime grows quadratically. Becomes slow very quickly. (e.g., Bubble Sort).`
             },
-             {
-                slug: 'cs-topics-quiz-1',
-                title: 'Algorithms Quiz',
-                type: 'quiz',
-                content: 'An algorithm needs to find a specific name in a phone book containing 1,000,000 sorted names. Which search algorithm would be most efficient, and what is its Big O complexity?',
-                options: [
-                    { id: 'A', text: 'Linear Search, O(n)' },
-                    { id: 'B', text: 'Binary Search, O(log n)' },
-                    { id: 'C', text: 'Bubble Sort, O(n²)' },
-                    { id: 'D', text: 'A hash map lookup, O(1)' }
-                ],
-                correctAnswer: 'B',
-                explanation: 'Because the names in a phone book are sorted, Binary Search is the most efficient algorithm. It works by repeatedly dividing the search interval in half. Its time complexity is O(log n), which is incredibly fast for large datasets. Linear Search (O(n)) would be far too slow.'
-            }
-        ]
-      },
-      {
-        title: "Module 2: Data Structures",
-        lessons: [
             { 
                 slug: "cs-topic-data-structures", 
                 title: "Data Structures: Organizing Information for Efficiency", 
                 content: "What are Data Structures?\nData structures are formats for organizing, managing, and storing data that enable efficient access and modification. The choice of data structure can have a massive impact on an algorithm's performance.\n\nCommon Data Structures\n- Arrays: A simple collection of items stored in contiguous memory locations. Offers fast access by index (O(1)).\n- Linked Lists: A sequence of nodes where each node points to the next. Allows for efficient insertions and deletions.\n- Stacks: A Last-In, First-Out (LIFO) structure. Think of a stack of plates. Used for managing function calls and undo features.\n- Queues: A First-In, First-Out (FIFO) structure. Like a checkout line. Used for managing tasks and requests.\n- Trees: A hierarchical structure with a root node and child nodes. Used for file systems and databases.\n- Graphs: A collection of nodes (vertices) and edges connecting them. Used to model networks like social media connections or road maps.\n- Hash Tables (or Dictionaries): A structure that maps keys to values for highly efficient lookups. Often provides O(1) average time complexity for insertion, deletion, and retrieval."
-            },
-            {
-                slug: 'cs-topics-quiz-2',
-                title: 'Data Structures Quiz',
-                type: 'quiz',
-                content: 'You are designing a feature for a music app that allows users to go back to the previously played song. Which data structure is best suited for managing the song history for this "back" button functionality?',
-                options: [
-                    { id: 'A', text: 'Queue' },
-                    { id: 'B', text: 'Stack' },
-                    { id: 'C', text: 'Array' },
-                    { id: 'D', text: 'Linked List' }
-                ],
-                correctAnswer: 'B',
-                explanation: 'A Stack is the perfect data structure for this. As a new song is played, you "push" it onto the stack. When the user hits the "back" button, you "pop" the most recently played song off the stack to reveal the previous one. This is a classic Last-In, First-Out (LIFO) problem.'
             }
         ]
       },
        {
-        title: "Module 3: Operating Systems",
+        title: "Module 2: Systems & Architecture",
         lessons: [
             { 
                 slug: "cs-topic-os", 
                 title: "Operating Systems: The Computer's Manager", 
                 content: "An Operating System (OS) is the software that manages all of the computer's hardware and software resources. It acts as an intermediary between the user and the computer hardware. Examples include Windows, macOS, and Linux.\n\nCore Responsibilities:\n- Process Management: Manages the execution of programs (processes) and scheduling of tasks.\n- Memory Management: Allocates and deallocates RAM to various processes.\n- File System Management: Organizes and keeps track of files and directories on storage devices.\n- Device Management: Controls hardware devices through drivers."
-            }
-        ]
-      },
-       {
-        title: "Module 4: Computer Networks",
-        lessons: [
+            },
             { 
                 slug: "cs-topic-networks", 
                 title: "Computer Networks: Connecting the World", 
@@ -668,7 +915,7 @@ We use Big O Notation to analyze the performance of an algorithm. It describes h
         ]
       },
       {
-        title: "Module 5: Databases",
+        title: "Module 3: Software & Databases",
         lessons: [
             { 
                 slug: "cs-topic-databases", 
@@ -676,6 +923,129 @@ We use Big O Notation to analyze the performance of an algorithm. It describes h
                 content: "Databases are systems for storing and retrieving data efficiently. A Database Management System (DBMS) is the software used to manage the database.\n\nTypes of Databases:\n- Relational (SQL): Organizes data into structured tables with rows and columns. Uses SQL (Structured Query Language). Examples: MySQL, PostgreSQL.\n- Non-Relational (NoSQL): Provides more flexibility and is often used for large-scale or unstructured data. Examples: MongoDB (document-based), Redis (key-value)."
             }
         ]
+      },
+      {
+          title: "Module 4: Final Assessment",
+          lessons: [
+            {
+                slug: 'cs-topics-final-quiz',
+                title: 'Final Quiz: Core CS Topics',
+                type: 'quiz',
+                content: "Test your knowledge on the most important topics in Computer Science.",
+                questions: [
+                    {
+                        question: 'An algorithm needs to find a specific name in a phone book containing 1,000,000 sorted names. Which search algorithm would be most efficient, and what is its Big O complexity?',
+                        options: [
+                            { id: 'A', text: 'Linear Search, O(n)' },
+                            { id: 'B', text: 'Binary Search, O(log n)' },
+                            { id: 'C', 'text': 'Bubble Sort, O(n²)' },
+                            { id: 'D', 'text': 'A hash map lookup, O(1)' }
+                        ],
+                        correctAnswer: 'B',
+                        explanation: 'Because the names in a phone book are sorted, Binary Search is the most efficient algorithm. It works by repeatedly dividing the search interval in half. Its time complexity is O(log n), which is incredibly fast for large datasets.'
+                    },
+                    {
+                        question: 'You are designing a feature for a music app that allows users to go back to the previously played song. Which data structure is best suited for managing the song history for this "back" button functionality?',
+                        options: [
+                            { id: 'A', text: 'Queue' },
+                            { id: 'B', text: 'Stack' },
+                            { id: 'C', 'text': 'Array' },
+                            { id: 'D', 'text': 'Linked List' }
+                        ],
+                        correctAnswer: 'B',
+                        explanation: 'A Stack is the perfect data structure for this. As a new song is played, you "push" it onto the stack. When the user hits the "back" button, you "pop" the most recently played song off the stack to reveal the previous one. This is a classic Last-In, First-Out (LIFO) problem.'
+                    },
+                    {
+                        question: "Which of the following is a primary responsibility of an Operating System?",
+                        options: [
+                            { id: 'A', text: 'Translating domain names to IP addresses.' },
+                            { id: 'B', text: 'Managing memory allocation for programs.' },
+                            { id: 'C', 'text': 'Styling the content of a webpage.' },
+                            { id: 'D', 'text': 'Storing data in relational tables.' }
+                        ],
+                        correctAnswer: 'B',
+                        explanation: "Operating Systems are responsible for core functions like memory management, process scheduling, and controlling hardware devices. DNS translation is a network function."
+                    },
+                    {
+                        question: "What does DNS (Domain Name System) do?",
+                        options: [
+                            { id: 'A', text: 'It secures web traffic using encryption.' },
+                            { id: 'B', text: 'It translates human-readable domain names (e.g., google.com) into computer-readable IP addresses.' },
+                            { id: 'C', 'text': 'It manages the layout of a webpage.' },
+                            { id: 'D', 'text': 'It stores and retrieves large amounts of data.' }
+                        ],
+                        correctAnswer: 'B',
+                        explanation: "DNS acts like the internet's phonebook, converting easy-to-remember domain names into the numerical IP addresses that computers use to identify each other."
+                    },
+                    {
+                        question: "Which database type uses a flexible, non-tabular structure and is often used for large-scale or unstructured data?",
+                        options: [
+                            { id: 'A', text: 'Relational (SQL)' },
+                            { id: 'B', text: 'NoSQL' },
+                            { id: 'C', 'text': 'Hierarchical' },
+                            { id: 'D', 'text': 'Network' }
+                        ],
+                        correctAnswer: 'B',
+                        explanation: "NoSQL databases (like MongoDB or Redis) are designed for flexibility and scalability, making them well-suited for handling diverse and large datasets that don't fit neatly into the rigid table structure of SQL databases."
+                    },
+                    {
+                        question: "What is the time complexity of accessing an element in an array at a specific index?",
+                        options: [
+                            { id: 'A', text: 'O(1)' },
+                            { id: 'B', text: 'O(n)' },
+                            { id: 'C', 'text': 'O(log n)' },
+                            { id: 'D', 'text': 'O(n²)' }
+                        ],
+                        correctAnswer: 'A',
+                        explanation: "Accessing an array element by its index is a constant time operation, O(1), because the memory location can be calculated directly from the base address and the index, regardless of the array's size."
+                    },
+                    {
+                        question: "Which data structure follows a First-In, First-Out (FIFO) principle?",
+                        options: [
+                            { id: 'A', text: 'Stack' },
+                            { id: 'B', text: 'Queue' },
+                            { id: 'C', 'text': 'Tree' },
+                            { id: 'D', 'text': 'Hash Table' }
+                        ],
+                        correctAnswer: 'B',
+                        explanation: "A Queue operates like a waiting line. The first item added to the queue is the first one to be removed, following the FIFO principle."
+                    },
+                    {
+                        question: "What is the main advantage of using a Hash Table (or Dictionary) for data retrieval?",
+                        options: [
+                            { id: 'A', text: 'It keeps the data sorted automatically.' },
+                            { id: 'B', text: 'It uses very little memory.' },
+                            { id: 'C', 'text': 'It provides very fast average time for lookups, insertions, and deletions.' },
+                            { id: 'D', 'text': 'It is the best structure for hierarchical data.' }
+                        ],
+                        correctAnswer: 'C',
+                        explanation: "Hash Tables use a hash function to map keys to indices in an array, allowing for average-case O(1) time complexity for data retrieval, which is extremely efficient."
+                    },
+                    {
+                        question: "Which of these protocols is the foundation of the World Wide Web, used for fetching web pages?",
+                        options: [
+                            { id: 'A', text: 'FTP (File Transfer Protocol)' },
+                            { id: 'B', text: 'SMTP (Simple Mail Transfer Protocol)' },
+                            { id: 'C', 'text': 'TCP/IP' },
+                            { id: 'D', 'text': 'HTTP (Hypertext Transfer Protocol)' }
+                        ],
+                        correctAnswer: 'D',
+                        explanation: "HTTP is the application-layer protocol used by web browsers to request and receive web page data from servers."
+                    },
+                    {
+                        question: "If you need to model a social network where users are nodes and friendships are edges, what data structure would be most appropriate?",
+                        options: [
+                            { id: 'A', text: 'A Tree' },
+                            { id: 'B', text: 'A Stack' },
+                            { id: 'C', 'text': 'A Graph' },
+                            { id: 'D', 'text': 'A Queue' }
+                        ],
+                        correctAnswer: 'C',
+                        explanation: "A Graph is the ideal data structure for representing networks, as it consists of vertices (nodes) and edges that connect them, perfectly modeling relationships like friendships."
+                    }
+                ]
+            }
+          ]
       }
     ]
   },
