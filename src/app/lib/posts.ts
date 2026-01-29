@@ -1,5 +1,7 @@
+
 export const blogPosts = [
   {
+    author: 'Prerana',
     category: 'Software Development',
     title: 'The 10 Most Important Topics in Computer Science',
     date: 'August 13, 2024',
@@ -7,6 +9,7 @@ export const blogPosts = [
     link: '/blog/10-most-important-cs-topics',
   },
   {
+    author: 'Prerana',
     category: 'Career Development',
     title: 'Unlocking Career Success: Mastering Soft Skills for Tech Professionals',
     date: 'August 12, 2024',
@@ -14,6 +17,7 @@ export const blogPosts = [
     link: '/blog/unlocking-career-success-soft-skills',
   },
   {
+    author: 'Prerana',
     category: 'Career Development',
     title: 'The Future of Work-Life Balance: Myth or Modern Necessity?',
     date: 'August 5, 2024',
@@ -21,6 +25,7 @@ export const blogPosts = [
     link: '/blog/the-future-of-work-life-balance',
   },
   {
+    author: 'Prerana',
     category: 'Career Development',
     title: 'From Resume to Offer: A Complete Guide to Cracking Job Interviews',
     date: 'August 1, 2024',
@@ -28,6 +33,7 @@ export const blogPosts = [
     link: '/blog/from-resume-to-offer',
   },
   {
+    author: 'Prerana',
     category: 'Tech Insights',
     title: 'Is AI Writing Stealing Your Job? The Future of Blogging in the Age of Artificial Intelligence',
     date: 'July 22, 2024',
@@ -35,6 +41,7 @@ export const blogPosts = [
     link: '/blog/is-ai-writing-stealing-your-job',
   },
   {
+    author: 'Prerana',
     category: 'Artificial Intelligence',
     title: 'Breaking the Programming Barrier: AI Supercharges Developers to Build the Unthinkable',
     date: 'July 15, 2024',
@@ -42,6 +49,7 @@ export const blogPosts = [
     link: '/blog/breaking-the-programming-barrier',
   },
   {
+    author: 'Prerana',
     category: 'Career Development',
     title: '20 Essential Tips to Ace Corporate Interviews in 2025',
     date: '1 July 2024',
@@ -49,6 +57,7 @@ export const blogPosts = [
     link: '/blog/20-essential-tips-to-ace-corporate-interviews-in-2025',
   },
   {
+    author: 'Prerana',
     category: 'Career Development',
     title: 'Career Tips for Tech Professionals: Navigating Your Path to Success',
     date: '5 June 2024',
@@ -56,6 +65,7 @@ export const blogPosts = [
     link: '/blog/career-tips-for-tech-professionals',
   },
   {
+    author: 'Prerana',
     category: 'Software Development',
     title: 'Mastering Python in 2025: A Comprehensive Guide with Tips and Insights',
     date: '10 February 2025',
@@ -63,6 +73,7 @@ export const blogPosts = [
     link: '/blog/mastering-python-in-2025',
   },
   {
+    author: 'Prerana',
     category: 'Software Development',
     title: '100 Essential Python Questions & Answers: Your Ultimate Beginner’s Guide to Mastering Python',
     date: '11 February 2025',
@@ -70,6 +81,7 @@ export const blogPosts = [
     link: '/blog/100-essential-python-questions',
   },
   {
+    author: 'Prerana',
     category: 'Artificial Intelligence',
     title: 'Understanding Artificial Intelligence: A Beginner’s Guide to AI | Simplified Computer Science',
     date: '7 October 2024',
@@ -77,6 +89,7 @@ export const blogPosts = [
     link: '#',
   },
   {
+    author: 'Prerana',
     category: 'Career Development',
     title: 'Project Management: The Ultimate Guide to Starting and Completing Projects with top 8 tips',
     date: '9 September 2024',
@@ -84,6 +97,7 @@ export const blogPosts = [
     link: '#',
   },
   {
+    author: 'Prerana',
     category: 'Career Development',
     title: 'Effective Project Execution: From Inception to Completion',
     date: '9 September 2024',
@@ -91,6 +105,7 @@ export const blogPosts = [
     link: '#',
   },
   {
+    author: 'Prerana',
     category: 'Software Development',
     title: 'How to Create a Project Website on WordPress Without Coding',
     date: '9 September 2024',
@@ -125,3 +140,5 @@ export const tags = [
 export function getBlogPosts() {
     return blogPosts;
 }
+
+    
