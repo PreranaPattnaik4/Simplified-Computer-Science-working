@@ -631,6 +631,9 @@ export default function HomePage() {
         {/* The SCS Ecosystem Section */}
         <SCSLearningPaths />
 
+        {/* Section 7: Step-by-Step Career Timeline */}
+        <CareerTimeline />
+
         {/* Section: Career Roadmap CTA */}
         <section className="bg-gray-50/50 py-20 px-4 sm:px-6 lg:px-8">
             <div className="container mx-auto max-w-7xl">
@@ -658,9 +661,6 @@ export default function HomePage() {
                 </div>
             </div>
         </section>
-
-        {/* Section 7: Step-by-Step Career Timeline */}
-        <CareerTimeline />
 
         {/* Section 9: FAQ Section */}
         <section className="container mx-auto max-w-7xl px-4 py-16">
@@ -707,3 +707,4 @@ export default function HomePage() {
     
 
     
+
