@@ -337,11 +337,11 @@ export default function HomePage() {
         image: placeholderImages.homeHero1.src
     },
     {
-        title: "Tech Guide",
-        subtitle: "Deep-dive into core concepts.",
-        href: "/tech-guide",
-        image: placeholderImages.techGuideHero.src,
-        hint: placeholderImages.techGuideHero.hint
+        title: "Trending Courses",
+        subtitle: "Explore our most popular and highly-rated courses.",
+        href: "/courses-live",
+        image: placeholderImages.homeHero5.src,
+        hint: placeholderImages.homeHero5.hint
     },
     {
         title: "SCS DevStudio",
@@ -597,7 +597,7 @@ export default function HomePage() {
                 <div>
                     <h2 className="text-4xl font-bold font-space-grotesk">Frequently Asked Questions</h2>
                     <p className="mt-4 text-lg text-muted-foreground">
-                        Our platform is designed for learners of all levels, from absolute beginners looking to start their journey in tech, to experienced professionals aiming to upskill. We provide a comprehensive range of resources to support your learning goals.
+                        Our platform is designed for learners of all levels, from absolute beginners to experienced professionals. We provide a comprehensive range of resources to support your learning goals.
                     </p>
                 </div>
                 <div>
