@@ -323,7 +323,7 @@ const courses = [
                     {
                         cardTitle: "Variables: Naming Your Data",
                         cardSubtitle: "Learn how to store information in Python using variables.",
-                        cardContent: "A variable is a symbolic name that is a reference or pointer to an object. Once an object is assigned to a variable, you can refer to the object by that name. ```python # Variable assignment project_name = 'AI Stock Predictor' accuracy_target = 0.95 num_features = 50 ```"
+                        cardContent: "A variable is a symbolic name that is a reference or pointer to an object. Once an object is assigned to a variable, you can refer to the object by that name. ```python\nproject_name = 'AI Stock Predictor'\naccuracy_target = 0.95\nnum_features = 50\n```"
                     },
                     {
                         cardTitle: "Python's Primary Data Types",
@@ -338,7 +338,7 @@ const courses = [
                     {
                         cardTitle: "Real-World Scenario: Model Performance",
                         cardSubtitle: "See how variables and operators are used in a practical data science context.",
-                        cardContent: "Imagine you're calculating the performance improvement of a new model. ```python # Model performance data old_model_accuracy = 0.88 new_model_accuracy = 0.91 # Calculate the percentage improvement improvement = ((new_model_accuracy - old_model_accuracy) / old_model_accuracy) * 100 # The f-string is a modern and readable way to format strings print(f\"Model improvement: {improvement:.2f}%\") # Decision-making with logical operators is_significant_improvement = improvement > 2.0 needs_ceo_approval = is_significant_improvement and new_model_accuracy > 0.9 print(f\"Does it need CEO approval? {needs_ceo_approval}\") ```"
+                        cardContent: "Imagine you're calculating the performance improvement of a new model. ```python\nold_model_accuracy = 0.88\nnew_model_accuracy = 0.91\nimprovement = ((new_model_accuracy - old_model_accuracy) / old_model_accuracy) * 100\nprint(f\"Model improvement: {improvement:.2f}%\")\nis_significant_improvement = improvement > 2.0\nneeds_ceo_approval = is_significant_improvement and new_model_accuracy > 0.9\nprint(f\"Does it need CEO approval? {needs_ceo_approval}\")\n```"
                     }
                 ]
             },
@@ -349,22 +349,22 @@ const courses = [
                     {
                         cardTitle: "Conditional Logic with `if`, `elif`, `else`",
                         cardSubtitle: "Learn to make decisions and execute different code paths based on specific conditions.",
-                        cardContent: "This is the primary way to make decisions in your code. Scenario: Classifying a stock as 'Buy', 'Hold', or 'Sell' based on an analyst's rating. ```python analyst_rating = 4.2  # On a scale of 1 to 5 if analyst_rating >= 4.5:    recommendation = 'Strong Buy' elif analyst_rating >= 3.5:    recommendation = 'Hold' else:    recommendation = 'Sell' print(f\"Recommendation: {recommendation}\") # Output: Recommendation: Hold ```"
+                        cardContent: "This is the primary way to make decisions in your code. Scenario: Classifying a stock as 'Buy', 'Hold', or 'Sell' based on an analyst's rating. ```python\nanalyst_rating = 4.2\nif analyst_rating >= 4.5:\n    recommendation = 'Strong Buy'\nelif analyst_rating >= 3.5:\n    recommendation = 'Hold'\nelse:\n    recommendation = 'Sell'\nprint(f\"Recommendation: {recommendation}\")\n```"
                     },
                     {
                         cardTitle: "`for` Loops: Iterating Over Sequences",
                         cardSubtitle: "Use `for` loops to perform an action on each item in a collection, such as a list.",
-                        cardContent: "`for` loops are used when you have a collection of items (like a list of stocks) and you want to perform an action on each item. Scenario: Calculating the average price of a list of stocks. ```python stock_prices = [150.25, 152.50, 149.75, 155.00] total_price = 0 for price in stock_prices:    total_price += price average_price = total_price / len(stock_prices) print(f\"Average stock price: ${average_price:.2f}\") ```"
+                        cardContent: "`for` loops are used when you have a collection of items (like a list of stocks) and you want to perform an action on each item. Scenario: Calculating the average price of a list of stocks. ```python\nstock_prices = [150.25, 152.50, 149.75, 155.00]\ntotal_price = 0\nfor price in stock_prices:\n    total_price += price\naverage_price = total_price / len(stock_prices)\nprint(f\"Average stock price: ${average_price:.2f}\")\n```"
                     },
                     {
                         cardTitle: "`while` Loops: Repeating Until a Condition is Met",
                         cardSubtitle: "Use `while` loops for situations where you need to repeat a task until a certain condition is no longer true.",
-                        cardContent: "`while` loops are useful when you don't know in advance how many times you need to loop. Scenario: Simulating a stock price until it reaches a target. ```python import random current_price = 100 target_price = 110 days = 0 while current_price < target_price:    # Simulate a random daily change between -1 and +1    daily_change = random.uniform(-1, 1)    current_price += daily_change    days += 1    print(f\"Day {days}: Price = {current_price:.2f}\") print(f\"Target price of ${target_price} reached in {days} days.\") ```"
+                        cardContent: "`while` loops are useful when you don't know in advance how many times you need to loop. Scenario: Simulating a stock price until it reaches a target. ```python\nimport random\ncurrent_price = 100\ntarget_price = 110\ndays = 0\nwhile current_price < target_price:\n    daily_change = random.uniform(-1, 1)\n    current_price += daily_change\n    days += 1\n    print(f\"Day {days}: Price = {current_price:.2f}\")\nprint(f\"Target price of ${target_price} reached in {days} days.\")\n```"
                     },
                     {
                         cardTitle: "Mastery Tip: List Comprehensions",
                         cardSubtitle: "Learn a concise, readable, and 'Pythonic' way to create lists.",
-                        cardContent: "List comprehensions provide a more elegant syntax for creating new lists based on existing ones. Scenario: Filtering a list of stocks to find only those above a certain price. ```python prices = {'AAPL': 150, 'GOOG': 2800, 'MSFT': 300, 'AMZN': 3400} # Find stocks with price > 1000 expensive_stocks = [stock for stock, price in prices.items() if price > 1000] print(expensive_stocks) # Output: ['GOOG', 'AMZN'] ```"
+                        cardContent: "List comprehensions provide a more elegant syntax for creating new lists based on existing ones. Scenario: Filtering a list of stocks to find only those above a certain price. ```python\nprices = {'AAPL': 150, 'GOOG': 2800, 'MSFT': 300, 'AMZN': 3400}\nexpensive_stocks = [stock for stock, price in prices.items() if price > 1000]\nprint(expensive_stocks)\n```"
                     }
                 ]
             },
@@ -387,24 +387,24 @@ const courses = [
     {
         title: "Module 2: Machine Learning Fundamentals with Scikit-Learn",
         lessons: [
-            { 
-                slug: 'intro-to-scikit-learn', 
-                title: 'Scikit-Learn: The Core of Practical ML in Python', 
+            {
+                slug: 'intro-to-scikit-learn',
+                title: 'Scikit-Learn: The Core of Practical ML in Python',
                 content: [
                     {
                         cardTitle: "What is Scikit-learn?",
                         cardSubtitle: "Understand the role and strengths of Python's go-to machine learning library.",
-                        cardContent: "Scikit-learn provides a simple and efficient tool for data mining and data analysis. It is built on NumPy, SciPy, and Matplotlib.\n\n**Key Strengths:**\n- **Consistent API:** A simple, predictable interface for all algorithms.\n- **Comprehensive:** Covers most traditional ML tasks like classification, regression, clustering, and dimensionality reduction.\n- **Well-Documented:** Excellent documentation and community support."
+                        cardContent: "Scikit-learn provides a simple and efficient tool for data mining and data analysis. It is built on NumPy, SciPy, and Matplotlib.\n\nKey Strengths:\n- Consistent API: A simple, predictable interface for all algorithms.\n- Comprehensive: Covers most traditional ML tasks like classification, regression, clustering, and dimensionality reduction.\n- Well-Documented: Excellent documentation and community support."
                     },
                     {
                         cardTitle: "The Scikit-learn API: A Consistent Pattern",
                         cardSubtitle: "Learn the 5-step pattern for using any model in Scikit-learn.",
-                        cardContent: "Scikit-learn's key strength is its consistent API. This simple 5-step pattern is used across almost all models in the library, making it incredibly easy to experiment with different algorithms.\n\n1.  **Choose a model:** Import the class of the model you want to use.\n2.  **Instantiate the model:** Create an instance of the model with desired hyperparameters.\n3.  **Arrange data:** Arrange your data into a features matrix (X) and a target vector (y).\n4.  **Fit the model:** Train the model on your data using the `.fit()` method.\n5.  **Predict:** Use the trained model to make predictions on new data with the `.predict()` method."
+                        cardContent: "Scikit-learn's key strength is its consistent API. This simple 5-step pattern is used across almost all models in the library, making it incredibly easy to experiment with different algorithms.\n\n1.  Choose a model: Import the class of the model you want to use.\n2.  Instantiate the model: Create an instance of the model with desired hyperparameters.\n3.  Arrange data: Arrange your data into a features matrix (X) and a target vector (y).\n4.  Fit the model: Train the model on your data using the `.fit()` method.\n5.  Predict: Use the trained model to make predictions on new data with the `.predict()` method."
                     },
                     {
                         cardTitle: "Code Example: Logistic Regression",
                         cardSubtitle: "See the 5-step pattern in action with a practical code example.",
-                        cardContent: "```python\nfrom sklearn.linear_model import LogisticRegression\n\n# 1. Choose a model (imported above)\n\n# 2. Instantiate the model\nmodel = LogisticRegression()\n\n# 3. Arrange data \n# X_train, y_train are assumed to be ready from a data splitting step\n\n# 4. Fit the model to the training data\nmodel.fit(X_train, y_train)\n\n# 5. Predict on new, unseen data\n# X_test is new data the model has not seen before\npredictions = model.predict(X_test)\n```"
+                        cardContent: "```python\nfrom sklearn.linear_model import LogisticRegression\n\nmodel = LogisticRegression()\n\n\nmodel.fit(X_train, y_train)\n\n\npredictions = model.predict(X_test)\n```"
                     }
                 ]
             },
@@ -480,7 +480,7 @@ const courses = [
                 { 
                     slug: "variables-data-types", 
                     title: "Variables and Data Types", 
-                    content: "Objective: Learn how to store and categorize information in a program. What are Variables? A variable is like a labeled box where you can store a piece of information. You give it a name and put a value inside it. ```python # 'message' is the variable name, \"Welcome to CS Basics!\" is the value. message = \"Welcome to CS Basics!\" student_count = 50 ``` Common Data Types - String (`str`): Text (e.g., `\"Hello\"`). - Integer (`int`): Whole numbers (e.g., `101`). - Float (`float`): Numbers with decimals (e.g., `99.9`). - Boolean (`bool`): `True` or `False`. Python automatically figures out the data type for you when you assign a value to a variable."
+                    content: "Objective: Learn how to store and categorize information in a program. What are Variables? A variable is like a labeled box where you can store a piece of information. You give it a name and put a value inside it. ```python\nmessage = \"Welcome to CS Basics!\"\nstudent_count = 50\n``` Common Data Types - String (`str`): Text (e.g., `\"Hello\"`). - Integer (`int`): Whole numbers (e.g., `101`). - Float (`float`): Numbers with decimals (e.g., `99.9`). - Boolean (`bool`): `True` or `False`. Python automatically figures out the data type for you when you assign a value to a variable."
                 },
                 {
                     slug: 'cs-basics-quiz-2',
