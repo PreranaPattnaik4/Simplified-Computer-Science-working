@@ -32,6 +32,7 @@ import {
   FolderKanban,
   FileBadge,
   ArrowDown,
+  Bot,
 } from 'lucide-react';
 import {
   Accordion,
@@ -294,7 +295,7 @@ const advancedTabs = [
                     'Serverless Computing: Running code without provisioning or managing servers (e.g., AWS Lambda, Google Cloud Functions).',
                     'Containerization: Packaging an application and its dependencies into a container (using Docker) and orchestrating them with Kubernetes.',
                     'Cloud-Native Services: Leveraging managed services for databases, storage, and AI/ML.',
-                    'Security & Compliance: Implementing robust security measures in the cloud environment.'
+                    'Security & Compliance: Implementing robust security measures in the cloud environment.',
                 ]
             },
             conclusion: 'Cloud Engineering is the backbone of modern technology, providing the scalable and resilient infrastructure needed to power everything from startups to enterprise-scale AI.'
@@ -350,11 +351,11 @@ export default function HomePage() {
         hint: placeholderImages.course2.hint
     },
     {
-        title: "Trending Blogs",
-        subtitle: "Stay updated with the latest insights.",
-        href: "/blog",
-        image: placeholderImages.homeHero3.src,
-        hint: placeholderImages.homeHero3.hint
+        title: "SCS AI Assistant",
+        subtitle: "Your personal guide to SCS. Ask me anything about our courses, content, or career paths.",
+        href: "#", // This can be wired up to open the chatbot
+        image: placeholderImages.aiAssistant.src,
+        hint: placeholderImages.aiAssistant.hint
     }
   ];
 
@@ -522,7 +523,14 @@ export default function HomePage() {
                                     <h3 className="text-xl font-bold font-space-grotesk">{card.title}</h3>
                                     <p className="text-sm text-gray-300">{card.subtitle}</p>
                                     <div className="mt-4 flex items-center gap-2 opacity-0 transition-opacity duration-500 group-hover:opacity-100 motion-reduce:opacity-100">
-                                        <span className="font-semibold text-sm">{card.title === 'SCS DevStudio' ? 'Open Sandbox' : 'Explore'}</span>
+                                        <span className="font-semibold text-sm">
+                                            {card.title === 'SCS DevStudio' 
+                                                ? 'Open Sandbox' 
+                                                : card.title === 'SCS AI Assistant'
+                                                ? 'Ask AI'
+                                                : 'Explore'
+                                            }
+                                        </span>
                                         <ArrowRight className="h-4 w-4" />
                                     </div>
                                 </div>
@@ -634,3 +642,5 @@ export default function HomePage() {
     </div>
   );
 }
+
+    
