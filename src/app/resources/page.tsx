@@ -1,29 +1,11 @@
 'use client';
 
 import Image from 'next/image';
-import { Download, Code, FileText, BrainCircuit, Bot } from 'lucide-react';
+import { Download, Code, FileText, BrainCircuit, Bot, CheckCircle } from 'lucide-react';
 import placeholderImages from '@/app/lib/placeholder-images.json';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { FaWhatsapp } from 'react-icons/fa';
-
-const heroImages = [
-  {
-    src: placeholderImages.resourcesHero1.src,
-    alt: 'VR Future Tech',
-    hint: placeholderImages.resourcesHero1.hint,
-  },
-  {
-    src: placeholderImages.resourcesHero2.src,
-    alt: 'Hackathons and Internships',
-    hint: placeholderImages.resourcesHero2.hint,
-  },
-  {
-    src: placeholderImages.resourcesHero3.src,
-    alt: 'Robotics and Circuitry',
-    hint: placeholderImages.resourcesHero3.hint,
-  },
-];
 
 const resources = [
     {
@@ -52,6 +34,21 @@ const resources = [
     }
 ];
 
+const GuideDetail = ({ title, items }: { title: string; items: string[] }) => (
+    <div>
+        <h3 className="font-semibold text-lg text-accent mb-2">{title}</h3>
+        <ul className="text-gray-300 space-y-1">
+            {items.map((item, index) => (
+                <li key={index} className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-accent/80 mt-1 flex-shrink-0" />
+                    <span>{item}</span>
+                </li>
+            ))}
+        </ul>
+    </div>
+);
+
+
 export default function ResourcesPage() {
   const shareOnWhatsApp = (title: string) => {
     if (typeof window !== "undefined") {
@@ -59,38 +56,48 @@ export default function ResourcesPage() {
       window.open(`https://api.whatsapp.com/send?text=${text}`);
     }
   };
+  
+  const whatYoullFind = [
+    "Downloadable cheat sheets for quick reference.",
+    "Comprehensive guides and checklists for tech roles.",
+    "Curated lists of interview questions to ace your next interview.",
+    "Practical resources for prompt engineering and AI tools.",
+    "Ready-to-use templates for resumes and projects.",
+  ];
+
+  const whoThisIsFor = [
+    "Students looking for handy study aids.",
+    "Developers and engineers preparing for technical interviews.",
+    "Self-learners wanting to accelerate their progress.",
+    "Anyone in tech needing quick, actionable information and templates.",
+  ];
 
   return (
     <main>
       {/* Hero Section */}
-      <section className="w-full py-16 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-7xl">
-          {/* Image Panels */}
-          <div className="flex flex-col md:flex-row gap-4 mb-8">
-            {heroImages.map((image, index) => (
-              <div key={index} className="flex-1 overflow-hidden rounded-lg relative h-64 md:h-80">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className="w-full h-auto object-cover"
-                  data-ai-hint={image.hint}
-                />
-              </div>
-            ))}
-          </div>
-
-          {/* Text Content */}
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold font-space-grotesk text-foreground mb-2">
-              Hackathons & Internships: Stand Out with Hands-On Experience!
-            </h2>
-            <p className="text-xl font-bold text-accent">
-              Earn Free Certificate
-            </p>
-          </div>
-        </div>
-      </section>
+      <section className="relative bg-black text-white py-20 px-4 sm:px-6 lg:px-8">
+            <Image 
+                src={placeholderImages.resourcesHero1.src}
+                alt="Tech resources abstract"
+                fill
+                className="object-cover opacity-20"
+                data-ai-hint="tech resources"
+            />
+            <div className="relative max-w-7xl mx-auto">
+                <div className="text-center mb-12">
+                    <h1 className="text-4xl md:text-6xl font-bold font-space-grotesk text-accent">
+                        Resources
+                    </h1>
+                    <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+                        Your one-stop collection of downloadable cheat sheets, guides, and templates to accelerate your tech journey.
+                    </p>
+                </div>
+                <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                    <GuideDetail title="What you’ll find here:" items={whatYoullFind} />
+                    <GuideDetail title="Who this is for:" items={whoThisIsFor} />
+                </div>
+            </div>
+        </section>
 
       {/* Downloadable Resources Section */}
       <section className="bg-gray-50/50 py-20 px-4 sm:px-6 lg:px-8">
