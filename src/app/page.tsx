@@ -292,7 +292,7 @@ const advancedTabs = [
                 list: [
                     'Infrastructure as Code (IaC): Managing infrastructure through code using tools like Terraform or CloudFormation.',
                     'Serverless Computing: Running code without provisioning or managing servers (e.g., AWS Lambda, Google Cloud Functions).',
-                    'Containerization: Packaging applications with all their dependencies using Docker and orchestrating them with Kubernetes.',
+                    'Containerization: Packaging an application and its dependencies into a container (using Docker) and orchestrating them with Kubernetes.',
                     'Cloud-Native Services: Leveraging managed services for databases, storage, and AI/ML.',
                     'Security & Compliance: Implementing robust security measures in the cloud environment.'
                 ]
@@ -685,6 +685,18 @@ export default function HomePage() {
             </div>
         </section>
 
+        {/* Section 9.5: FAQ CTA */}
+        <section className="container mx-auto max-w-7xl px-4 pb-16">
+            <div className="text-center">
+                <p className="text-lg text-muted-foreground">Have more questions? Find all the answers you need on our FAQ page.</p>
+                <Link href="/faq">
+                    <Button variant="link" className="mt-2 text-lg">
+                        Visit FAQ Page <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                </Link>
+            </div>
+        </section>
+
         {/* Section 10: Final Enrollment CTA */}
         <section className="container mx-auto max-w-7xl px-4 py-16">
             <div className="rounded-lg border-l-8 border-accent bg-card p-8 shadow-lg md:p-12 text-center">
@@ -702,11 +714,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-    
-
-    
-
-
-
-    
