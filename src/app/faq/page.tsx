@@ -146,31 +146,31 @@ const faqSections = [
     }
 ];
 
+const allFaqItems = faqSections.flatMap(section => section.items);
+
+
 export default function FaqPage() {
     return (
         <div className="container mx-auto max-w-7xl px-4 py-16">
-            <div className="text-center mb-12">
-                <h1 className="text-4xl font-bold font-space-grotesk">Frequently Asked Questions</h1>
-                <p className="mt-4 text-lg text-muted-foreground">
-                    Find answers to the most common questions about our platform, courses, and more.
-                </p>
-            </div>
-            <div className="max-w-4xl mx-auto space-y-12">
-                {faqSections.map((section, sectionIndex) => (
-                    <div key={sectionIndex}>
-                        <h2 className="text-2xl md:text-3xl font-bold font-space-grotesk mb-6 text-gray-900">{section.title}</h2>
-                        <Accordion type="single" collapsible className="w-full">
-                            {section.items.map((item, itemIndex) => (
-                                <AccordionItem key={itemIndex} value={`item-${sectionIndex}-${itemIndex}`}>
-                                    <AccordionTrigger className="text-lg font-semibold font-space-grotesk text-left">{item.question}</AccordionTrigger>
-                                    <AccordionContent className="text-base text-muted-foreground">
-                                        {typeof item.answer === 'string' ? <p>{item.answer}</p> : item.answer}
-                                    </AccordionContent>
-                                </AccordionItem>
-                            ))}
-                        </Accordion>
-                    </div>
-                ))}
+             <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
+                <div>
+                    <h2 className="text-4xl font-bold font-space-grotesk">Frequently Asked Questions</h2>
+                    <p className="mt-4 text-lg text-muted-foreground">
+                        Our platform is designed for learners of all levels, from absolute beginners looking to start their journey in tech, to experienced professionals aiming to upskill. We provide a comprehensive range of resources to support your learning goals.
+                    </p>
+                </div>
+                <div>
+                    <Accordion type="single" collapsible className="w-full">
+                        {allFaqItems.map((item, index) => (
+                            <AccordionItem key={index} value={`item-${index + 1}`}>
+                                <AccordionTrigger className="text-lg font-semibold font-space-grotesk">{item.question}</AccordionTrigger>
+                                <AccordionContent className="text-base text-muted-foreground">
+                                    {typeof item.answer === 'string' ? <p>{item.answer}</p> : item.answer}
+                                </AccordionContent>
+                            </AccordionItem>
+                        ))}
+                    </Accordion>
+                </div>
             </div>
             <div className="text-center mt-16">
                 <h3 className="text-2xl font-bold font-space-grotesk">Still have questions?</h3>
