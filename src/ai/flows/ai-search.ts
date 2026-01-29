@@ -54,7 +54,7 @@ const aiSearchFlow = ai.defineFlow(
   },
   async (input) => {
     const { output } = await ai.generate({
-      model: 'gemini-pro',
+      model: 'gemini-1.5-flash-latest',
       system: `You are an AI Search Results Generator for a professional AI Product platform.
 This system is NOT a chatbot. Do NOT behave conversationally.
 
