@@ -322,51 +322,38 @@ const advancedTabs = [
 ];
 
 export default function HomePage() {
-  const router = useRouter();
-  const [activePanel, setActivePanel] = useState(2);
   const [activeFoundationTab, setActiveFoundationTab] = useState('Programming Fundamentals');
   const [activeAdvancedTab, setActiveAdvancedTab] = useState('Machine Learning');
-
-  const panels = [
-    {
-        id: 0,
-        title: "Career Roadmaps",
-        subtitle: "Your career journey starts here",
-        image: placeholderImages.homeHero1.src,
-        href: "/career-tips-and-roadmaps",
-    },
-    {
-        id: 1,
-        title: "TRENDING BLOGS",
-        subtitle: "Stay updated with the latest trends",
-        image: placeholderImages.homeHero2.src,
-        href: "/blogs",
-    },
-    {
-        id: 2,
-        title: "Tutorials",
-        subtitle: "Explore our Tech Guide",
-        image: placeholderImages.homeHero3.src,
-        href: "/tech-guide",
-    },
-    {
-        id: 3,
-        title: "PROJECTS",
-        subtitle: "Build your portfolio",
-        image: placeholderImages.homeHero4.src,
-        href: "/codelab",
-    },
-     {
-        id: 4,
-        title: "TOP TRENDING COURSES",
-        subtitle: "Master in-demand skills",
-        image: placeholderImages.homeHero5.src,
-        href: "/courses-live",
-    },
-  ];
   
   const activeFoundationTabData = foundationsTabs.find(tab => tab.id === activeFoundationTab)?.content;
   const activeAdvancedTabData = advancedTabs.find(tab => tab.id === activeAdvancedTab)?.content;
+
+  const explorationCards = [
+    {
+        title: "Career Roadmaps",
+        subtitle: "Chart your path to success in tech.",
+        href: "/career-tips-and-roadmaps",
+        image: placeholderImages.homeHero1.src
+    },
+    {
+        title: "Tech Guide",
+        subtitle: "Deep-dive into core concepts.",
+        href: "/tech-guide",
+        image: placeholderImages.homeHero3.src
+    },
+    {
+        title: "Hands-On Projects",
+        subtitle: "Apply your skills in the DevStudio.",
+        href: "/codelab",
+        image: placeholderImages.homeHero4.src
+    },
+    {
+        title: "Trending Blogs",
+        subtitle: "Stay updated with the latest insights.",
+        href: "/blog",
+        image: placeholderImages.homeHero2.src
+    }
+  ];
 
   return (
     <div className="bg-background text-foreground">
@@ -507,94 +494,43 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Hero Image Accordion */}
-        <section className="w-full bg-background py-16 md:py-24 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
-                <div className="flex gap-2 h-80 md:h-96 rounded-lg overflow-hidden">
-                {panels.map((panel) => {
-                    const isActive = activePanel === panel.id;
-                    const activeWidth = 40; // Decreased width for active panel
-                    const inactiveWidth = (100 - activeWidth) / (panels.length - 1);
-                    const width = isActive ? activeWidth : inactiveWidth;
-
-                    return (
-                    <div
-                        key={panel.id}
-                        className={'relative overflow-hidden cursor-pointer group transition-all duration-500 ease-out rounded-lg'}
-                        style={{
-                            width: `${width}%`,
-                            flexShrink: 0,
-                        }}
-                        onClick={() => {
-                            if (panel.href) {
-                                router.push(panel.href);
-                            } else {
-                                setActivePanel(panel.id);
-                            }
-                        }}
-                        onMouseEnter={() => setActivePanel(panel.id)}
-                    >
-                        <Image
-                            src={panel.image}
-                            alt={panel.title}
-                            fill
-                            className="object-cover group-hover:scale-110 transition-transform duration-500"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-                        <div
-                        className={`absolute bottom-0 left-0 right-0 p-6 md:p-8 transition-opacity duration-500 ${
-                            isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
-                        }`}
-                        >
-                        <h3 className="text-white text-lg md:text-2xl font-bold uppercase tracking-wider mb-2">
-                            {panel.title}
-                        </h3>
-                        <p className="text-yellow-400 font-semibold text-sm md:text-base uppercase tracking-widest">
-                            {panel.subtitle}
-                        </p>
-                        </div>
-                        {!isActive && (
-                        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 opacity-75 group-hover:opacity-0 transition-opacity duration-300">
-                            <h3 className="text-white text-sm md:text-lg font-bold uppercase tracking-wider truncate">
-                            {panel.title}
-                            </h3>
-                        </div>
-                        )}
-                    </div>
-                    );
-                })}
+        {/* Explore Core Features Section */}
+        <section className="bg-gray-50/50 py-20 px-4 sm:px-6 lg:px-8">
+            <div className="container mx-auto max-w-7xl">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold font-space-grotesk text-gray-900">Explore Core Features</h2>
+                    <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+                        Dive into our main offerings, each designed to provide a clear path to mastering new skills and concepts.
+                    </p>
                 </div>
-                <div className="flex justify-center gap-3 mt-8">
-                {panels.map((panel) => (
-                    <button
-                    key={panel.id}
-                    onClick={() => setActivePanel(panel.id)}
-                    className={`h-3 rounded-full transition-all duration-300 ${
-                        activePanel === panel.id
-                        ? "w-8 bg-yellow-400"
-                        : "w-3 bg-gray-600 hover:bg-gray-500"
-                    }`}
-                    aria-label={`Go to ${panel.title}`}
-                    />
-                ))}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {explorationCards.map(card => (
+                        <Link href={card.href} key={card.title}>
+                            <div className="group relative block h-96 overflow-hidden rounded-xl shadow-lg">
+                                <Image 
+                                    src={card.image} 
+                                    alt={card.title} 
+                                    fill 
+                                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-105" 
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent transition-opacity duration-500 opacity-0 group-hover:opacity-100 motion-reduce:opacity-0"></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transition-transform duration-500 ease-out group-hover:-translate-y-2 motion-reduce:transition-none">
+                                    <h3 className="text-xl font-bold font-space-grotesk">{card.title}</h3>
+                                    <p className="text-sm text-gray-300">{card.subtitle}</p>
+                                    <div className="mt-4 flex items-center gap-2 opacity-0 transition-opacity duration-500 group-hover:opacity-100 motion-reduce:opacity-100">
+                                        <span className="font-semibold text-sm">Explore</span>
+                                        <ArrowRight className="h-4 w-4" />
+                                    </div>
+                                </div>
+                            </div>
+                        </Link>
+                    ))}
                 </div>
             </div>
         </section>
 
-        {/* Hero Content */}
-        <section className="container mx-auto max-w-7xl px-4 py-16 text-center">
-          <h2 className="text-4xl font-bold font-space-grotesk">Unleash Your Potential in AI, Tech & Innovation!</h2>
-          <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground">
-            Gain hands-on experience through exciting hackathons and real-world internships in AI, Machine Learning, and cutting-edge tech. Build your portfolio, collaborate with industry experts, and stand out in your career journey.
-          </p>
-          <ul className="mt-6 flex justify-center gap-8 text-lg">
-            <li className="flex items-center gap-2"><Lightbulb className="h-5 w-5 text-accent" /> Work on real projects</li>
-            <li className="flex items-center gap-2"><Lightbulb className="h-5 w-5 text-accent" /> Enhance your problem-solving skills</li>
-            <li className="flex items-center gap-2"><Lightbulb className="h-5 w-5 text-accent" /> Earn certificates & grow your network</li>
-          </ul>
-        </section>
-
-        {/* Section 8: "What We Offer" Grid */}
+        {/* What We Offer Section */}
         <section className="container mx-auto max-w-7xl px-4 py-16">
             <h2 className="mb-12 text-center text-4xl font-bold font-space-grotesk">What We Offer</h2>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -612,28 +548,11 @@ export default function HomePage() {
         </section>
         
         <TrendingBlogs />
-
-        {/* Section 4: Gateway to Mastering CS & AI */}
         <LimitlessLearning />
-
-        {/* Section 5: Limitless Learning */}
-        <section className="bg-black text-white py-20">
-            <div className="container mx-auto max-w-7xl px-4 text-center">
-                <h2 className="font-space-grotesk text-4xl font-bold leading-tight mb-4">Unlock Your Potential: Learn, Create, and Innovate with Our Comprehensive Courses!</h2>
-                <button className="bg-accent text-accent-foreground font-bold py-3 px-8 rounded-full transition-colors">Tranding Courses Live!</button>
-            </div>
-        </section>
-
-        {/* Section 6: Industry Solutions */}
         <IndustrySolutions />
-
-        {/* The SCS Ecosystem Section */}
         <SCSLearningPaths />
-
-        {/* Section 7: Step-by-Step Career Timeline */}
         <CareerTimeline />
 
-        {/* Section: Career Roadmap CTA */}
         <section className="bg-gray-50/50 py-20 px-4 sm:px-6 lg:px-8">
             <div className="container mx-auto max-w-7xl">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -661,7 +580,6 @@ export default function HomePage() {
             </div>
         </section>
 
-        {/* Section 9: FAQ Section */}
         <section className="container mx-auto max-w-7xl px-4 py-16">
             <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
                 <div>
@@ -685,7 +603,6 @@ export default function HomePage() {
             </div>
         </section>
 
-        {/* Section 9.5: FAQ CTA */}
         <section className="container mx-auto max-w-7xl px-4 pb-16">
             <div className="text-center">
                 <p className="text-lg text-muted-foreground">Have more questions? Find all the answers you need on our FAQ page.</p>
@@ -697,7 +614,6 @@ export default function HomePage() {
             </div>
         </section>
 
-        {/* Section 10: Final Enrollment CTA */}
         <section className="container mx-auto max-w-7xl px-4 py-16">
             <div className="rounded-lg border-l-8 border-accent bg-card p-8 shadow-lg md:p-12 text-center">
                 <h2 className="text-3xl font-bold font-space-grotesk">Discover the most trending courses in AI, technology, and more! Join now to access these high-demand courses</h2>
