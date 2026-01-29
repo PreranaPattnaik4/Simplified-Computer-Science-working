@@ -1,3 +1,4 @@
+
 'use client'
 
 import { notFound } from 'next/navigation';
@@ -148,6 +149,13 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
         </div>
         <div className="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8 flex justify-center bg-gray-50">
           <div className="w-full max-w-4xl">
+            <nav className="mb-6 text-sm text-muted-foreground flex items-center gap-1.5 flex-wrap">
+              <Link href="/courses-live" className="hover:text-primary">Courses</Link>
+              <ChevronRight size={16} className="flex-shrink-0" />
+              <Link href={`/courses-live/${course.slug}`} className="hover:text-primary truncate">{course.title}</Link>
+              <ChevronRight size={16} className="flex-shrink-0" />
+              <span className="font-medium text-foreground truncate">{currentLesson.title}</span>
+            </nav>
             <h2 className="text-3xl font-bold font-space-grotesk mb-2">{currentLesson.title}</h2>
             <div className="h-px bg-gray-200 mb-8"></div>
             
