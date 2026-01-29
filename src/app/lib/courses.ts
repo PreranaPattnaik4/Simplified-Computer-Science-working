@@ -374,10 +374,10 @@ const courses = [
                 type: 'quiz',
                 content: 'A data analyst has a list of customer satisfaction scores: `scores = [5, 4, 5, 3, 2, 5, 4, 2]`. They need to calculate the average score but only for scores that are 3 or higher. Which code snippet correctly performs this calculation?',
                 options: [
-                    { id: 'A', text: '`filtered_scores = [s for s in scores if s >= 3] \nprint(sum(filtered_scores) / len(filtered_scores))`' },
-                    { id: 'B', text: '`total = 0\nfor s in scores:\n  if s > 3:\n    total += s\nprint(total / len(scores))`' },
-                    { id: 'C', text: '`filtered_scores = scores.filter(s > 3)\nprint(sum(filtered_scores) / len(filtered_scores))`' },
-                    { id: 'D', text: '`total = sum(scores)\ncount = len(scores)\nprint(total / count)`' }
+                    { id: 'A', text: '`filtered_scores = [s for s in scores if s >= 3] \\nprint(sum(filtered_scores) / len(filtered_scores))`' },
+                    { id: 'B', text: '`total = 0\\nfor s in scores:\\n  if s > 3:\\n    total += s\\nprint(total / len(scores))`' },
+                    { id: 'C', text: '`filtered_scores = scores.filter(s > 3)\\nprint(sum(filtered_scores) / len(filtered_scores))`' },
+                    { id: 'D', text: '`total = sum(scores)\\ncount = len(scores)\\nprint(total / count)`' }
                 ],
                 correctAnswer: 'A',
                 explanation: 'Option A is the most Pythonic and correct solution. It uses a list comprehension to first filter the list for scores >= 3, and then calculates the average of that new, filtered list. Option B has a logic error (it divides by the length of the original list). Option C uses a non-existent `.filter()` method for lists. Option D calculates the average of all scores, not the filtered ones.'
@@ -390,7 +390,23 @@ const courses = [
             { 
                 slug: 'intro-to-scikit-learn', 
                 title: 'Scikit-Learn: The Core of Practical ML in Python', 
-                content: 'Objective Understand the architecture and core principles of Scikit-learn, the go-to library for traditional machine learning in Python. What is Scikit-learn? Scikit-learn provides a simple and efficient tool for data mining and data analysis. It is built on NumPy, SciPy, and Matplotlib. Its key strength is its consistent and easy-to-use API. The Scikit-learn API: A Consistent Pattern 1.  Choose a model: Import the class of the model you want to use. 2.  Instantiate the model: Create an instance of the model with desired hyperparameters. 3.  Arrange data: Arrange your data into a features matrix (X) and a target vector (y). 4.  Fit the model: Train the model on your data using the `.fit()` method. 5.  Predict: Use the trained model to make predictions on new data with the `.predict()` method. ```python from sklearn.linear_model import LogisticRegression # 1 & 2: Choose and instantiate the model model = LogisticRegression() # 3: Arrange data (X_train, y_train are assumed to be ready) # 4: Fit the model # model.fit(X_train, y_train) # 5: Predict on new data # predictions = model.predict(X_test) ``` This simple pattern is used across almost all models in the library, making it incredibly easy to experiment with different algorithms.' 
+                content: [
+                    {
+                        cardTitle: "What is Scikit-learn?",
+                        cardSubtitle: "Understand the role and strengths of Python's go-to machine learning library.",
+                        cardContent: "Scikit-learn provides a simple and efficient tool for data mining and data analysis. It is built on NumPy, SciPy, and Matplotlib.\n\n**Key Strengths:**\n- **Consistent API:** A simple, predictable interface for all algorithms.\n- **Comprehensive:** Covers most traditional ML tasks like classification, regression, clustering, and dimensionality reduction.\n- **Well-Documented:** Excellent documentation and community support."
+                    },
+                    {
+                        cardTitle: "The Scikit-learn API: A Consistent Pattern",
+                        cardSubtitle: "Learn the 5-step pattern for using any model in Scikit-learn.",
+                        cardContent: "Scikit-learn's key strength is its consistent API. This simple 5-step pattern is used across almost all models in the library, making it incredibly easy to experiment with different algorithms.\n\n1.  **Choose a model:** Import the class of the model you want to use.\n2.  **Instantiate the model:** Create an instance of the model with desired hyperparameters.\n3.  **Arrange data:** Arrange your data into a features matrix (X) and a target vector (y).\n4.  **Fit the model:** Train the model on your data using the `.fit()` method.\n5.  **Predict:** Use the trained model to make predictions on new data with the `.predict()` method."
+                    },
+                    {
+                        cardTitle: "Code Example: Logistic Regression",
+                        cardSubtitle: "See the 5-step pattern in action with a practical code example.",
+                        cardContent: "```python\nfrom sklearn.linear_model import LogisticRegression\n\n# 1. Choose a model (imported above)\n\n# 2. Instantiate the model\nmodel = LogisticRegression()\n\n# 3. Arrange data \n# X_train, y_train are assumed to be ready from a data splitting step\n\n# 4. Fit the model to the training data\nmodel.fit(X_train, y_train)\n\n# 5. Predict on new, unseen data\n# X_test is new data the model has not seen before\npredictions = model.predict(X_test)\n```"
+                    }
+                ]
             },
             {
                 slug: 'ml-quiz-1',
@@ -398,10 +414,10 @@ const courses = [
                 type: 'quiz',
                 content: 'An ML engineer is building a model to predict customer churn. They have their feature data in a Pandas DataFrame `X` and the target labels (0 for no churn, 1 for churn) in a Series `y`. They have chosen a `RandomForestClassifier`. What is the correct Scikit-learn code to train this model?',
                 options: [
-                    { id: 'A', text: '`from sklearn.ensemble import RandomForestClassifier\nmodel = RandomForestClassifier()\nmodel.train(X, y)`' },
-                    { id: 'B', text: '`from sklearn.ensemble import RandomForestClassifier\nmodel = RandomForestClassifier()\nmodel.fit(X, y)`' },
-                    { id: 'C', text: '`from sklearn.ensemble import RandomForestClassifier\nmodel = RandomForestClassifier(X, y)\nmodel.fit()`' },
-                    { id: 'D', text: '`from sklearn.ensemble import RandomForestClassifier\nmodel = RandomForestClassifier.fit(X, y)`' }
+                    { id: 'A', text: '`from sklearn.ensemble import RandomForestClassifier\\nmodel = RandomForestClassifier()\\nmodel.train(X, y)`' },
+                    { id: 'B', text: '`from sklearn.ensemble import RandomForestClassifier\\nmodel = RandomForestClassifier()\\nmodel.fit(X, y)`' },
+                    { id: 'C', text: '`from sklearn.ensemble import RandomForestClassifier\\nmodel = RandomForestClassifier(X, y)\\nmodel.fit()`' },
+                    { id: 'D', text: '`from sklearn.ensemble import RandomForestClassifier\\nmodel = RandomForestClassifier.fit(X, y)`' }
                 ],
                 correctAnswer: 'B',
                 explanation: 'The standard Scikit-learn API pattern for training a model is to first instantiate the model object (`model = RandomForestClassifier()`) and then call the `.fit()` method on that object with the training data (`model.fit(X, y)`). The other options misuse the API.'
@@ -430,12 +446,12 @@ const courses = [
                 { 
                     slug: "what-is-cs", 
                     title: "What is Computer Science?",
-                    content: "Objective Define Computer Science and understand that it's more than just programming. Computer Science is the Science of Problem-Solving At its heart, Computer Science (CS) is the study of how to solve problems using computers. It's a field that blends logic, creativity, and engineering. While programming is the tool we use to implement solutions, CS is about designing those solutions in the first place. It encompasses: - Theory: The fundamental principles of computation and information. - Design: How to structure software and hardware systems. - Application: Creating useful tools and technologies that impact the world."
+                    content: "Objective: Define Computer Science and understand that it's more than just programming. Computer Science is the Science of Problem-Solving. At its heart, Computer Science (CS) is the study of how to solve problems using computers. It's a field that blends logic, creativity, and engineering. While programming is the tool we use to implement solutions, CS is about designing those solutions in the first place. It encompasses: - Theory: The fundamental principles of computation and information. - Design: How to structure software and hardware systems. - Application: Creating useful tools and technologies that impact the world."
                 },
                 { 
                     slug: "key-areas-of-cs", 
                     title: "Key Areas of Computer Science", 
-                    content: "Objective Get a high-level overview of the major disciplines within Computer Science. Computer Science is a vast field with many specializations. Here are some of the core pillars: 1.  Algorithms & Data Structures: The study of efficient problem-solving methods and ways to organize data. 2.  Programming Languages: The tools we use to communicate instructions to computers. 3.  Computer Architecture: The design and structure of computer hardware systems. 4.  Operating Systems: The software that manages all hardware and software resources. 5.  Computer Networks: The principles behind how computers connect and communicate (e.g., the Internet). 6.  Databases: How to store, manage, and retrieve large amounts of data efficiently. 7.  Artificial Intelligence (AI): The science of creating machines that can think, learn, and act intelligently."
+                    content: "Objective: Get a high-level overview of the major disciplines within Computer Science. Computer Science is a vast field with many specializations. Here are some of the core pillars: 1.  Algorithms & Data Structures: The study of efficient problem-solving methods and ways to organize data. 2.  Programming Languages: The tools we use to communicate instructions to computers. 3.  Computer Architecture: The design and structure of computer hardware systems. 4.  Operating Systems: The software that manages all hardware and software resources. 5.  Computer Networks: The principles behind how computers connect and communicate (e.g., the Internet). 6.  Databases: How to store, manage, and retrieve large amounts of data efficiently. 7.  Artificial Intelligence (AI): The science of creating machines that can think, learn, and act intelligently."
                 },
                 {
                     slug: 'cs-basics-quiz-1',
@@ -459,12 +475,12 @@ const courses = [
                 { 
                     slug: "programming-intro", 
                     title: "Introduction to Programming with Python", 
-                    content: "Objective Understand the role of a programming language and write your first lines of code using Python. Why Start with Python? Python is famous for its simple and readable syntax, which looks a lot like plain English. This makes it an ideal first language for beginners, allowing you to focus on learning programming concepts without getting bogged down by complex rules. Your First Program: \"Hello, World!\" It's a tradition in programming to start by making the computer say \"Hello, World!\". In Python, it's just one line: ```python print(\"Hello, World!\") ``` This simple command tells the computer to call the `print` function and give it the text \"Hello, World!\" to display on the screen."
+                    content: "Objective: Understand the role of a programming language and write your first lines of code using Python. Why Start with Python? Python is famous for its simple and readable syntax, which looks a lot like plain English. This makes it an ideal first language for beginners, allowing you to focus on learning programming concepts without getting bogged down by complex rules. Your First Program: \"Hello, World!\" It's a tradition in programming to start by making the computer say \"Hello, World!\". In Python, it's just one line: ```python print(\"Hello, World!\") ``` This simple command tells the computer to call the `print` function and give it the text \"Hello, World!\" to display on the screen."
                 },
                 { 
                     slug: "variables-data-types", 
                     title: "Variables and Data Types", 
-                    content: "Objective Learn how to store and categorize information in a program. What are Variables? A variable is like a labeled box where you can store a piece of information. You give it a name and put a value inside it. ```python # 'message' is the variable name, \"Welcome to CS Basics!\" is the value. message = \"Welcome to CS Basics!\" student_count = 50 ``` Common Data Types - String (`str`): Text (e.g., `\"Hello\"`). - Integer (`int`): Whole numbers (e.g., `101`). - Float (`float`): Numbers with decimals (e.g., `99.9`). - Boolean (`bool`): `True` or `False`. Python automatically figures out the data type for you when you assign a value to a variable."
+                    content: "Objective: Learn how to store and categorize information in a program. What are Variables? A variable is like a labeled box where you can store a piece of information. You give it a name and put a value inside it. ```python # 'message' is the variable name, \"Welcome to CS Basics!\" is the value. message = \"Welcome to CS Basics!\" student_count = 50 ``` Common Data Types - String (`str`): Text (e.g., `\"Hello\"`). - Integer (`int`): Whole numbers (e.g., `101`). - Float (`float`): Numbers with decimals (e.g., `99.9`). - Boolean (`bool`): `True` or `False`. Python automatically figures out the data type for you when you assign a value to a variable."
                 },
                 {
                     slug: 'cs-basics-quiz-2',
@@ -504,12 +520,12 @@ const courses = [
                 {
                     slug: "html-structure",
                     title: "HTML: The Skeleton of the Web",
-                    content: "Objective Understand the role of HTML and learn to create well-structured, semantic web pages. What is HTML? HyperText Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser. It is the backbone of every website. Core Concepts - Elements & Tags: HTML consists of elements, which are represented by tags. For example, `<p>` is a tag for a paragraph element. - Document Structure: Every HTML document has a basic structure:  ```html  <!DOCTYPE html>  <html>  <head>    <title>Page Title</title>  </head>  <body>    <h1>This is a Heading</h1>    <p>This is a paragraph.</p>  </body>  </html>  ``` - Semantic HTML: Using HTML tags that describe the meaning of the content, such as `<header>`, `<footer>`, `<nav>`, and `<article>`. This is crucial for accessibility and SEO."
+                    content: "Objective: Understand the role of HTML and learn to create well-structured, semantic web pages. What is HTML? HyperText Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser. It is the backbone of every website. Core Concepts - Elements & Tags: HTML consists of elements, which are represented by tags. For example, `<p>` is a tag for a paragraph element. - Document Structure: Every HTML document has a basic structure:  ```html  <!DOCTYPE html>  <html>  <head>    <title>Page Title</title>  </head>  <body>    <h1>This is a Heading</h1>    <p>This is a paragraph.</p>  </body>  </html>  ``` - Semantic HTML: Using HTML tags that describe the meaning of the content, such as `<header>`, `<footer>`, `<nav>`, and `<article>`. This is crucial for accessibility and SEO."
                 },
                 {
                     slug: "css-styling",
                     title: "CSS: The Art of Styling",
-                    content: "Objective Learn how to use Cascading Style Sheets (CSS) to control the visual appearance of your website. What is CSS? CSS is a stylesheet language used to describe the presentation of a document written in HTML. It controls colors, fonts, spacing, layout, and more. Core Concepts - Selectors: Target specific HTML elements to apply styles to. (e.g., `p`, `.my-class`, `#my-id`). - Properties & Values: `color: blue;` `font-size: 16px;` - The Box Model: Every HTML element is a rectangular box. The box model describes the content, padding, border, and margin of this box. - Layouts with Flexbox & Grid: Modern CSS provides powerful tools for creating complex, responsive layouts. Flexbox is for one-dimensional layouts (rows or columns), while Grid is for two-dimensional layouts (rows and columns)."
+                    content: "Objective: Learn how to use Cascading Style Sheets (CSS) to control the visual appearance of your website. What is CSS? CSS is a stylesheet language used to describe the presentation of a document written in HTML. It controls colors, fonts, spacing, layout, and more. Core Concepts - Selectors: Target specific HTML elements to apply styles to. (e.g., `p`, `.my-class`, `#my-id`). - Properties & Values: `color: blue;` `font-size: 16px;` - The Box Model: Every HTML element is a rectangular box. The box model describes the content, padding, border, and margin of this box. - Layouts with Flexbox & Grid: Modern CSS provides powerful tools for creating complex, responsive layouts. Flexbox is for one-dimensional layouts (rows or columns), while Grid is for two-dimensional layouts (rows and columns)."
                 },
                 {
                     slug: 'web-dev-quiz-1',
@@ -533,12 +549,12 @@ const courses = [
                 {
                     slug: "js-fundamentals",
                     title: "JavaScript Fundamentals",
-                    content: "Objective Learn the core concepts of the JavaScript language, the engine of dynamic websites. What is JavaScript? JavaScript (JS) is a programming language that allows you to implement complex features on web pages. Every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved. Core Concepts - Variables: `let`, `const`. - Data Types: String, Number, Boolean, Array, Object. - Operators: Arithmetic, Comparison, Logical. - Control Flow: `if/else`, `for` loops, `while` loops. - Functions: Reusable blocks of code."
+                    content: "Objective: Learn the core concepts of the JavaScript language, the engine of dynamic websites. What is JavaScript? JavaScript (JS) is a programming language that allows you to implement complex features on web pages. Every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved. Core Concepts - Variables: `let`, `const`. - Data Types: String, Number, Boolean, Array, Object. - Operators: Arithmetic, Comparison, Logical. - Control Flow: `if/else`, `for` loops, `while` loops. - Functions: Reusable blocks of code."
                 },
                 {
                     slug: "dom-manipulation",
                     title: "Interacting with the Page: The DOM",
-                    content: "Objective Learn how to use JavaScript to manipulate the Document Object Model (DOM) to create dynamic and interactive user experiences. What is the DOM? The DOM is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects; that way, programming languages can connect to the page. Common Tasks - Selecting Elements: `document.getElementById('myId')`, `document.querySelector('.myClass')`. - Changing Content: `element.textContent = 'New text!'`. - Changing Styles: `element.style.color = 'red'`. - Event Handling: Responding to user actions like clicks and key presses. `element.addEventListener('click', myFunction)`."
+                    content: "Objective: Learn how to use JavaScript to manipulate the Document Object Model (DOM) to create dynamic and interactive user experiences. What is the DOM? The DOM is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects; that way, programming languages can connect to the page. Common Tasks - Selecting Elements: `document.getElementById('myId')`, `document.querySelector('.myClass')`. - Changing Content: `element.textContent = 'New text!'`. - Changing Styles: `element.style.color = 'red'`. - Event Handling: Responding to user actions like clicks and key presses. `element.addEventListener('click', myFunction)`."
                 },
                  {
                     slug: 'web-dev-quiz-2',
@@ -546,10 +562,10 @@ const courses = [
                     type: 'quiz',
                     content: 'A developer wants to change the text of a paragraph with the ID `welcome-message` to "Welcome!" when a button with the ID `login-btn` is clicked. Which JavaScript snippet correctly accomplishes this?',
                     options: [
-                        { id: 'A', text: '`document.getElementById(\"login-btn\").addEventListener(\"click\", () => {\n  document.getElementById(\"welcome-message\").textContent = \"Welcome!\";\n});`' },
-                        { id: 'B', text: '`document.querySelector(\"#login-btn\").onClick = {\n  document.querySelector(\"#welcome-message\").innerHTML = \"Welcome!\";\n};`' },
+                        { id: 'A', text: '`document.getElementById(\"login-btn\").addEventListener(\"click\", () => {\\n  document.getElementById(\"welcome-message\").textContent = \"Welcome!\";\\n});`' },
+                        { id: 'B', text: '`document.querySelector(\"#login-btn\").onClick = {\\n  document.querySelector(\"#welcome-message\").innerHTML = \"Welcome!\";\\n};`' },
                         { id: 'C', text: '`document.getElementById(\"welcome-message\").textContent = \"Welcome!\";`' },
-                        { id: 'D', text: '`#login-btn.click(() => {\n  #welcome-message.text(\"Welcome!\");\n});`' }
+                        { id: 'D', text: '`#login-btn.click(() => {\\n  #welcome-message.text(\"Welcome!\");\\n});`' }
                     ],
                     correctAnswer: 'A',
                     explanation: 'Option A correctly uses `addEventListener` to listen for a click event on the button. When the event occurs, it executes a function that selects the paragraph by its ID and updates its `textContent`. Option B has incorrect syntax for an event handler. Option C changes the text immediately, not on a button click. Option D uses jQuery-like syntax, not standard JavaScript.'
@@ -578,7 +594,18 @@ const courses = [
             { 
                 slug: "cs-topic-algorithms", 
                 title: "Algorithms: The Foundation of Computation", 
-                content: "What is an Algorithm?\nAn algorithm is a step-by-step procedure for solving a problem or accomplishing a task. In computer science, it's a sequence of instructions a computer follows to transform input into output. Think of it as a recipe: a finite set of clear steps to achieve a specific outcome.\n\nWhy They Matter\nAlgorithms are the heart of computer science. The efficiency of an algorithm can make the difference between an application that runs in milliseconds and one that takes hours. Understanding algorithms is key to writing efficient and scalable code.\n\nMeasuring Efficiency: Big O Notation\nWe use Big O Notation to analyze the performance of an algorithm. It describes how the runtime or memory usage grows as the input size (`n`) increases.\n- O(1) - Constant Time: The time taken is the same, regardless of input size. (e.g., accessing an array element at a known index).\n- O(log n) - Logarithmic Time: Runtime grows logarithmically. Very efficient. (e.g., Binary Search).\n- O(n) - Linear Time: Runtime grows linearly with the input size. (e.g., searching an unsorted list).\n- O(n²) - Quadratic Time: Runtime grows quadratically. Becomes slow very quickly. (e.g., Bubble Sort)."
+                content: `What is an Algorithm?
+An algorithm is a step-by-step procedure for solving a problem or accomplishing a task. In computer science, it's a sequence of instructions a computer follows to transform input into output. Think of it as a recipe: a finite set of clear steps to achieve a specific outcome.
+
+Why They Matter
+Algorithms are the heart of computer science. The efficiency of an algorithm can make the difference between an application that runs in milliseconds and one that takes hours. Understanding algorithms is key to writing efficient and scalable code.
+
+Measuring Efficiency: Big O Notation
+We use Big O Notation to analyze the performance of an algorithm. It describes how the runtime or memory usage grows as the input size (\`n\`) increases.
+- O(1) - Constant Time: The time taken is the same, regardless of input size. (e.g., accessing an array element at a known index).
+- O(log n) - Logarithmic Time: Runtime grows logarithmically. Very efficient. (e.g., Binary Search).
+- O(n) - Linear Time: Runtime grows linearly with the input size. (e.g., searching an unsorted list).
+- O(n²) - Quadratic Time: Runtime grows quadratically. Becomes slow very quickly. (e.g., Bubble Sort).`
             },
              {
                 slug: 'cs-topics-quiz-1',
