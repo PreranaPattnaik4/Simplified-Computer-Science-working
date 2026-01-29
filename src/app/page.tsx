@@ -611,7 +611,6 @@ export default function HomePage() {
             </div>
         </section>
         
-        {/* Section 3: Trending Blogs */}
         <TrendingBlogs />
 
         {/* Section 4: Gateway to Mastering CS & AI */}
@@ -648,7 +647,7 @@ export default function HomePage() {
                         />
                     </div>
                     <div className="text-center md:text-left">
-                        <h2 className="text-3xl md:text-4xl font-bold font-space-grotesk text-gray-900">Chart Your Course with Career Roadmaps</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold font-space-grotesk text-gray-900">Career Roadmaps for Modern Tech Roles</h2>
                         <p className="mt-4 text-lg text-muted-foreground">
                             Navigate your career in tech with our detailed roadmaps. Get step-by-step guidance for top roles like AI/ML Engineer, Full-Stack Developer, and more.
                         </p>
@@ -708,3 +707,6 @@ export default function HomePage() {
 
     
 
+
+
+    
