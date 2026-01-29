@@ -1,5 +1,5 @@
 
-import { BrainCircuit, Milestone, PencilRuler, TerminalSquare } from 'lucide-react';
+import { BrainCircuit, Milestone, TerminalSquare, Bot } from 'lucide-react';
 import Link from 'next/link';
 
 const paths = [
@@ -20,6 +20,12 @@ const paths = [
         description: 'Execute code in real-time. Supports HTML/CSS, Python, C, SQL, and Modern JS Frameworks.',
         icon: <TerminalSquare className="w-6 h-6" />,
         href: '/codelab',
+    },
+    {
+        title: 'AI Assistant',
+        description: 'Your personal guide to SCS. Ask me anything about our courses, content, or career paths.',
+        icon: <Bot className="w-6 h-6" />,
+        href: '#',
     },
 ];
 
