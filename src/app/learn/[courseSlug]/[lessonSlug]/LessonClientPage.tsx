@@ -1,4 +1,3 @@
-
 'use client'
 
 import { notFound } from 'next/navigation';
@@ -79,7 +78,7 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
   const isCurrentLessonCompleted = completedLessons.has(lessonSlug);
 
   return (
-    <div className="flex h-screen bg-white">
+    <div className="flex h-[calc(100vh-5rem)] bg-white">
       {/* Sidebar */}
       <aside className="w-80 min-w-80 flex-shrink-0 border-r bg-white flex flex-col">
         <div className="p-4 border-b">

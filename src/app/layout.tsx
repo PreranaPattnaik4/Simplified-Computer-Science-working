@@ -1,4 +1,3 @@
-
 'use client';
 
 import type { Metadata } from "next";
@@ -40,7 +39,12 @@ function LayoutWrapper({ children }: { children: React.ReactNode }) {
   }
   
   if (isLearnPage) {
-    return <>{children}</>;
+    return (
+        <>
+            <Header />
+            {children}
+        </>
+    );
   }
 
 
