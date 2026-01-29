@@ -343,8 +343,8 @@ export default function HomePage() {
         hint: placeholderImages.techGuideHero.hint
     },
     {
-        title: "Hands-On Projects",
-        subtitle: "Apply your skills in the DevStudio.",
+        title: "SCS DevStudio",
+        subtitle: "Execute code in real-time. Supports HTML/CSS, Python, C, SQL, and Modern JS Frameworks.",
         href: "/codelab",
         image: placeholderImages.course2.src,
         hint: placeholderImages.course2.hint
@@ -522,7 +522,7 @@ export default function HomePage() {
                                     <h3 className="text-xl font-bold font-space-grotesk">{card.title}</h3>
                                     <p className="text-sm text-gray-300">{card.subtitle}</p>
                                     <div className="mt-4 flex items-center gap-2 opacity-0 transition-opacity duration-500 group-hover:opacity-100 motion-reduce:opacity-100">
-                                        <span className="font-semibold text-sm">Explore</span>
+                                        <span className="font-semibold text-sm">{card.title === 'SCS DevStudio' ? 'Open Sandbox' : 'Explore'}</span>
                                         <ArrowRight className="h-4 w-4" />
                                     </div>
                                 </div>
