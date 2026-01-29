@@ -528,6 +528,82 @@ const courses = [
         }
     ]
   },
+  {
+    slug: 'cs-top-10-topics',
+    title: 'The 10 Most Important Topics in Computer Science',
+    description: 'A comprehensive course covering the 10 most important topics that form the backbone of computer science, from algorithms to AI.',
+    level: 'Beginner',
+    primaryCategory: 'Computer Science',
+    suggestedTags: ['Algorithms', 'Data Structures', 'Operating Systems', 'Cybersecurity', 'AI'],
+    image: placeholderImages.course16.src,
+    rating: 5,
+    students: 0,
+    comments: 0,
+    author: 'Prerana',
+    isTopCourse: false,
+    syllabus: [
+      {
+        title: "Module 1: Algorithms",
+        lessons: [
+            { slug: "cs-topic-algorithms", title: "Algorithms: The Foundation", content: "Step-by-step problem-solving methods. Foundation of coding, interviews, and system efficiency. Examples: sorting, searching, path finding" }
+        ]
+      },
+      {
+        title: "Module 2: Data Structures",
+        lessons: [
+            { slug: "cs-topic-data-structures", title: "Data Structures: Organizing Information", content: "How data is stored and organized. Directly affects performance and scalability. Examples: arrays, linked lists, stacks, queues, trees, graphs" }
+        ]
+      },
+      {
+        title: "Module 3: Operating Systems",
+        lessons: [
+            { slug: "cs-topic-os", title: "Operating Systems: Bridging Software and Hardware", content: "How software talks to hardware. Core concepts behind multitasking & memory. Examples: processes, threads, scheduling, memory management" }
+        ]
+      },
+      {
+        title: "Module 4: Computer Networks",
+        lessons: [
+            { slug: "cs-topic-networks", title: "Computer Networks: How Computers Communicate", content: "How computers communicate. Backbone of the internet and cloud. Examples: TCP/IP, HTTP/HTTPS, DNS, routing" }
+        ]
+      },
+      {
+        title: "Module 5: Databases & DBMS",
+        lessons: [
+            { slug: "cs-topic-databases", title: "Databases: Storing and Retrieving Data", content: "How applications store and retrieve data. Used in almost every real-world system. Examples: SQL, NoSQL, indexing, transactions" }
+        ]
+      },
+      {
+        title: "Module 6: Programming Languages & Paradigms",
+        lessons: [
+            { slug: "cs-topic-languages", title: "Programming Languages & Paradigms", content: "How code is written and structured. Understanding paradigms improves thinking. Examples: OOP, functional, procedural, scripting" }
+        ]
+      },
+      {
+        title: "Module 7: Software Engineering",
+        lessons: [
+            { slug: "cs-topic-software-engineering", title: "Software Engineering: Building Real Software", content: "How real software is designed, built, and maintained. Focuses on scalability, teamwork, and quality. Examples: SDLC, design patterns, testing, version control" }
+        ]
+      },
+      {
+        title: "Module 8: Computer Architecture",
+        lessons: [
+            { slug: "cs-topic-architecture", title: "Computer Architecture: Inside the Machine", content: "How a computer works internally. Helps understand performance and low-level behavior. Examples: CPU, memory, instruction sets, cache" }
+        ]
+      },
+      {
+        title: "Module 9: Cybersecurity",
+        lessons: [
+            { slug: "cs-topic-cybersecurity", title: "Cybersecurity: Protecting Our Digital World", content: "Protecting systems and data. Critical in today’s digital world. Examples: encryption, authentication, network security" }
+        ]
+      },
+      {
+        title: "Module 10: Artificial Intelligence & Machine Learning",
+        lessons: [
+            { slug: "cs-topic-ai-ml", title: "AI & Machine Learning: The Future of Tech", content: "Teaching machines to learn and reason. Driving modern tech innovation." }
+        ]
+      }
+    ]
+  },
 ];
 
 export function getCourses() {
@@ -537,7 +613,3 @@ export function getCourses() {
 export function getCourseBySlug(slug: string) {
   return courses.find(course => course.slug === slug);
 }
-
-    
-
-    
