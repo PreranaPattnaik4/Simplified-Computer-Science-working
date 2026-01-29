@@ -545,61 +545,101 @@ const courses = [
       {
         title: "Module 1: Algorithms",
         lessons: [
-            { slug: "cs-topic-algorithms", title: "Algorithms: The Foundation", content: "Step-by-step problem-solving methods. Foundation of coding, interviews, and system efficiency. Examples: sorting, searching, path finding" }
+            { 
+                slug: "cs-topic-algorithms", 
+                title: "Algorithms: The Foundation", 
+                content: `### What is an Algorithm?\n\nAn algorithm is a finite sequence of well-defined, computer-implementable instructions, typically to solve a class of specific problems or to perform a computation. Think of it as a recipe for a computer to follow.\n\n### Why Do They Matter?\n\nAlgorithms are the core of computer science. They determine how efficiently a program runs. A small change in an algorithm can be the difference between a program that runs in a fraction of a second and one that takes years!\n\n### Measuring Efficiency: Big O Notation\n\nWe use **Big O Notation** to describe an algorithm's performance or complexity. It characterizes how the runtime or space requirements grow as the input size grows. For example:\n\n- **O(1):** Constant time (e.g., accessing an array element by index).\n- **O(log n):** Logarithmic time (e.g., binary search).\n- **O(n):** Linear time (e.g., searching an unsorted list).\n- **O(n²):** Quadratic time (e.g., a simple bubble sort).\n\n### Common Examples\n\n**1. Searching Algorithms:**\n*   **Linear Search:** Checks every element in a list sequentially. Simple, but slow for large lists.\n*   **Binary Search:** Efficiently finds an item in a **sorted** list by repeatedly dividing the search interval in half.\n\n**2. Sorting Algorithms:**\n*   **Bubble Sort:** Repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. Simple to understand, but very inefficient (O(n²)).\n*   **Merge Sort:** A more efficient, recursive algorithm that divides the list into halves, sorts them, and then merges them back together. Its complexity is O(n log n).\n`
+            }
         ]
       },
       {
         title: "Module 2: Data Structures",
         lessons: [
-            { slug: "cs-topic-data-structures", title: "Data Structures: Organizing Information", content: "How data is stored and organized. Directly affects performance and scalability. Examples: arrays, linked lists, stacks, queues, trees, graphs" }
+            { 
+                slug: "cs-topic-data-structures", 
+                title: "Data Structures: Organizing Information", 
+                content: `### What are Data Structures?\n\nData structures are specialized formats for organizing, processing, retrieving, and storing data. They provide a way to manage large amounts of data efficiently for uses such as large databases and internet indexing services. The choice of data structure directly impacts an algorithm's performance.\n\n### Common Data Structures\n\n**1. Arrays:**\n*   A collection of items stored at contiguous memory locations.\n*   **Use case:** Storing a list of elements of the same type. Fast access to elements using an index (O(1)).\n\n**2. Linked Lists:**\n*   A linear collection of data elements whose order is not given by their physical placement in memory. Each element points to the next.\n*   **Use case:** When you need efficient insertions or deletions from any position in the sequence.\n\n**3. Stacks:**\n*   A LIFO (Last-In, First-Out) structure. The last element added is the first one to be removed.\n*   **Use case:** Managing function calls (the "call stack"), undo functionality in an editor.\n\n**4. Queues:**\n*   A FIFO (First-In, First-Out) structure. The first element added is the first one to be removed.\n*   **Use case:** Managing tasks in a print queue, handling requests on a server.\n\n**5. Trees:**\n*   A hierarchical structure with a root value and subtrees of children with a parent node.\n*   **Use case:** File systems, representing hierarchical data like an organization chart. Binary search trees allow for fast searching, insertion, and deletion.\n\n**6. Graphs:**\n*   A set of nodes (vertices) and edges that connect pairs of nodes.\n*   **Use case:** Social networks, mapping applications (cities and roads), computer networks.`
+            }
         ]
       },
       {
         title: "Module 3: Operating Systems",
         lessons: [
-            { slug: "cs-topic-os", title: "Operating Systems: Bridging Software and Hardware", content: "How software talks to hardware. Core concepts behind multitasking & memory. Examples: processes, threads, scheduling, memory management" }
+            { 
+                slug: "cs-topic-os", 
+                title: "Operating Systems: Bridging Software and Hardware", 
+                content: `### What is an Operating System (OS)?\n\nThe OS is the most important software that runs on a computer. It manages the computer's memory and processes, as well as all of its software and hardware. It also allows you to communicate with the computer without knowing how to speak the computer's language.\n\n### Core Responsibilities\n\n**1. Process Management:**\n*   A **process** is a program in execution. The OS manages the lifecycle of processes, including creation, deletion, and scheduling.\n*   **Scheduling:** The OS decides which process gets to use the CPU and for how long. Common algorithms include First-Come, First-Served (FCFS), and Round Robin.\n*   **Threads:** A thread is a lightweight process. A single process can have multiple threads, allowing for multitasking (e.g., a web browser using one thread to display images and another to fetch data).\n\n**2. Memory Management:**\n*   The OS manages the computer's primary memory (RAM).\n*   It keeps track of which parts of memory are currently being used and by whom.\n*   It allocates and deallocates memory space as needed for programs and processes.\n*   **Virtual Memory:** A technique that allows the execution of a process that may not be completely in memory, using disk space as an extension of RAM.\n\n**3. File System Management:**\n*   The OS provides a structured way to store and retrieve files on storage devices like hard drives.\n\n**4. Device Management:**\n*   The OS communicates with hardware devices through their respective drivers.` 
+            }
         ]
       },
       {
         title: "Module 4: Computer Networks",
         lessons: [
-            { slug: "cs-topic-networks", title: "Computer Networks: How Computers Communicate", content: "How computers communicate. Backbone of the internet and cloud. Examples: TCP/IP, HTTP/HTTPS, DNS, routing" }
+            { 
+                slug: "cs-topic-networks", 
+                title: "Computer Networks: How Computers Communicate", 
+                content: `### What is a Computer Network?\n\nA computer network is a set of computers sharing resources located on or provided by network nodes. The computers use common communication protocols over digital interconnections to communicate with each other.\n\n### The Internet & The TCP/IP Model\n\nThe internet is a global network of computers. Its communication is standardized by the **TCP/IP protocol suite**. This model is divided into layers:\n\n1.  **Application Layer (e.g., HTTP, FTP):** Where network applications and their protocols reside. Your web browser uses HTTP (Hypertext Transfer Protocol).\n2.  **Transport Layer (e.g., TCP, UDP):** Provides host-to-host communication services. **TCP (Transmission Control Protocol)** is reliable and connection-oriented, ensuring all data arrives in order. **UDP (User Datagram Protocol)** is faster but less reliable.\n3.  **Internet Layer (e.g., IP):** Responsible for addressing, routing, and packaging data packets. The **IP (Internet Protocol)** address is a unique identifier for each device on the network.\n4.  **Link Layer:** Handles the physical connection to the network.\n\n### Key Concepts\n\n*   **DNS (Domain Name System):** The phonebook of the Internet. It translates human-readable domain names (like \`www.google.com\`) into machine-readable IP addresses.\n*   **HTTP/HTTPS:** The protocol used for transmitting web pages. HTTPS is the secure version, encrypting data between your browser and the server.\n*   **Routing:** The process of selecting a path for traffic in a network, or between or across multiple networks.`
+            }
         ]
       },
       {
         title: "Module 5: Databases & DBMS",
         lessons: [
-            { slug: "cs-topic-databases", title: "Databases: Storing and Retrieving Data", content: "How applications store and retrieve data. Used in almost every real-world system. Examples: SQL, NoSQL, indexing, transactions" }
+            { 
+                slug: "cs-topic-databases", 
+                title: "Databases: Storing and Retrieving Data", 
+                content: `### What is a Database?\n\nA database is an organized collection of structured information, or data, typically stored electronically in a computer system. A **Database Management System (DBMS)** is the software that interacts with end users, applications, and the database itself to capture and analyze the data.\n\n### Types of Databases\n\n**1. Relational Databases (SQL):**\n*   Data is organized into tables (rows and columns).\n*   Uses **SQL (Structured Query Language)** for defining and manipulating the data.\n*   Emphasizes rigidity and consistency of data (schema-on-write).\n*   **Examples:** MySQL, PostgreSQL, Microsoft SQL Server.\n\n**2. Non-Relational Databases (NoSQL):**\n*   Data can be stored in various ways: document (JSON-like), key-value, wide-column, or graph.\n*   Offers more flexibility (schema-on-read).\n*   Often better for large-scale, unstructured data.\n*   **Examples:** MongoDB (document), Redis (key-value), Cassandra (wide-column), Neo4j (graph).\n\n### Core Concepts\n\n*   **Indexing:** A data structure technique to efficiently retrieve records from a database file. An index is like the index in the back of a book; it helps you find data without searching every row.\n*   **Transactions (ACID Properties):** A transaction is a single logical unit of work. In relational databases, transactions adhere to ACID properties (Atomicity, Consistency, Isolation, Durability) to guarantee data integrity even in the event of errors or power failures.` 
+            }
         ]
       },
       {
         title: "Module 6: Programming Languages & Paradigms",
         lessons: [
-            { slug: "cs-topic-languages", title: "Programming Languages & Paradigms", content: "How code is written and structured. Understanding paradigms improves thinking. Examples: OOP, functional, procedural, scripting" }
+            { 
+                slug: "cs-topic-languages", 
+                title: "Programming Languages & Paradigms", 
+                content: `### What is a Programming Paradigm?\n\nA programming paradigm is a style or “way” of programming. It's an approach to solving problems using some programming language. Some languages are designed for one paradigm, while others support multiple.\n\n### Common Paradigms\n\n**1. Procedural Programming:**\n*   Based on the concept of the procedure call. Procedures, also known as routines or functions, simply contain a series of computational steps to be carried out.\n*   Code is structured into procedures that perform specific tasks.\n*   **Example Languages:** C, Pascal.\n\n**2. Object-Oriented Programming (OOP):**\n*   Based on the concept of "objects", which can contain data in the form of fields (often known as attributes or properties), and code, in the form of procedures (often known as methods).\n*   **Core Concepts:**\n    *   **Encapsulation:** Bundling data and methods that operate on the data within one unit.\n    *   **Inheritance:** A mechanism for creating new classes from existing ones.\n    *   **Polymorphism:** The ability to present the same interface for differing underlying forms (data types).\n*   **Example Languages:** Java, Python, C++.\n\n**3. Functional Programming:**\n*   Treats computation as the evaluation of mathematical functions and avoids changing-state and mutable data.\n*   Emphasizes the use of "pure functions" which have no side effects.\n*   **Example Languages:** Haskell, Lisp, F#. JavaScript and Python also support functional programming styles.`
+            }
         ]
       },
       {
         title: "Module 7: Software Engineering",
         lessons: [
-            { slug: "cs-topic-software-engineering", title: "Software Engineering: Building Real Software", content: "How real software is designed, built, and maintained. Focuses on scalability, teamwork, and quality. Examples: SDLC, design patterns, testing, version control" }
+            { 
+                slug: "cs-topic-software-engineering", 
+                title: "Software Engineering: Building Real Software", 
+                content: `### What is Software Engineering?\n\nSoftware engineering is the branch of computer science that deals with the design, development, testing, and maintenance of software applications. It applies engineering principles to create robust, efficient, and scalable software.\n\n### Software Development Life Cycle (SDLC)\n\nThe SDLC is a process followed for a software project. It consists of a detailed plan describing how to develop, maintain, replace and alter or enhance specific software. Common models include:\n\n*   **Waterfall Model:** A linear, sequential approach. Each phase must be completed before the next begins.\n*   **Agile Model:** An iterative approach. Development is done in short cycles (sprints), allowing for flexibility and adaptation to change.\n\n### Key Concepts\n\n**1. Design Patterns:**\n*   General, reusable solutions to commonly occurring problems within a given context in software design. They are not finished designs that can be transformed directly into code, but templates for how to solve a problem.\n*   **Examples:** Singleton Pattern, Factory Pattern, Observer Pattern.\n\n**2. Testing:**\n*   The process of evaluating a software application to find any bugs or errors.\n*   **Levels of Testing:**\n    *   **Unit Testing:** Testing individual components or functions.\n    *   **Integration Testing:** Testing how multiple components work together.\n    *   **System Testing:** Testing the complete, integrated system.\n\n**3. Version Control:**\n*   A system that records changes to a file or set of files over time so that you can recall specific versions later. **Git** is the most popular version control system, and **GitHub** is a platform for hosting Git repositories.`
+            }
         ]
       },
       {
         title: "Module 8: Computer Architecture",
         lessons: [
-            { slug: "cs-topic-architecture", title: "Computer Architecture: Inside the Machine", content: "How a computer works internally. Helps understand performance and low-level behavior. Examples: CPU, memory, instruction sets, cache" }
+            { 
+                slug: "cs-topic-architecture", 
+                title: "Computer Architecture: Inside the Machine", 
+                content: `### What is Computer Architecture?\n\nComputer architecture is a set of rules and methods that describe the functionality, organization, and implementation of computer systems. It's the blueprint that tells us how the hardware components are connected and interact to create a working computer.\n\n### Core Components\n\n**1. CPU (Central Processing Unit):**\n*   The "brain" of the computer. It performs most of the processing inside a computer, executing instructions from programs.\n*   The CPU's performance is often measured in gigahertz (GHz).\n\n**2. Memory (RAM - Random Access Memory):**\n*   A form of volatile memory used to store working data and machine code. Data in RAM is lost when the power is turned off.\n*   The CPU can access data in RAM very quickly.\n\n**3. Storage (Hard Drive/SSD):**\n*   Non-volatile memory where software, documents, and other files are stored. Data here persists even when the power is off.\n*   Slower than RAM, but provides long-term storage.\n\n### How it Works Together: The Instruction Cycle\n\nThe basic operation of a computer is the instruction cycle (also known as the fetch-decode-execute cycle):\n1.  **Fetch:** The CPU retrieves an instruction from memory.\n2.  **Decode:** The CPU decodes the instruction to understand what action to perform.\n3.  **Execute:** The CPU performs the action. This might involve reading/writing from/to memory or performing a calculation.\n\n**Cache:** A smaller, faster memory closer to the CPU that stores copies of the data from frequently used main memory locations. It's used to reduce the average time to access data from the main memory.`
+            }
         ]
       },
       {
         title: "Module 9: Cybersecurity",
         lessons: [
-            { slug: "cs-topic-cybersecurity", title: "Cybersecurity: Protecting Our Digital World", content: "Protecting systems and data. Critical in today’s digital world. Examples: encryption, authentication, network security" }
+            { 
+                slug: "cs-topic-cybersecurity", 
+                title: "Cybersecurity: Protecting Our Digital World", 
+                content: `### What is Cybersecurity?\n\nCybersecurity is the practice of protecting systems, networks, and programs from digital attacks. These cyberattacks are usually aimed at accessing, changing, or destroying sensitive information; extorting money from users; or interrupting normal business processes.\n\n### The CIA Triad\n\nA core model for guiding security policies:\n\n*   **Confidentiality:** Ensuring that data is accessible only to those with authorized access.\n*   **Integrity:** Maintaining the consistency, accuracy, and trustworthiness of data.\n*   **Availability:** Ensuring that systems and data are available to authorized users when needed.\n\n### Key Concepts\n\n**1. Encryption:**\n*   The process of converting data into a code to prevent unauthorized access. The data can only be read after it's been decrypted with a specific key.\n*   Used in HTTPS to secure web traffic.\n\n**2. Authentication:**\n*   The process of verifying the identity of a user or process. \n*   **Methods:** Passwords, biometrics (fingerprints), multi-factor authentication (MFA).\n\n**3. Firewalls:**\n*   A network security device that monitors incoming and outgoing network traffic and decides whether to allow or block specific traffic based on a defined set of security rules.\n\n**4. Common Attacks:**\n*   **Phishing:** Fraudulent attempts to obtain sensitive information by disguising as a trustworthy entity in an electronic communication.\n*   **Malware:** Malicious software designed to disrupt, damage, or gain unauthorized access to a computer system.\n*   **Denial-of-Service (DoS):** An attack meant to shut down a machine or network, making it inaccessible to its intended users.`
+            }
         ]
       },
       {
         title: "Module 10: Artificial Intelligence & Machine Learning",
         lessons: [
-            { slug: "cs-topic-ai-ml", title: "AI & Machine Learning: The Future of Tech", content: "Teaching machines to learn and reason. Driving modern tech innovation." }
+            { 
+                slug: "cs-topic-ai-ml", 
+                title: "AI & Machine Learning: The Future of Tech", 
+                content: `### What is Artificial Intelligence (AI)?\n\nAI is a broad area of computer science that makes computers seem like they have human intelligence. It is the science of training machines to learn, reason, and make decisions.\n\n### What is Machine Learning (ML)?\n\nMachine Learning is a subset of AI. It's the "learning" part. Instead of being explicitly programmed with rules, an ML system is trained on large amounts of data, which allows it to learn to make predictions or decisions.\n\n### Common Paradigms of Machine Learning\n\n**1. Supervised Learning:**\n*   The model is trained on **labeled data**. This means the training data includes the desired output (the "right answer").\n*   **Use cases:**\n    *   **Classification:** Predicting a category (e.g., "spam" or "not spam").\n    *   **Regression:** Predicting a continuous value (e.g., predicting a house price).\n\n**2. Unsupervised Learning:**\n*   The model is trained on **unlabeled data** and tries to find patterns on its own.\n*   **Use cases:**\n    *   **Clustering:** Grouping similar data points together (e.g., customer segmentation).\n    *   **Dimensionality Reduction:** Reducing the number of variables in a dataset.\n\n**3. Deep Learning:**\n*   A subfield of ML based on **artificial neural networks** with many layers (hence "deep").\n*   It has been particularly successful in areas like image recognition (Computer Vision) and natural language processing (NLP).`
+            }
         ]
       }
     ]
