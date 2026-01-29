@@ -1,7 +1,7 @@
-
 'use client';
 import { Search, User, Calendar, Tag } from 'lucide-react';
 import Link from 'next/link';
+import { useState } from 'react';
 
 const blogPosts = [
   {
@@ -126,8 +126,16 @@ const tags = [
     "Social Media", "Software Engineering", "Website Development"
 ];
 
+const filterCategories = ['All', 'Artificial Intelligence', 'Futures Tech', 'Insight blogs'];
+
 
 export default function BlogPage() {
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
+  const filteredPosts = blogPosts.filter(post => 
+    selectedCategory === 'All' || post.category.includes(selectedCategory)
+  );
+
   return (
     <div className="bg-white text-gray-800">
       <main>
@@ -153,14 +161,23 @@ export default function BlogPage() {
             {/* Blog Posts */}
             <div className="w-full lg:w-2/3">
               <div className="flex flex-wrap gap-2 mb-8 border-b pb-4">
-                  <button className="px-4 py-2 text-sm font-semibold bg-accent text-accent-foreground rounded-full">All</button>
-                  <button className="px-4 py-2 text-sm font-semibold text-gray-600 hover:bg-gray-200 rounded-full">Artificial Intelligence</button>
-                  <button className="px-4 py-2 text-sm font-semibold text-gray-600 hover:bg-gray-200 rounded-full">Futures Tech</button>
-                  <button className="px-4 py-2 text-sm font-semibold text-gray-600 hover:bg-gray-200 rounded-full">Insight blogs</button>
+                  {filterCategories.map(category => (
+                    <button 
+                      key={category}
+                      onClick={() => setSelectedCategory(category)}
+                      className={`px-4 py-2 text-sm font-semibold rounded-full transition-colors ${
+                        selectedCategory === category
+                          ? 'bg-accent text-accent-foreground'
+                          : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                      }`}
+                    >
+                      {category}
+                    </button>
+                  ))}
               </div>
 
               <div className="space-y-12">
-                {blogPosts.map((post, index) => (
+                {filteredPosts.map((post, index) => (
                   <article key={index} className="flex flex-col md:flex-row gap-6 group">
                      <div className="flex-grow">
                         <div className="text-xs text-gray-500 mb-2 uppercase tracking-wider">{post.category}</div>
