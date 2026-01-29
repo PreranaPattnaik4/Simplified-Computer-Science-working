@@ -22,14 +22,14 @@ import { getBlogPosts } from "@/app/lib/posts"
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/courses-live", label: "Courses" },
-  { href: "/blog", label: "Blogs" },
-  { href: "/resources", label: "Resources" },
-  { href: "/tech-guide", label: "Tech Guide" },
-  { href: "/career-tips-and-roadmaps", label: "Career Tips" },
   { href: "/ai-search", label: "AI Search" },
-  { href: "/contact", label: "Contact" },
+  { href: "/courses-live", label: "Courses" },
+  { href: "/tech-guide", label: "Tech Guide" },
+  { href: "/resources", label: "Resources" },
+  { href: "/blog", label: "Blogs" },
+  { href: "/career-tips-and-roadmaps", label: "Career Tips" },
   { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Header() {
