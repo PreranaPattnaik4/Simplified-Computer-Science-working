@@ -281,7 +281,7 @@ const courses = [
   {
     slug: 'mastering-python-for-data-science-and-ai',
     title: 'Mastering Python for Data Science & AI',
-    description: 'A comprehensive course covering Python fundamentals and its advanced applications in data science and artificial intelligence. Perfect for aspiring data scientists and AI specialists.\n\n**Learning Outcomes:**\n- Apply Python fundamentals for complex data analysis.\n- Build and evaluate machine learning models using Scikit-learn.\n- Implement deep learning solutions with TensorFlow and Keras.\n- Create compelling data visualizations to communicate insights.\n- Deploy a machine learning model as a web service.',
+    description: 'A comprehensive course covering Python fundamentals and its advanced applications in data science and artificial intelligence. Perfect for aspiring data scientists and AI specialists.\n\nLearning Outcomes:\n- Apply Python fundamentals for complex data analysis.\n- Build and evaluate machine learning models using Scikit-learn.\n- Implement deep learning solutions with TensorFlow and Keras.\n- Create compelling data visualizations to communicate insights.\n- Deploy a machine learning model as a web service.',
     level: 'Intermediate',
     primaryCategory: 'Data Science & Analytics',
     suggestedTags: ['Python', 'TensorFlow', 'PyTorch'],
@@ -302,12 +302,12 @@ const courses = [
                     {
                         cardTitle: "Why Python for Data Science?",
                         cardSubtitle: "Understand Python's dominant role in the data science ecosystem.",
-                        cardContent: "Python's design philosophy emphasizes code readability and simplicity, making it ideal for the iterative nature of data science projects. Its gentle learning curve allows beginners to become productive quickly, while its powerful features support complex scientific computing tasks.\n\n*   **Key Strengths:**\n    *   **Vast Ecosystem:** A rich collection of libraries like Pandas, NumPy, Matplotlib, Scikit-learn, TensorFlow, and PyTorch.\n    *   **Versatility:** Handle everything from data extraction to model deployment within a single language.\n    *   **Strong Community:** A massive global community provides extensive support and third-party packages."
+                        cardContent: "Python's design philosophy emphasizes code readability and simplicity, making it ideal for the iterative nature of data science projects. Its gentle learning curve allows beginners to become productive quickly, while its powerful features support complex scientific computing tasks. Key Strengths: -   Vast Ecosystem: A rich collection of libraries like Pandas, NumPy, Matplotlib, Scikit-learn, TensorFlow, and PyTorch. -   Versatility: Handle everything from data extraction to model deployment within a single language. -   Strong Community: A massive global community provides extensive support and third-party packages."
                     },
                     {
                         cardTitle: "Setting Up Your Professional Environment",
                         cardSubtitle: "A well-configured environment is crucial for productivity and reproducibility.",
-                        cardContent: "We will use Anaconda, the industry standard for Python data science.\n\n1.  **Install Anaconda:** Download and install the Anaconda Distribution from the [official website](https://www.anaconda.com/products/distribution).\n2.  **Create a Virtual Environment:** To avoid dependency conflicts, create one for this course:\n    ```bash\n    conda create --name scs_python_course python=3.9\n    ```\n3.  **Activate the Environment:**\n    ```bash\n    conda activate scs_python_course\n    ```\n4.  **Launch Jupyter Notebook:** An interactive, web-based tool for data exploration.\n    ```bash\n    jupyter notebook\n    ```"
+                        cardContent: "We will use Anaconda, the industry standard for Python data science. 1.  Install Anaconda: Download and install the Anaconda Distribution from the official website (https://www.anaconda.com/products/distribution). 2.  Create a Virtual Environment: To avoid dependency conflicts, create one for this course:    ```bash    conda create --name scs_python_course python=3.9    ``` 3.  Activate the Environment:    ```bash    conda activate scs_python_course    ``` 4.  Launch Jupyter Notebook: An interactive, web-based tool for data exploration.    ```bash    jupyter notebook    ```"
                     },
                     {
                         cardTitle: "Industry Best Practice: Virtual Environments",
@@ -323,22 +323,22 @@ const courses = [
                     {
                         cardTitle: "Variables: Naming Your Data",
                         cardSubtitle: "Learn how to store information in Python using variables.",
-                        cardContent: "A variable is a symbolic name that is a reference or pointer to an object. Once an object is assigned to a variable, you can refer to the object by that name.\n\n```python\n# Variable assignment\nproject_name = 'AI Stock Predictor'\naccuracy_target = 0.95\nnum_features = 50\n```"
+                        cardContent: "A variable is a symbolic name that is a reference or pointer to an object. Once an object is assigned to a variable, you can refer to the object by that name. ```python # Variable assignment project_name = 'AI Stock Predictor' accuracy_target = 0.95 num_features = 50 ```"
                     },
                     {
                         cardTitle: "Python's Primary Data Types",
                         cardSubtitle: "Understand the fundamental data types for representing different kinds of information.",
-                        cardContent: "*   **`int` (Integer):** For whole numbers (e.g., `num_features = 50`).\n*   **`float` (Floating-Point Number):** For numbers with a decimal point (e.g., `accuracy_target = 0.95`).\n*   **`str` (String):** For textual data. Enclosed in single `'...'` or double `\"...\"` quotes (e.g., `project_name = 'AI Stock Predictor'`).\n*   **`bool` (Boolean):** For truth values `True` or `False` (e.g., `is_deployed = False`)."
+                        cardContent: "- `int` (Integer): For whole numbers (e.g., `num_features = 50`). - `float` (Floating-Point Number): For numbers with a decimal point (e.g., `accuracy_target = 0.95`). - `str` (String): For textual data. Enclosed in single `'...'` or double `\"...\"` quotes (e.g., `project_name = 'AI Stock Predictor'`). - `bool` (Boolean): For truth values `True` or `False` (e.g., `is_deployed = False`)."
                     },
                     {
                         cardTitle: "Data Structures: Collections of Data",
                         cardSubtitle: "Learn about the primary ways to group and organize data in Python.",
-                        cardContent: "*   **`list`:** An ordered, mutable (changeable) collection of items. `features = ['volume', 'price', 'moving_avg']`\n*   **`tuple`:** An ordered, immutable (unchangeable) collection. `model_version = (1, 2, 0)`\n*   **`dict` (Dictionary):** An unordered collection of key-value pairs. `hyperparameters = {'learning_rate': 0.01, 'epochs': 100}`"
+                        cardContent: "- `list`: An ordered, mutable (changeable) collection of items. `features = ['volume', 'price', 'moving_avg']` - `tuple`: An ordered, immutable (unchangeable) collection. `model_version = (1, 2, 0)` - `dict` (Dictionary): An unordered collection of key-value pairs. `hyperparameters = {'learning_rate': 0.01, 'epochs': 100}`"
                     },
                     {
                         cardTitle: "Real-World Scenario: Model Performance",
                         cardSubtitle: "See how variables and operators are used in a practical data science context.",
-                        cardContent: "Imagine you're calculating the performance improvement of a new model.\n```python\n# Model performance data\nold_model_accuracy = 0.88\nnew_model_accuracy = 0.91\n\n# Calculate the percentage improvement\nimprovement = ((new_model_accuracy - old_model_accuracy) / old_model_accuracy) * 100\n\n# The f-string is a modern and readable way to format strings\nprint(f\"Model improvement: {improvement:.2f}%\")\n\n# Decision-making with logical operators\nis_significant_improvement = improvement > 2.0\nneeds_ceo_approval = is_significant_improvement and new_model_accuracy > 0.9\n\nprint(f\"Does it need CEO approval? {needs_ceo_approval}\")\n```"
+                        cardContent: "Imagine you're calculating the performance improvement of a new model. ```python # Model performance data old_model_accuracy = 0.88 new_model_accuracy = 0.91 # Calculate the percentage improvement improvement = ((new_model_accuracy - old_model_accuracy) / old_model_accuracy) * 100 # The f-string is a modern and readable way to format strings print(f\"Model improvement: {improvement:.2f}%\") # Decision-making with logical operators is_significant_improvement = improvement > 2.0 needs_ceo_approval = is_significant_improvement and new_model_accuracy > 0.9 print(f\"Does it need CEO approval? {needs_ceo_approval}\") ```"
                     }
                 ]
             },
@@ -349,22 +349,22 @@ const courses = [
                     {
                         cardTitle: "Conditional Logic with `if`, `elif`, `else`",
                         cardSubtitle: "Learn to make decisions and execute different code paths based on specific conditions.",
-                        cardContent: "This is the primary way to make decisions in your code.\n\n**Scenario:** Classifying a stock as 'Buy', 'Hold', or 'Sell' based on an analyst's rating.\n```python\nanalyst_rating = 4.2  # On a scale of 1 to 5\n\nif analyst_rating >= 4.5:\n    recommendation = 'Strong Buy'\nelif analyst_rating >= 3.5:\n    recommendation = 'Hold'\nelse:\n    recommendation = 'Sell'\n\nprint(f\"Recommendation: {recommendation}\") # Output: Recommendation: Hold\n```"
+                        cardContent: "This is the primary way to make decisions in your code. Scenario: Classifying a stock as 'Buy', 'Hold', or 'Sell' based on an analyst's rating. ```python analyst_rating = 4.2  # On a scale of 1 to 5 if analyst_rating >= 4.5:    recommendation = 'Strong Buy' elif analyst_rating >= 3.5:    recommendation = 'Hold' else:    recommendation = 'Sell' print(f\"Recommendation: {recommendation}\") # Output: Recommendation: Hold ```"
                     },
                     {
                         cardTitle: "`for` Loops: Iterating Over Sequences",
                         cardSubtitle: "Use `for` loops to perform an action on each item in a collection, such as a list.",
-                        cardContent: "`for` loops are used when you have a collection of items (like a list of stocks) and you want to perform an action on each item.\n\n**Scenario:** Calculating the average price of a list of stocks.\n```python\nstock_prices = [150.25, 152.50, 149.75, 155.00]\ntotal_price = 0\n\nfor price in stock_prices:\n    total_price += price\n\naverage_price = total_price / len(stock_prices)\nprint(f\"Average stock price: ${average_price:.2f}\")\n```"
+                        cardContent: "`for` loops are used when you have a collection of items (like a list of stocks) and you want to perform an action on each item. Scenario: Calculating the average price of a list of stocks. ```python stock_prices = [150.25, 152.50, 149.75, 155.00] total_price = 0 for price in stock_prices:    total_price += price average_price = total_price / len(stock_prices) print(f\"Average stock price: ${average_price:.2f}\") ```"
                     },
                     {
                         cardTitle: "`while` Loops: Repeating Until a Condition is Met",
                         cardSubtitle: "Use `while` loops for situations where you need to repeat a task until a certain condition is no longer true.",
-                        cardContent: "`while` loops are useful when you don't know in advance how many times you need to loop.\n\n**Scenario:** Simulating a stock price until it reaches a target.\n```python\nimport random\n\ncurrent_price = 100\ntarget_price = 110\ndays = 0\n\nwhile current_price < target_price:\n    # Simulate a random daily change between -1 and +1\n    daily_change = random.uniform(-1, 1)\n    current_price += daily_change\n    days += 1\n    print(f\"Day {days}: Price = {current_price:.2f}\")\n\nprint(f\"Target price of ${target_price} reached in {days} days.\")\n```"
+                        cardContent: "`while` loops are useful when you don't know in advance how many times you need to loop. Scenario: Simulating a stock price until it reaches a target. ```python import random current_price = 100 target_price = 110 days = 0 while current_price < target_price:    # Simulate a random daily change between -1 and +1    daily_change = random.uniform(-1, 1)    current_price += daily_change    days += 1    print(f\"Day {days}: Price = {current_price:.2f}\") print(f\"Target price of ${target_price} reached in {days} days.\") ```"
                     },
                     {
                         cardTitle: "Mastery Tip: List Comprehensions",
                         cardSubtitle: "Learn a concise, readable, and 'Pythonic' way to create lists.",
-                        cardContent: "List comprehensions provide a more elegant syntax for creating new lists based on existing ones.\n\n**Scenario:** Filtering a list of stocks to find only those above a certain price.\n```python\nprices = {'AAPL': 150, 'GOOG': 2800, 'MSFT': 300, 'AMZN': 3400}\n\n# Find stocks with price > 1000\nexpensive_stocks = [stock for stock, price in prices.items() if price > 1000]\n\nprint(expensive_stocks) # Output: ['GOOG', 'AMZN']\n```"
+                        cardContent: "List comprehensions provide a more elegant syntax for creating new lists based on existing ones. Scenario: Filtering a list of stocks to find only those above a certain price. ```python prices = {'AAPL': 150, 'GOOG': 2800, 'MSFT': 300, 'AMZN': 3400} # Find stocks with price > 1000 expensive_stocks = [stock for stock, price in prices.items() if price > 1000] print(expensive_stocks) # Output: ['GOOG', 'AMZN'] ```"
                     }
                 ]
             },
@@ -390,7 +390,7 @@ const courses = [
             { 
                 slug: 'intro-to-scikit-learn', 
                 title: 'Scikit-Learn: The Core of Practical ML in Python', 
-                content: '### Objective\nUnderstand the architecture and core principles of Scikit-learn, the go-to library for traditional machine learning in Python.\n\n### What is Scikit-learn?\nScikit-learn provides a simple and efficient tool for data mining and data analysis. It is built on NumPy, SciPy, and Matplotlib. Its key strength is its consistent and easy-to-use API.\n\n### The Scikit-learn API: A Consistent Pattern\n1.  **Choose a model:** Import the class of the model you want to use.\n2.  **Instantiate the model:** Create an instance of the model with desired hyperparameters.\n3.  **Arrange data:** Arrange your data into a features matrix (X) and a target vector (y).\n4.  **Fit the model:** Train the model on your data using the `.fit()` method.\n5.  **Predict:** Use the trained model to make predictions on new data with the `.predict()` method.\n\n```python\nfrom sklearn.linear_model import LogisticRegression\n\n# 1 & 2: Choose and instantiate the model\nmodel = LogisticRegression()\n\n# 3: Arrange data (X_train, y_train are assumed to be ready)\n# 4: Fit the model\n# model.fit(X_train, y_train)\n\n# 5: Predict on new data\n# predictions = model.predict(X_test)\n```\nThis simple pattern is used across almost all models in the library, making it incredibly easy to experiment with different algorithms.' 
+                content: 'Objective Understand the architecture and core principles of Scikit-learn, the go-to library for traditional machine learning in Python. What is Scikit-learn? Scikit-learn provides a simple and efficient tool for data mining and data analysis. It is built on NumPy, SciPy, and Matplotlib. Its key strength is its consistent and easy-to-use API. The Scikit-learn API: A Consistent Pattern 1.  Choose a model: Import the class of the model you want to use. 2.  Instantiate the model: Create an instance of the model with desired hyperparameters. 3.  Arrange data: Arrange your data into a features matrix (X) and a target vector (y). 4.  Fit the model: Train the model on your data using the `.fit()` method. 5.  Predict: Use the trained model to make predictions on new data with the `.predict()` method. ```python from sklearn.linear_model import LogisticRegression # 1 & 2: Choose and instantiate the model model = LogisticRegression() # 3: Arrange data (X_train, y_train are assumed to be ready) # 4: Fit the model # model.fit(X_train, y_train) # 5: Predict on new data # predictions = model.predict(X_test) ``` This simple pattern is used across almost all models in the library, making it incredibly easy to experiment with different algorithms.' 
             },
             {
                 slug: 'ml-quiz-1',
@@ -413,7 +413,7 @@ const courses = [
    {
     slug: 'cs-basics-get-started',
     title: 'Computer Science Basics: Everything You Need to Know to Get Started',
-    description: 'This course will introduce you to the essential concepts, key terminology, and foundational topics that make up the heart of Computer Science.\n\n**Learning Outcomes:**\n- Explain the fundamental pillars of Computer Science.\n- Write basic programs using core programming concepts.\n- Understand how computer hardware and software interact.\n- Describe the basics of web technology and the internet.',
+    description: 'This course will introduce you to the essential concepts, key terminology, and foundational topics that make up the heart of Computer Science.\n\nLearning Outcomes:\n- Explain the fundamental pillars of Computer Science.\n- Write basic programs using core programming concepts.\n- Understand how computer hardware and software interact.\n- Describe the basics of web technology and the internet.',
     level: 'Beginner',
     primaryCategory: 'Software Development',
     suggestedTags: ['Computer Science', 'Algorithms', 'Python'],
@@ -430,12 +430,12 @@ const courses = [
                 { 
                     slug: "what-is-cs", 
                     title: "What is Computer Science?",
-                    content: "### Objective\nDefine Computer Science and understand that it's more than just programming.\n\n### Computer Science is the Science of Problem-Solving\nAt its heart, Computer Science (CS) is the study of how to solve problems using computers. It's a field that blends logic, creativity, and engineering. While programming is the tool we use to implement solutions, CS is about designing those solutions in the first place.\n\nIt encompasses:\n- **Theory:** The fundamental principles of computation and information.\n- **Design:** How to structure software and hardware systems.\n- **Application:** Creating useful tools and technologies that impact the world."
+                    content: "Objective Define Computer Science and understand that it's more than just programming. Computer Science is the Science of Problem-Solving At its heart, Computer Science (CS) is the study of how to solve problems using computers. It's a field that blends logic, creativity, and engineering. While programming is the tool we use to implement solutions, CS is about designing those solutions in the first place. It encompasses: - Theory: The fundamental principles of computation and information. - Design: How to structure software and hardware systems. - Application: Creating useful tools and technologies that impact the world."
                 },
                 { 
                     slug: "key-areas-of-cs", 
-                    title: "Key Areas of Computer Science",
-                    content: "### Objective\nGet a high-level overview of the major disciplines within Computer Science.\n\nComputer Science is a vast field with many specializations. Here are some of the core pillars:\n\n1.  **Algorithms & Data Structures:** The study of efficient problem-solving methods and ways to organize data.\n2.  **Programming Languages:** The tools we use to communicate instructions to computers.\n3.  **Computer Architecture:** The design and structure of computer hardware systems.\n4.  **Operating Systems:** The software that manages all hardware and software resources.\n5.  **Computer Networks:** The principles behind how computers connect and communicate (e.g., the Internet).\n6.  **Databases:** How to store, manage, and retrieve large amounts of data efficiently.\n7.  **Artificial Intelligence (AI):** The science of creating machines that can think, learn, and act intelligently."
+                    title: "Key Areas of Computer Science", 
+                    content: "Objective Get a high-level overview of the major disciplines within Computer Science. Computer Science is a vast field with many specializations. Here are some of the core pillars: 1.  Algorithms & Data Structures: The study of efficient problem-solving methods and ways to organize data. 2.  Programming Languages: The tools we use to communicate instructions to computers. 3.  Computer Architecture: The design and structure of computer hardware systems. 4.  Operating Systems: The software that manages all hardware and software resources. 5.  Computer Networks: The principles behind how computers connect and communicate (e.g., the Internet). 6.  Databases: How to store, manage, and retrieve large amounts of data efficiently. 7.  Artificial Intelligence (AI): The science of creating machines that can think, learn, and act intelligently."
                 },
                 {
                     slug: 'cs-basics-quiz-1',
@@ -449,7 +449,7 @@ const courses = [
                         { id: 'D', text: 'To become an expert in using specific software applications like Microsoft Word.' }
                     ],
                     correctAnswer: 'B',
-                    explanation: 'Computer Science is fundamentally about problem-solving. While learning languages and understanding hardware are parts of it, the central goal is to design computational solutions to problems. It is a creative and analytical discipline, not just a technical skill.'
+                    explanation: "Computer Science is fundamentally about problem-solving. While learning languages and understanding hardware are parts of it, the central goal is to design computational solutions to problems. It is a creative and analytical discipline, not just a technical skill."
                 }
             ]
         },
@@ -459,12 +459,12 @@ const courses = [
                 { 
                     slug: "programming-intro", 
                     title: "Introduction to Programming with Python", 
-                    content: "### Objective\nUnderstand the role of a programming language and write your first lines of code using Python.\n\n### Why Start with Python?\nPython is famous for its simple and readable syntax, which looks a lot like plain English. This makes it an ideal first language for beginners, allowing you to focus on learning programming concepts without getting bogged down by complex rules.\n\n### Your First Program: \"Hello, World!\"\nIt's a tradition in programming to start by making the computer say \"Hello, World!\". In Python, it's just one line:\n```python\nprint(\"Hello, World!\")\n```\nThis simple command tells the computer to call the `print` function and give it the text \"Hello, World!\" to display on the screen."
+                    content: "Objective Understand the role of a programming language and write your first lines of code using Python. Why Start with Python? Python is famous for its simple and readable syntax, which looks a lot like plain English. This makes it an ideal first language for beginners, allowing you to focus on learning programming concepts without getting bogged down by complex rules. Your First Program: \"Hello, World!\" It's a tradition in programming to start by making the computer say \"Hello, World!\". In Python, it's just one line: ```python print(\"Hello, World!\") ``` This simple command tells the computer to call the `print` function and give it the text \"Hello, World!\" to display on the screen."
                 },
                 { 
                     slug: "variables-data-types", 
                     title: "Variables and Data Types", 
-                    content: "### Objective\nLearn how to store and categorize information in a program.\n\n### What are Variables?\nA variable is like a labeled box where you can store a piece of information. You give it a name and put a value inside it.\n```python\n# 'message' is the variable name, \"Welcome to CS Basics!\" is the value.\nmessage = \"Welcome to CS Basics!\"\nstudent_count = 50\n```\n\n### Common Data Types\n- **String (`str`):** Text (e.g., `\"Hello\"`).\n- **Integer (`int`):** Whole numbers (e.g., `101`).\n- **Float (`float`):** Numbers with decimals (e.g., `99.9`).\n- **Boolean (`bool`):** `True` or `False`.\n\nPython automatically figures out the data type for you when you assign a value to a variable."
+                    content: "Objective Learn how to store and categorize information in a program. What are Variables? A variable is like a labeled box where you can store a piece of information. You give it a name and put a value inside it. ```python # 'message' is the variable name, \"Welcome to CS Basics!\" is the value. message = \"Welcome to CS Basics!\" student_count = 50 ``` Common Data Types - String (`str`): Text (e.g., `\"Hello\"`). - Integer (`int`): Whole numbers (e.g., `101`). - Float (`float`): Numbers with decimals (e.g., `99.9`). - Boolean (`bool`): `True` or `False`. Python automatically figures out the data type for you when you assign a value to a variable."
                 },
                 {
                     slug: 'cs-basics-quiz-2',
@@ -478,7 +478,7 @@ const courses = [
                         { id: 'D', text: 'Boolean' }
                     ],
                     correctAnswer: 'C',
-                    explanation: 'The value `25` is a whole number, so Python assigns it the integer (`int`) data type. A string would be in quotes (e.g., `"25"`), a float would have a decimal (e.g., `25.0`), and a boolean would be `True` or `False`.'
+                    explanation: "The value `25` is a whole number, so Python assigns it the integer (`int`) data type. A string would be in quotes (e.g., `\"25\"`), a float would have a decimal (e.g., `25.0`), and a boolean would be `True` or `False`."
                 }
             ]
         }
@@ -487,7 +487,7 @@ const courses = [
   {
     slug: 'web-dev-guide',
     title: 'The Ultimate Guide to Website Development with Coding',
-    description: 'A complete guide covering everything from front-end and back-end development to full-stack technologies, security best practices, and performance optimization.\n\n**Learning Outcomes:**\n- Build structured and semantic web pages with HTML.\n- Style modern, responsive layouts using CSS, Flexbox, and Grid.\n- Add interactivity to websites using JavaScript and the DOM.\n- Develop a complete full-stack MERN application (MongoDB, Express, React, Node.js).\n- Deploy a web application to a live server.',
+    description: 'A complete guide covering everything from front-end and back-end development to full-stack technologies, security best practices, and performance optimization.\n\nLearning Outcomes:\n- Build structured and semantic web pages with HTML.\n- Style modern, responsive layouts using CSS, Flexbox, and Grid.\n- Add interactivity to websites using JavaScript and the DOM.\n- Develop a complete full-stack MERN application (MongoDB, Express, React, Node.js).\n- Deploy a web application to a live server.',
     level: 'Intermediate',
     primaryCategory: 'Software Development',
     suggestedTags: ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js'],
@@ -504,18 +504,18 @@ const courses = [
                 {
                     slug: "html-structure",
                     title: "HTML: The Skeleton of the Web",
-                    content: "### Objective\nUnderstand the role of HTML and learn to create well-structured, semantic web pages.\n\n### What is HTML?\nHyperText Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser. It is the backbone of every website.\n\n### Core Concepts\n- **Elements & Tags:** HTML consists of elements, which are represented by tags. For example, `<p>` is a tag for a paragraph element.\n- **Document Structure:** Every HTML document has a basic structure:\n  ```html\n  <!DOCTYPE html>\n  <html>\n  <head>\n    <title>Page Title</title>\n  </head>\n  <body>\n    <h1>This is a Heading</h1>\n    <p>This is a paragraph.</p>\n  </body>\n  </html>\n  ```\n- **Semantic HTML:** Using HTML tags that describe the meaning of the content, such as `<header>`, `<footer>`, `<nav>`, and `<article>`. This is crucial for accessibility and SEO."
+                    content: "Objective Understand the role of HTML and learn to create well-structured, semantic web pages. What is HTML? HyperText Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser. It is the backbone of every website. Core Concepts - Elements & Tags: HTML consists of elements, which are represented by tags. For example, `<p>` is a tag for a paragraph element. - Document Structure: Every HTML document has a basic structure:  ```html  <!DOCTYPE html>  <html>  <head>    <title>Page Title</title>  </head>  <body>    <h1>This is a Heading</h1>    <p>This is a paragraph.</p>  </body>  </html>  ``` - Semantic HTML: Using HTML tags that describe the meaning of the content, such as `<header>`, `<footer>`, `<nav>`, and `<article>`. This is crucial for accessibility and SEO."
                 },
                 {
                     slug: "css-styling",
                     title: "CSS: The Art of Styling",
-                    content: "### Objective\nLearn how to use Cascading Style Sheets (CSS) to control the visual appearance of your website.\n\n### What is CSS?\nCSS is a stylesheet language used to describe the presentation of a document written in HTML. It controls colors, fonts, spacing, layout, and more.\n\n### Core Concepts\n- **Selectors:** Target specific HTML elements to apply styles to. (e.g., `p`, `.my-class`, `#my-id`).\n- **Properties & Values:** `color: blue;` `font-size: 16px;`\n- **The Box Model:** Every HTML element is a rectangular box. The box model describes the content, padding, border, and margin of this box.\n- **Layouts with Flexbox & Grid:** Modern CSS provides powerful tools for creating complex, responsive layouts. **Flexbox** is for one-dimensional layouts (rows or columns), while **Grid** is for two-dimensional layouts (rows and columns)."
+                    content: "Objective Learn how to use Cascading Style Sheets (CSS) to control the visual appearance of your website. What is CSS? CSS is a stylesheet language used to describe the presentation of a document written in HTML. It controls colors, fonts, spacing, layout, and more. Core Concepts - Selectors: Target specific HTML elements to apply styles to. (e.g., `p`, `.my-class`, `#my-id`). - Properties & Values: `color: blue;` `font-size: 16px;` - The Box Model: Every HTML element is a rectangular box. The box model describes the content, padding, border, and margin of this box. - Layouts with Flexbox & Grid: Modern CSS provides powerful tools for creating complex, responsive layouts. Flexbox is for one-dimensional layouts (rows or columns), while Grid is for two-dimensional layouts (rows and columns)."
                 },
                 {
                     slug: 'web-dev-quiz-1',
                     title: 'Module 1 Quiz',
                     type: 'quiz',
-                    content: 'A developer wants to create a navigation bar at the top of their page that contains a list of links. What is the most *semantic* HTML structure for this?',
+                    content: 'A developer wants to create a navigation bar at the top of their page that contains a list of links. What is the most semantic HTML structure for this?',
                     options: [
                         { id: 'A', text: '`<div><ul><li><a href=\"#\">Home</a></li></ul></div>`' },
                         { id: 'B', text: '`<nav><ul><li><a href=\"#\">Home</a></li></ul></nav>`' },
@@ -533,12 +533,12 @@ const courses = [
                 {
                     slug: "js-fundamentals",
                     title: "JavaScript Fundamentals",
-                    content: "### Objective\nLearn the core concepts of the JavaScript language, the engine of dynamic websites.\n\n### What is JavaScript?\nJavaScript (JS) is a programming language that allows you to implement complex features on web pages. Every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved.\n\n### Core Concepts\n- **Variables:** `let`, `const`.\n- **Data Types:** String, Number, Boolean, Array, Object.\n- **Operators:** Arithmetic, Comparison, Logical.\n- **Control Flow:** `if/else`, `for` loops, `while` loops.\n- **Functions:** Reusable blocks of code."
+                    content: "Objective Learn the core concepts of the JavaScript language, the engine of dynamic websites. What is JavaScript? JavaScript (JS) is a programming language that allows you to implement complex features on web pages. Every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved. Core Concepts - Variables: `let`, `const`. - Data Types: String, Number, Boolean, Array, Object. - Operators: Arithmetic, Comparison, Logical. - Control Flow: `if/else`, `for` loops, `while` loops. - Functions: Reusable blocks of code."
                 },
                 {
                     slug: "dom-manipulation",
                     title: "Interacting with the Page: The DOM",
-                    content: "### Objective\nLearn how to use JavaScript to manipulate the Document Object Model (DOM) to create dynamic and interactive user experiences.\n\n### What is the DOM?\nThe DOM is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects; that way, programming languages can connect to the page.\n\n### Common Tasks\n- **Selecting Elements:** `document.getElementById('myId')`, `document.querySelector('.myClass')`.\n- **Changing Content:** `element.textContent = 'New text!'`.\n- **Changing Styles:** `element.style.color = 'red'`.\n- **Event Handling:** Responding to user actions like clicks and key presses. `element.addEventListener('click', myFunction)`."
+                    content: "Objective Learn how to use JavaScript to manipulate the Document Object Model (DOM) to create dynamic and interactive user experiences. What is the DOM? The DOM is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects; that way, programming languages can connect to the page. Common Tasks - Selecting Elements: `document.getElementById('myId')`, `document.querySelector('.myClass')`. - Changing Content: `element.textContent = 'New text!'`. - Changing Styles: `element.style.color = 'red'`. - Event Handling: Responding to user actions like clicks and key presses. `element.addEventListener('click', myFunction)`."
                 },
                  {
                     slug: 'web-dev-quiz-2',
@@ -561,7 +561,7 @@ const courses = [
   {
     slug: 'cs-top-10-topics',
     title: 'The 10 Most Important Topics in Computer Science',
-    description: 'A comprehensive course covering the 10 most important topics that form the backbone of computer science, from algorithms to AI.\n\n**Learning Outcomes:**\n- Explain the function and importance of core data structures and algorithms.\n- Describe the roles of an operating system and a computer network.\n- Differentiate between various programming paradigms.\n- Understand the fundamentals of software engineering, cybersecurity, and AI.',
+    description: 'A comprehensive course covering the 10 most important topics that form the backbone of computer science, from algorithms to AI.\n\nLearning Outcomes:\n- Explain the function and importance of core data structures and algorithms.\n- Describe the roles of an operating system and a computer network.\n- Differentiate between various programming paradigms.\n- Understand the fundamentals of software engineering, cybersecurity, and AI.',
     level: 'Beginner',
     primaryCategory: 'Computer Science',
     suggestedTags: ['Algorithms', 'Data Structures', 'Operating Systems', 'Cybersecurity', 'AI'],
@@ -578,7 +578,7 @@ const courses = [
             { 
                 slug: "cs-topic-algorithms", 
                 title: "Algorithms: The Foundation of Computation", 
-                content: `### What is an Algorithm?\nAn algorithm is a step-by-step procedure for solving a problem or accomplishing a task. In computer science, it's a sequence of instructions a computer follows to transform input into output. Think of it as a recipe: a finite set of clear steps to achieve a specific outcome.\n\n### Why They Matter\nAlgorithms are the heart of computer science. The efficiency of an algorithm can make the difference between an application that runs in milliseconds and one that takes hours. Understanding algorithms is key to writing efficient and scalable code.\n\n### Measuring Efficiency: Big O Notation\nWe use **Big O Notation** to analyze the performance of an algorithm. It describes how the runtime or memory usage grows as the input size (\`n\`) increases.\n- **O(1) - Constant Time:** The time taken is the same, regardless of input size. (e.g., accessing an array element at a known index).\n- **O(log n) - Logarithmic Time:** Runtime grows logarithmically. Very efficient. (e.g., Binary Search).\n- **O(n) - Linear Time:** Runtime grows linearly with the input size. (e.g., searching an unsorted list).\n- **O(n²) - Quadratic Time:** Runtime grows quadratically. Becomes slow very quickly. (e.g., Bubble Sort).`
+                content: "What is an Algorithm?\nAn algorithm is a step-by-step procedure for solving a problem or accomplishing a task. In computer science, it's a sequence of instructions a computer follows to transform input into output. Think of it as a recipe: a finite set of clear steps to achieve a specific outcome.\n\nWhy They Matter\nAlgorithms are the heart of computer science. The efficiency of an algorithm can make the difference between an application that runs in milliseconds and one that takes hours. Understanding algorithms is key to writing efficient and scalable code.\n\nMeasuring Efficiency: Big O Notation\nWe use Big O Notation to analyze the performance of an algorithm. It describes how the runtime or memory usage grows as the input size (`n`) increases.\n- O(1) - Constant Time: The time taken is the same, regardless of input size. (e.g., accessing an array element at a known index).\n- O(log n) - Logarithmic Time: Runtime grows logarithmically. Very efficient. (e.g., Binary Search).\n- O(n) - Linear Time: Runtime grows linearly with the input size. (e.g., searching an unsorted list).\n- O(n²) - Quadratic Time: Runtime grows quadratically. Becomes slow very quickly. (e.g., Bubble Sort)."
             },
              {
                 slug: 'cs-topics-quiz-1',
@@ -602,7 +602,7 @@ const courses = [
             { 
                 slug: "cs-topic-data-structures", 
                 title: "Data Structures: Organizing Information for Efficiency", 
-                content: `### What are Data Structures?\nData structures are formats for organizing, managing, and storing data that enable efficient access and modification. The choice of data structure can have a massive impact on an algorithm's performance.\n\n### Common Data Structures\n- **Arrays:** A simple collection of items stored in contiguous memory locations. Offers fast access by index (O(1)).\n- **Linked Lists:** A sequence of nodes where each node points to the next. Allows for efficient insertions and deletions.\n- **Stacks:** A Last-In, First-Out (LIFO) structure. Think of a stack of plates. Used for managing function calls and undo features.\n- **Queues:** A First-In, First-Out (FIFO) structure. Like a checkout line. Used for managing tasks and requests.\n- **Trees:** A hierarchical structure with a root node and child nodes. Used for file systems and databases.\n- **Graphs:** A collection of nodes (vertices) and edges connecting them. Used to model networks like social media connections or road maps.\n- **Hash Tables (or Dictionaries):** A structure that maps keys to values for highly efficient lookups. Often provides O(1) average time complexity for insertion, deletion, and retrieval.`
+                content: "What are Data Structures?\nData structures are formats for organizing, managing, and storing data that enable efficient access and modification. The choice of data structure can have a massive impact on an algorithm's performance.\n\nCommon Data Structures\n- Arrays: A simple collection of items stored in contiguous memory locations. Offers fast access by index (O(1)).\n- Linked Lists: A sequence of nodes where each node points to the next. Allows for efficient insertions and deletions.\n- Stacks: A Last-In, First-Out (LIFO) structure. Think of a stack of plates. Used for managing function calls and undo features.\n- Queues: A First-In, First-Out (FIFO) structure. Like a checkout line. Used for managing tasks and requests.\n- Trees: A hierarchical structure with a root node and child nodes. Used for file systems and databases.\n- Graphs: A collection of nodes (vertices) and edges connecting them. Used to model networks like social media connections or road maps.\n- Hash Tables (or Dictionaries): A structure that maps keys to values for highly efficient lookups. Often provides O(1) average time complexity for insertion, deletion, and retrieval."
             },
             {
                 slug: 'cs-topics-quiz-2',
@@ -626,7 +626,7 @@ const courses = [
             { 
                 slug: "cs-topic-os", 
                 title: "Operating Systems: The Computer's Manager", 
-                content: "An Operating System (OS) is the software that manages all of the computer's hardware and software resources. It acts as an intermediary between the user and the computer hardware. Examples include Windows, macOS, and Linux.\n\n### Core Responsibilities:\n- **Process Management:** Manages the execution of programs (processes) and scheduling of tasks.\n- **Memory Management:** Allocates and deallocates RAM to various processes.\n- **File System Management:** Organizes and keeps track of files and directories on storage devices.\n- **Device Management:** Controls hardware devices through drivers."
+                content: "An Operating System (OS) is the software that manages all of the computer's hardware and software resources. It acts as an intermediary between the user and the computer hardware. Examples include Windows, macOS, and Linux.\n\nCore Responsibilities:\n- Process Management: Manages the execution of programs (processes) and scheduling of tasks.\n- Memory Management: Allocates and deallocates RAM to various processes.\n- File System Management: Organizes and keeps track of files and directories on storage devices.\n- Device Management: Controls hardware devices through drivers."
             }
         ]
       },
@@ -636,7 +636,7 @@ const courses = [
             { 
                 slug: "cs-topic-networks", 
                 title: "Computer Networks: Connecting the World", 
-                content: "Computer networking is the practice of connecting computers together to share data and resources. The internet is the largest example of a computer network.\n\n### Key Concepts:\n- **TCP/IP Model:** The foundational protocol suite of the internet. It defines how data is broken into packets, addressed, transmitted, routed, and received.\n- **HTTP/HTTPS:** The protocol used for viewing web pages in a browser. HTTPS is the secure, encrypted version.\n- **DNS (Domain Name System):** The internet's phonebook. It translates human-readable domain names (like `google.com`) into computer-readable IP addresses."
+                content: "Computer networking is the practice of connecting computers together to share data and resources. The internet is the largest example of a computer network.\n\nKey Concepts:\n- TCP/IP Model: The foundational protocol suite of the internet. It defines how data is broken into packets, addressed, transmitted, routed, and received.\n- HTTP/HTTPS: The protocol used for viewing web pages in a browser. HTTPS is the secure, encrypted version.\n- DNS (Domain Name System): The internet's phonebook. It translates human-readable domain names (like `google.com`) into computer-readable IP addresses."
             }
         ]
       },
@@ -646,7 +646,7 @@ const courses = [
             { 
                 slug: "cs-topic-databases", 
                 title: "Databases: Storing and Retrieving Data", 
-                content: "Databases are systems for storing and retrieving data efficiently. A Database Management System (DBMS) is the software used to manage the database.\n\n### Types of Databases:\n- **Relational (SQL):** Organizes data into structured tables with rows and columns. Uses SQL (Structured Query Language). Examples: MySQL, PostgreSQL.\n- **Non-Relational (NoSQL):** Provides more flexibility and is often used for large-scale or unstructured data. Examples: MongoDB (document-based), Redis (key-value)."
+                content: "Databases are systems for storing and retrieving data efficiently. A Database Management System (DBMS) is the software used to manage the database.\n\nTypes of Databases:\n- Relational (SQL): Organizes data into structured tables with rows and columns. Uses SQL (Structured Query Language). Examples: MySQL, PostgreSQL.\n- Non-Relational (NoSQL): Provides more flexibility and is often used for large-scale or unstructured data. Examples: MongoDB (document-based), Redis (key-value)."
             }
         ]
       }
