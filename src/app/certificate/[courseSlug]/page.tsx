@@ -133,6 +133,12 @@ export default function CertificatePage() {
                                         <p className="mt-1"><span className="font-bold">Date of Completion:</span> {completionDate}</p>
                                         <p className="mt-1"><span className="font-bold">Certificate ID:</span> {certificateId}</p>
                                     </div>
+                                    
+                                    <div className="text-center text-xs text-gray-700 flex flex-col items-center">
+                                        <Image src="https://www.dropbox.com/scl/fi/lygt88nh9af53v5z34pe0/qr-code.png?rlkey=y6ix6etermxo022dknvuugt5d&st=up2u5pqk&raw=1" alt="SCS QR Code" width={60} height={60} />
+                                        <p className="font-bold mt-2">Verification:</p>
+                                        <p className="max-w-[150px]">Scan the QR code to visit the official SCS website</p>
+                                    </div>
 
                                     <div className="text-center">
                                         <p className="font-serif text-xl font-semibold border-b border-dotted border-gray-400 pb-1 px-4">Prerana Pattnaik</p>

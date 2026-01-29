@@ -26,6 +26,12 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'www.dropbox.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
   async redirects() {
