@@ -31,20 +31,19 @@ const paths = [
 
 export default function SCSLearningPaths() {
     return (
-        <section className="bg-black text-white py-20 px-4 sm:px-6 lg:px-8">
+        <section className="bg-white text-foreground py-20 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                 {/* Left Side */}
                 <div className="max-w-lg">
                     <h2 className="text-4xl md:text-5xl font-bold font-space-grotesk leading-tight">
                         The SCS Ecosystem.
                     </h2>
-                    <p className="mt-4 text-lg text-gray-300">
+                    <p className="mt-4 text-lg text-muted-foreground">
                         Stop chasing random tutorials. Follow our curated, visual-first journeys designed to build technical intuition from the ground up and apply your skills in a live sandbox.
                     </p>
                     <Link href="/learning-paths">
                         <button 
-                            className="mt-8 rounded-full px-8 py-3 text-lg font-bold transition-colors"
-                            style={{ backgroundColor: '#FFD700', color: '#000000', border: 'none' }}
+                            className="mt-8 rounded-full bg-accent text-accent-foreground px-8 py-3 text-lg font-bold transition-colors hover:bg-accent/90"
                         >
                             Start Learning
                         </button>
@@ -55,17 +54,17 @@ export default function SCSLearningPaths() {
                 <div className="space-y-4">
                     {paths.map((path, index) => (
                         <Link href={path.href} key={index} className="block">
-                            <div className="flex items-center gap-4 border border-gray-700 hover:border-yellow-400 p-4 rounded-xl transition-colors" style={{ borderRadius: '12px' }}>
-                                <div className="text-yellow-400">
+                            <div className="flex items-center gap-4 border border-border bg-card hover:border-accent p-4 rounded-xl transition-colors">
+                                <div className="text-accent">
                                     {path.icon}
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-bold" style={{ color: '#FFD700' }}>
+                                    <h3 className="text-xl font-bold text-accent">
                                         {path.title}
                                     </h3>
-                                    <p className="text-gray-400">{path.description}</p>
+                                    <p className="text-muted-foreground">{path.description}</p>
                                     {path.title === 'SCS DevStudio' && (
-                                        <div className="text-yellow-400 font-bold mt-2">Open Sandbox</div>
+                                        <div className="text-accent font-bold mt-2">Open Sandbox</div>
                                     )}
                                 </div>
                             </div>
